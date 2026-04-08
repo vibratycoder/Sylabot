@@ -360,7 +360,7 @@
     border-radius: 10px;
     overflow: hidden;
   }
-  .chart-container canvas { width: 100% !important; height: 100% !important; }
+  .chart-container canvas { display: block; }
 
   /* Quiz Settings */
   .quiz-settings {
@@ -972,6 +972,7 @@
           <tbody id="historyTable"></tbody>
         </table>
       </div>
+      <button onclick="clearQuizHistory()" style="margin-top:14px;padding:6px 18px;border-radius:8px;border:1px solid var(--red);background:transparent;color:var(--red);cursor:pointer;font-size:0.82rem;">Clear Quiz History</button>
     </div>
   </div>
 
@@ -2373,10 +2374,15 @@ function deleteCourse(courseId) {
   // Remove all course-specific data
   const keys = Object.keys(localStorage).filter(k => k.startsWith('syllabot_' + courseId));
   keys.forEach(k => localStorage.removeItem(k));
-  if (courses.length === 0) {
-    courses = [DEFAULT_ECO114];
-  }
   saveCourses(courses);
+  if (courses.length === 0) {
+    localStorage.removeItem('syllabot_activeCourse');
+    activeCourse = null;
+    activeContent = { tutor: {}, quiz: {}, written: {}, flashcards: {} };
+    document.getElementById('headerCourseBadge').textContent = 'No Course Selected';
+    renderCourses();
+    return;
+  }
   if (getActiveCourseId() === courseId) {
     setActiveCourse(courses[0].id);
   }
@@ -2950,6 +2956,13 @@ function newQuizAndScroll() {
   document.getElementById('quizTopCard').scrollIntoView({ behavior: 'smooth' });
 }
 
+function clearQuizHistory() {
+  if (!confirm('Clear all quiz history for ' + (activeCourse ? activeCourse.code : 'this course') + '?')) return;
+  quizHistory = [];
+  if (activeCourse) localStorage.removeItem('syllabot_' + activeCourse.id + '_quizHistory');
+  renderQuizHistory();
+}
+
 function renderQuizHistory() {
   const card = document.getElementById('quizHistoryCard');
   const tbody = document.getElementById('historyTable');
@@ -2974,19 +2987,26 @@ function renderQuizHistory() {
     </tr>`;
   }).join('');
 
-  // Draw chart
-  drawHistoryChart();
+  // Draw chart after the card is visible so getBoundingClientRect returns real dimensions
+  requestAnimationFrame(() => drawHistoryChart());
 }
 
 function drawHistoryChart() {
   const canvas = document.getElementById('historyChart');
-  const ctx = canvas.getContext('2d');
-  const rect = canvas.parentElement.getBoundingClientRect();
-  canvas.width = rect.width * window.devicePixelRatio;
-  canvas.height = rect.height * window.devicePixelRatio;
-  ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  if (!canvas) return;
+  const container = canvas.parentElement;
+  const rect = container.getBoundingClientRect();
+  // If container isn't visible yet, skip — will be called again via rAF
+  if (rect.width === 0 || rect.height === 0) return;
+  const dpr = window.devicePixelRatio || 1;
   const W = rect.width;
   const H = rect.height;
+  canvas.width = W * dpr;
+  canvas.height = H * dpr;
+  canvas.style.width = W + 'px';
+  canvas.style.height = H + 'px';
+  const ctx = canvas.getContext('2d');
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
   ctx.clearRect(0, 0, W, H);
 
@@ -3066,6 +3086,13 @@ function drawHistoryChart() {
     ctx.fillText('#' + (i + 1), p.x, padT + chartH + 16);
   });
 }
+
+// Redraw chart on window resize
+window.addEventListener('resize', () => {
+  if (quizHistory.length > 0 && document.getElementById('quizHistoryCard').style.display !== 'none') {
+    drawHistoryChart();
+  }
+});
 
 // ===== FLASHCARDS =====
 let currentFCModule = null;
@@ -3273,7 +3300,7 @@ function renderCourses() {
       </div>
       <div class="cc-actions" onclick="event.stopPropagation()">
         <button class="cc-btn cc-btn-primary" onclick="setActiveCourse('${c.id}')">Switch</button>
-        ${c.id !== 'eco114-spring2026' ? '<button class="cc-btn cc-btn-danger" onclick="if(confirm(\'Delete ' + c.code + '?\')) deleteCourse(\'' + c.id + '\')">Delete</button>' : ''}
+        <button class="cc-btn cc-btn-danger" onclick="if(confirm('Delete ' + c.code + '?')) deleteCourse('${c.id}')">Delete</button>
       </div>
     </div>
   `).join('');
