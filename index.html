@@ -2780,7 +2780,7 @@ function generateQuiz() {
   // Written questions
   const wContainer = document.getElementById('writtenContainer');
   if (numWritten > 0 && getWritten(currentQuizModule).length > 0) {
-    const writtenPool = shuffleArray(activeContent.written[currentQuizModule]);
+    const writtenPool = shuffleArray(getWritten(currentQuizModule));
     const pickedWritten = writtenPool.slice(0, Math.min(numWritten, writtenPool.length));
     writtenCount = pickedWritten.length;
     window._currentWritten = pickedWritten;
@@ -3131,7 +3131,7 @@ function startFlashcards(mod) {
 }
 function showFlashcard() {
   if (!currentFCModule) return;
-  const cards = (activeContent.flashcards || {})[currentFCModule] || [];
+  const cards = getFlashcards(currentFCModule);
   const card = cards[fcIndex];
   document.getElementById('flashcard').classList.remove('flipped');
   document.getElementById('fcFront').textContent = card.front;
@@ -3141,12 +3141,12 @@ function showFlashcard() {
 function flipCard() { document.getElementById('flashcard').classList.toggle('flipped'); }
 function nextCard() {
   if (!currentFCModule) return;
-  fcIndex = (fcIndex + 1) % ((activeContent.flashcards || {})[currentFCModule] || []).length;
+  fcIndex = (fcIndex + 1) % getFlashcards(currentFCModule).length;
   showFlashcard();
 }
 function prevCard() {
   if (!currentFCModule) return;
-  const len = ((activeContent.flashcards || {})[currentFCModule] || []).length;
+  const len = getFlashcards(currentFCModule).length;
   fcIndex = (fcIndex - 1 + len) % len;
   showFlashcard();
 }
