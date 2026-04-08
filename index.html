@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Syllabot — ECO 114</title>
+<title>Syllabot — Study Companion</title>
 <style>
   :root {
     --bg: #0f1117;
@@ -269,14 +269,14 @@
     padding: 20px;
     margin-bottom: 16px;
   }
-  .quiz-question .q-number {
+  .quiz-question .q-number, .written-question .q-number {
     font-size: 0.75rem;
     color: var(--accent-light);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 8px;
   }
-  .quiz-question .q-text {
+  .quiz-question .q-text, .written-question .q-text {
     font-size: 1rem;
     font-weight: 500;
     margin-bottom: 14px;
@@ -407,19 +407,7 @@
     padding: 20px;
     margin-bottom: 16px;
   }
-  .written-question .q-number {
-    font-size: 0.75rem;
-    color: var(--accent-light);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-  }
-  .written-question .q-text {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 14px;
-    line-height: 1.5;
-  }
+  /* .q-number and .q-text shared with quiz-question above */
   .written-answer-box {
     width: 100%;
     min-height: 100px;
@@ -842,7 +830,7 @@
   <button class="tab-btn active" data-tab="dashboard"><span class="tab-icon">&#9632;</span> Dashboard</button>
   <button class="tab-btn" data-tab="planner"><span class="tab-icon">&#9776;</span> Planner</button>
   <button class="tab-btn" data-tab="tutor"><span class="tab-icon">&#9733;</span> Tutor</button>
-  <button class="tab-btn" data-tab="quiz"><span class="tab-icon">&#10067;</span> Quiz</button>
+  <button class="tab-btn" data-tab="quiz"><span class="tab-icon">&#11043;</span> Quiz</button>
   <button class="tab-btn" data-tab="flashcards"><span class="tab-icon">&#9830;</span> Flashcards</button>
   <button class="tab-btn" data-tab="progress"><span class="tab-icon">&#9650;</span> Progress</button>
   <button class="tab-btn" data-tab="grades"><span class="tab-icon">&#9679;</span> Grade Calc</button>
@@ -1212,10 +1200,22 @@
 </div>
 
 <script>
-// ===== TUTOR CONTENT (ECO 114 built-in) =====
+// ===== CONSTANTS =====
+const REASONING_PATTERNS = [
+  /because|since|due to|as a result|therefore|this means|this leads to/,
+  /causes?|effects?|impacts?|results? in|leads? to/,
+  /for example|for instance|such as|e\.g\./,
+  /compared to|whereas|while|unlike|on the other hand|in contrast/,
+  /increases?|decreases?|shifts?|changes?|moves?/,
+  /relationship between|connection between|linked to|related to/
+];
+
 // ===== DYNAMIC CONTENT SYSTEM =====
 // Per-course content stored in localStorage. ECO 114 data is seeded as default.
 let activeContent = { tutor: {}, quiz: {}, written: {}, flashcards: {} };
+function getQuiz(mod) { return (activeContent.quiz || {})[mod] || []; }
+function getWritten(mod) { return (activeContent.written || {})[mod] || []; }
+function getFlashcards(mod) { return (activeContent.flashcards || {})[mod] || []; }
 
 function getCourseContent(courseId) {
   const key = 'syllabot_content_' + courseId;
@@ -2425,18 +2425,14 @@ function loadActiveCourse() {
   // Load course-specific quiz history
   quizHistory = JSON.parse(localStorage.getItem('syllabot_' + activeCourse.id + '_quizHistory') || '[]');
 
-  // Re-render all tabs
+  // Render dashboard immediately, defer other tabs until viewed
   renderDeadlines();
   renderActions();
   renderSemesterBar();
   renderGradeWeights();
-  renderPlanner();
-  renderTutor();
-  renderQuizControls();
-  renderFlashcardControls();
-  renderProgress();
-  renderGradeCalc();
   renderCourses();
+  _dirtyTabs = { planner:1, tutor:1, quiz:1, flashcards:1, progress:1, grades:1 };
+  renderTabIfDirty(document.querySelector('.tab-btn.active')?.dataset.tab);
 }
 
 // ===== INITIALIZATION =====
@@ -2448,12 +2444,32 @@ function daysUntil(dateStr) {
   return Math.ceil((d - today) / (1000*60*60*24));
 }
 
+// ===== LAZY TAB RENDERING =====
+let _dirtyTabs = {};
+const TAB_RENDERERS = {
+  planner: renderPlanner,
+  tutor: renderTutor,
+  quiz: renderQuizControls,
+  flashcards: renderFlashcardControls,
+  progress: renderProgress,
+  grades: renderGradeCalc
+};
+function renderTabIfDirty(tabName) {
+  if (_dirtyTabs[tabName] && TAB_RENDERERS[tabName]) {
+    TAB_RENDERERS[tabName]();
+    delete _dirtyTabs[tabName];
+  }
+}
+
 // ===== TAB SWITCHING =====
-document.querySelectorAll('.tab-btn').forEach(btn => {
+const _allTabBtns = document.querySelectorAll('.tab-btn');
+const _allTabContents = document.querySelectorAll('.tab-content');
+_allTabBtns.forEach(btn => {
   btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    _allTabBtns.forEach(b => b.classList.remove('active'));
+    _allTabContents.forEach(c => c.classList.remove('active'));
     btn.classList.add('active');
+    renderTabIfDirty(btn.dataset.tab);
     const tab = document.getElementById('tab-' + btn.dataset.tab);
     tab.classList.add('active');
     tab.classList.remove('fade-in');
@@ -2659,14 +2675,14 @@ function startQuiz(mod) {
   // Show settings and update slider max
   const settings = document.getElementById('quizSettings');
   settings.style.display = 'flex';
-  const maxQ = Math.min((activeContent.quiz[mod] || []).length, 50);
+  const maxQ = Math.min(getQuiz(mod).length, 50);
   const slider = document.getElementById('questionSlider');
   slider.max = maxQ;
   if (parseInt(slider.value) > maxQ) slider.value = maxQ;
   updateSliderLabel();
 
   // Update written slider max
-  const writtenAvail = (activeContent.written || {})[mod] ? activeContent.written[mod].length : 0;
+  const writtenAvail = getWritten(mod).length;
   const wSlider = document.getElementById('writtenSlider');
   wSlider.max = Math.max(1, writtenAvail);
   if (parseInt(wSlider.value) > writtenAvail) wSlider.value = Math.min(writtenAvail, 1);
@@ -2687,13 +2703,18 @@ function startQuiz(mod) {
   generateQuiz();
 }
 
+let _quizDebounce = null;
+function _debouncedGenerate() {
+  clearTimeout(_quizDebounce);
+  _quizDebounce = setTimeout(() => { if (currentQuizModule) generateQuiz(); }, 200);
+}
 function updateSliderLabel() {
   document.getElementById('sliderVal').textContent = document.getElementById('questionSlider').value;
-  if (currentQuizModule) generateQuiz();
+  _debouncedGenerate();
 }
 function updateWrittenSliderLabel() {
   document.getElementById('writtenSliderVal').textContent = document.getElementById('writtenSlider').value;
-  if (currentQuizModule) generateQuiz();
+  _debouncedGenerate();
 }
 function onWrittenToggle() {
   const checked = document.getElementById('writtenToggle').checked;
@@ -2728,7 +2749,7 @@ function generateQuiz() {
   const numWritten = includeWritten ? (parseInt(document.getElementById('writtenSlider').value) || 1) : 0;
 
   // Shuffle and pick MC questions
-  const sourceQuestions = (activeContent.quiz || {})[currentQuizModule] || [];
+  const sourceQuestions = getQuiz(currentQuizModule);
   const shuffledAll = shuffleArray(sourceQuestions);
   const picked = shuffledAll.slice(0, Math.min(numMC, shuffledAll.length));
 
@@ -2758,7 +2779,7 @@ function generateQuiz() {
 
   // Written questions
   const wContainer = document.getElementById('writtenContainer');
-  if (numWritten > 0 && (activeContent.written || {})[currentQuizModule]) {
+  if (numWritten > 0 && getWritten(currentQuizModule).length > 0) {
     const writtenPool = shuffleArray(activeContent.written[currentQuizModule]);
     const pickedWritten = writtenPool.slice(0, Math.min(numWritten, writtenPool.length));
     writtenCount = pickedWritten.length;
@@ -2815,17 +2836,9 @@ function gradeWritten(wi) {
 
   const keywordRatio = keywordsHit / w.keywords.length;
 
-  // Conceptual depth — look for reasoning indicators (explanations, cause-effect, comparisons)
-  const reasoningPatterns = [
-    /because|since|due to|as a result|therefore|this means|this leads to/,
-    /causes?|effects?|impacts?|results? in|leads? to/,
-    /for example|for instance|such as|e\.g\./,
-    /compared to|whereas|while|unlike|on the other hand|in contrast/,
-    /increases?|decreases?|shifts?|changes?|moves?/,
-    /relationship between|connection between|linked to|related to/
-  ];
+  // Conceptual depth — reasoning indicators
   let reasoningHits = 0;
-  reasoningPatterns.forEach(p => { if (p.test(lowerAnswer)) reasoningHits++; });
+  REASONING_PATTERNS.forEach(p => { if (p.test(lowerAnswer)) reasoningHits++; });
   const reasoningScore = Math.min(reasoningHits / 3, 1.0);
 
   // Minimum length — just enough to show understanding, not rewarding verbosity
@@ -3548,9 +3561,9 @@ function handleFileUpload(event) {
         const text = result.text || '';
         document.getElementById('extractedText').value = text;
         document.getElementById('extractedPreview').style.display = 'block';
-        showUploadStatus('success', file.name + ' parsed successfully (' + text.split('\n').length + ' lines extracted). Review the text below, then fill in the course form.');
+        showUploadStatus('info', file.name + ' parsed (' + text.split('\n').length + ' lines). Auto-filling form...');
 
-        // Try to auto-detect some fields from extracted text
+        // Smart auto-fill: extract course info, grades, modules, deadlines
         autoFillFromText(text);
       }
     })
@@ -3561,56 +3574,414 @@ function handleFileUpload(event) {
   event.target.value = '';
 }
 
-// Try to auto-detect course info from extracted text
+// ===== SMART SYLLABUS PARSER =====
+// Parses extracted syllabus text and auto-populates all 4 form steps
+
 function autoFillFromText(text) {
   const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
   if (lines.length === 0) return;
 
-  // Try to find course code pattern (e.g., "ECO 114", "FIN 201", "ACC 310")
-  const codeMatch = text.match(/\b([A-Z]{2,4})\s*(\d{3}[A-Z]?)\b/);
+  // --- STEP 1: Course Info ---
+  fillCourseInfo(text, lines);
+
+  // --- STEP 2: Grade Weights ---
+  const weights = extractGradeWeights(text, lines);
+  if (weights.length > 0) {
+    document.getElementById('gradeWeightsList').innerHTML = '';
+    weights.forEach(w => addGradeWeightRow(w.name, w.weight));
+    goToFormStep(1); // Show grade weights step so user sees them
+    setTimeout(() => goToFormStep(0), 50); // Go back to step 1
+  }
+
+  // --- STEP 3: Modules ---
+  const modules = extractModules(text, lines);
+  if (modules.length > 0) {
+    document.getElementById('modulesList').innerHTML = '';
+    modules.forEach(m => addModuleRow(m.num, m.topic, m.reading));
+  }
+
+  // --- STEP 4: Deadlines ---
+  const deadlines = extractDeadlines(text, lines);
+  if (deadlines.length > 0) {
+    document.getElementById('deadlinesList').innerHTML = '';
+    deadlines.forEach(d => addDeadlineRow(d.name, d.date, d.type));
+  }
+
+  // Summary message
+  const parts = [];
+  if (weights.length) parts.push(weights.length + ' grade components');
+  if (modules.length) parts.push(modules.length + ' modules');
+  if (deadlines.length) parts.push(deadlines.length + ' deadlines');
+  if (parts.length) {
+    showUploadStatus('success', 'Auto-detected: ' + parts.join(', ') + '. Review all 4 steps before saving.');
+  }
+}
+
+function fillCourseInfo(text, lines) {
+  // Course code: "ECO 114", "FIN201", "ACC 310-I"
+  const codeMatch = text.match(/\b([A-Z]{2,4})\s*(\d{3}[A-Z]?)(?:\s*[-–]\s*[A-Z0-9]+)?\b/);
   if (codeMatch) {
     document.getElementById('nc-code').value = codeMatch[1] + ' ' + codeMatch[2];
   }
 
-  // Try to detect semester
+  // Semester
   const semMatch = text.match(/(Spring|Fall|Summer|Winter)\s*(\d{4})/i);
   if (semMatch) {
-    document.getElementById('nc-semester').value = semMatch[1] + ' ' + semMatch[2];
+    document.getElementById('nc-semester').value = semMatch[1].charAt(0).toUpperCase() + semMatch[1].slice(1).toLowerCase() + ' ' + semMatch[2];
   }
 
-  // Try to detect instructor (look for "Instructor:" or "Professor:" patterns)
-  const instrMatch = text.match(/(?:Instructor|Professor|Faculty)\s*:\s*(.+)/i);
-  if (instrMatch) {
-    const instrName = instrMatch[1].split(/\t|Email|Office|\(/)[0].trim();
-    if (instrName) document.getElementById('nc-instructor').value = instrName;
-  }
-
-  // Try to detect schedule (look for day/time patterns)
-  const schedMatch = text.match(/(?:Time|Schedule|Meets|Class)\s*:\s*(.+)/i);
-  if (schedMatch) {
-    const sched = schedMatch[1].split(/\t|Place|Room|Location/)[0].trim();
-    if (sched) document.getElementById('nc-schedule').value = sched;
-  }
-
-  // Try to detect location
-  const locMatch = text.match(/(?:Place|Location|Room)\s*:\s*(.+)/i);
-  if (locMatch) {
-    const loc = locMatch[1].split(/\t|Canvas|Office/)[0].trim();
-    if (loc) document.getElementById('nc-location').value = loc;
-  }
-
-  // Try to find course name (often first or second line, or after the code)
-  if (codeMatch) {
-    // Look for the line containing the course code and extract the name part
-    const codeLine = lines.find(l => l.includes(codeMatch[0]));
-    if (codeLine) {
-      const nameMatch = codeLine.match(/\d{3}[A-Z]?\s*:?\s*(.+)/);
-      if (nameMatch) {
-        const name = nameMatch[1].split(/\t|Spring|Fall|Summer|Winter/)[0].trim();
-        if (name && name.length > 3) document.getElementById('nc-name').value = name;
+  // Instructor — multiple patterns
+  const instrPatterns = [
+    /(?:Instructor|Professor|Faculty|Lecturer|Taught by)\s*:\s*(.+)/i,
+    /(?:Prof\.|Dr\.)\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)/,
+  ];
+  for (const pat of instrPatterns) {
+    const m = text.match(pat);
+    if (m) {
+      const instrName = m[1].split(/\t|Email|Office|\(|Phone|,/)[0].trim();
+      if (instrName && instrName.length > 2) {
+        document.getElementById('nc-instructor').value = instrName;
+        break;
       }
     }
   }
+
+  // Schedule — day/time patterns
+  const schedPatterns = [
+    /(?:Time|Schedule|Meets|Class Time|Meeting)\s*:\s*(.+)/i,
+    /\b((?:M|T|W|R|F|Mon|Tue|Wed|Thu|Fri|Sat|Sun|MW|MWF|TR|TF|TTh|TuTh)[A-Za-z,\/]*\s+\d{1,2}:\d{2}\s*(?:AM|PM|am|pm)?\s*[-–]\s*\d{1,2}:\d{2}\s*(?:AM|PM|am|pm)?)\b/i,
+  ];
+  for (const pat of schedPatterns) {
+    const m = text.match(pat);
+    if (m) {
+      const sched = m[1].split(/\t|Place|Room|Location|Where/i)[0].trim();
+      if (sched && sched.length > 3) {
+        document.getElementById('nc-schedule').value = sched;
+        break;
+      }
+    }
+  }
+
+  // Location
+  const locPatterns = [
+    /(?:Place|Location|Room|Where|Building)\s*:\s*(.+)/i,
+    /\b([A-Z]{2,5}\s+\d{2,4}[A-Z]?)\b/,  // e.g. "UNI 268", "BUS 304"
+  ];
+  for (const pat of locPatterns) {
+    const m = text.match(pat);
+    if (m) {
+      const loc = m[1].split(/\t|Canvas|Office|Phone|Email/i)[0].trim();
+      if (loc && loc.length > 2 && loc.length < 30) {
+        document.getElementById('nc-location').value = loc;
+        break;
+      }
+    }
+  }
+
+  // Course name — look near the course code or in the first few lines
+  if (codeMatch) {
+    const codeStr = codeMatch[1] + ' ' + codeMatch[2];
+    // Check the line containing the code
+    const codeLine = lines.find(l => l.includes(codeMatch[0]) || l.includes(codeStr));
+    if (codeLine) {
+      // Try "ECO 114: Microeconomic Principles" pattern
+      const nameMatch = codeLine.match(/\d{3}[A-Z]?\s*[-–:]\s*(.+)/);
+      if (nameMatch) {
+        const name = nameMatch[1].split(/\t|Spring|Fall|Summer|Winter|Section/i)[0].trim();
+        if (name && name.length > 3) document.getElementById('nc-name').value = name;
+      }
+    }
+    // Fallback: check next line after the code line
+    if (!document.getElementById('nc-name').value && codeLine) {
+      const idx = lines.indexOf(codeLine);
+      if (idx >= 0 && idx + 1 < lines.length) {
+        const nextLine = lines[idx + 1];
+        if (nextLine.length > 5 && nextLine.length < 80 && !/instructor|professor|semester|spring|fall/i.test(nextLine)) {
+          document.getElementById('nc-name').value = nextLine;
+        }
+      }
+    }
+  }
+}
+
+function extractGradeWeights(text, lines) {
+  const weights = [];
+  const seen = new Set();
+
+  // Strategy: find the "% of Grade" or "Graded Assignment" section first for best results
+  let startIdx = lines.findIndex(l => /(?:graded\s*assignment|%\s*of\s*grade|grade\s*weight|grade\s*breakdown|final\s*grades?\s*will\s*be\s*determined)/i.test(l));
+  const searchLines = startIdx >= 0 ? lines.slice(startIdx) : lines;
+
+  // Match patterns: "Component Name\tNN%", "Component Name NN%", "Component Name\tNN"
+  for (const line of searchLines) {
+    // Stop scanning if we hit a clearly unrelated section
+    if (weights.length > 0 && /^(?:schedule|policy|attendance|academic|prerequisite|textbook|course\s*description)/i.test(line)) break;
+
+    // Pattern: "Name\tNN%" or "Name\tNN"
+    let match = line.match(/^([^\t]+)\t(\d{1,3})\s*%?$/);
+    // Pattern: "Name ... NN%" (spaces/dots between)
+    if (!match) match = line.match(/^(.+?)\s{2,}(\d{1,3})\s*%/);
+    // Pattern: "Name: NN%" or "Name (NN%)"
+    if (!match) match = line.match(/^(.+?)\s*[:(]\s*(\d{1,3})\s*%/);
+
+    if (match) {
+      let name = match[1].replace(/[:\-–(]+$/, '').replace(/\(.*$/, '').trim();
+      const weight = parseInt(match[2]);
+      // Filter: must be a real grade component
+      if (weight > 0 && weight <= 60 && name.length > 2 && name.length < 70
+          && !/^\d/.test(name) && !/^[A-F][+-]?\s*$/i.test(name)
+          && !/grade\s*scale|grading\s*scale|letter|between|above|below|excellent|good|satisfactory|failing/i.test(name)
+          && !/^graded\s*assignment|%\s*of\s*grade/i.test(name)) {
+        const key = name.toLowerCase().replace(/\s*\(.*\)/, '');
+        if (!seen.has(key)) {
+          seen.add(key);
+          weights.push({ name, weight });
+        }
+      }
+    }
+  }
+
+  // Validate: total should be ~100
+  const total = weights.reduce((s, w) => s + w.weight, 0);
+  if (weights.length >= 2 && total >= 80 && total <= 110) {
+    return weights;
+  }
+
+  // Fallback: scan ALL lines for "NN%" adjacent to text
+  if (weights.length < 2) {
+    const fallback = [];
+    const fbSeen = new Set();
+    for (const line of lines) {
+      const m = line.match(/^([A-Za-z][\w\s&()–-]{2,50}?)\s*\t?\s*(\d{1,3})\s*%/);
+      if (m) {
+        let name = m[1].trim();
+        const w = parseInt(m[2]);
+        if (w > 0 && w <= 60 && !/^[A-F][+-]?\s*$/i.test(name) && !/between|above|below/i.test(name)) {
+          const key = name.toLowerCase();
+          if (!fbSeen.has(key)) { fbSeen.add(key); fallback.push({ name, weight: w }); }
+        }
+      }
+    }
+    const fbTotal = fallback.reduce((s, w) => s + w.weight, 0);
+    if (fallback.length >= 2 && fbTotal >= 80 && fbTotal <= 110) return fallback;
+  }
+
+  return weights.length >= 2 ? weights : [];
+}
+
+function extractModules(text, lines) {
+  const modules = [];
+  const seen = new Set();
+
+  // Primary strategy: find "Module N: Topic" anywhere in any line (including tab-separated schedule rows)
+  // Real format: "Unit 1: ...\tTuesday, January 20th\tModule 1: Scarcity, Opportunity, & Decisions\tTxtbk. Ch. 1 & 2\t..."
+  for (const line of lines) {
+    const moduleMatch = line.match(/Module\s*(\d{1,2})\s*[:–\-]\s*([^\t]+)/i);
+    if (moduleMatch) {
+      const num = parseInt(moduleMatch[1]);
+      let topic = moduleMatch[2].trim();
+      if (!seen.has(num) && topic.length > 2) {
+        seen.add(num);
+        // Extract reading from the column AFTER the module reference, not the whole line
+        // Split by tabs, find the reading column (usually the one after module)
+        const cols = line.split('\t');
+        let reading = '';
+        const modColIdx = cols.findIndex(c => /Module\s*\d/i.test(c));
+        if (modColIdx >= 0) {
+          // Look at the next column(s) for reading info
+          for (let ci = modColIdx + 1; ci < cols.length; ci++) {
+            const r = extractReadingFromLine(cols[ci]);
+            if (r) { reading = r; break; }
+          }
+        }
+        if (!reading) reading = extractReadingFromLine(line);
+        // Clean topic: remove "Txtbk" references if they leaked in
+        topic = topic.replace(/\s*Txtbk\.?\s*$/i, '').replace(/\s*\(C\)\s*$/, '').trim();
+        modules.push({ num, topic, reading: reading || '' });
+      }
+    }
+  }
+
+  // If we found modules, return them sorted
+  if (modules.length > 0) {
+    return modules.sort((a, b) => a.num - b.num);
+  }
+
+  // Fallback 1: "Chapter N: Topic" or "Week N: Topic"
+  const fallbackPatterns = [
+    /(?:Chapter|Ch\.?)\s*(\d{1,2})\s*[:–\-\t]\s*([^\t]+)/i,
+    /(?:Week)\s*(\d{1,2})\s*[:–\-\t]\s*([^\t]+)/i,
+    /(?:Topic|Lesson)\s*(\d{1,2})\s*[:–\-\t]\s*([^\t]+)/i,
+  ];
+
+  for (const line of lines) {
+    for (const pat of fallbackPatterns) {
+      const m = line.match(pat);
+      if (m) {
+        const num = parseInt(m[1]);
+        let topic = m[2].trim();
+        const reading = extractReadingFromLine(line);
+        topic = topic.replace(/\s*Txtbk\.?\s*$/i, '').trim();
+        if (topic && topic.length > 2 && !seen.has(num)) {
+          seen.add(num);
+          modules.push({ num, topic, reading: reading || '' });
+        }
+        break;
+      }
+    }
+  }
+
+  if (modules.length > 0) return modules.sort((a, b) => a.num - b.num);
+
+  // Fallback 2: numbered list items that look like topics
+  let modNum = 1;
+  for (const line of lines) {
+    const numberedMatch = line.match(/^(\d{1,2})[.)]\s+(.+)/);
+    if (numberedMatch) {
+      const topic = numberedMatch[2].split(/\t/)[0].trim();
+      if (topic.length > 3 && topic.length < 80) {
+        const reading = extractReadingFromLine(line);
+        modules.push({ num: modNum++, topic, reading: reading || '' });
+      }
+    }
+  }
+
+  return modules.sort((a, b) => a.num - b.num);
+}
+
+function extractReadingFromLine(text) {
+  if (!text) return '';
+  // Match "Txtbk. Ch. 1 & 2", "Ch. 5", "Chapter 3", "pp. 100-120", "Canvas materials"
+  const m = text.match(/(?:Txtbk\.?\s*)?Ch\.?\s*\d+(?:\s*[&,]\s*\d+)*/i)
+         || text.match(/Chapter\s+\d+(?:\s*[&,]\s*\d+)*/i)
+         || text.match(/pp?\.\s*\d+[-–]\d+/i)
+         || text.match(/Canvas\s+materials?/i)
+         || text.match(/Saloni[^\t]*/i);
+  if (!m) return '';
+  // Normalize "Txtbk. Ch. 1 & 2" → "Ch. 1 & 2"
+  return m[0].replace(/^Txtbk\.?\s*/i, '').trim();
+}
+
+function extractDeadlines(text, lines) {
+  const deadlines = [];
+  const seen = new Set();
+
+  const months = { jan:1, january:1, feb:2, february:2, mar:3, march:3, apr:4, april:4,
+    may:5, jun:6, june:6, jul:7, july:7, aug:8, august:8, sep:9, september:9,
+    oct:10, october:10, nov:11, november:11, dec:12, december:12 };
+
+  const yearMatch = text.match(/(20\d{2})/);
+  const defaultYear = yearMatch ? parseInt(yearMatch[1]) : new Date().getFullYear();
+
+  // Helper: parse "January 20th" or "Feb 6" into ISO date string
+  function parseNaturalDate(monthStr, dayStr, yearStr) {
+    const monthNum = months[monthStr.toLowerCase().substring(0, 3)];
+    const day = parseInt(dayStr);
+    const year = yearStr ? parseInt(yearStr) : defaultYear;
+    if (!monthNum || !day || day < 1 || day > 31) return null;
+    return `${year}-${String(monthNum).padStart(2,'0')}-${String(day).padStart(2,'0')}`;
+  }
+
+  // Strategy: parse tab-separated schedule rows
+  // Real format: "Unit 1: ...\tTuesday, January 20th\tModule 1: Topic\tReading\tAssignment Due"
+  for (const line of lines) {
+    const cols = line.split('\t');
+    if (cols.length < 3) continue;
+
+    // Find the date column — matches "Tuesday, January 20th" or "Friday, February 6th"
+    let dateStr = null;
+    for (const col of cols) {
+      const dateMatch = col.match(/(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)?,?\s*(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2})(?:st|nd|rd|th)?(?:,?\s*(\d{4}))?/i);
+      if (dateMatch) {
+        dateStr = parseNaturalDate(dateMatch[1], dateMatch[2], dateMatch[3]);
+        break;
+      }
+    }
+    if (!dateStr) continue;
+
+    // Look for "due" items in the columns — assignments, exams, homework
+    for (const col of cols) {
+      const c = col.trim();
+      if (!c || c.length < 3) continue;
+      // Skip date columns, reading columns, navigation text, "no class" entries
+      if (/^(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)/i.test(c)) continue;
+      if (/^Unit\s*\d+\s*:/i.test(c)) continue; // "Unit 1: Thinking like..." (label, not deadline)
+      if (/^Module\s*\d+\s*:/i.test(c) && !/exam/i.test(c)) continue; // "Module 1: Topic" but NOT "Module 5: Unit 1 Exam"
+      if (/^Txtbk|^Ch\.|^Saloni|^No Class|^Canvas:|^Syllabus!/i.test(c)) continue;
+      if (/^(?:To Read|Assignments? Due)/i.test(c)) continue; // header row
+
+      // This column might be an assignment/deadline
+      if (/exam|homework|hw|project|presentation|survey|competition|aec|due|progress|linkedin/i.test(c)) {
+        const key = dateStr + ':' + c.toLowerCase();
+        if (!seen.has(key)) {
+          seen.add(key);
+          // Clean name
+          let name = c.replace(/\s*\(C\)\s*/g, '').trim();
+          deadlines.push({ name, date: dateStr, type: classifyDeadlineType(name) });
+        }
+      }
+    }
+  }
+
+  // Also scan for standalone date patterns: "Month DD" or ISO dates outside tables
+  for (const line of lines) {
+    if (line.includes('\t') && line.split('\t').length >= 3) continue; // already handled above
+
+    // ISO dates
+    const isoMatches = [...line.matchAll(/(\d{4})-(\d{2})-(\d{2})/g)];
+    for (const im of isoMatches) {
+      const dateStr = im[0];
+      let eventName = line.replace(dateStr, '').replace(/\t+/g, ' ').trim();
+      eventName = eventName.replace(/^[-•*]\s*/, '').replace(/^(?:due|deadline|date)\s*:\s*/i, '').trim();
+      if (eventName && eventName.length > 2 && /exam|homework|hw|project|assignment|due|quiz|paper|presentation/i.test(eventName)) {
+        const key = dateStr + ':' + eventName.toLowerCase();
+        if (!seen.has(key)) {
+          seen.add(key);
+          deadlines.push({ name: eventName, date: dateStr, type: classifyDeadlineType(eventName) });
+        }
+      }
+    }
+
+    // "Month DD" dates
+    const monthDateRegex = /\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+(\d{1,2})(?:st|nd|rd|th)?(?:\s*,?\s*(\d{4}))?\b/gi;
+    let mdm;
+    while ((mdm = monthDateRegex.exec(line)) !== null) {
+      const dateStr = parseNaturalDate(mdm[1], mdm[2], mdm[3]);
+      if (!dateStr) continue;
+      let eventName = line.replace(mdm[0], '').replace(/\t+/g, ' ').trim();
+      eventName = eventName.replace(/^[-•*]\s*/, '').replace(/^(?:due|deadline|date)\s*:\s*/i, '').trim();
+      if (eventName && eventName.length > 2 && /exam|homework|hw|project|assignment|due|quiz|paper|presentation/i.test(eventName)) {
+        const key = dateStr + ':' + eventName.toLowerCase();
+        if (!seen.has(key)) {
+          seen.add(key);
+          deadlines.push({ name: eventName, date: dateStr, type: classifyDeadlineType(eventName) });
+        }
+      }
+    }
+  }
+
+  // Deduplicate: if same name appears on same date, keep only one
+  const deduped = [];
+  const dedupSeen = new Set();
+  for (const d of deadlines) {
+    const shortName = d.name.toLowerCase().replace(/\s+/g, ' ').trim();
+    const key = d.date + '|' + shortName;
+    if (!dedupSeen.has(key)) {
+      dedupSeen.add(key);
+      deduped.push(d);
+    }
+  }
+
+  return deduped.sort((a, b) => a.date.localeCompare(b.date)).slice(0, 50);
+}
+
+function classifyDeadlineType(name) {
+  const n = name.toLowerCase();
+  if (/exam|test|midterm|final\s*exam/i.test(n)) return 'exam';
+  if (/homework|hw|assignment|problem\s*set|pset|canvas/i.test(n)) return 'hw';
+  if (/project|paper|essay|presentation|report|competition|aec/i.test(n)) return 'project';
+  if (/reading|read\s*ch/i.test(n)) return 'reading';
+  return 'other';
 }
 
 function showUploadStatus(type, msg) {
