@@ -791,7 +791,7 @@
   @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   .fade-in { animation: fadeIn 0.3s ease; }
 
-  /* AEC Breakdown */
+  /* Step Breakdown (legacy) */
   .aec-step {
     display: flex;
     gap: 14px;
@@ -877,9 +877,7 @@
     <div class="card">
       <h2>Semester Timeline</h2>
       <div style="display:flex; gap:4px; margin-bottom:12px; flex-wrap:wrap;" id="semesterBar"></div>
-      <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-dim);">
-        <span>Jan 20</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May (Final)</span>
-      </div>
+      <div id="semesterBarLabels" style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-dim);"></div>
     </div>
 
     <div class="card">
@@ -891,16 +889,12 @@
   <!-- ==================== PLANNER ==================== -->
   <div class="tab-content" id="tab-planner">
     <div class="card">
-      <h2>This Week — Apr 7-13</h2>
+      <h2 id="thisWeekHeader">This Week</h2>
       <div id="thisWeekPlan"></div>
     </div>
     <div class="card">
-      <h2>Next Week — Apr 14-20</h2>
+      <h2 id="nextWeekHeader">Next Week</h2>
       <div id="nextWeekPlan"></div>
-    </div>
-    <div class="card">
-      <h2>AEC Project Breakdown (20% of grade)</h2>
-      <div id="aecBreakdown"></div>
     </div>
     <div class="card">
       <h2>Full Remaining Schedule</h2>
@@ -2355,13 +2349,14 @@ function saveCourses(courses) {
 }
 
 function getActiveCourseId() {
-  return localStorage.getItem('syllabot_activeCourse') || 'eco114-spring2026';
+  return localStorage.getItem('syllabot_activeCourse') || '';
 }
 
 function getActiveCourse() {
   const courses = getAllCourses();
+  if (courses.length === 0) return null;
   const id = getActiveCourseId();
-  return courses.find(c => c.id === id) || courses[0];
+  return courses.find(c => c.id === id) || courses[0] || null;
 }
 
 function setActiveCourse(courseId) {
@@ -2397,6 +2392,19 @@ let activeGradeWeights = [];
 
 function loadActiveCourse() {
   activeCourse = getActiveCourse();
+  if (!activeCourse) {
+    activeDeadlines = [];
+    activeModules = [];
+    activeGradeWeights = [];
+    activeContent = { tutor: {}, quiz: {}, written: {}, flashcards: {} };
+    document.getElementById('headerCourseBadge').textContent = 'No Course — Add one in Courses tab';
+    document.getElementById('daysLeft').textContent = '—';
+    document.getElementById('statUnit').textContent = '—';
+    document.getElementById('statModule').textContent = '—';
+    document.getElementById('statRemaining').textContent = '—';
+    renderCourses();
+    return;
+  }
   activeDeadlines = activeCourse.deadlines || [];
   activeModules = activeCourse.modules || [];
   activeGradeWeights = activeCourse.gradeWeights || [];
@@ -2406,8 +2414,14 @@ function loadActiveCourse() {
   document.getElementById('headerCourseBadge').textContent = activeCourse.code + ' — ' + activeCourse.name;
 
   // Update dashboard stat cards
-  const finalDate = activeCourse.finalExamDate || '2026-05-12';
-  document.getElementById('daysLeft').textContent = '~' + daysUntil(finalDate);
+  const finalDate = activeCourse.finalExamDate || '';
+  if (finalDate) {
+    document.getElementById('daysLeft').textContent = '~' + daysUntil(finalDate);
+  } else {
+    // Estimate from last deadline
+    const lastDeadline = activeDeadlines.length > 0 ? activeDeadlines[activeDeadlines.length - 1].date : '';
+    document.getElementById('daysLeft').textContent = lastDeadline ? '~' + daysUntil(lastDeadline) : '—';
+  }
 
   // Determine current module info
   const currentMod = activeModules.find(m => m.status === 'current');
@@ -2417,8 +2431,10 @@ function loadActiveCourse() {
   document.getElementById('statUnit').textContent = currentUnit !== '—' ? 'Unit ' + currentUnit : '—';
   document.getElementById('statModule').textContent = currentMod ? 'Mod ' + currentMod.num : '—';
 
+  // Calculate remaining grade weight based on deadlines that have passed
+  const pastDeadlines = activeDeadlines.filter(d => new Date(d.date + 'T00:00:00') < today).map(d => d.name.toLowerCase());
   const completedWeight = activeGradeWeights
-    .filter(g => g.id === 'exam1' || g.id === 'exam2')
+    .filter(g => pastDeadlines.some(pd => pd.includes(g.name.toLowerCase()) || g.name.toLowerCase().includes(pd.replace(/\s*\(c\)/g, ''))))
     .reduce((sum, g) => sum + g.weight, 0);
   document.getElementById('statRemaining').textContent = (100 - completedWeight) + '%';
 
@@ -2436,7 +2452,7 @@ function loadActiveCourse() {
 }
 
 // ===== INITIALIZATION =====
-const today = new Date(2026, 3, 8); // April 8, 2026
+const today = new Date();
 document.getElementById('currentDate').textContent = today.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
 
 function daysUntil(dateStr) {
@@ -2498,13 +2514,21 @@ function renderDeadlines() {
 // ===== DASHBOARD: Action Items =====
 function renderActions() {
   const el = document.getElementById('actionItems');
-  const actions = [
-    { text: "Review Ch. 8 (Perfect Competition) notes from yesterday's lecture", time: "~45 min", priority: 1 },
-    { text: "Complete Homework Module 10 on Canvas", time: "~60 min", priority: 1 },
-    { text: "Start reading Ch. 9 (Monopoly) for next Tuesday", time: "~90 min", priority: 2 },
-    { text: "Check in with AEC team — final presentations Apr 24", time: "~20 min", priority: 2 },
-    { text: "Review Unit 2 Exam feedback (if posted)", time: "~15 min", priority: 3 }
-  ];
+  const upcoming = activeDeadlines
+    .filter(d => daysUntil(d.date) > 0)
+    .sort((a, b) => a.date.localeCompare(b.date))
+    .slice(0, 5);
+  if (upcoming.length === 0) {
+    el.innerHTML = '<p style="color:var(--text-dim);">No upcoming deadlines. Add a course with deadlines to see action items.</p>';
+    return;
+  }
+  const actions = upcoming.map(d => {
+    const days = daysUntil(d.date);
+    const priority = days <= 3 ? 1 : days <= 7 ? 2 : 3;
+    const verb = d.type === 'exam' ? 'Study for' : d.type === 'reading' ? 'Complete reading:' : 'Work on';
+    const time = d.type === 'exam' ? '~60-90 min' : d.type === 'hw' ? '~45-60 min' : '~30-45 min';
+    return { text: `${verb} ${d.name} (due ${new Date(d.date + 'T00:00:00').toLocaleDateString('en-US', {month:'short', day:'numeric'})})`, time, priority };
+  });
   el.innerHTML = actions.map(a => `
     <div class="checklist-item">
       <input type="checkbox" onchange="this.parentElement.classList.toggle('checked')">
@@ -2517,9 +2541,19 @@ function renderActions() {
 // ===== DASHBOARD: Semester Bar =====
 function renderSemesterBar() {
   const el = document.getElementById('semesterBar');
-  const start = new Date(2026, 0, 20);
-  const end = new Date(2026, 4, 12);
-  const totalWeeks = Math.ceil((end - start) / (7*24*60*60*1000));
+  const labelEl = document.getElementById('semesterBarLabels');
+  if (!activeDeadlines || activeDeadlines.length === 0) {
+    el.innerHTML = '<span style="color:var(--text-dim); font-size:0.8rem;">No deadlines — add a course to see the semester timeline.</span>';
+    if (labelEl) labelEl.innerHTML = '';
+    return;
+  }
+  const dates = activeDeadlines.map(d => new Date(d.date + 'T00:00:00'));
+  const earliest = new Date(Math.min(...dates));
+  const latest = new Date(Math.max(...dates));
+  // Pad start to beginning of that week (Monday), end to 1 week after last deadline
+  const start = new Date(earliest); start.setDate(start.getDate() - start.getDay());
+  const end = new Date(latest); end.setDate(end.getDate() + 7);
+  const totalWeeks = Math.max(1, Math.ceil((end - start) / (7*24*60*60*1000)));
   let html = '';
   for (let i = 0; i < totalWeeks; i++) {
     const weekStart = new Date(start.getTime() + i*7*24*60*60*1000);
@@ -2527,90 +2561,100 @@ function renderSemesterBar() {
     const isPast = weekStart < today && !isCurrent;
     let color = isPast ? 'var(--accent)' : isCurrent ? 'var(--yellow)' : 'var(--surface2)';
     let border = isCurrent ? '2px solid var(--yellow)' : '1px solid var(--border)';
-    html += `<div style="flex:1; height:20px; background:${color}; border:${border}; border-radius:3px; min-width:10px;" title="Week ${i+1}"></div>`;
+    html += `<div style="flex:1; height:20px; background:${color}; border:${border}; border-radius:3px; min-width:10px;" title="Week ${i+1}: ${weekStart.toLocaleDateString('en-US', {month:'short', day:'numeric'})}"></div>`;
   }
   el.innerHTML = html;
+  if (labelEl) {
+    const mid = new Date((start.getTime() + end.getTime()) / 2);
+    labelEl.innerHTML = `<span>${start.toLocaleDateString('en-US',{month:'short', day:'numeric'})}</span><span>${mid.toLocaleDateString('en-US',{month:'short'})}</span><span>${end.toLocaleDateString('en-US',{month:'short', day:'numeric'})}</span>`;
+  }
 }
 
 // ===== DASHBOARD: Grade Weight Bars =====
 function renderGradeWeights() {
   const el = document.getElementById('gradeWeightBars');
   const colors = ['var(--blue)', 'var(--green)', 'var(--yellow)', 'var(--accent-light)', 'var(--orange)', 'var(--red)'];
-  const completed = [false, false, false, true, true, false];
-  el.innerHTML = activeGradeWeights.map((c, i) => `
+  el.innerHTML = activeGradeWeights.map((c, i) => {
+    // A grade weight category is "done" if all its matching deadlines are in the past
+    const matching = activeDeadlines.filter(d => {
+      const nameLC = c.name.toLowerCase();
+      const dNameLC = d.name.toLowerCase();
+      return dNameLC.includes(nameLC) || nameLC.includes(d.type || '');
+    });
+    const allPast = matching.length > 0 && matching.every(d => daysUntil(d.date) < 0);
+    return `
     <div style="display:flex; align-items:center; gap:12px; padding:8px 0; border-bottom:1px solid var(--border);">
       <span style="flex:1; font-size:0.85rem;">${c.name}</span>
       <span style="font-size:0.8rem; color:var(--text-dim); min-width:40px;">${c.weight}%</span>
       <div style="width:200px;">
         <div class="progress-bar">
-          <div class="progress-fill" style="width:${c.weight}%; background:${colors[i]};"></div>
+          <div class="progress-fill" style="width:${c.weight}%; background:${colors[i % colors.length]};"></div>
         </div>
       </div>
-      <span style="font-size:0.75rem; min-width:60px;">${completed[i] ? '<span class="badge badge-done">Done</span>' : '<span class="badge badge-soon">Active</span>'}</span>
-    </div>
-  `).join('');
+      <span style="font-size:0.75rem; min-width:60px;">${allPast ? '<span class="badge badge-done">Done</span>' : '<span class="badge badge-soon">Active</span>'}</span>
+    </div>`;
+  }).join('');
 }
 
 // ===== PLANNER =====
 function renderPlanner() {
-  document.getElementById('thisWeekPlan').innerHTML = [
-    { day: "Wed Apr 8", tasks: "Review Ch. 8 notes. Start HW Module 10. Review Unit 2 exam feedback.", hours: "2-3 hrs" },
-    { day: "Thu Apr 9", tasks: "Finish HW Module 10 (retry for best score). Begin reading Ch. 9 sections 9.1-9.2.", hours: "2 hrs" },
-    { day: "Fri Apr 10", tasks: "Class: Perfect Competition applied work. Submit HW 10 if not done. Continue Ch. 9.", hours: "1.5 hrs + class" },
-    { day: "Sat-Sun", tasks: "Finish reading Ch. 9. AEC team meeting/check-in. Review Perfect Competition concepts.", hours: "3-4 hrs total" }
-  ].map(d => `
-    <div class="timeline-item">
-      <div class="timeline-date">${d.day}</div>
-      <div class="timeline-content">
-        <div class="title">${d.tasks}</div>
-        <div class="detail">${d.hours}</div>
-      </div>
-    </div>
-  `).join('');
+  // Calculate this week and next week date ranges
+  const now = new Date();
+  const dayOfWeek = now.getDay();
+  const thisWeekStart = new Date(now); thisWeekStart.setDate(now.getDate() - dayOfWeek);
+  const thisWeekEnd = new Date(thisWeekStart); thisWeekEnd.setDate(thisWeekStart.getDate() + 6);
+  const nextWeekStart = new Date(thisWeekEnd); nextWeekStart.setDate(thisWeekEnd.getDate() + 1);
+  const nextWeekEnd = new Date(nextWeekStart); nextWeekEnd.setDate(nextWeekStart.getDate() + 6);
 
-  document.getElementById('nextWeekPlan').innerHTML = [
-    { day: "Tue Apr 14", tasks: "Class: Monopoly lecture (Ch. 9). Have Ch. 9 read before class.", hours: "Class + review" },
-    { day: "Fri Apr 17", tasks: "NO CLASS (Break). Use time to start Ch. 10 and work on AEC.", hours: "3-4 hrs study" },
-    { day: "Weekend", tasks: "Finish Ch. 10. Start HW Module 11. Intensive AEC prep (presentations Apr 24).", hours: "4-5 hrs" }
-  ].map(d => `
-    <div class="timeline-item">
-      <div class="timeline-date">${d.day}</div>
-      <div class="timeline-content">
-        <div class="title">${d.tasks}</div>
-        <div class="detail">${d.hours}</div>
-      </div>
-    </div>
-  `).join('');
+  const fmt = d => d.toLocaleDateString('en-US', {month:'short', day:'numeric'});
+  document.getElementById('thisWeekHeader').textContent = `This Week — ${fmt(thisWeekStart)}-${fmt(thisWeekEnd)}`;
+  document.getElementById('nextWeekHeader').textContent = `Next Week — ${fmt(nextWeekStart)}-${fmt(nextWeekEnd)}`;
 
-  document.getElementById('aecBreakdown').innerHTML = [
-    { num: 1, title: "Finalize SDG Analysis", detail: "Complete your team's microeconomic analysis of the US progress on your chosen UN SDG.", due: "By Apr 17" },
-    { num: 2, title: "Build Presentation", detail: "Create slides with clear economic reasoning, data visualizations, and policy recommendations.", due: "By Apr 21" },
-    { num: 3, title: "Practice & Rehearse", detail: "Run through the presentation as a team. Time yourselves. Prepare for Q&A.", due: "Apr 22-23" },
-    { num: 4, title: "Final Presentation", detail: "Present in class. Winning team competes against other sections.", due: "Apr 24 (in class)" },
-    { num: 5, title: "LinkedIn Post & Profile", detail: "Write a LinkedIn post about your AEC experience and update your profile.", due: "Apr 28" }
-  ].map(s => `
-    <div class="aec-step">
-      <div class="aec-step-num">${s.num}</div>
-      <div class="aec-step-content">
-        <div class="step-title">${s.title}</div>
-        <div class="step-detail">${s.detail}</div>
-        <div class="step-due">Due: ${s.due}</div>
-      </div>
-    </div>
-  `).join('');
+  // Filter deadlines for this week and next week
+  const inRange = (d, start, end) => {
+    const dt = new Date(d.date + 'T00:00:00');
+    return dt >= start && dt <= end;
+  };
 
-  document.getElementById('fullSchedule').innerHTML = activeDeadlines.map(d => {
-    const days = daysUntil(d.date);
-    const dateObj = new Date(d.date + 'T00:00:00');
-    return `
-    <div class="timeline-item">
-      <div class="timeline-date">${dateObj.toLocaleDateString('en-US', {month:'short', day:'numeric'})}</div>
-      <div class="timeline-content">
-        <div class="title">${d.name}</div>
-        <div class="detail">${days} days away</div>
-      </div>
-    </div>`;
-  }).join('');
+  const thisWeekItems = activeDeadlines.filter(d => inRange(d, thisWeekStart, thisWeekEnd));
+  const nextWeekItems = activeDeadlines.filter(d => inRange(d, nextWeekStart, nextWeekEnd));
+
+  const renderWeekItems = (items) => {
+    if (items.length === 0) return '<p style="color:var(--text-dim);">No deadlines this week.</p>';
+    return items.map(d => {
+      const dateObj = new Date(d.date + 'T00:00:00');
+      const dayName = dateObj.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric'});
+      const verb = d.type === 'exam' ? 'Study for' : d.type === 'reading' ? 'Read for' : 'Complete';
+      return `
+      <div class="timeline-item">
+        <div class="timeline-date">${dayName}</div>
+        <div class="timeline-content">
+          <div class="title">${verb} ${d.name}</div>
+          <div class="detail">${d.type || 'assignment'}</div>
+        </div>
+      </div>`;
+    }).join('');
+  };
+
+  document.getElementById('thisWeekPlan').innerHTML = renderWeekItems(thisWeekItems);
+  document.getElementById('nextWeekPlan').innerHTML = renderWeekItems(nextWeekItems);
+
+  // Full remaining schedule
+  const remaining = activeDeadlines.filter(d => daysUntil(d.date) >= 0).sort((a,b) => a.date.localeCompare(b.date));
+  document.getElementById('fullSchedule').innerHTML = remaining.length === 0
+    ? '<p style="color:var(--text-dim);">No remaining deadlines.</p>'
+    : remaining.map(d => {
+      const days = daysUntil(d.date);
+      const dateObj = new Date(d.date + 'T00:00:00');
+      return `
+      <div class="timeline-item">
+        <div class="timeline-date">${dateObj.toLocaleDateString('en-US', {month:'short', day:'numeric'})}</div>
+        <div class="timeline-content">
+          <div class="title">${d.name}</div>
+          <div class="detail">${days === 0 ? 'Today!' : days + ' days away'}</div>
+        </div>
+      </div>`;
+    }).join('');
 }
 
 // ===== TUTOR =====
@@ -3184,29 +3228,37 @@ function renderProgress() {
     </div>`;
   }).join('');
 
-  document.getElementById('riskAnalysis').innerHTML = `
-    <div style="padding:12px; background:rgba(253,203,110,0.1); border-left:3px solid var(--yellow); border-radius:0 8px 8px 0; margin-bottom:10px;">
-      <strong style="color:var(--yellow);">MEDIUM RISK: AEC Final Presentation (Apr 24)</strong><br>
-      <span style="font-size:0.85rem; color:var(--text-dim);">Worth 20% of your grade. Only 16 days away. Ensure your team is coordinated and the analysis is solid. This is your highest-weight remaining deliverable besides the final exam.</span>
-    </div>
-    <div style="padding:12px; background:rgba(225,112,85,0.1); border-left:3px solid var(--red); border-radius:0 8px 8px 0; margin-bottom:10px;">
-      <strong style="color:var(--red);">HIGH RISK: Final Exam (Cumulative, 25%)</strong><br>
-      <span style="font-size:0.85rem; color:var(--text-dim);">Covers ALL 13 modules. Start reviewing Units 1 & 2 material now in small doses rather than cramming. The professor explicitly warns against cramming.</span>
-    </div>
-    <div style="padding:12px; background:rgba(0,184,148,0.1); border-left:3px solid var(--green); border-radius:0 8px 8px 0;">
-      <strong style="color:var(--green);">LOW RISK: Weekly Homework</strong><br>
-      <span style="font-size:0.85rem; color:var(--text-dim);">Multiple attempts allowed. Keep submitting and retrying for the best score. HW Module 10 due Friday.</span>
+  // Dynamic risk analysis based on upcoming deadlines
+  const upcoming = activeDeadlines.filter(d => daysUntil(d.date) > 0).sort((a,b) => a.date.localeCompare(b.date));
+  const riskItems = upcoming.slice(0, 5).map(d => {
+    const days = daysUntil(d.date);
+    const weight = activeGradeWeights.find(g => d.name.toLowerCase().includes(g.name.toLowerCase().split(' ')[0]));
+    const weightStr = weight ? ` (${weight.weight}% of grade)` : '';
+    let level, color, bg;
+    if (days <= 3) { level = 'URGENT'; color = 'var(--red)'; bg = 'rgba(225,112,85,0.1)'; }
+    else if (days <= 10) { level = 'HIGH RISK'; color = 'var(--red)'; bg = 'rgba(225,112,85,0.1)'; }
+    else if (days <= 21) { level = 'MEDIUM RISK'; color = 'var(--yellow)'; bg = 'rgba(253,203,110,0.1)'; }
+    else { level = 'LOW RISK'; color = 'var(--green)'; bg = 'rgba(0,184,148,0.1)'; }
+    return `<div style="padding:12px; background:${bg}; border-left:3px solid ${color}; border-radius:0 8px 8px 0; margin-bottom:10px;">
+      <strong style="color:${color};">${level}: ${d.name}${weightStr}</strong><br>
+      <span style="font-size:0.85rem; color:var(--text-dim);">${days} day${days===1?'':'s'} away (${d.date}). ${d.type === 'exam' ? 'Start reviewing early — avoid cramming.' : d.type === 'project' ? 'Ensure your work is polished and complete.' : 'Stay on top of regular submissions.'}</span>
     </div>`;
+  }).join('');
+  document.getElementById('riskAnalysis').innerHTML = riskItems || '<p style="color:var(--text-dim);">No upcoming deadlines.</p>';
 
-  document.getElementById('recommendations').innerHTML = `
-    <ul style="line-height:2; font-size:0.9rem; padding-left:20px;">
-      <li>Start <strong>spaced review</strong> of Units 1 & 2 now — 20 min/day rotating through old modules</li>
-      <li>Use the <strong>flashcards tab</strong> to cycle through key terms from Modules 1-8</li>
-      <li>Prioritize <strong>AEC preparation</strong> over the next two weeks — it's 20% of your grade</li>
-      <li>After each homework, <strong>review incorrect answers</strong> before retrying — don't just guess differently</li>
-      <li>Prepare your <strong>1-page handwritten note sheet</strong> for the final exam — start building it now, adding key formulas and concepts as you cover new modules</li>
-      <li>Visit <strong>office hours</strong> (Wed 11-2 or Fri 1-2) if Perfect Competition graphs feel unclear</li>
-    </ul>`;
+  // Dynamic recommendations
+  const completedPct = totalMods > 0 ? Math.round(doneMods / totalMods * 100) : 0;
+  const hasQuizContent = Object.keys(activeContent.quiz || {}).length > 0;
+  const hasFlashcards = Object.keys(activeContent.flashcards || {}).length > 0;
+  const recs = [];
+  if (completedPct < 100) recs.push(`You've covered <strong>${completedPct}%</strong> of modules. Keep progressing through the remaining topics.`);
+  if (hasFlashcards) recs.push(`Use the <strong>Flashcards tab</strong> to review key terms from completed modules.`);
+  if (hasQuizContent) recs.push(`Take practice <strong>quizzes</strong> on completed modules to test your understanding.`);
+  if (upcoming.some(d => d.type === 'exam')) recs.push(`Start <strong>spaced review</strong> for upcoming exams — 20 min/day rotating through modules.`);
+  if (!hasQuizContent && !hasFlashcards) recs.push(`Generate study content from the <strong>Tutor, Quiz, or Flashcard</strong> tabs to unlock practice materials.`);
+  recs.push(`After each assignment, <strong>review incorrect answers</strong> before moving on.`);
+  if (activeCourse && activeCourse.instructor) recs.push(`Visit <strong>${activeCourse.instructor}'s office hours</strong> if any topics feel unclear.`);
+  document.getElementById('recommendations').innerHTML = `<ul style="line-height:2; font-size:0.9rem; padding-left:20px;">${recs.map(r => `<li>${r}</li>`).join('')}</ul>`;
 }
 
 function toggleModule(num, el) {
@@ -3261,32 +3313,23 @@ function calcGrade() {
 
   // What do you need on the final?
   const finalEl = document.getElementById('finalNeeded');
-  const finalInput = document.getElementById('grade-final');
-  if (finalInput.value === '' && weightUsed > 0) {
-    const nonFinal = total;
+  // Find the final exam grade weight dynamically (matches "final" anywhere in name)
+  const finalWeight = activeGradeWeights.find(c => /final/i.test(c.name));
+  const finalInput = finalWeight ? document.getElementById('grade-' + finalWeight.id) : null;
+  if (finalInput && finalInput.value === '' && weightUsed > 0 && finalWeight) {
+    const finalWt = finalWeight.weight / 100;
     const targets = [
       { letter: 'A', min: 93 }, { letter: 'A-', min: 90 }, { letter: 'B+', min: 86 },
       { letter: 'B', min: 83 }, { letter: 'B-', min: 80 }, { letter: 'C', min: 73 }
     ];
     finalEl.innerHTML = targets.map(t => {
-      const needed = ((t.min - nonFinal*100/weightUsed * weightUsed/100) / 0.25);
-      const needed2 = (t.min/100 - nonFinal) / 0.25 * 100;
-      const pct = ((t.min - (nonFinal / 1 * 100 / 100 )) / 25 * 100);
-      // Simpler: need final score such that nonFinal + final*0.25 >= target
-      // final >= (target - nonFinal) / 0.25
-      const finalNeeded = (t.min/100 * 100 - nonFinal * (100/weightUsed) * (weightUsed/100) ) ;
-      // Actually: current weighted total + final*0.25 >= target
-      // final >= (target - currentTotal) / 0.25
-      const fn = ((t.min - (total / weightUsed * 100)) * weightUsed / 100 + (100-weightUsed)/100 * t.min  - total) ;
-      // Let me simplify: if user entered scores for all except final
-      // Total = sum(score_i * weight_i / 100) = total (already calculated)
-      // Need: total + finalScore * 25/100 >= target
-      // finalScore >= (target - total) / 0.25
-      const need = (t.min - total) / 0.25;
+      const need = (t.min - total) / finalWt;
       const display = need <= 0 ? 'Already achieved!' : need > 100 ? 'Not possible' : `${Math.ceil(need)}%`;
       const color = need <= 0 ? 'var(--green)' : need > 100 ? 'var(--red)' : need > 90 ? 'var(--yellow)' : 'var(--text)';
       return `<div style="display:flex; justify-content:space-between;"><span>For a <strong>${t.letter}</strong> (${t.min}%):</span><span style="color:${color}; font-weight:600;">${display}</span></div>`;
     }).join('');
+  } else if (!finalWeight) {
+    finalEl.innerHTML = '<span style="color:var(--text-dim);">No "Final" grade weight found for this course.</span>';
   } else {
     finalEl.innerHTML = '<span style="color:var(--text-dim);">Enter all non-final scores to see what you need on the final.</span>';
   }
