@@ -1212,7 +1212,51 @@
 
 <script>
 // ===== TUTOR CONTENT (ECO 114 built-in) =====
-const TUTOR_DATA = {
+// ===== DYNAMIC CONTENT SYSTEM =====
+// Per-course content stored in localStorage. ECO 114 data is seeded as default.
+let activeContent = { tutor: {}, quiz: {}, written: {}, flashcards: {} };
+
+function getCourseContent(courseId) {
+  const key = 'syllabot_content_' + courseId;
+  const stored = localStorage.getItem(key);
+  if (stored) return JSON.parse(stored);
+  return null;
+}
+
+function setCourseContent(courseId, content) {
+  const key = 'syllabot_content_' + courseId;
+  localStorage.setItem(key, JSON.stringify(content));
+}
+
+function loadActiveContent() {
+  if (!activeCourse) return;
+  const content = getCourseContent(activeCourse.id);
+  if (content) {
+    activeContent = content;
+  } else if (activeCourse.id === 'eco114-spring2026') {
+    // Seed ECO 114 with built-in data
+    activeContent = {
+      tutor: ECO114_TUTOR,
+      quiz: ECO114_QUIZ,
+      written: ECO114_WRITTEN,
+      flashcards: ECO114_FLASHCARDS
+    };
+    setCourseContent(activeCourse.id, activeContent);
+  } else {
+    activeContent = { tutor: {}, quiz: {}, written: {}, flashcards: {} };
+  }
+}
+
+function courseHasContent() {
+  return activeContent && (
+    Object.keys(activeContent.quiz || {}).length > 0 ||
+    Object.keys(activeContent.flashcards || {}).length > 0 ||
+    Object.keys(activeContent.tutor || {}).length > 0
+  );
+}
+
+// ===== ECO 114 BUILT-IN CONTENT =====
+const ECO114_TUTOR = {
   "Module 1: Scarcity & Decisions": `
     <div class="tutor-section">
     <h4>Core Concepts</h4>
@@ -1883,7 +1927,7 @@ const TUTOR_DATA = {
 };
 
 // ===== QUIZ DATA =====
-const QUIZ_DATA = {
+const ECO114_QUIZ = {
   "Module 1": [
     { q: "A student gives up a $15/hour part-time shift to study for an exam. The student also spends $5 on coffee while studying. What is the opportunity cost of studying?", opts: ["$5", "$15", "$20", "$15 plus the value of the next best alternative activity"], correct: 3, explain: "Opportunity cost is the value of the next best alternative foregone. The $15 wage is what was given up. The $5 coffee is a direct cost, not an opportunity cost — you spent it regardless of the alternative. The opportunity cost is the $15/hr shift (plus any non-monetary value of that time)." },
     { q: "Which statement best describes marginal analysis?", opts: ["Analyzing total costs and total benefits", "Comparing the additional benefit of one more unit to its additional cost", "Calculating average costs over time", "Minimizing total expenditure"], correct: 1, explain: "Marginal analysis compares the ADDITIONAL (marginal) benefit to the ADDITIONAL (marginal) cost of one more unit. Rational decision-makers think at the margin." },
@@ -2062,7 +2106,7 @@ const QUIZ_DATA = {
 };
 
 // ===== WRITTEN QUESTION DATA =====
-const WRITTEN_DATA = {
+const ECO114_WRITTEN = {
   "Module 1": [
     { q: "Explain the concept of opportunity cost using a real-world example. Why is opportunity cost not the same as monetary cost?", keywords: ["next best alternative","forgone","give up","not monetary","implicit","explicit","time","trade-off","value"], idealAnswer: "Opportunity cost is the value of the next best alternative you give up when making a choice. For example, if you choose to spend an hour studying instead of working a $15/hour job, the opportunity cost of studying is the $15 you could have earned. Opportunity cost differs from monetary cost because it includes non-monetary factors like time, enjoyment, and other implicit costs — not just dollars spent." },
     { q: "What is the difference between a positive economic statement and a normative economic statement? Give one example of each.", keywords: ["what is","what should","testable","value judgment","objective","subjective","data","opinion","policy"], idealAnswer: "A positive statement describes 'what is' and can be tested with evidence (e.g., 'Raising the minimum wage to $15 reduces teenage employment by 3%'). A normative statement expresses 'what should be' and involves value judgments (e.g., 'The government should raise the minimum wage to help low-income workers'). Positive statements are objective and falsifiable; normative statements are subjective." },
@@ -2116,7 +2160,7 @@ const WRITTEN_DATA = {
 };
 
 // ===== FLASHCARD DATA =====
-const FLASHCARD_DATA = {
+const ECO114_FLASHCARDS = {
   "Module 1": [
     { front: "What is scarcity?", back: "Resources are limited while human wants are unlimited. This is the fundamental economic problem that forces us to make choices." },
     { front: "Define opportunity cost", back: "The value of the next best alternative forgone when making a choice. It includes both explicit (monetary) and implicit (non-monetary) costs." },
@@ -2291,7 +2335,7 @@ const DEFAULT_ECO114 = {
     { name: "Homework Module 12", date: "2026-05-05", type: "hw" },
     { name: "Final Exam (Cumulative, 25%)", date: "2026-05-12", type: "exam" }
   ],
-  hasBuiltInContent: true // Flag: this course has tutor/quiz/flashcard content
+  hasBuiltInContent: true // Legacy flag — content now stored per-course in localStorage
 };
 
 function getAllCourses() {
@@ -2350,6 +2394,7 @@ function loadActiveCourse() {
   activeDeadlines = activeCourse.deadlines || [];
   activeModules = activeCourse.modules || [];
   activeGradeWeights = activeCourse.gradeWeights || [];
+  loadActiveContent();
 
   // Update header
   document.getElementById('headerCourseBadge').textContent = activeCourse.code + ' — ' + activeCourse.name;
@@ -2549,19 +2594,23 @@ function renderPlanner() {
 // ===== TUTOR =====
 function renderTutor() {
   const el = document.getElementById('topicSelector');
-  if (activeCourse && activeCourse.hasBuiltInContent) {
-    el.innerHTML = Object.keys(TUTOR_DATA).map(t =>
+  const tutorTopics = Object.keys(activeContent.tutor || {});
+  if (tutorTopics.length > 0) {
+    el.innerHTML = tutorTopics.map(t =>
       `<button class="topic-btn" onclick="showTutor('${t}')">${t}</button>`
     ).join('');
     document.getElementById('tutorContent').innerHTML = '<p style="color:var(--text-dim);">Select a topic above to begin studying.</p>';
   } else {
     el.innerHTML = '';
-    document.getElementById('tutorContent').innerHTML = '<p style="color:var(--text-dim);">Tutor content is available for ECO 114. Switch to that course or select it from the Courses tab to access study materials.</p>';
+    document.getElementById('tutorContent').innerHTML = `<div style="text-align:center; padding:40px; color:var(--text-dim);">
+      <p style="font-size:1.1rem;">No tutor content for this course yet.</p>
+      <button class="grade-btn" onclick="generateCourseContent()" style="margin-top:12px;">Generate Study Content</button>
+    </div>`;
   }
 }
 function showTutor(topic) {
   document.querySelectorAll('.topic-btn').forEach(b => b.classList.toggle('active', b.textContent === topic));
-  document.getElementById('tutorContent').innerHTML = TUTOR_DATA[topic];
+  document.getElementById('tutorContent').innerHTML = (activeContent.tutor || {})[topic] || '<p>No content available for this topic.</p>';
 }
 
 // ===== QUIZ =====
@@ -2575,12 +2624,16 @@ let writtenPoints = 0;
 let quizHistory = [];
 
 function renderQuizControls() {
-  if (activeCourse && activeCourse.hasBuiltInContent) {
-    document.getElementById('quizControls').innerHTML = Object.keys(QUIZ_DATA).map(m =>
+  const quizModules = Object.keys(activeContent.quiz || {});
+  if (quizModules.length > 0) {
+    document.getElementById('quizControls').innerHTML = quizModules.map(m =>
       `<button class="quiz-module-btn" onclick="startQuiz('${m}')">${m}</button>`
     ).join('');
   } else {
-    document.getElementById('quizControls').innerHTML = '<p style="color:var(--text-dim); font-size:0.85rem;">Quiz content is available for ECO 114. Switch to that course from the Courses tab.</p>';
+    document.getElementById('quizControls').innerHTML = `<div style="text-align:center; padding:20px; color:var(--text-dim);">
+      <p>No quiz content for this course yet.</p>
+      <button class="grade-btn" onclick="generateCourseContent()" style="margin-top:10px;">Generate Study Content</button>
+    </div>`;
   }
   document.getElementById('quizContainer').innerHTML = '';
   document.getElementById('writtenContainer').innerHTML = '';
@@ -2600,14 +2653,14 @@ function startQuiz(mod) {
   // Show settings and update slider max
   const settings = document.getElementById('quizSettings');
   settings.style.display = 'flex';
-  const maxQ = Math.min(QUIZ_DATA[mod].length, 50);
+  const maxQ = Math.min((activeContent.quiz[mod] || []).length, 50);
   const slider = document.getElementById('questionSlider');
   slider.max = maxQ;
   if (parseInt(slider.value) > maxQ) slider.value = maxQ;
   updateSliderLabel();
 
   // Update written slider max
-  const writtenAvail = WRITTEN_DATA[mod] ? WRITTEN_DATA[mod].length : 0;
+  const writtenAvail = (activeContent.written || {})[mod] ? activeContent.written[mod].length : 0;
   const wSlider = document.getElementById('writtenSlider');
   wSlider.max = Math.max(1, writtenAvail);
   if (parseInt(wSlider.value) > writtenAvail) wSlider.value = Math.min(writtenAvail, 1);
@@ -2669,7 +2722,7 @@ function generateQuiz() {
   const numWritten = includeWritten ? (parseInt(document.getElementById('writtenSlider').value) || 1) : 0;
 
   // Shuffle and pick MC questions
-  const sourceQuestions = QUIZ_DATA[currentQuizModule];
+  const sourceQuestions = (activeContent.quiz || {})[currentQuizModule] || [];
   const shuffledAll = shuffleArray(sourceQuestions);
   const picked = shuffledAll.slice(0, Math.min(numMC, shuffledAll.length));
 
@@ -2699,8 +2752,8 @@ function generateQuiz() {
 
   // Written questions
   const wContainer = document.getElementById('writtenContainer');
-  if (numWritten > 0 && WRITTEN_DATA[currentQuizModule]) {
-    const writtenPool = shuffleArray(WRITTEN_DATA[currentQuizModule]);
+  if (numWritten > 0 && (activeContent.written || {})[currentQuizModule]) {
+    const writtenPool = shuffleArray(activeContent.written[currentQuizModule]);
     const pickedWritten = writtenPool.slice(0, Math.min(numWritten, writtenPool.length));
     writtenCount = pickedWritten.length;
     window._currentWritten = pickedWritten;
@@ -3018,12 +3071,16 @@ function drawHistoryChart() {
 let currentFCModule = null;
 let fcIndex = 0;
 function renderFlashcardControls() {
-  if (activeCourse && activeCourse.hasBuiltInContent) {
-    document.getElementById('flashcardControls').innerHTML = Object.keys(FLASHCARD_DATA).map(m =>
+  const fcModules = Object.keys(activeContent.flashcards || {});
+  if (fcModules.length > 0) {
+    document.getElementById('flashcardControls').innerHTML = fcModules.map(m =>
       `<button class="quiz-module-btn" onclick="startFlashcards('${m}')">${m}</button>`
     ).join('');
   } else {
-    document.getElementById('flashcardControls').innerHTML = '<p style="color:var(--text-dim); font-size:0.85rem;">Flashcard content is available for ECO 114. Switch from the Courses tab.</p>';
+    document.getElementById('flashcardControls').innerHTML = `<div style="text-align:center; padding:20px; color:var(--text-dim);">
+      <p>No flashcard content for this course yet.</p>
+      <button class="grade-btn" onclick="generateCourseContent()" style="margin-top:10px;">Generate Study Content</button>
+    </div>`;
   }
 }
 function startFlashcards(mod) {
@@ -3034,7 +3091,7 @@ function startFlashcards(mod) {
 }
 function showFlashcard() {
   if (!currentFCModule) return;
-  const cards = FLASHCARD_DATA[currentFCModule];
+  const cards = (activeContent.flashcards || {})[currentFCModule] || [];
   const card = cards[fcIndex];
   document.getElementById('flashcard').classList.remove('flipped');
   document.getElementById('fcFront').textContent = card.front;
@@ -3044,12 +3101,12 @@ function showFlashcard() {
 function flipCard() { document.getElementById('flashcard').classList.toggle('flipped'); }
 function nextCard() {
   if (!currentFCModule) return;
-  fcIndex = (fcIndex + 1) % FLASHCARD_DATA[currentFCModule].length;
+  fcIndex = (fcIndex + 1) % ((activeContent.flashcards || {})[currentFCModule] || []).length;
   showFlashcard();
 }
 function prevCard() {
   if (!currentFCModule) return;
-  const len = FLASHCARD_DATA[currentFCModule].length;
+  const len = ((activeContent.flashcards || {})[currentFCModule] || []).length;
   fcIndex = (fcIndex - 1 + len) % len;
   showFlashcard();
 }
@@ -3415,8 +3472,21 @@ function importJSON() {
     existing.push(course);
     saveCourses(existing);
     setActiveCourse(course.id);
+
+    // If JSON includes study content, import it
+    if (data.content) {
+      const content = { tutor: {}, quiz: {}, written: {}, flashcards: {} };
+      if (data.content.quiz) content.quiz = data.content.quiz;
+      if (data.content.written) content.written = data.content.written;
+      if (data.content.flashcards) content.flashcards = data.content.flashcards;
+      if (data.content.tutor) content.tutor = data.content.tutor;
+      setCourseContent(course.id, content);
+      activeContent = content;
+    }
+
     document.getElementById('jsonPasteArea').value = '';
-    showUploadStatus('success', course.code + ' imported successfully! Switched to new course.');
+    const contentMsg = data.content ? ' Study content loaded!' : ' Use "Generate Study Content" to create quiz/flashcard content.';
+    showUploadStatus('success', course.code + ' imported successfully!' + contentMsg);
   } catch(e) {
     showUploadStatus('error', 'Invalid JSON: ' + e.message);
   }
@@ -3539,6 +3609,127 @@ if (uploadArea) {
       handleFileUpload({ target: input });
     }
   });
+}
+
+// ===== CONTENT GENERATION =====
+function generateCourseContent() {
+  if (!activeCourse || !activeCourse.modules || activeCourse.modules.length === 0) {
+    alert('This course has no modules defined. Add modules in the Courses tab first.');
+    return;
+  }
+
+  const modules = activeCourse.modules.filter(m => m.topic && !m.topic.toLowerCase().includes('exam') && !m.topic.toLowerCase().includes('putting it all'));
+  if (modules.length === 0) {
+    alert('No content modules found (exam modules are excluded).');
+    return;
+  }
+
+  const modal = document.createElement('div');
+  modal.id = 'generateModal';
+  modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;';
+  modal.innerHTML = `
+    <div style="background:var(--surface);border-radius:16px;padding:32px;max-width:550px;width:90%;max-height:80vh;overflow-y:auto;">
+      <h3 style="margin:0 0 8px;">Generate Study Content</h3>
+      <p style="color:var(--text-dim);font-size:0.85rem;margin:0 0 20px;">Generate quiz questions, flashcards, and written questions for <strong>${activeCourse.code}</strong> modules.</p>
+      <div id="genModuleList" style="display:flex;flex-direction:column;gap:8px;margin-bottom:20px;">
+        ${modules.map(m => `
+          <label style="display:flex;align-items:center;gap:10px;padding:8px 12px;background:var(--bg);border-radius:8px;cursor:pointer;">
+            <input type="checkbox" checked value="${m.num}" data-topic="${m.topic}" data-reading="${m.reading || ''}">
+            <span>Module ${m.num}: ${m.topic}</span>
+            <span style="margin-left:auto;font-size:0.75rem;color:var(--text-dim);">${m.reading || ''}</span>
+          </label>
+        `).join('')}
+      </div>
+      <div style="display:flex;gap:10px;margin-bottom:16px;">
+        <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;"><input type="checkbox" id="genQuiz" checked> MCQ</label>
+        <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;"><input type="checkbox" id="genWritten" checked> Written</label>
+        <label style="display:flex;align-items:center;gap:6px;font-size:0.85rem;"><input type="checkbox" id="genFlashcards" checked> Flashcards</label>
+      </div>
+      <div id="genStatus" style="display:none;padding:12px;border-radius:8px;background:var(--bg);margin-bottom:16px;font-size:0.85rem;"></div>
+      <div style="display:flex;gap:10px;justify-content:flex-end;">
+        <button onclick="document.getElementById('generateModal').remove()" style="padding:8px 20px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text);cursor:pointer;">Cancel</button>
+        <button id="genStartBtn" onclick="startGeneration()" style="padding:8px 20px;border-radius:8px;border:none;background:var(--accent);color:white;cursor:pointer;font-weight:600;">Generate</button>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+}
+
+async function startGeneration() {
+  const checkboxes = document.querySelectorAll('#genModuleList input[type=checkbox]:checked');
+  const modules = Array.from(checkboxes).map(cb => ({
+    num: parseInt(cb.value),
+    topic: cb.dataset.topic,
+    reading: cb.dataset.reading || ''
+  }));
+  if (modules.length === 0) { alert('Select at least one module.'); return; }
+
+  const genQuiz = document.getElementById('genQuiz').checked;
+  const genWritten = document.getElementById('genWritten').checked;
+  const genFlashcards = document.getElementById('genFlashcards').checked;
+
+  const status = document.getElementById('genStatus');
+  const btn = document.getElementById('genStartBtn');
+  status.style.display = 'block';
+  btn.disabled = true;
+  btn.textContent = 'Generating...';
+
+  const payload = {
+    course: activeCourse.code + ' — ' + activeCourse.name,
+    modules: modules,
+    types: { quiz: genQuiz, written: genWritten, flashcards: genFlashcards }
+  };
+
+  status.innerHTML = 'Connecting to server...';
+
+  try {
+    const res = await fetch('/generate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const result = await res.json();
+
+    if (result.error) {
+      status.innerHTML = '<span style="color:var(--red);">Error: ' + result.error + '</span>';
+      btn.disabled = false;
+      btn.textContent = 'Retry';
+      return;
+    }
+
+    // Merge generated content into activeContent
+    if (result.quiz) Object.assign(activeContent.quiz, result.quiz);
+    if (result.written) Object.assign(activeContent.written, result.written);
+    if (result.flashcards) Object.assign(activeContent.flashcards, result.flashcards);
+    if (result.tutor) Object.assign(activeContent.tutor, result.tutor);
+
+    setCourseContent(activeCourse.id, activeContent);
+
+    status.innerHTML = '<span style="color:var(--green);">Content generated successfully! Refreshing...</span>';
+    setTimeout(() => {
+      document.getElementById('generateModal').remove();
+      renderTutor();
+      renderQuizControls();
+      renderFlashcardControls();
+    }, 1000);
+
+  } catch(e) {
+    status.innerHTML = `<span style="color:var(--red);">Server error: ${e.message}. Make sure server.py is running.</span>`;
+    btn.disabled = false;
+    btn.textContent = 'Retry';
+  }
+}
+
+// Import content JSON directly (for manual or agent-generated content)
+function importCourseContent(contentJson) {
+  if (!activeCourse) return;
+  if (contentJson.quiz) Object.assign(activeContent.quiz, contentJson.quiz);
+  if (contentJson.written) Object.assign(activeContent.written, contentJson.written);
+  if (contentJson.flashcards) Object.assign(activeContent.flashcards, contentJson.flashcards);
+  if (contentJson.tutor) Object.assign(activeContent.tutor, contentJson.tutor);
+  setCourseContent(activeCourse.id, activeContent);
+  renderTutor();
+  renderQuizControls();
+  renderFlashcardControls();
 }
 
 // ===== RENDER ALL (Initial Load) =====
