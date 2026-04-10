@@ -1,0 +1,1261 @@
+{
+  "metadata": {
+    "institution": "Bryant University",
+    "location": "Smithfield, Rhode Island",
+    "generated": "2026-04-08",
+    "purpose": "Study material knowledge base for quiz, flashcard, and tutor generation",
+    "programs": [
+      "Legal Studies / Business Law",
+      "International Business",
+      "Entrepreneurship",
+      "Applied Psychology"
+    ]
+  },
+
+  "programs": {
+    "legal_studies": {
+      "department": "Department of Politics, Law & Society",
+      "college": "College of Arts and Sciences",
+      "description": "Exposes students to 'law in context,' helping them understand how law operates in society while developing practical skills to analyze legal phenomena and investigate legal resources.",
+      "courses": [
+        {
+          "code": "LGLS 211",
+          "name": "The Legal Environment of Business",
+          "credits": 3,
+          "prerequisites": "Sophomore standing",
+          "offered": "Fall and Spring (Annual)",
+          "description": "Emphasizes the nature of legal systems and processes. Topics include agency, contracts, the Uniform Commercial Code, debtor-creditor relationships, government regulation of business, and business structure selection.",
+          "key_topics": ["Agency law", "Contract law", "UCC", "Debtor-creditor relationships", "Government regulation", "Business structures"]
+        },
+        {
+          "code": "LGLS 230",
+          "name": "Introduction to the U.S. Legal System",
+          "credits": 3,
+          "prerequisites": "None",
+          "offered": "Fall and Spring (Annual)",
+          "description": "Provides foundational overview of U.S. legal system including sources of law, court system, constitutional law, civil law and procedure, criminal law and procedure, and the regulatory state. Explores connections to international legal systems.",
+          "key_topics": ["Sources of law", "Court system", "Constitutional law", "Civil procedure", "Criminal procedure", "Regulatory state"]
+        },
+        {
+          "code": "LGLS 320",
+          "name": "Global Legal Traditions",
+          "credits": 3,
+          "prerequisites": "LGLS 211 or LGLS 230; Sophomore standing",
+          "offered": "Fall only",
+          "description": "Introduces comparative law, examining how laws vary across nations within major legal traditions including common law. Analyzes institutions, substantive law, founding concepts, attitudes toward change, and relationships among traditions.",
+          "key_topics": ["Comparative law", "Common law tradition", "Civil law tradition", "Legal institutions", "Legal change"]
+        },
+        {
+          "code": "LGLS 330",
+          "name": "Criminal Law and Procedure",
+          "credits": 3,
+          "prerequisites": "LGLS 211 or LGLS 230",
+          "offered": "Spring only",
+          "description": "Foundations of criminal responsibility, common crime definitions, and procedural requirements. Topics include guilt establishment, justification of punishment, criminal conduct definition, inchoate crimes, right to counsel, search warrants, jury selection, negotiated pleas, and evidence rules.",
+          "key_topics": ["Criminal responsibility", "Crime definitions", "Inchoate crimes", "Right to counsel", "Search and seizure", "Jury selection", "Plea bargaining", "Evidence rules"]
+        },
+        {
+          "code": "LGLS 351",
+          "name": "Civil Rights and Liberties",
+          "credits": 3,
+          "prerequisites": "LGLS 211 or LGLS 230",
+          "offered": "Fall only",
+          "description": "Examines legal principles and rules defining the nature and limits of American government and constitutional citizen protections. Emphasizes Supreme Court decision analysis and influence on American political and economic development.",
+          "key_topics": ["Civil rights", "Civil liberties", "Constitutional protections", "Supreme Court decisions", "Government limitations"]
+        },
+        {
+          "code": "LGLS 354",
+          "name": "Communications Law",
+          "credits": 3,
+          "prerequisites": "LGLS 211 or LGLS 230",
+          "description": "Studies legal rights and privileges of communications media addressing written communications, privacy vs. transparency, libel, defamation, copyright, infringement, regulatory agencies, and First Amendment theories.",
+          "key_topics": ["Media law", "Privacy", "Libel", "Defamation", "Copyright", "First Amendment"]
+        },
+        {
+          "code": "LGLS 356",
+          "name": "Law and the Digital World",
+          "credits": 3,
+          "prerequisites": "None",
+          "description": "Covers legal and policy issues regarding technology's societal impact. Topics: internet infrastructure regulation, individual rights in cyberspace, protection from cyber threats, and private company regulation.",
+          "key_topics": ["Internet regulation", "Cyber rights", "Cybersecurity law", "Tech company regulation", "Digital privacy"]
+        },
+        {
+          "code": "LGLS 360",
+          "name": "Law and Society",
+          "credits": 3,
+          "prerequisites": "None",
+          "description": "Examines law's nature and societal limitations, legal categories shaping society, roles of lawyers and judges, judiciary structure, case flow, and controversial issues in business, medicine, and gender. Draws from sociology, political science, history, and philosophy.",
+          "key_topics": ["Law and social control", "Law and social change", "Judiciary structure", "Legal profession", "Interdisciplinary legal analysis"]
+        },
+        {
+          "code": "LGLS 380",
+          "name": "Sport and the Law",
+          "credits": 3,
+          "prerequisites": "LGLS 211",
+          "offered": "Spring only",
+          "description": "Uses sport as an analytical lens for examining societal changes and interactions across local, regional, national, and international levels.",
+          "key_topics": ["Sports law", "Societal analysis through sports", "International sports regulation"]
+        },
+        {
+          "code": "LGLS 381",
+          "name": "International Law",
+          "credits": 3,
+          "prerequisites": "Sophomore standing",
+          "description": "Introduces binding rules, norms, and principles governing state interactions. Covers sources, sovereignty, jurisdiction, state responsibility, treaties, non-intervention, dispute resolution, international organizations, criminal law, force use, terrorism, and environmental law.",
+          "key_topics": ["International law sources", "Sovereignty", "Jurisdiction", "Treaties", "State responsibility", "International organizations", "International criminal law", "Use of force", "Environmental law"]
+        },
+        {
+          "code": "LGLS 382",
+          "name": "Nonprofit Law and Governance",
+          "credits": 3,
+          "prerequisites": "LGLS 211 or LGLS 230",
+          "description": "Explores law, governance, and policy surrounding the nonprofit sector. Addresses formation, maintenance, and governance of tax-exempt organizations, director/officer duties and liabilities, and alternatives like fiscal sponsorship.",
+          "key_topics": ["Nonprofit formation", "Tax-exempt status", "Director duties", "Officer liabilities", "Fiscal sponsorship"]
+        },
+        {
+          "code": "LGLS 383",
+          "name": "Health Law",
+          "credits": 3,
+          "prerequisites": "Sophomore standing",
+          "description": "How law regulates health and affects practitioners, patients, and scientists. Topics vary but include infectious disease, privacy, quarantine, FDA regulation, clinical trials, advertisement, medical tourism, reproductive health, rationing, abortion, and end-of-life issues.",
+          "key_topics": ["FDA regulation", "Medical privacy", "Clinical trials", "Reproductive health law", "End-of-life law", "Quarantine law"]
+        },
+        {
+          "code": "LGLS 386",
+          "name": "History, Law, and the Holocaust",
+          "credits": 3,
+          "prerequisites": "200-level History course; Sophomore standing",
+          "description": "Explores the Holocaust and post-1945 international law development. Covers anti-Semitism, Hitler's rise, the Final Solution, Nuremberg Tribunal, peremptory norms, transitional justice, hate speech, and Holocaust denial.",
+          "key_topics": ["Nuremberg Tribunal", "International criminal law", "Transitional justice", "Hate speech law", "Peremptory norms"]
+        },
+        {
+          "code": "LGLS 411",
+          "name": "Markets and the Law: The Uniform Commercial Code",
+          "credits": 3,
+          "prerequisites": "Junior standing",
+          "offered": "Fall only",
+          "description": "Advanced examination of UCC provisions covering contracts, sales, negotiable instruments, and secured transactions. Particularly relevant for accounting-interested students.",
+          "key_topics": ["UCC Article 2 (Sales)", "Negotiable instruments", "Secured transactions", "Commercial contracts"]
+        },
+        {
+          "code": "LGLS 412",
+          "name": "Law of Financial Institutions",
+          "credits": 3,
+          "prerequisites": "Junior standing",
+          "offered": "Spring only",
+          "description": "Laws and regulations governing U.S. financial institutions and federal regulatory agencies. Analyzes monetary system and capital markets evolution. Examines the 2007-2008 financial crisis and regulatory responses, focusing on Dodd-Frank Act.",
+          "key_topics": ["Financial regulation", "Federal regulatory agencies", "Capital markets", "2008 financial crisis", "Dodd-Frank Act"]
+        },
+        {
+          "code": "LGLS 413",
+          "name": "Gender and the Law",
+          "credits": 3,
+          "prerequisites": "LGLS 230 or LGLS 211",
+          "description": "Gender-related legal history, social battles, and legal analysis. Topics include voting rights, privacy, affirmative action, abortion, reproductive rights, rape laws, domestic violence, human trafficking, and discrimination based on sex and sexual orientation.",
+          "key_topics": ["Gender equality", "Voting rights", "Reproductive rights", "Affirmative action", "Discrimination law", "Human trafficking"]
+        },
+        {
+          "code": "LGLS 443",
+          "name": "Legal Ethics",
+          "credits": 3,
+          "prerequisites": "Sophomore standing; one 300-level LGLS course",
+          "description": "Investigates ethical systems guiding thought about 'the Good' as the foundation of law's purpose. Integrates ethical systems with moral development theories using U.S. and international law examples.",
+          "key_topics": ["Ethical systems", "Moral development", "Legal ethics", "Purpose of law", "Ethical reasoning"]
+        },
+        {
+          "code": "LGLS 451",
+          "name": "International Business Law",
+          "credits": 3,
+          "prerequisites": "LGLS 211 or instructor permission",
+          "offered": "Fall and Spring (Annual)",
+          "description": "Government control of international business and overseas business processes. Compares U.S., European, Japanese, and Middle Eastern cultures and legal systems. Focuses on international agreements including GATT, NAFTA, and EU.",
+          "key_topics": ["International trade law", "GATT", "NAFTA", "EU law", "Cross-cultural legal systems", "International agreements"]
+        },
+        {
+          "code": "LGLS 490",
+          "name": "Seminar in Politics and Law",
+          "credits": 3,
+          "prerequisites": "Politics and Law major; Senior standing",
+          "offered": "Fall only",
+          "description": "Interdisciplinary capstone with selected theme for in-depth examination. Students complete major research projects presented to seminar. Cross-listed with POLS 490.",
+          "key_topics": ["Capstone research", "Interdisciplinary legal analysis"]
+        },
+        {
+          "code": "LGLS 497",
+          "name": "Directed Study in Legal Studies",
+          "credits": 3,
+          "prerequisites": "LGLS 211 or LGLS 220; Instructor permission",
+          "description": "Faculty-supervised study of well-defined legal studies interest areas.",
+          "key_topics": ["Independent research"]
+        }
+      ]
+    },
+
+    "international_business": {
+      "department": "International Business Program",
+      "college": "College of Business",
+      "degree": "Bachelor of Science in International Business",
+      "description": "Develops strong theoretical and practical foundation in international business through globally focused coursework in business and liberal arts. Requires foreign language minor and global learning experiences.",
+      "learning_objectives": [
+        "Lead responsibly in global business contexts",
+        "Understand cultural, institutional, and governmental factors affecting international operations",
+        "Demonstrate functional business expertise with concentration focus",
+        "Apply problem-solving skills to complex global business challenges",
+        "Communicate effectively in English and a foreign language",
+        "Leverage study abroad, internships, and consulting projects"
+      ],
+      "concentrations": [
+        "Accounting", "Digital Marketing", "Finance",
+        "Global Supply Chain Management", "Human Resource Management",
+        "Information Systems", "Leadership and Innovation Management",
+        "Marketing", "Team and Project Management"
+      ],
+      "courses": [
+        {
+          "code": "IB 356",
+          "name": "International Business Management",
+          "credits": 3,
+          "prerequisites": "Junior standing; IB major",
+          "offered": "Spring (Annual)",
+          "description": "Overview of the cultural, economic, legal, and political forces that shape the environment of international business.",
+          "key_topics": ["Cultural forces", "Economic environment", "Legal/political forces", "Global business environment"]
+        },
+        {
+          "code": "IB 385",
+          "name": "Special Topics in International Business",
+          "credits": 3,
+          "prerequisites": "Junior standing",
+          "description": "Topics vary yearly based on student interest, faculty availability, and current developments in IB or functional areas.",
+          "key_topics": ["Varies by semester"]
+        },
+        {
+          "code": "IB 387",
+          "name": "Financial and Economic Developments in Latin America",
+          "credits": 3,
+          "prerequisites": "Sophomore standing; FIN 201 or FIN 201G",
+          "offered": "Fall (Varies)",
+          "description": "Survey of contemporary financial and economic environment in Latin America with focus on doing business in Mexico, Chile, Brazil, and Argentina. Examines social, economic, and political forces affecting business.",
+          "key_topics": ["Latin American economies", "Mexico business environment", "Brazil business environment", "Chile business environment", "Argentina business environment", "Regional economic forces"]
+        },
+        {
+          "code": "IB 391",
+          "name": "Internship in International Business",
+          "credits": 3,
+          "prerequisites": "BSIB major; 2.5+ GPA; Faculty approval; Junior/Senior standing",
+          "description": "Supervised employment applying IB theory. Minimum 10 hours weekly with faculty meetings, research, and substantive report.",
+          "key_topics": ["Applied international business", "Professional development"]
+        },
+        {
+          "code": "IB 490",
+          "name": "International Business Practicum",
+          "credits": 3,
+          "prerequisites": "BSIB major; Senior standing",
+          "offered": "Fall and Spring (Annual)",
+          "description": "Capstone combining global business strategy and practical experience. Students serve as consultants analyzing market entry and competitive strategies.",
+          "key_topics": ["Global strategy", "Market entry analysis", "Competitive strategy", "Consulting"]
+        },
+        {
+          "code": "IB 497",
+          "name": "Directed Study in International Business",
+          "credits": 3,
+          "prerequisites": "BSIB major; 3.0+ GPA; Faculty approval; Senior standing",
+          "description": "In-depth study or research under faculty direction in internationally focused areas.",
+          "key_topics": ["Independent research"]
+        }
+      ]
+    },
+
+    "entrepreneurship": {
+      "department": "Entrepreneurship Program",
+      "college": "College of Business",
+      "degree": "Bachelor of Science in Entrepreneurship",
+      "description": "Dedicated entrepreneurship degree combining core entrepreneurship courses with a specialized concentration and business foundation coursework. 120 credit hours minimum.",
+      "concentrations": ["Finance", "Information Systems", "Marketing"],
+      "core_requirements": [
+        "ISA 221 - Introduction to Programming (3 cr)",
+        "ENT 280 - Creating a New Venture (3 cr)",
+        "ENT 380 - Entrepreneurial Marketing (3 cr)",
+        "ENT 381 - Entrepreneurial Finance (3 cr)",
+        "ENT 484 - Entrepreneurship Practicum (3 cr)",
+        "Two approved electives (6 cr)"
+      ],
+      "courses": [
+        {
+          "code": "ENT 280",
+          "name": "Creating a New Venture",
+          "credits": 3,
+          "prerequisites": "BUS 100; Sophomore standing",
+          "offered": "Spring (Annual)",
+          "description": "Searching the environment for new venture opportunities, matching individual skills with the venture, evaluating viability, writing a business plan, and financing/starting the new venture.",
+          "key_topics": ["Opportunity recognition", "Skills assessment", "Venture viability", "Business plan writing", "Venture financing", "Startup launch"]
+        },
+        {
+          "code": "ENT 380",
+          "name": "Entrepreneurial Marketing",
+          "credits": 3,
+          "prerequisites": "MKT 201, MKT 201G, or MKT 203; Junior standing",
+          "offered": "Fall, Spring (Annual)",
+          "description": "Examines concepts and strategic issues for startup ventures, including customer base creation and marketing under financial constraints.",
+          "key_topics": ["Startup marketing strategy", "Customer acquisition", "Bootstrap marketing", "Resource-constrained marketing", "Customer base creation"]
+        },
+        {
+          "code": "ENT 381",
+          "name": "Entrepreneurial Finance",
+          "credits": 3,
+          "prerequisites": "FIN 201 or FIN 201G; Junior standing",
+          "offered": "Fall, Spring (Annual)",
+          "description": "Financing and growing a new venture whether inside or outside the corporate structure. Applies financial tools and analytic techniques to new venture creation and growth with a global perspective.",
+          "key_topics": ["Venture financing", "Financial tools for startups", "Growth financing", "Corporate venturing", "Global financial perspective"]
+        },
+        {
+          "code": "ENT 382",
+          "name": "Entrepreneurship in Action",
+          "credits": 3,
+          "prerequisites": "Instructor approval",
+          "offered": "Spring (Annual)",
+          "description": "Students team with entrepreneurs in an incubator-like environment, gaining hands-on experience in sales, product development, and fundraising.",
+          "key_topics": ["Incubator experience", "Sales", "Product development", "Fundraising", "Startup operations"]
+        },
+        {
+          "code": "ENT 482",
+          "name": "Managing a New Venture",
+          "credits": 3,
+          "prerequisites": "ENT 380, ENT 381; Senior standing",
+          "offered": "Spring (Annual)",
+          "description": "Develops general management and entrepreneurial leadership skills through case studies across diverse industries.",
+          "key_topics": ["Venture management", "Entrepreneurial leadership", "Case study analysis", "Cross-industry management"]
+        },
+        {
+          "code": "ENT 484",
+          "name": "Entrepreneurship Practicum",
+          "credits": 3,
+          "prerequisites": "ENT 280, ENT 380, ENT 381; Senior standing",
+          "offered": "Spring (Annual)",
+          "description": "Students in small teams assigned to a local startup conducting due diligence, developing business plans, and preparing pitch decks.",
+          "key_topics": ["Due diligence", "Business plan development", "Pitch deck creation", "Startup consulting", "Team-based projects"]
+        },
+        {
+          "code": "ENT 497",
+          "name": "Directed Study in Entrepreneurship",
+          "credits": 3,
+          "prerequisites": "ENT 380, ENT 381; 3.0+ GPA; Faculty approval",
+          "description": "In-depth study or research under faculty direction for seniors concentrating in Entrepreneurship.",
+          "key_topics": ["Independent research"]
+        }
+      ]
+    },
+
+    "psychology": {
+      "department": "Department of Psychology",
+      "college": "School of Health and Behavioral Sciences",
+      "degree": "Bachelor of Science with a Major in Psychology",
+      "description": "Emphasizes theoretical and applied psychology plus exposure to core business courses. Minimum 36 credits for major, 120 for degree. Requires a business minor.",
+      "core_requirements": [
+        "PSY 260 or 263 - Introduction to Psychology (3 cr)",
+        "PSY 376 - Research Methods in Psychology (3 cr)",
+        "PSY 386 - Research Methods II (3 cr)",
+        "PSY 490 or 491 - Senior Research/Internship Seminar (3 cr)"
+      ],
+      "foundational_perspectives": {
+        "developmental": ["PSY 360 Child and Adolescent Development", "PSY 361 Adult Development and Aging"],
+        "social_cultural": ["PSY 465 Cross-Cultural Psychology", "PSY 470 Social Psychology"],
+        "cognition_learning": ["PSY 373 Cognitive Psychology", "PSY 377 Educational Psychology", "PSY 486 Judgment and Decision Making"],
+        "biological": ["PSY 374 Introduction to Neuroscience", "PSY 375 Health Psychology", "PSY 483 Drugs and Behavior"],
+        "clinical": ["PSY 355 Introduction to Psychopathology", "PSY 472 Child Psychopathology", "PSY 480 Counseling Theory and Practice"]
+      },
+      "courses": [
+        {
+          "code": "PSY 260",
+          "name": "Introduction to Psychology",
+          "credits": 3,
+          "prerequisites": "None",
+          "description": "Survey of major principles, theories, and research methods in psychology, covering mental processing, behavior across contexts, and ethical implications.",
+          "key_topics": ["Research methods", "Mental processes", "Behavior", "Ethics in psychology"]
+        },
+        {
+          "code": "PSY 301",
+          "name": "Sensation and Perception",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263; Sophomore standing",
+          "corequisites": "PSY 374",
+          "description": "Explores biological and psychological processes of perception, sensory systems, brain processing structures, and integration of sensory information.",
+          "key_topics": ["Sensory systems", "Perceptual processes", "Brain processing", "Sensory integration"]
+        },
+        {
+          "code": "PSY 353",
+          "name": "Psychology of Personality",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263",
+          "description": "Historical and contemporary personality approaches, development, cross-cultural and gender influences, with application to case studies.",
+          "key_topics": ["Personality theories", "Personality development", "Cross-cultural influences", "Gender influences"]
+        },
+        {
+          "code": "PSY 355",
+          "name": "Introduction to Psychopathology",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263",
+          "description": "Contemporary approaches to understanding causes and treatments of psychological and psychiatric disorders.",
+          "key_topics": ["Psychological disorders", "Psychiatric disorders", "Causes of psychopathology", "Treatment approaches"]
+        },
+        {
+          "code": "PSY 360",
+          "name": "Child and Adolescent Development",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263",
+          "description": "Development from prenatal through adolescence using current research methods and relevant theories.",
+          "key_topics": ["Prenatal development", "Childhood development", "Adolescent development", "Developmental theories"]
+        },
+        {
+          "code": "PSY 361",
+          "name": "Adult Development and Aging",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263",
+          "description": "Psychological and physical change and stability throughout adulthood, emphasizing aging individuals in an aging society.",
+          "key_topics": ["Adult development", "Aging", "Physical changes", "Psychological stability"]
+        },
+        {
+          "code": "PSY 365",
+          "name": "Environmental Psychology",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263",
+          "description": "Interdisciplinary investigation of the environment's role in behavior and attributes of settings associated with performance and functioning.",
+          "key_topics": ["Environment-behavior relationships", "Setting attributes", "Performance", "Functioning"]
+        },
+        {
+          "code": "PSY 371",
+          "name": "Applied Psychology",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263",
+          "description": "Overview of practical applications of psychological research to real-world problems in biomedical, educational, industrial/organizational, sports, and other contexts.",
+          "key_topics": ["Biomedical applications", "Educational psychology", "I/O psychology", "Sports psychology", "Applied research"]
+        },
+        {
+          "code": "PSY 372",
+          "name": "Positive Psychology",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263",
+          "description": "Subjective well-being, optimal human functioning, positive traits development, and collective societal well-being across the lifespan.",
+          "key_topics": ["Well-being", "Optimal functioning", "Positive traits", "Flourishing", "Lifespan perspective"]
+        },
+        {
+          "code": "PSY 373",
+          "name": "Cognitive Psychology",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263",
+          "description": "Primary cognitive psychology areas including neuroscience, perception, attention, memory, language, and decision-making.",
+          "key_topics": ["Neuroscience", "Perception", "Attention", "Memory", "Language", "Decision-making"]
+        },
+        {
+          "code": "PSY 374",
+          "name": "Introduction to Neuroscience",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263",
+          "description": "Foundational overview of nervous system structure and function including neurons, neural communication, brain organization, sensory systems, and neural basis of behavior.",
+          "key_topics": ["Neurons", "Neural communication", "Brain organization", "Sensory systems", "Neural basis of behavior"]
+        },
+        {
+          "code": "PSY 375",
+          "name": "Health Psychology",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263",
+          "description": "Stress, coping, lifestyle enhancement, chronic illness, pain management, and utilization of healthcare systems.",
+          "key_topics": ["Stress", "Coping", "Chronic illness", "Pain management", "Healthcare systems"]
+        },
+        {
+          "code": "PSY 376",
+          "name": "Research Methods in Psychology",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263",
+          "corequisites": "MATH 201",
+          "description": "Introduction to experimental methods covering research planning, design, statistics, APA report writing, ethical standards, and critical evaluation of scientific evidence.",
+          "key_topics": ["Research design", "Statistics", "APA style", "Ethics", "Evidence evaluation"]
+        },
+        {
+          "code": "PSY 377",
+          "name": "Educational Psychology",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263",
+          "description": "Psychological principles and theories applied to teaching and learning, covering motivation, developmental characteristics, assessment, and socio-cultural influences.",
+          "key_topics": ["Learning theories", "Motivation", "Assessment", "Socio-cultural influences"]
+        },
+        {
+          "code": "PSY 378",
+          "name": "Industrial and Organizational Psychology",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263",
+          "description": "Workplace human behavior, employee hiring, management, development, and career support aligned with organizational strategic goals.",
+          "key_topics": ["Employee selection", "Training", "Management", "Career development", "Organizational strategy"]
+        },
+        {
+          "code": "PSY 379",
+          "name": "Neural Circuits and Systems",
+          "credits": 3,
+          "prerequisites": "PSY 374; Sophomore standing",
+          "description": "How neural circuits produce sensation, action, attention, executive function, language, emotion, motivation, and sleep, including disruption effects.",
+          "key_topics": ["Neural circuits", "Executive function", "Emotion", "Motivation", "Sleep", "Disruption effects"]
+        },
+        {
+          "code": "PSY 386",
+          "name": "Research Methods in Psychology II",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263, MATH 201, PSY 376; Sophomore standing",
+          "description": "Advanced research methods focusing on design, implementation, and analysis of psychological research for graduate preparation.",
+          "key_topics": ["Advanced research design", "Implementation", "Data analysis", "Graduate preparation"]
+        },
+        {
+          "code": "PSY 401",
+          "name": "Neurobiology of Learning and Memory",
+          "credits": 3,
+          "prerequisites": "PSY 260, PSY 374",
+          "description": "Current understanding of learning and memory processes from human and animal research, comparing memory types and underlying mechanisms.",
+          "key_topics": ["Learning mechanisms", "Memory types", "Human research", "Animal models", "Neural mechanisms"]
+        },
+        {
+          "code": "PSY 440",
+          "name": "The Design Thinking Process",
+          "credits": 3,
+          "prerequisites": "IDEA 101, PSY 260 or MGT 302",
+          "description": "Hands-on application of design thinking and psychological principles underlying innovative thinking, problem-solving, and gamification.",
+          "key_topics": ["Design thinking", "Innovation", "Problem-solving", "Gamification"]
+        },
+        {
+          "code": "PSY 465",
+          "name": "Cross-Cultural Psychology",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263; Junior standing",
+          "description": "In-depth examination of culture's role in socialization and behavior using cross-cultural methodology.",
+          "key_topics": ["Culture and behavior", "Socialization", "Cross-cultural methodology"]
+        },
+        {
+          "code": "PSY 470",
+          "name": "Social Psychology",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263; Junior standing",
+          "description": "Factors impacting human relationships including attraction, attitudes, perception, cognition, altruism, aggression, group behavior, and social influence.",
+          "key_topics": ["Attraction", "Attitudes", "Social perception", "Altruism", "Aggression", "Group behavior", "Social influence"]
+        },
+        {
+          "code": "PSY 471",
+          "name": "Gender in Childhood",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263; Junior standing",
+          "description": "Gender meaning and its influence on children's experiences, identities, and behavior considering biology and socio-cultural factors.",
+          "key_topics": ["Gender development", "Identity", "Biology vs. culture", "Childhood experience"]
+        },
+        {
+          "code": "PSY 472",
+          "name": "Child Psychopathology",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263; Sophomore standing",
+          "description": "Atypical childhood and adolescent development including behavioral, mood, and learning disorders within normal development and systems contexts.",
+          "key_topics": ["Childhood disorders", "Behavioral disorders", "Mood disorders", "Learning disorders", "Developmental context"]
+        },
+        {
+          "code": "PSY 480",
+          "name": "Counseling Theory and Practice",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263; Junior standing",
+          "description": "Major contemporary counseling theories and techniques with observation opportunities and practice, addressing cross-cultural issues.",
+          "key_topics": ["Counseling theories", "Therapeutic techniques", "Cross-cultural counseling", "Practice skills"]
+        },
+        {
+          "code": "PSY 481",
+          "name": "Exercise and Sport Psychology",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263; Junior standing",
+          "description": "Educational, research, and professional contributions of psychology to promote, enhance, and maintain exercise and sport behavior across the lifespan.",
+          "key_topics": ["Exercise behavior", "Sport performance", "Motivation", "Behavior maintenance"]
+        },
+        {
+          "code": "PSY 482",
+          "name": "Forensic Psychology",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263; Junior standing",
+          "description": "Criminal profiling, hypnosis, lie detection, eyewitness testimony, jury selection, insanity defense, and related topics.",
+          "key_topics": ["Criminal profiling", "Eyewitness testimony", "Jury selection", "Insanity defense", "Lie detection"]
+        },
+        {
+          "code": "PSY 483",
+          "name": "Drugs and Behavior",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263; Junior standing",
+          "description": "Drugs and behavioral effects covering stimulants, depressants, narcotics, hallucinogens, and psychiatric medications with historical perspectives.",
+          "key_topics": ["Stimulants", "Depressants", "Narcotics", "Hallucinogens", "Psychiatric medications", "Psychopharmacology"]
+        },
+        {
+          "code": "PSY 484",
+          "name": "Psychological Testing and Assessment",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263, MATH 201; Junior standing",
+          "description": "Assessment goals and principles including measurement theory, test construction, major test types, and contemporary issues like bias and ethics.",
+          "key_topics": ["Measurement theory", "Test construction", "Assessment types", "Bias", "Testing ethics"]
+        },
+        {
+          "code": "PSY 486",
+          "name": "Judgment and Decision Making",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263; Junior standing",
+          "description": "Research on judgment and decision-making with exploration of influence in health, financial, legal, political, and relationship choice contexts.",
+          "key_topics": ["Heuristics", "Biases", "Health decisions", "Financial decisions", "Legal judgment", "Political decisions"]
+        },
+        {
+          "code": "PSY 490",
+          "name": "Senior Research Seminar",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263, PSY 371, PSY 376; Applied Psychology major; Senior standing",
+          "description": "Students develop and investigate applied psychology hypotheses from hypothesis through presentations, integrating three years of knowledge.",
+          "key_topics": ["Hypothesis development", "Applied research", "Presentation skills", "Knowledge integration"]
+        },
+        {
+          "code": "PSY 491",
+          "name": "Senior Internship Seminar",
+          "credits": 3,
+          "prerequisites": "PSY 260 or 263, PSY 376; Psychology major; Senior standing",
+          "description": "Integration course with field placement and classroom seminar involving lectures, exercises, discussions, and written assignments.",
+          "key_topics": ["Field placement", "Professional integration", "Reflective practice"]
+        }
+      ]
+    }
+  },
+
+  "subject_knowledge": {
+    "business_law_legal_studies": {
+      "sources_of_law": {
+        "definition": "The origins from which legal authority and rules derive in a legal system.",
+        "types": {
+          "constitutional_law": {
+            "definition": "The supreme law of a nation or state, establishing governmental structure, powers, and individual rights.",
+            "key_terms": ["Supremacy Clause", "Due Process", "Equal Protection", "Commerce Clause", "Bill of Rights", "Judicial Review", "Separation of Powers", "Federalism"],
+            "landmark_cases": [
+              {"case": "Marbury v. Madison (1803)", "significance": "Established judicial review, giving courts power to declare laws unconstitutional."},
+              {"case": "McCulloch v. Maryland (1819)", "significance": "Affirmed implied powers of Congress under the Necessary and Proper Clause; established federal supremacy over states."},
+              {"case": "Gibbons v. Ogden (1824)", "significance": "Broadly interpreted the Commerce Clause, giving Congress power over interstate commerce."},
+              {"case": "Brown v. Board of Education (1954)", "significance": "Declared racial segregation in public schools unconstitutional under the Equal Protection Clause."}
+            ],
+            "examples": ["The First Amendment protects freedom of speech from government restriction.", "The Commerce Clause allows federal regulation of activities substantially affecting interstate commerce."]
+          },
+          "statutory_law": {
+            "definition": "Written laws enacted by legislative bodies (Congress, state legislatures, local councils).",
+            "key_terms": ["Legislation", "Statute", "Ordinance", "Codification", "Legislative Intent", "Statutory Interpretation"],
+            "examples": ["The Civil Rights Act of 1964", "The Sarbanes-Oxley Act of 2002", "The Sherman Antitrust Act of 1890", "The Americans with Disabilities Act of 1990"]
+          },
+          "administrative_law": {
+            "definition": "Rules, regulations, and orders created by administrative agencies (executive branch) that have the force of law.",
+            "key_terms": ["Rulemaking", "Adjudication", "Administrative Agency", "Federal Register", "Code of Federal Regulations (CFR)", "Enabling Statute", "Chevron Deference"],
+            "landmark_cases": [
+              {"case": "Chevron U.S.A., Inc. v. NRDC (1984)", "significance": "Established two-step test for judicial deference to agency interpretations of ambiguous statutes."}
+            ],
+            "examples": ["SEC regulations governing securities markets", "EPA environmental standards", "OSHA workplace safety rules", "FDA drug approval requirements"]
+          },
+          "common_law": {
+            "definition": "Judge-made law developed through court decisions and precedent (stare decisis), rather than statutes.",
+            "key_terms": ["Stare Decisis", "Precedent", "Case Law", "Judicial Opinion", "Ratio Decidendi", "Obiter Dictum", "Distinguish", "Overrule"],
+            "examples": ["Much of contract law and tort law evolved through common law", "The 'reasonable person' standard in negligence emerged from judicial decisions"]
+          }
+        },
+        "relationships": "Constitutional law is supreme; statutes must conform to the Constitution. Administrative regulations must be authorized by enabling statutes. Common law fills gaps where statutes are silent but can be superseded by statutory law."
+      },
+
+      "contract_law": {
+        "definition": "The body of law governing legally enforceable agreements between two or more parties.",
+        "formation": {
+          "elements": {
+            "offer": {
+              "definition": "A manifestation of willingness to enter into a bargain, made so that another person is justified in understanding that assent will conclude the bargain.",
+              "key_terms": ["Offeror", "Offeree", "Preliminary negotiations", "Advertisements (generally invitations to deal)", "Revocation", "Rejection", "Counteroffer", "Mirror Image Rule", "Mailbox Rule"],
+              "rules": [
+                "Must be communicated to the offeree",
+                "Must have definite and certain terms",
+                "Must manifest present contractual intent",
+                "Terminated by: revocation, rejection, counteroffer, lapse of time, death/incapacity, illegality"
+              ]
+            },
+            "acceptance": {
+              "definition": "A voluntary act by the offeree that shows assent to the terms of the offer.",
+              "key_terms": ["Unilateral contract (accepted by performance)", "Bilateral contract (accepted by promise)", "Silence as acceptance", "Mailbox Rule (acceptance effective on dispatch)"],
+              "rules": [
+                "Must be by the person to whom the offer was made",
+                "Must match the offer (mirror image rule at common law; UCC is more flexible)",
+                "Must be communicated to the offeror"
+              ]
+            },
+            "consideration": {
+              "definition": "Something of legal value exchanged between parties; a bargained-for exchange of promises or performances.",
+              "key_terms": ["Bargained-for exchange", "Legal detriment", "Legal benefit", "Adequacy vs. sufficiency", "Promissory estoppel", "Past consideration (not valid)", "Pre-existing duty rule", "Illusory promise"],
+              "landmark_cases": [
+                {"case": "Hamer v. Sidway (1891)", "significance": "Established that forbearance (refraining from a legal right) constitutes valid consideration."},
+                {"case": "Dougherty v. Salt (1919)", "significance": "A gratuitous promise (gift) is not enforceable for lack of consideration."}
+              ]
+            },
+            "capacity": {
+              "definition": "The legal ability to enter into a contract. Minors, mentally incapacitated persons, and intoxicated persons may lack capacity.",
+              "key_terms": ["Age of majority", "Voidable contract", "Disaffirmance", "Ratification", "Necessaries"]
+            },
+            "legality": {
+              "definition": "The contract's purpose must be legal. Contracts for illegal purposes are void and unenforceable.",
+              "key_terms": ["Void contract", "Unconscionable contract", "Covenant not to compete", "Exculpatory clause", "Usury"]
+            }
+          }
+        },
+        "breach": {
+          "definition": "Failure to perform a contractual duty without legal excuse.",
+          "types": {
+            "material_breach": "A substantial failure that permits the non-breaching party to treat the contract as terminated and sue for damages.",
+            "minor_breach": "A slight deviation; the non-breaching party must still perform but may sue for damages caused by the breach.",
+            "anticipatory_breach": "One party indicates in advance they will not perform; the other party may immediately sue or wait for performance."
+          },
+          "landmark_cases": [
+            {"case": "Hadley v. Baxendale (1854)", "significance": "Established the foreseeability test for consequential damages in breach of contract."},
+            {"case": "Jacob & Youngs v. Kent (1921)", "significance": "Established the substantial performance doctrine: a party who substantially performs is entitled to payment minus damages for deviation."}
+          ]
+        },
+        "remedies": {
+          "compensatory_damages": "Money to restore the injured party to the position they would have been in had the contract been performed (expectation interest).",
+          "consequential_damages": "Foreseeable indirect losses resulting from the breach (established in Hadley v. Baxendale).",
+          "liquidated_damages": "Pre-agreed damages specified in the contract; enforceable if reasonable estimate of actual damages.",
+          "specific_performance": "Court order requiring the breaching party to perform; typically for unique goods or real property.",
+          "rescission_and_restitution": "Canceling the contract and restoring both parties to pre-contract positions.",
+          "nominal_damages": "Small symbolic amount when breach occurred but no actual loss."
+        },
+        "defenses": ["Mistake (mutual/unilateral)", "Duress", "Undue influence", "Fraud/Misrepresentation", "Unconscionability", "Statute of Frauds", "Impossibility/Impracticability", "Frustration of purpose"]
+      },
+
+      "tort_law": {
+        "definition": "The body of law addressing civil wrongs that cause harm to persons or property, providing remedies (usually damages) to injured parties.",
+        "categories": {
+          "negligence": {
+            "definition": "Failure to exercise the degree of care that a reasonably prudent person would exercise under similar circumstances.",
+            "elements": [
+              "Duty of care (owed to foreseeable plaintiffs)",
+              "Breach of duty (failure to meet standard of care)",
+              "Causation: actual cause (but-for test) AND proximate cause (foreseeability)",
+              "Damages (actual harm suffered)"
+            ],
+            "key_terms": ["Reasonable person standard", "Res ipsa loquitur", "Contributory negligence", "Comparative negligence", "Assumption of risk", "Negligence per se"],
+            "landmark_cases": [
+              {"case": "Palsgraf v. Long Island Railroad (1928)", "significance": "Established the foreseeability test for proximate cause: duty is owed only to foreseeable plaintiffs."},
+              {"case": "MacPherson v. Buick Motor Co. (1916)", "significance": "Eliminated the privity requirement for negligence claims involving dangerous products."},
+              {"case": "Liebeck v. McDonald's Restaurants (1994)", "significance": "Hot coffee case illustrating product liability, foreseeability, and comparative fault analysis."}
+            ]
+          },
+          "strict_liability": {
+            "definition": "Liability without fault; defendant is liable regardless of intent or negligence.",
+            "applies_to": ["Abnormally dangerous activities", "Wild animal owners", "Product liability (manufacturing defects, design defects, failure to warn)"],
+            "key_terms": ["Abnormally dangerous activity", "Defective product", "Manufacturing defect", "Design defect", "Failure to warn", "Restatement (Third) of Torts"],
+            "landmark_cases": [
+              {"case": "Rylands v. Fletcher (1868)", "significance": "Established strict liability for non-natural use of land causing damage."},
+              {"case": "Greenman v. Yuba Power Products (1963)", "significance": "Established strict liability in tort for defective products, eliminating need to prove negligence."}
+            ]
+          },
+          "intentional_torts": {
+            "definition": "Wrongful acts committed with intent to cause harm or with substantial certainty that harm will result.",
+            "types": {
+              "against_persons": ["Assault (apprehension of imminent harmful contact)", "Battery (intentional harmful or offensive contact)", "False imprisonment (intentional confinement without consent or authority)", "Intentional infliction of emotional distress (IIED)", "Defamation (libel/slander)", "Invasion of privacy", "Fraud/Deceit"],
+              "against_property": ["Trespass to land", "Trespass to chattels", "Conversion (wrongful exercise of dominion over another's property)"]
+            },
+            "defenses": ["Consent", "Self-defense", "Defense of others", "Defense of property", "Privilege", "Necessity", "Truth (for defamation)"]
+          }
+        }
+      },
+
+      "business_organizations": {
+        "definition": "Legal structures through which business activities are conducted.",
+        "types": {
+          "sole_proprietorship": {
+            "definition": "An unincorporated business owned and operated by one individual.",
+            "characteristics": ["Simplest form", "No formal filing required", "Owner has unlimited personal liability", "Pass-through taxation", "Complete control", "Easiest to dissolve"],
+            "advantages": ["Easy and inexpensive to form", "Complete managerial control", "Tax simplicity", "All profits to owner"],
+            "disadvantages": ["Unlimited personal liability", "Limited ability to raise capital", "Limited life (tied to owner)", "Difficulty attracting talent"]
+          },
+          "general_partnership": {
+            "definition": "An association of two or more persons carrying on a business as co-owners for profit (UPA).",
+            "characteristics": ["May be formed by oral agreement", "Joint and several liability", "Pass-through taxation", "Each partner is an agent of the partnership", "Fiduciary duties among partners"],
+            "key_terms": ["Uniform Partnership Act (UPA)", "Joint and several liability", "Fiduciary duty", "Partnership agreement", "Dissolution", "Winding up"]
+          },
+          "limited_partnership": {
+            "definition": "Partnership with at least one general partner (unlimited liability, management) and one or more limited partners (liability limited to investment, no management role).",
+            "key_terms": ["General partner", "Limited partner", "RULPA", "Certificate of limited partnership"]
+          },
+          "limited_liability_partnership": {
+            "definition": "Partnership where all partners have limited liability for the acts of other partners.",
+            "key_terms": ["LLP", "Professional firms", "Limited liability shield"]
+          },
+          "corporation": {
+            "definition": "A legal entity separate from its owners (shareholders), created under state law.",
+            "characteristics": ["Separate legal entity", "Limited liability for shareholders", "Perpetual existence", "Centralized management (board of directors)", "Transferable ownership (shares)", "Double taxation (C-Corp)", "Formation requires articles of incorporation"],
+            "types": {
+              "c_corporation": "Standard corporation subject to double taxation (corporate level + shareholder dividend level).",
+              "s_corporation": "Elects pass-through taxation; limited to 100 shareholders, one class of stock, U.S. shareholders only.",
+              "close_corporation": "Small number of shareholders; stock not publicly traded; may operate without a formal board."
+            },
+            "key_terms": ["Articles of incorporation", "Bylaws", "Board of directors", "Shareholders", "Dividends", "Piercing the corporate veil", "Business judgment rule", "Fiduciary duties (care, loyalty, good faith)"],
+            "landmark_cases": [
+              {"case": "Dartmouth College v. Woodward (1819)", "significance": "Established that a corporate charter is a contract protected by the Constitution."},
+              {"case": "Citizens United v. FEC (2010)", "significance": "Recognized corporate First Amendment rights regarding political speech."}
+            ]
+          },
+          "limited_liability_company": {
+            "definition": "A hybrid entity combining limited liability of a corporation with pass-through taxation and operational flexibility of a partnership.",
+            "characteristics": ["Limited liability for all members", "Flexible management (member-managed or manager-managed)", "Pass-through taxation by default", "Operating agreement governs", "Not subject to corporate formalities"],
+            "key_terms": ["Members", "Operating agreement", "Articles of organization", "Member-managed", "Manager-managed", "Series LLC"]
+          }
+        }
+      },
+
+      "employment_law": {
+        "definition": "The body of law governing the employer-employee relationship.",
+        "key_areas": {
+          "at_will_employment": {
+            "definition": "Either employer or employee can terminate the relationship at any time, for any reason not prohibited by law.",
+            "exceptions": ["Public policy exception", "Implied contract exception", "Implied covenant of good faith"]
+          },
+          "discrimination_law": {
+            "statutes": ["Title VII of the Civil Rights Act (1964) - race, color, religion, sex, national origin", "Age Discrimination in Employment Act (ADEA) - age 40+", "Americans with Disabilities Act (ADA)", "Equal Pay Act", "Pregnancy Discrimination Act"],
+            "key_terms": ["Disparate treatment", "Disparate impact", "Bona fide occupational qualification (BFOQ)", "Hostile work environment", "Quid pro quo harassment", "Reasonable accommodation"]
+          },
+          "wage_and_hour": {
+            "key_statutes": ["Fair Labor Standards Act (FLSA)"],
+            "key_terms": ["Minimum wage", "Overtime", "Exempt vs. non-exempt employees", "Independent contractor vs. employee"]
+          },
+          "workplace_safety": {
+            "key_statutes": ["Occupational Safety and Health Act (OSHA)"],
+            "key_terms": ["General duty clause", "OSHA inspections", "Whistleblower protections"]
+          },
+          "workers_compensation": {
+            "definition": "No-fault insurance system providing benefits to employees injured on the job, in exchange for employees giving up the right to sue employers for negligence."
+          }
+        },
+        "landmark_cases": [
+          {"case": "Griggs v. Duke Power Co. (1971)", "significance": "Established the disparate impact theory under Title VII."},
+          {"case": "Meritor Savings Bank v. Vinson (1986)", "significance": "Recognized hostile work environment sexual harassment as actionable under Title VII."}
+        ]
+      },
+
+      "intellectual_property": {
+        "definition": "Legal rights protecting creations of the mind, granting exclusive rights to creators/inventors.",
+        "types": {
+          "patents": {
+            "definition": "Exclusive rights granted for an invention, allowing the holder to exclude others from making, using, or selling the invention for a limited period.",
+            "duration": "20 years from filing date (utility); 15 years from grant date (design)",
+            "types": ["Utility patent (new/useful process, machine, manufacture, composition)", "Design patent (new, original ornamental design)", "Plant patent"],
+            "requirements": ["Novelty", "Non-obviousness", "Utility", "Adequate description"],
+            "key_terms": ["Patent prosecution", "Prior art", "Claims", "Patent infringement", "Patent troll", "Provisional patent application"]
+          },
+          "trademarks": {
+            "definition": "A word, phrase, symbol, design, or combination that identifies and distinguishes the source of goods or services.",
+            "duration": "Potentially indefinite (must renew every 10 years; must remain in use)",
+            "types": ["Word marks", "Design marks", "Service marks", "Trade dress", "Sound marks", "Color marks"],
+            "strength_spectrum": ["Generic (not protectable)", "Descriptive (protectable with secondary meaning)", "Suggestive (inherently distinctive)", "Arbitrary (inherently distinctive)", "Fanciful (strongest protection)"],
+            "key_terms": ["Lanham Act", "Likelihood of confusion", "Dilution", "Secondary meaning", "Genericization", "USPTO registration"],
+            "landmark_cases": [
+              {"case": "Qualitex Co. v. Jacobson Products Co. (1995)", "significance": "Color alone can serve as a trademark if it has acquired secondary meaning."}
+            ]
+          },
+          "copyrights": {
+            "definition": "Protection for original works of authorship fixed in a tangible medium of expression.",
+            "duration": "Life of author + 70 years (individual); 95 years from publication or 120 years from creation (work for hire)",
+            "protects": ["Literary works", "Musical works", "Dramatic works", "Pictorial/graphic/sculptural works", "Motion pictures", "Sound recordings", "Architectural works", "Software"],
+            "does_not_protect": ["Ideas (only expression)", "Facts", "Titles", "Short phrases", "Useful articles"],
+            "key_terms": ["Fair use", "Work for hire", "Public domain", "First sale doctrine", "DMCA", "Derivative works", "Moral rights"],
+            "fair_use_factors": [
+              "Purpose and character of the use (commercial vs. educational; transformative?)",
+              "Nature of the copyrighted work",
+              "Amount and substantiality of the portion used",
+              "Effect on the market for the original work"
+            ]
+          },
+          "trade_secrets": {
+            "definition": "Information that derives economic value from not being generally known and is subject to reasonable efforts to maintain secrecy.",
+            "duration": "Potentially indefinite (as long as secrecy is maintained)",
+            "requirements": ["Economic value from secrecy", "Reasonable measures to maintain secrecy"],
+            "key_terms": ["Uniform Trade Secrets Act (UTSA)", "Defend Trade Secrets Act (DTSA, 2016)", "Non-disclosure agreement (NDA)", "Non-compete agreement", "Misappropriation"],
+            "examples": ["Coca-Cola formula", "Google search algorithm", "Customer lists", "Manufacturing processes"]
+          }
+        }
+      },
+
+      "ethics_in_business_and_law": {
+        "definition": "The application of ethical principles and moral standards to business activities and legal practice.",
+        "ethical_theories": {
+          "utilitarianism": "Actions are right if they produce the greatest good for the greatest number (Bentham, Mill).",
+          "deontological_ethics": "Actions are right or wrong based on adherence to rules or duties, regardless of consequences (Kant's categorical imperative).",
+          "virtue_ethics": "Focuses on the character of the moral agent rather than rules or consequences (Aristotle).",
+          "social_contract_theory": "Moral/political rules are justified by agreement among individuals (Rawls' veil of ignorance).",
+          "ethics_of_care": "Emphasizes relationships and responsibilities rather than abstract principles."
+        },
+        "business_ethics_frameworks": {
+          "stakeholder_theory": "Businesses should consider the interests of all stakeholders (employees, customers, suppliers, community, shareholders).",
+          "shareholder_primacy": "The primary duty of a corporation is to maximize shareholder value (Friedman doctrine).",
+          "corporate_social_responsibility": "Businesses have obligations beyond profit-making, including social and environmental responsibilities.",
+          "triple_bottom_line": "People, Planet, Profit - measuring success across social, environmental, and financial dimensions."
+        },
+        "key_legislation": ["Sarbanes-Oxley Act (2002) - corporate governance and financial disclosure", "Dodd-Frank Act (2010) - financial reform and consumer protection", "Foreign Corrupt Practices Act (FCPA) - anti-bribery", "Federal Sentencing Guidelines for Organizations"]
+      },
+
+      "ucc_commercial_transactions": {
+        "definition": "The Uniform Commercial Code is a comprehensive set of laws governing commercial transactions in the United States, adopted (with variations) by all 50 states.",
+        "key_articles": {
+          "article_1": "General Provisions (definitions, rules of construction, good faith obligation)",
+          "article_2": {
+            "name": "Sales of Goods",
+            "key_concepts": ["Applies to transactions in goods (movable, tangible property)", "Merchant vs. non-merchant distinctions", "Battle of the forms (Section 2-207)", "Implied warranty of merchantability", "Implied warranty of fitness for a particular purpose", "Statute of Frauds ($500+)", "Perfect tender rule", "Cure", "Risk of loss", "Remedies for breach"],
+            "differences_from_common_law": ["More flexible acceptance rules (no strict mirror image)", "Gap-filler provisions", "Good faith requirement for merchants", "Firm offer rule (merchant's signed written offer irrevocable for stated period up to 3 months)"]
+          },
+          "article_3": "Negotiable Instruments (promissory notes, drafts, checks)",
+          "article_4": "Bank Deposits and Collections",
+          "article_9": {
+            "name": "Secured Transactions",
+            "key_concepts": ["Security interest", "Attachment", "Perfection", "Priority", "Filing a financing statement (UCC-1)", "Default and remedies"]
+          }
+        }
+      },
+
+      "agency_law": {
+        "definition": "The body of law governing the relationship where one party (the agent) is authorized to act on behalf of another (the principal).",
+        "formation": ["Express agency (written or oral agreement)", "Implied agency (from conduct or circumstances)", "Apparent agency (third party reasonably believes agent has authority)", "Ratification (principal retroactively approves unauthorized act)"],
+        "types_of_authority": {
+          "actual_express": "Authority explicitly granted by the principal.",
+          "actual_implied": "Authority reasonably necessary to carry out express authority.",
+          "apparent": "Authority that a reasonable third party would believe the agent has based on the principal's conduct."
+        },
+        "duties": {
+          "agent_to_principal": ["Duty of loyalty", "Duty of obedience", "Duty of care", "Duty to account", "Duty to notify"],
+          "principal_to_agent": ["Duty of compensation", "Duty of reimbursement", "Duty of cooperation", "Duty of safe working conditions"]
+        },
+        "liability": {
+          "disclosed_principal": "Principal is liable; agent generally not liable on contracts.",
+          "partially_disclosed_principal": "Both principal and agent may be liable.",
+          "undisclosed_principal": "Agent is liable; principal may also be liable once discovered.",
+          "vicarious_liability": "Principal liable for agent's torts committed within scope of employment (respondeat superior)."
+        },
+        "termination": ["Mutual agreement", "Fulfillment of purpose", "Lapse of time", "Revocation by principal", "Renunciation by agent", "Death or incapacity", "Impossibility", "Changed circumstances"],
+        "landmark_cases": [
+          {"case": "Gorton v. Doty (1937)", "significance": "Established that an agency relationship can be implied from conduct, even without an express agreement."}
+        ]
+      }
+    },
+
+    "international_business": {
+      "globalization_theories": {
+        "definition": "Globalization is the increasing interconnectedness and interdependence of world economies, cultures, and populations through cross-border trade, technology, investment, and migration.",
+        "perspectives": {
+          "hyperglobalist": "National borders are becoming irrelevant; a single global market is emerging (Ohmae).",
+          "skeptic": "Globalization is overstated; nation-states and regionalism remain dominant (Hirst & Thompson).",
+          "transformationalist": "Globalization is real but its direction is uncertain; states are being transformed, not diminished (Held, Giddens)."
+        },
+        "drivers": ["Technological advancement (internet, communications, transportation)", "Trade liberalization (reduced tariffs, trade agreements)", "Capital market liberalization", "Multinational corporations", "Political factors (end of Cold War, free-market ideology)"],
+        "criticisms": ["Income inequality (within and between nations)", "Cultural homogenization", "Environmental degradation", "Loss of sovereignty", "Exploitation of developing nations", "Race to the bottom in labor/environmental standards"]
+      },
+
+      "international_trade_theories": {
+        "mercantilism": {
+          "definition": "A nation's wealth depends on accumulated gold/silver; maximize exports, minimize imports (trade surplus).",
+          "key_figures": "Thomas Mun, Jean-Baptiste Colbert",
+          "criticism": "Zero-sum thinking; ignores mutual gains from trade."
+        },
+        "absolute_advantage": {
+          "definition": "A country should produce and export goods it can produce more efficiently than other countries (Adam Smith, 1776).",
+          "key_terms": ["Efficiency", "Specialization"],
+          "example": "If the U.S. can produce wheat more efficiently than Japan, and Japan can produce electronics more efficiently than the U.S., each should specialize and trade."
+        },
+        "comparative_advantage": {
+          "definition": "A country should specialize in producing goods for which it has the lowest opportunity cost, even if it doesn't have absolute advantage in anything (David Ricardo, 1817).",
+          "key_terms": ["Opportunity cost", "Specialization", "Gains from trade", "Terms of trade"],
+          "example": "Even if the U.S. is more efficient at producing both wheat and cloth than Bangladesh, if Bangladesh's opportunity cost of cloth is lower, Bangladesh should specialize in cloth."
+        },
+        "heckscher_ohlin": {
+          "definition": "Countries export goods that intensively use their abundant factors of production and import goods that intensively use their scarce factors (Heckscher & Ohlin).",
+          "key_terms": ["Factor endowments", "Capital-intensive", "Labor-intensive", "Factor price equalization", "Stolper-Samuelson theorem", "Leontief paradox"],
+          "example": "Capital-abundant countries (U.S., Germany) export capital-intensive goods; labor-abundant countries (Bangladesh, Vietnam) export labor-intensive goods."
+        },
+        "new_trade_theory": {
+          "definition": "Economies of scale and first-mover advantages can give countries an edge; trade may arise even between similar countries (Paul Krugman).",
+          "key_terms": ["Economies of scale", "First-mover advantage", "Network effects", "Imperfect competition"]
+        },
+        "porters_diamond": {
+          "definition": "Michael Porter's model explaining why certain industries in certain nations are more competitive, based on four attributes.",
+          "factors": ["Factor conditions (resources, labor, infrastructure)", "Demand conditions (nature of domestic demand)", "Related and supporting industries (presence of supplier clusters)", "Firm strategy, structure, and rivalry (domestic competition)"],
+          "additional_variables": ["Government policy", "Chance events"]
+        }
+      },
+
+      "foreign_exchange_markets": {
+        "definition": "The global marketplace for exchanging national currencies, the largest and most liquid financial market in the world.",
+        "key_concepts": {
+          "exchange_rate": "The price of one currency expressed in terms of another.",
+          "spot_rate": "The exchange rate for immediate delivery (within 2 business days).",
+          "forward_rate": "The exchange rate agreed upon today for delivery at a future date.",
+          "appreciation": "An increase in the value of a currency relative to another.",
+          "depreciation": "A decrease in the value of a currency relative to another.",
+          "bid_ask_spread": "The difference between the buying and selling price of a currency."
+        },
+        "exchange_rate_systems": {
+          "fixed": "Government/central bank pegs currency to another currency or basket (e.g., gold standard, currency board).",
+          "floating": "Exchange rate determined by supply and demand in the forex market (e.g., USD, EUR, JPY).",
+          "managed_float": "Primarily market-determined but with occasional central bank intervention (dirty float).",
+          "pegged": "Currency value fixed relative to a major currency (e.g., Hong Kong dollar pegged to USD)."
+        },
+        "determinants": ["Interest rates (higher rates attract capital, appreciate currency)", "Inflation rates (higher inflation depreciates currency via PPP)", "Trade balance (surplus tends to appreciate currency)", "Political stability", "Speculation", "Government intervention"],
+        "key_terms": ["Purchasing Power Parity (PPP)", "Interest Rate Parity (IRP)", "Fisher Effect", "International Fisher Effect", "Arbitrage", "Currency hedging", "Swap", "Option", "Future"]
+      },
+
+      "international_financial_management": {
+        "key_topics": {
+          "foreign_exchange_risk": {
+            "types": ["Transaction exposure (risk on outstanding FX-denominated obligations)", "Translation exposure (risk from consolidating foreign subsidiary financials)", "Economic exposure (long-term impact of exchange rate changes on firm value)"],
+            "hedging_techniques": ["Forward contracts", "Futures contracts", "Options", "Money market hedging", "Natural hedging (matching revenues/costs in same currency)"]
+          },
+          "international_capital_budgeting": "Evaluating foreign investment projects considering exchange rate risk, political risk, tax differences, and blocked funds.",
+          "cost_of_capital": "Firms access global capital markets to lower cost of capital through international diversification.",
+          "international_taxation": {
+            "key_terms": ["Tax treaty", "Transfer pricing", "Tax haven", "Double taxation", "Foreign tax credit", "Controlled foreign corporation", "BEPS (Base Erosion and Profit Shifting)"]
+          }
+        }
+      },
+
+      "cross_cultural_management": {
+        "definition": "Understanding and managing the impact of cultural differences on business practices and organizational behavior.",
+        "hofstedes_dimensions": {
+          "power_distance": {
+            "definition": "The extent to which less powerful members of organizations accept that power is distributed unequally.",
+            "high_pd": "Malaysia, Philippines, Mexico - hierarchical, centralized authority, deference to superiors",
+            "low_pd": "Denmark, Austria, Israel - flat organizations, participative management, questioning authority"
+          },
+          "individualism_vs_collectivism": {
+            "definition": "The degree to which people are integrated into groups versus acting as individuals.",
+            "individualist": "U.S., UK, Australia - personal achievement, individual rights, loose social ties",
+            "collectivist": "Japan, China, Colombia - group harmony, loyalty, in-group obligations"
+          },
+          "masculinity_vs_femininity": {
+            "definition": "Distribution of emotional roles between genders; assertiveness/competitiveness vs. modesty/caring.",
+            "masculine": "Japan, Hungary, Austria - competition, achievement, material success",
+            "feminine": "Sweden, Norway, Netherlands - quality of life, consensus, gender equality"
+          },
+          "uncertainty_avoidance": {
+            "definition": "Society's tolerance for ambiguity and uncertainty.",
+            "high_ua": "Greece, Portugal, Japan - formal rules, risk aversion, expert authority",
+            "low_ua": "Singapore, Denmark, UK - tolerance of deviance, risk-taking, fewer rules"
+          },
+          "long_term_vs_short_term_orientation": {
+            "definition": "The extent to which a society prioritizes future-oriented values (thrift, perseverance) vs. past/present-oriented values (tradition, social obligations).",
+            "long_term": "China, Japan, South Korea",
+            "short_term": "U.S., UK, Nigeria"
+          },
+          "indulgence_vs_restraint": {
+            "definition": "The extent to which a society allows free gratification of basic human desires vs. regulating through strict norms.",
+            "indulgent": "Mexico, Sweden, U.S.",
+            "restrained": "Egypt, China, Russia"
+          }
+        },
+        "other_frameworks": {
+          "trompenaars": "Seven dimensions of culture (universalism/particularism, individualism/communitarianism, specific/diffuse, neutral/emotional, achievement/ascription, sequential/synchronic, internal/external control).",
+          "hall": "High-context vs. low-context cultures; monochronic vs. polychronic time.",
+          "globe_study": "Extension of Hofstede covering 62 societies with 9 cultural dimensions."
+        }
+      },
+
+      "modes_of_entry": {
+        "definition": "The methods by which a firm enters a foreign market, ranging from low-risk/low-control to high-risk/high-control.",
+        "modes": {
+          "exporting": {
+            "definition": "Producing goods domestically and selling them abroad.",
+            "types": ["Direct exporting (selling directly to foreign customers)", "Indirect exporting (using intermediaries like export trading companies)"],
+            "advantages": ["Low risk", "Low investment", "Quick market entry"],
+            "disadvantages": ["Transportation costs", "Tariff barriers", "Less market knowledge", "Less control"]
+          },
+          "licensing": {
+            "definition": "Granting a foreign entity the right to use intellectual property (patents, trademarks, technology) in exchange for royalties.",
+            "advantages": ["Low risk/investment", "Revenue from IP", "Quick entry"],
+            "disadvantages": ["Limited control over quality", "Risk of creating competitor", "Limited revenue potential"]
+          },
+          "franchising": {
+            "definition": "A specialized form of licensing where the franchisor provides a complete business system to the franchisee.",
+            "advantages": ["Rapid expansion", "Local operator knowledge", "Brand consistency"],
+            "disadvantages": ["Quality control challenges", "Cultural adaptation needed"]
+          },
+          "joint_venture": {
+            "definition": "Two or more firms create a jointly owned entity to operate in a foreign market.",
+            "advantages": ["Shared risk and cost", "Local partner knowledge", "May be required by host government"],
+            "disadvantages": ["Shared control", "Potential conflicts", "Technology transfer risk"]
+          },
+          "wholly_owned_subsidiary": {
+            "definition": "The firm owns 100% of a foreign operation, either through greenfield investment (building new) or acquisition.",
+            "advantages": ["Full control", "No sharing of profits/technology", "Global coordination"],
+            "disadvantages": ["High risk and investment", "Slow entry", "Political risk exposure"]
+          },
+          "foreign_direct_investment": {
+            "definition": "Investment in physical assets or significant ownership stake in a foreign business entity.",
+            "types": ["Greenfield investment", "Brownfield investment", "Mergers and acquisitions"],
+            "determinants": ["Market size", "Political stability", "Infrastructure", "Tax incentives", "Labor costs", "Trade barriers"]
+          }
+        }
+      },
+
+      "international_organizations": {
+        "wto": {
+          "name": "World Trade Organization",
+          "established": 1995,
+          "predecessor": "GATT (General Agreement on Tariffs and Trade, 1947)",
+          "function": "Administers trade agreements, provides forum for negotiations, handles trade disputes.",
+          "key_principles": ["Most-Favored Nation (MFN) - treat all members equally", "National Treatment - treat foreign and domestic goods equally once imported", "Transparency", "Tariff bindings"],
+          "dispute_settlement": "Binding dispute resolution mechanism; panels and Appellate Body hear cases.",
+          "key_agreements": ["GATT (goods)", "GATS (services)", "TRIPS (intellectual property)", "Agreement on Agriculture"]
+        },
+        "imf": {
+          "name": "International Monetary Fund",
+          "established": 1944,
+          "function": "Promotes global monetary cooperation, financial stability, facilitates trade, reduces poverty.",
+          "activities": ["Surveillance (monitoring economies)", "Lending (to countries with balance-of-payments problems)", "Technical assistance"],
+          "key_terms": ["Special Drawing Rights (SDR)", "Conditionality", "Structural adjustment programs", "Quota system"]
+        },
+        "world_bank": {
+          "name": "World Bank Group",
+          "established": 1944,
+          "function": "Provides loans and grants to developing countries for capital programs aimed at reducing poverty.",
+          "components": ["IBRD (loans to middle-income/creditworthy low-income)", "IDA (concessional loans to poorest)", "IFC (private sector investment)", "MIGA (political risk insurance)", "ICSID (investment dispute settlement)"]
+        },
+        "regional_agreements": {
+          "eu": "European Union - most advanced economic integration (customs union, single market, monetary union for eurozone).",
+          "usmca": "United States-Mexico-Canada Agreement (replaced NAFTA in 2020) - free trade area.",
+          "asean": "Association of Southeast Asian Nations - economic cooperation among 10 Southeast Asian countries.",
+          "mercosur": "Southern Common Market - customs union of South American countries.",
+          "cptpp": "Comprehensive and Progressive Agreement for Trans-Pacific Partnership."
+        }
+      },
+
+      "global_supply_chain_management": {
+        "definition": "The management of the flow of goods, services, information, and finances across international borders from raw materials to end consumers.",
+        "key_concepts": {
+          "logistics": "Physical movement and storage of goods (transportation, warehousing, inventory management).",
+          "procurement": "Sourcing and acquiring inputs from global suppliers.",
+          "operations": "Managing production across multiple countries.",
+          "distribution": "Getting finished products to customers in multiple markets."
+        },
+        "strategies": {
+          "offshoring": "Moving business operations to a foreign country (typically for cost savings).",
+          "nearshoring": "Moving operations to a nearby country (balance cost and proximity).",
+          "reshoring": "Bringing operations back to the home country.",
+          "outsourcing": "Contracting with external firms (domestic or foreign) to perform functions."
+        },
+        "challenges": ["Cultural and language barriers", "Regulatory differences", "Currency fluctuations", "Political instability", "Longer lead times", "Quality control", "Intellectual property protection", "Sustainability and ethical concerns"],
+        "risk_management": ["Supplier diversification", "Safety stock", "Flexible contracts", "Dual sourcing", "Supply chain visibility technology", "Contingency planning"]
+      }
+    },
+
+    "entrepreneurship": {
+      "business_model_canvas": {
+        "definition": "A strategic management tool (Alexander Osterwalder) that provides a visual chart with nine building blocks describing a firm's value proposition, infrastructure, customers, and finances.",
+        "nine_blocks": {
+          "customer_segments": "Who are the target customers? (Mass market, niche, segmented, multi-sided platform)",
+          "value_propositions": "What value is delivered to the customer? What problem is being solved? (Newness, performance, customization, design, brand, price, cost reduction, risk reduction, accessibility, convenience)",
+          "channels": "How does the company reach and communicate with its customer segments? (Direct, indirect, owned, partner channels)",
+          "customer_relationships": "What type of relationship does each customer segment expect? (Personal assistance, self-service, automated, communities, co-creation)",
+          "revenue_streams": "How does the company generate revenue from each segment? (Asset sale, usage fee, subscription, licensing, advertising, freemium)",
+          "key_resources": "What assets are required? (Physical, intellectual, human, financial)",
+          "key_activities": "What key things must the company do? (Production, problem solving, platform/network management)",
+          "key_partnerships": "Who are key partners and suppliers? (Strategic alliances, coopetition, joint ventures, buyer-supplier)",
+          "cost_structure": "What are the most important costs? (Cost-driven vs. value-driven, fixed costs, variable costs, economies of scale, economies of scope)"
+        },
+        "usage": "Brainstorming, pivoting, communicating business model to investors, iterating on startup ideas."
+      },
+
+      "lean_startup_methodology": {
+        "definition": "An approach to building businesses and products developed by Eric Ries, emphasizing rapid experimentation, validated learning, and iterative product development.",
+        "core_principles": {
+          "build_measure_learn": {
+            "definition": "The fundamental feedback loop: build a minimum viable product, measure customer response, learn whether to pivot or persevere.",
+            "steps": ["Identify assumptions/hypotheses", "Build MVP to test assumptions", "Measure results with actionable metrics", "Learn from data", "Pivot or persevere"]
+          },
+          "minimum_viable_product": {
+            "definition": "The version of a new product that allows a team to collect the maximum amount of validated learning about customers with the least effort.",
+            "types": ["Landing page MVP", "Concierge MVP", "Wizard of Oz MVP", "Single-feature MVP", "Prototype/mockup"],
+            "purpose": "Test fundamental business hypotheses before investing significant resources."
+          },
+          "validated_learning": {
+            "definition": "Learning backed by empirical data collected from real customers, not opinions or theoretical analysis.",
+            "key_terms": ["Actionable metrics (vs. vanity metrics)", "Cohort analysis", "Split testing (A/B testing)", "Innovation accounting"]
+          },
+          "pivot": {
+            "definition": "A structured course correction to test a new fundamental hypothesis about the product, strategy, or engine of growth.",
+            "types": ["Zoom-in pivot", "Zoom-out pivot", "Customer segment pivot", "Customer need pivot", "Platform pivot", "Business architecture pivot", "Value capture pivot", "Engine of growth pivot", "Channel pivot", "Technology pivot"]
+          }
+        },
+        "related_concepts": ["Customer development (Steve Blank)", "Design thinking", "Agile development"]
+      },
+
+      "venture_financing": {
+        "definition": "The various methods and stages through which startups and new ventures raise capital.",
+        "stages_and_sources": {
+          "bootstrapping": {
+            "definition": "Self-funding the venture using personal savings, revenue, or minimal external resources.",
+            "methods": ["Personal savings", "Credit cards", "Friends and family", "Revenue reinvestment", "Sweat equity"],
+            "advantages": ["Full control/ownership", "No dilution", "Forces discipline"],
+            "disadvantages": ["Limited capital", "Slower growth", "Personal financial risk"]
+          },
+          "angel_investors": {
+            "definition": "High-net-worth individuals who invest their own money in early-stage startups, typically in exchange for equity.",
+            "characteristics": ["Invest $25K-$500K typically", "Often provide mentorship and connections", "Invest in seed/early stage", "May organize in angel groups/networks"],
+            "key_terms": ["Angel group", "Convertible note", "SAFE (Simple Agreement for Future Equity)", "Valuation cap", "Discount rate"]
+          },
+          "venture_capital": {
+            "definition": "Professional investment firms that manage pooled money from institutional investors and invest in high-growth startups.",
+            "stages": ["Seed stage", "Series A (first significant VC round)", "Series B (scaling)", "Series C+ (expansion/pre-IPO)"],
+            "key_terms": ["Term sheet", "Due diligence", "Pre-money valuation", "Post-money valuation", "Dilution", "Liquidation preference", "Anti-dilution provisions", "Board seats", "Vesting", "Carried interest (20% of profits to VC managers)", "Management fee (2% of fund)"],
+            "process": ["Deal sourcing", "Screening", "Due diligence", "Term sheet negotiation", "Investment", "Portfolio management", "Exit (IPO, M&A, secondary sale)"]
+          },
+          "other_sources": {
+            "crowdfunding": {
+              "types": ["Reward-based (Kickstarter, Indiegogo)", "Equity crowdfunding (Republic, Wefunder)", "Debt crowdfunding"],
+              "regulation": "JOBS Act (2012) enabled equity crowdfunding for non-accredited investors via Regulation CF."
+            },
+            "accelerators_incubators": {
+              "accelerators": "Fixed-term, cohort-based programs providing mentorship, education, and often seed funding in exchange for equity (e.g., Y Combinator, Techstars).",
+              "incubators": "Longer-term programs providing resources, office space, and mentorship, typically without taking equity."
+            },
+            "small_business_loans": "SBA loans, bank loans, microloans.",
+            "grants": "Government grants (SBIR, STTR), foundation grants."
+          }
+        }
+      },
+
+      "market_validation": {
+        "definition": "The process of determining whether a product or service has value to potential customers before building or fully launching it.",
+        "steps": [
+          "Problem identification: Confirm a real, significant problem exists",
+          "Customer discovery: Interview potential customers (Steve Blank's method)",
+          "Solution validation: Test whether your proposed solution addresses the problem",
+          "MVP testing: Build and test a minimum viable product",
+          "Market sizing: TAM (Total Addressable Market), SAM (Serviceable Available Market), SOM (Serviceable Obtainable Market)"
+        ],
+        "techniques": ["Customer interviews", "Surveys", "Landing page tests", "Prototype testing", "Crowdfunding campaigns", "Pre-sales", "Smoke tests", "Competitor analysis"],
+        "key_terms": ["Product-market fit", "Early adopters", "Beachhead market", "Chasm (Geoffrey Moore - Crossing the Chasm)", "Jobs-to-be-done framework (Clayton Christensen)"],
+        "metrics": ["Customer acquisition cost (CAC)", "Customer lifetime value (CLV/LTV)", "Conversion rate", "Churn rate", "Net Promoter Score (NPS)"]
+      },
+
+      "business_plan_fundamentals": {
+        "definition": "A formal written document containing business goals, methods for achieving them, and the timeframe for achievement.",
+        "key_sections": {
+          "executive_summary": "1-2 page overview of the entire plan; written last but placed first. Includes mission, product/service, market opportunity, competitive advantage, financial highlights, and funding request.",
+          "company_description": "Legal structure, history, mission/vision, objectives, and what makes the company unique.",
+          "market_analysis": {
+            "components": ["Industry overview", "Target market description", "Market size (TAM/SAM/SOM)", "Market trends", "Competitive analysis (Porter's Five Forces, SWOT)", "Customer personas"]
+          },
+          "organization_and_management": "Organizational structure, management team bios, board of advisors, hiring plan.",
+          "products_or_services": "Detailed description, development stage, intellectual property, R&D activities.",
+          "marketing_and_sales_strategy": {
+            "components": ["Positioning statement", "Marketing mix (4Ps: Product, Price, Place, Promotion)", "Sales strategy", "Customer acquisition plan", "Partnerships and channels"]
+          },
+          "financial_projections": {
+            "components": ["Income statement (P&L) - 3-5 year projection", "Cash flow statement", "Balance sheet", "Break-even analysis", "Assumptions clearly stated", "Funding requirements and use of funds"],
+            "key_metrics": ["Gross margin", "Net margin", "Burn rate", "Runway", "Unit economics"]
+          },
+          "appendix": "Supporting documents (resumes, permits, leases, contracts, market research data)."
+        },
+        "pitch_deck": {
+          "definition": "A brief presentation (10-15 slides) summarizing the business plan for potential investors.",
+          "typical_slides": ["Title/Company", "Problem", "Solution", "Market size", "Business model", "Traction", "Team", "Competition", "Financials", "Ask (funding amount and use)"]
+        }
+      }
+    }
+  }
+}

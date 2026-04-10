@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Syllabot — Study Companion</title>
+<style>
+/* ── Reset & Root ─────────────────────────────────────────────── */
+:root {
+  --bg: #0f1117;
+  --surface: #1a1d27;
+  --surface2: #232736;
+  --border: #2e3346;
+  --text: #e2e4eb;
+  --text-dim: #8b8fa3;
+  --accent: #6c5ce7;
+  --accent-light: #a29bfe;
+  --green: #00b894;
+  --yellow: #fdcb6e;
+  --red: #e17055;
+  --orange: #f39c12;
+  --blue: #74b9ff;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+a { color: var(--blue); text-decoration: none; }
+
+/* ── Layout ───────────────────────────────────────────────────── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* ── Header ───────────────────────────────────────────────────── */
+.header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  position: sticky; top: 0; z-index: 100;
+}
+.header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1200px; margin: 0 auto; padding: 0 20px;
+}
+.logo { font-size: 1.3rem; font-weight: 700; color: var(--accent-light); }
+.logo span { color: var(--text-dim); font-weight: 400; font-size: 0.85rem; margin-left: 8px; }
+.header-course-badge {
+  background: rgba(108,92,231,0.15); color: var(--accent-light);
+  padding: 4px 12px; border-radius: 8px; font-size: 0.82rem; font-weight: 600;
+}
+.header-date { color: var(--text-dim); font-size: 0.82rem; }
+
+/* ── Nav ──────────────────────────────────────────────────────── */
+.nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0; overflow-x: auto; white-space: nowrap;
+}
+.nav-inner {
+  display: flex; max-width: 1200px; margin: 0 auto; padding: 0 12px;
+}
+.nav-btn {
+  background: none; border: none; color: var(--text-dim); padding: 12px 16px;
+  cursor: pointer; font-size: 0.85rem; font-family: inherit; transition: color 0.2s;
+  border-bottom: 2px solid transparent; white-space: nowrap;
+}
+.nav-btn:hover { color: var(--text); }
+.nav-btn.active { color: var(--accent-light); border-bottom-color: var(--accent); }
+
+/* ── Cards ────────────────────────────────────────────────────── */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 20px; margin-bottom: 16px;
+}
+.card h3 { margin-bottom: 12px; font-size: 1rem; }
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+.stat-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 16px; text-align: center;
+}
+.stat-card .stat-value { font-size: 1.6rem; font-weight: 700; }
+.stat-card .stat-label { font-size: 0.78rem; color: var(--text-dim); margin-top: 4px; }
+
+/* ── Badges ───────────────────────────────────────────────────── */
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 6px;
+  font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+}
+.badge.urgent { background: rgba(225,112,85,0.15); color: var(--red); }
+.badge.soon { background: rgba(243,156,18,0.15); color: var(--orange); }
+.badge.upcoming { background: rgba(253,203,110,0.15); color: var(--yellow); }
+.badge.later { background: rgba(116,185,255,0.15); color: var(--blue); }
+.badge.done { background: rgba(0,184,148,0.15); color: var(--green); }
+.badge.exam { background: rgba(225,112,85,0.2); color: var(--red); }
+
+/* ── Buttons ──────────────────────────────────────────────────── */
+.btn {
+  background: var(--accent); color: #fff; border: none; padding: 10px 20px;
+  border-radius: 8px; cursor: pointer; font-family: inherit; font-size: 0.85rem;
+  font-weight: 600; transition: background 0.2s;
+}
+.btn:hover { background: var(--accent-light); }
+.btn-outline {
+  background: transparent; border: 1px solid var(--border); color: var(--text);
+  padding: 8px 16px; border-radius: 8px; cursor: pointer; font-family: inherit;
+  font-size: 0.85rem; transition: all 0.2s;
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent-light); }
+.btn-sm { padding: 6px 12px; font-size: 0.78rem; }
+.btn-danger { background: var(--red); }
+.btn-danger:hover { background: #c0392b; }
+.btn-green { background: var(--green); }
+
+/* ── Topic Buttons ────────────────────────────────────────────── */
+.topic-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.topic-btn {
+  padding: 8px 16px; border-radius: 20px; border: 1px solid var(--border);
+  background: transparent; color: var(--text); cursor: pointer; font-family: inherit;
+  font-size: 0.82rem; transition: all 0.2s;
+}
+.topic-btn:hover { border-color: var(--accent); color: var(--accent-light); }
+.topic-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* ── Tables ───────────────────────────────────────────────────── */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th { color: var(--text-dim); font-size: 0.78rem; text-transform: uppercase; font-weight: 600; }
+
+/* ── Quiz Options ─────────────────────────────────────────────── */
+.quiz-opt {
+  display: block; width: 100%; text-align: left;
+  padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--surface2); color: var(--text); cursor: pointer;
+  font-family: inherit; font-size: 0.85rem; margin-bottom: 8px; transition: all 0.2s;
+}
+.quiz-opt:hover:not(.locked) { border-color: var(--accent); }
+.quiz-opt.correct { background: rgba(0,184,148,0.2); border-color: var(--green); color: var(--green); }
+.quiz-opt.incorrect { background: rgba(225,112,85,0.2); border-color: var(--red); color: var(--red); }
+.quiz-opt.reveal-correct { border-color: var(--green); outline: 2px solid var(--green); }
+.quiz-opt.locked { cursor: default; opacity: 0.85; }
+.quiz-explain { display: none; padding: 10px; margin-top: 4px; background: var(--surface2); border-radius: 8px; font-size: 0.82rem; color: var(--text-dim); }
+.quiz-explain.show { display: block; }
+
+/* ── Flashcard ────────────────────────────────────────────────── */
+.fc-container { perspective: 1000px; max-width: 500px; margin: 0 auto 20px; }
+.fc-card {
+  width: 100%; min-height: 220px; position: relative;
+  transform-style: preserve-3d; transition: transform 0.5s; cursor: pointer;
+}
+.fc-card.flipped { transform: rotateX(180deg); }
+.fc-face {
+  position: absolute; width: 100%; min-height: 220px;
+  backface-visibility: hidden; display: flex; align-items: center; justify-content: center;
+  padding: 30px; border-radius: 12px; border: 1px solid var(--border);
+  text-align: center; font-size: 1rem;
+}
+.fc-front { background: var(--surface); }
+.fc-back { background: var(--surface2); transform: rotateX(180deg); }
+.fc-nav { display: flex; align-items: center; justify-content: center; gap: 20px; }
+.fc-counter { color: var(--text-dim); font-size: 0.85rem; }
+
+/* ── Grade Layout ─────────────────────────────────────────────── */
+.grade-layout {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;
+}
+.grade-calc-card { max-height: 500px; overflow-y: auto; }
+.grade-right { display: flex; flex-direction: column; gap: 20px; position: sticky; top: 20px; }
+@media (max-width: 800px) {
+  .grade-layout { grid-template-columns: 1fr; }
+}
+
+/* ── Grade Input ──────────────────────────────────────────────── */
+.grade-input-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 5px 10px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--surface2); margin-bottom: 5px;
+}
+.grade-input-row label { flex: 1; font-size: 0.8rem; }
+.grade-input-row input[type="number"] {
+  width: 65px; padding: 4px 6px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--surface); color: var(--text); font-family: inherit; font-size: 0.82rem;
+  text-align: center;
+}
+.grade-input-row .weight-badge { color: var(--text-dim); font-size: 0.72rem; min-width: 36px; text-align: right; }
+
+/* ── Progress Circles ─────────────────────────────────────────── */
+.mod-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+.mod-circle {
+  width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s;
+  border: 2px solid var(--border);
+}
+.mod-circle.done { background: rgba(0,184,148,0.2); border-color: var(--green); color: var(--green); }
+.mod-circle.current { background: rgba(253,203,110,0.2); border-color: var(--yellow); color: var(--yellow); }
+.mod-circle.upcoming-mod { background: var(--surface2); color: var(--text-dim); }
+
+/* ── Course Cards ─────────────────────────────────────────────── */
+.course-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.course-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px;
+  transition: all 0.2s;
+}
+.course-card.active-course { border-color: var(--accent); box-shadow: 0 0 16px rgba(108,92,231,0.25); }
+.course-color-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; margin-right: 8px; }
+
+/* ── Upload Area ──────────────────────────────────────────────── */
+.upload-area {
+  border: 2px dashed var(--border); border-radius: 12px; padding: 40px;
+  text-align: center; cursor: pointer; transition: border-color 0.2s; margin-bottom: 16px;
+}
+.upload-area:hover, .upload-area.drag-over { border-color: var(--accent); }
+.upload-area p { color: var(--text-dim); margin-top: 8px; font-size: 0.82rem; }
+
+/* ── Form Wizard ──────────────────────────────────────────────── */
+.step-indicators { display: flex; gap: 12px; margin-bottom: 24px; justify-content: center; }
+.step-ind {
+  width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.85rem; cursor: pointer; border: 2px solid var(--border);
+  background: var(--surface2); color: var(--text-dim); transition: all 0.2s;
+}
+.step-ind.active { border-color: var(--accent); background: var(--accent); color: #fff; }
+.step-ind.completed { border-color: var(--green); background: rgba(0,184,148,0.2); color: var(--green); }
+.form-step { display: none; }
+.form-step.visible { display: block; }
+.form-row { margin-bottom: 12px; }
+.form-row label { display: block; font-size: 0.82rem; color: var(--text-dim); margin-bottom: 4px; font-weight: 600; }
+.form-row input, .form-row select {
+  width: 100%; padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--surface2); color: var(--text); font-family: inherit; font-size: 0.9rem;
+}
+.dynamic-row {
+  display: flex; gap: 8px; align-items: center; margin-bottom: 8px;
+  padding: 8px; background: var(--surface2); border-radius: 8px; border: 1px solid var(--border);
+}
+.dynamic-row input, .dynamic-row select { flex: 1; padding: 6px 8px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-family: inherit; }
+.remove-row-btn {
+  background: none; border: none; color: var(--red); cursor: pointer; font-size: 1.1rem; padding: 4px 8px;
+}
+
+/* ── Tutor Content ────────────────────────────────────────────── */
+.tutor-section h3 { color: var(--accent-light); margin-bottom: 12px; }
+.tutor-section p { margin-bottom: 10px; line-height: 1.7; }
+.key-term { color: var(--yellow); font-weight: 600; }
+.example { border-left: 3px solid var(--accent); padding: 12px 16px; margin: 12px 0; background: var(--surface2); border-radius: 0 8px 8px 0; }
+.worked-example { border: 1px solid var(--border); padding: 16px; margin: 12px 0; border-radius: 8px; }
+
+/* ── Timeline ─────────────────────────────────────────────────── */
+.timeline-bar { display: flex; gap: 2px; margin: 12px 0; }
+.timeline-week {
+  flex: 1; height: 28px; border-radius: 4px; min-width: 12px;
+}
+.timeline-week.past { background: var(--accent); opacity: 0.7; }
+.timeline-week.current-week { background: var(--yellow); }
+.timeline-week.future { background: var(--surface2); }
+
+/* ── Weight Bars ──────────────────────────────────────────────── */
+.weight-bar-wrap { margin-bottom: 10px; }
+.weight-bar-label { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px; }
+.weight-bar-track { height: 18px; background: var(--surface2); border-radius: 9px; overflow: hidden; }
+.weight-bar-fill { height: 100%; border-radius: 9px; transition: width 0.5s ease; }
+
+/* ── Checklist ────────────────────────────────────────────────── */
+.checklist-item { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.checklist-item input[type="checkbox"] { accent-color: var(--accent); }
+.checklist-item.checked span { text-decoration: line-through; color: var(--text-dim); }
+.checklist-time { color: var(--text-dim); font-size: 0.78rem; margin-left: auto; }
+
+/* ── Grade Result ─────────────────────────────────────────────── */
+.grade-result { text-align: center; padding: 16px; }
+.grade-letter { font-size: 2.6rem; font-weight: 700; }
+.grade-pct { font-size: 1.1rem; color: var(--text-dim); }
+.final-needs { margin-top: 10px; }
+.final-needs-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 0.85rem; }
+
+/* ── Modal ────────────────────────────────────────────────────── */
+.modal-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 200;
+  align-items: center; justify-content: center;
+}
+.modal-overlay.show { display: flex; }
+.modal {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 28px; max-width: 560px; width: 90%; max-height: 80vh; overflow-y: auto;
+}
+.modal h3 { margin-bottom: 16px; }
+
+/* ── Written Grading ──────────────────────────────────────────── */
+.written-block { margin-bottom: 20px; }
+.written-block textarea {
+  width: 100%; min-height: 100px; padding: 10px; border-radius: 8px; border: 1px solid var(--border);
+  background: var(--surface2); color: var(--text); font-family: inherit; font-size: 0.85rem; resize: vertical;
+}
+.written-feedback { margin-top: 8px; padding: 12px; background: var(--surface2); border-radius: 8px; }
+.keyword-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin: 2px; }
+.keyword-tag.found { background: rgba(0,184,148,0.2); color: var(--green); }
+.keyword-tag.missing { background: rgba(253,203,110,0.2); color: var(--yellow); }
+
+/* ── Animations ───────────────────────────────────────────────── */
+@keyframes fadeIn { 0% { opacity:0; transform:translateY(8px); } 100% { opacity:1; transform:translateY(0); } }
+.fade-in { animation: fadeIn 0.3s ease; }
+
+/* ── Slider ───────────────────────────────────────────────────── */
+input[type="range"] { width: 100%; accent-color: var(--accent); }
+
+/* ── Risk ─────────────────────────────────────────────────────── */
+.risk-item { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+.risk-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+/* ── Canvas Chart ─────────────────────────────────────────────── */
+#quizChart { width: 100%; height: 200px; }
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .course-grid { grid-template-columns: 1fr; }
+  .header-inner { flex-wrap: wrap; gap: 8px; }
+  .fc-container { max-width: 100%; }
+  .dynamic-row { flex-wrap: wrap; }
+}
+
+/* ── Misc ─────────────────────────────────────────────────────── */
+.hidden { display: none !important; }
+.tab-panel { display: none; padding: 24px 0; }
+.tab-panel.active { display: block; }
+.section-title { font-size: 1rem; font-weight: 700; margin: 20px 0 12px; color: var(--text); }
+.empty-state { text-align: center; padding: 40px; color: var(--text-dim); }
+.gen-progress { margin: 12px 0; color: var(--text-dim); font-size: 0.85rem; }
+hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.confirm-dialog { background: rgba(0,184,148,0.1); border: 1px solid var(--green); border-radius: 10px; padding: 16px; margin: 12px 0; color: var(--green); text-align: center; }
+
+/* ── Completed Bar ────────────────────────────────────────────── */
+.completed-bar {
+  background: var(--surface2); border: 1px solid var(--border); border-radius: 10px;
+  margin-bottom: 16px; overflow: hidden; cursor: pointer; transition: all 0.2s;
+}
+.completed-bar:hover { border-color: var(--green); }
+.completed-bar-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; user-select: none;
+}
+.completed-bar-header .cb-left { display: flex; align-items: center; gap: 10px; }
+.completed-bar-header .cb-count {
+  background: rgba(0,184,148,0.15); color: var(--green); padding: 2px 10px;
+  border-radius: 12px; font-size: 0.82rem; font-weight: 600;
+}
+.completed-bar-header .cb-label { font-weight: 600; font-size: 0.95rem; color: var(--green); }
+.completed-bar-header .cb-arrow {
+  color: var(--text-dim); font-size: 0.85rem; transition: transform 0.3s;
+}
+.completed-bar.open .cb-arrow { transform: rotate(180deg); }
+.completed-bar-body {
+  max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
+}
+.completed-bar.open .completed-bar-body { max-height: 2000px; }
+.completed-bar-body table { margin: 0; }
+.completed-bar-body td, .completed-bar-body th { padding: 8px 20px; font-size: 0.85rem; }
+.completed-bar-body tr td:first-child { color: var(--text-dim); }
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<div class="header">
+  <div class="header-inner">
+    <div class="logo">Syllabot <span>Study Companion</span></div>
+    <div class="header-course-badge" id="headerBadge">No Course Loaded</div>
+    <div class="header-date" id="headerDate"></div>
+  </div>
+</div>
+
+<!-- ═══ NAV ═══ -->
+<div class="nav">
+  <div class="nav-inner">
+    <button class="nav-btn active" data-tab="dashboard">&#x1F4CA; Dashboard</button>
+    <button class="nav-btn" data-tab="planner">&#x1F4C5; Planner</button>
+    <button class="nav-btn" data-tab="tutor">&#x1F4D6; Tutor</button>
+    <button class="nav-btn" data-tab="quiz">&#x270D;&#xFE0F; Quiz</button>
+    <button class="nav-btn" data-tab="flashcards">&#x1F0CF; Flashcards</button>
+    <button class="nav-btn" data-tab="progress">&#x1F4C8; Progress</button>
+    <button class="nav-btn" data-tab="grades">&#x1F9EE; Grade Calc</button>
+    <button class="nav-btn" data-tab="courses">&#x1F4DA; Courses</button>
+  </div>
+</div>
+
+<!-- ═══ CONTENT ═══ -->
+<div class="container">
+
+  <!-- ── Dashboard ── -->
+  <div class="tab-panel active" id="tab-dashboard">
+    <div class="stat-grid" id="statGrid"></div>
+    <div id="completedBar"></div>
+    <div class="card" id="deadlinesCard"><h3>Upcoming Deadlines</h3><div id="deadlinesTable"></div></div>
+    <div class="card" id="actionsCard"><h3>Do Right Now</h3><div id="actionsList"></div></div>
+    <div class="card"><h3>Semester Timeline</h3><div id="timeline"></div></div>
+    <div class="card"><h3>Grade Weight Breakdown</h3><div id="weightBars"></div></div>
+  </div>
+
+  <!-- ── Planner ── -->
+  <div class="tab-panel" id="tab-planner">
+    <div class="card"><h3>This Week</h3><div id="plannerThisWeek"></div></div>
+    <div class="card"><h3>Next Week</h3><div id="plannerNextWeek"></div></div>
+    <div class="card"><h3>Full Schedule</h3><div id="plannerFull"></div></div>
+  </div>
+
+  <!-- ── Tutor ── -->
+  <div class="tab-panel" id="tab-tutor">
+    <div class="topic-btns" id="tutorTopics"></div>
+    <div class="card" id="tutorContent"><div class="empty-state">Select a module above to view study material.</div></div>
+  </div>
+
+  <!-- ── Quiz ── -->
+  <div class="tab-panel" id="tab-quiz">
+    <div class="topic-btns" id="quizTopics"></div>
+    <div id="quizSettings" class="card hidden">
+      <h3>Quiz Settings</h3>
+      <div class="form-row">
+        <label>Number of MC questions: <span id="mcCountLabel">5</span></label>
+        <input type="range" id="mcCountSlider" min="1" max="50" value="5">
+      </div>
+      <div class="form-row" style="margin-top:8px;">
+        <label><input type="checkbox" id="includeWritten"> Include written questions</label>
+      </div>
+      <button class="btn" style="margin-top:12px;" onclick="startQuiz()">Start Quiz</button>
+    </div>
+    <div id="quizArea" class="hidden"></div>
+    <div id="quizResults" class="card hidden"></div>
+    <div class="card" id="quizHistoryCard" style="margin-top:16px;">
+      <h3>Quiz History</h3>
+      <div id="quizHistoryTable"></div>
+      <canvas id="quizChart"></canvas>
+    </div>
+  </div>
+
+  <!-- ── Flashcards ── -->
+  <div class="tab-panel" id="tab-flashcards">
+    <div class="topic-btns" id="fcTopics"></div>
+    <div id="fcDisplay" class="hidden">
+      <div class="fc-container">
+        <div class="fc-card" id="fcCard" onclick="flipCard()">
+          <div class="fc-face fc-front" id="fcFront"></div>
+          <div class="fc-face fc-back" id="fcBack"></div>
+        </div>
+      </div>
+      <div class="fc-nav">
+        <button class="btn-outline btn-sm" onclick="prevCard()">&#9664; Prev</button>
+        <span class="fc-counter" id="fcCounter"></span>
+        <button class="btn-outline btn-sm" onclick="nextCard()">Next &#9654;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Progress ── -->
+  <div class="tab-panel" id="tab-progress">
+    <div class="stat-grid" id="progressStats"></div>
+    <div class="card"><h3>Module Tracker</h3><div class="mod-grid" id="modTracker"></div></div>
+    <div class="card"><h3>Risk Analysis</h3><div id="riskList"></div></div>
+    <div class="card"><h3>Recommendations</h3><div id="recommendations"></div></div>
+  </div>
+
+  <!-- ── Grade Calc ── -->
+  <div class="tab-panel" id="tab-grades">
+    <div class="grade-layout">
+      <div class="card grade-calc-card">
+        <h3>Grade Calculator</h3>
+        <div id="gradeInputs"></div>
+      </div>
+      <div class="grade-right">
+        <div class="card">
+          <div class="grade-result" id="gradeResult">
+            <div class="empty-state">Enter scores to see your grade</div>
+          </div>
+        </div>
+        <div class="card">
+          <h3>What Do I Need on the Final?</h3>
+          <div id="finalNeeds"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Courses ── -->
+  <div class="tab-panel" id="tab-courses">
+    <div class="course-grid" id="courseGrid"></div>
+    <div class="card">
+      <h3>Add a Course</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
+        <button class="btn" onclick="showManualForm()">Add Manually</button>
+        <button class="btn-outline" onclick="showImportArea()">Import Syllabus</button>
+      </div>
+      <div id="importArea" class="hidden">
+        <div class="upload-area" id="uploadArea">
+          <div style="font-size:2rem;">&#128196;</div>
+          <p>Drag & drop a syllabus file here, or click to browse</p>
+          <p style="font-size:0.75rem;">.pdf, .docx, .txt, .json</p>
+          <input type="file" id="fileInput" accept=".pdf,.docx,.txt,.json" class="hidden">
+        </div>
+        <div id="uploadStatus"></div>
+      </div>
+      <div id="courseForm" class="hidden">
+        <div class="step-indicators" id="stepIndicators"></div>
+        <!-- Step 0: Course Info -->
+        <div class="form-step visible" id="formStep0">
+          <div class="section-title">Course Information</div>
+          <div class="form-row"><label>Course Code</label><input type="text" id="fCode" placeholder="ECO 114" style="text-transform:uppercase;"></div>
+          <div class="form-row"><label>Course Name</label><input type="text" id="fName" placeholder="Microeconomic Principles"></div>
+          <div class="form-row"><label>Instructor</label><input type="text" id="fInstructor" placeholder="Dr. Smith"></div>
+          <div class="form-row"><label>Semester</label><input type="text" id="fSemester" placeholder="Spring 2026"></div>
+          <div class="form-row"><label>Schedule</label><input type="text" id="fSchedule" placeholder="TF 9:35-10:50AM"></div>
+          <div class="form-row"><label>Location</label><input type="text" id="fLocation" placeholder="UNI 268"></div>
+          <div class="form-row"><label>Final Exam Date</label><input type="date" id="fFinalDate"></div>
+          <button class="btn" style="margin-top:12px;" onclick="goToFormStep(1)">Next &#9654;</button>
+        </div>
+        <!-- Step 1: Grade Weights -->
+        <div class="form-step" id="formStep1">
+          <div class="section-title">Grade Weights</div>
+          <div id="gwRows"></div>
+          <button class="btn-outline btn-sm" onclick="addGWRow()">+ Add Component</button>
+          <div style="margin-top:8px;color:var(--text-dim);font-size:0.82rem;">Total: <span id="gwTotal">0</span>%</div>
+          <div style="margin-top:12px;display:flex;gap:8px;">
+            <button class="btn-outline" onclick="goToFormStep(0)">&#9664; Back</button>
+            <button class="btn" onclick="goToFormStep(2)">Next &#9654;</button>
+          </div>
+        </div>
+        <!-- Step 2: Modules -->
+        <div class="form-step" id="formStep2">
+          <div class="section-title">Modules / Topics</div>
+          <div id="modRows"></div>
+          <button class="btn-outline btn-sm" onclick="addModRow()">+ Add Module</button>
+          <div style="margin-top:12px;display:flex;gap:8px;">
+            <button class="btn-outline" onclick="goToFormStep(1)">&#9664; Back</button>
+            <button class="btn" onclick="goToFormStep(3)">Next &#9654;</button>
+          </div>
+        </div>
+        <!-- Step 3: Deadlines -->
+        <div class="form-step" id="formStep3">
+          <div class="section-title">Deadlines</div>
+          <div id="dlRows"></div>
+          <button class="btn-outline btn-sm" onclick="addDLRow()">+ Add Deadline</button>
+          <div style="margin-top:12px;display:flex;gap:8px;">
+            <button class="btn-outline" onclick="goToFormStep(2)">&#9664; Back</button>
+            <button class="btn btn-green" onclick="saveCourse()">Save Course</button>
+          </div>
+        </div>
+      </div>
+      <div id="saveConfirm"></div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- ═══ Auto-Generate Banner ═══ -->
+<div id="autoGenBanner" class="hidden" style="position:fixed;top:0;left:0;right:0;z-index:9999;background:var(--surface);border-bottom:2px solid var(--accent);padding:10px 20px;text-align:center;color:var(--text);font-size:0.85rem;">
+  <span id="autoGenMsg">Generating study content...</span>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// GLOBALS
+// ═══════════════════════════════════════════════════════════════════
+const COURSE_COLORS = ["#6c5ce7","#00b894","#e17055","#74b9ff","#fdcb6e","#a29bfe","#55efc4","#fd79a8","#0984e3","#ffeaa7"]
+let activeCourse = null
+let activeContent = {}
+let activeDeadlines = []
+let activeModules = []
+let activeGradeWeights = []
+let currentQuizModule = null
+let currentFCModule = null
+let fcIndex = 0
+let quizAnswered = 0
+let quizCorrect = 0
+let quizTotalMC = 0
+let writtenCount = 0
+let writtenGraded = 0
+let writtenPoints = 0
+let quizHistory = []
+let gwRowCount = 0
+let modRowCount = 0
+let dlRowCount = 0
+let currentFormStep = 0
+let _dirtyTabs = {}
+let today = new Date()
+
+// ═══════════════════════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════════════════════
+function getAllCourses() { return JSON.parse(localStorage.getItem('syllabot_courses') || '[]') }
+function saveCourses(arr) { localStorage.setItem('syllabot_courses', JSON.stringify(arr)) }
+function getCourseContent(id) { return JSON.parse(localStorage.getItem('syllabot_content_'+id) || '{}') }
+function setCourseContent(id, c) { localStorage.setItem('syllabot_content_'+id, JSON.stringify(c)) }
+function getQuiz(mod) { return activeContent.quiz?.[mod] || [] }
+function getWritten(mod) { return activeContent.written?.[mod] || [] }
+function getFlashcards(mod) { return activeContent.flashcards?.[mod] || [] }
+
+function daysUntil(dateStr) {
+  let d = new Date(dateStr + 'T00:00:00')
+  let t = new Date(today.getFullYear(), today.getMonth(), today.getDate())
+  return Math.ceil((d - t) / 86400000)
+}
+
+function shuffleArray(arr) {
+  let a = [...arr]
+  for (let i = a.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
+function fmtDate(dateStr) {
+  let d = new Date(dateStr + 'T00:00:00')
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+}
+
+function deadlineBadge(dl) {
+  if (dl.type === 'exam') return `<span class="badge exam">EXAM</span>`
+  let days = daysUntil(dl.date)
+  if (days < 0) return `<span class="badge done">DONE</span>`
+  if (days <= 3) return `<span class="badge urgent">URGENT</span>`
+  if (days <= 7) return `<span class="badge soon">THIS WEEK</span>`
+  if (days <= 14) return `<span class="badge upcoming">UPCOMING</span>`
+  return `<span class="badge later">LATER</span>`
+}
+
+function actionVerb(type) {
+  const v = { exam: 'Study for', reading: 'Complete reading:', hw: 'Work on', project: 'Work on', other: 'Prepare for' }
+  return v[type] || 'Prepare for'
+}
+function actionTime(type) {
+  const t = { exam: '60-90 min', hw: '45-60 min', reading: '30-45 min', project: '45-60 min', other: '30-45 min' }
+  return t[type] || '30-45 min'
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// TAB SWITCHING
+// ═══════════════════════════════════════════════════════════════════
+const TAB_RENDERERS = {
+  planner: renderPlanner,
+  tutor: renderTutor,
+  quiz: renderQuizControls,
+  flashcards: renderFlashcardControls,
+  progress: renderProgress,
+  grades: renderGradeCalc,
+  courses: renderCourses
+}
+
+function switchTab(tab) {
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab))
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + tab))
+  if (_dirtyTabs[tab] && TAB_RENDERERS[tab]) {
+    TAB_RENDERERS[tab]()
+    _dirtyTabs[tab] = false
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// DASHBOARD
+// ═══════════════════════════════════════════════════════════════════
+function renderDashboard() {
+  if (!activeCourse) {
+    document.getElementById('statGrid').innerHTML = '<div class="empty-state" style="grid-column:1/-1;">No course loaded. Go to Courses tab to add one.</div>'
+    document.getElementById('deadlinesTable').innerHTML = ''
+    document.getElementById('actionsList').innerHTML = ''
+    document.getElementById('timeline').innerHTML = ''
+    document.getElementById('weightBars').innerHTML = ''
+    return
+  }
+  let c = activeCourse
+  // Days to final
+  let daysToFinal = c.finalExamDate ? daysUntil(c.finalExamDate) : '—'
+  let finalColor = daysToFinal <= 7 ? 'var(--red)' : daysToFinal <= 21 ? 'var(--yellow)' : 'var(--green)'
+  // Current unit/module
+  let curMod = activeModules.find(m => m.status === 'current') || activeModules[0] || {}
+  let curUnit = curMod.unit || curMod.num || '—'
+  let curModTopic = curMod.topic || '—'
+  // Remaining weight
+  let remaining = activeGradeWeights.reduce((s, w) => s + w.weight, 0)
+
+  document.getElementById('statGrid').innerHTML = `
+    <div class="stat-card"><div class="stat-value" style="color:${finalColor}">${daysToFinal}</div><div class="stat-label">Days to Final</div></div>
+    <div class="stat-card"><div class="stat-value">${curUnit}</div><div class="stat-label">Current Unit</div></div>
+    <div class="stat-card"><div class="stat-value">${remaining}%</div><div class="stat-label">Grade Weight Remaining</div></div>
+    <div class="stat-card"><div class="stat-value" style="font-size:1rem;">${curModTopic}</div><div class="stat-label">Current Module</div></div>
+  `
+
+  // Split deadlines into completed and upcoming
+  let sorted = [...activeDeadlines].sort((a, b) => a.date.localeCompare(b.date))
+  let completed = sorted.filter(dl => dl.completed || daysUntil(dl.date) < 0)
+  let upcomingDl = sorted.filter(dl => !dl.completed && daysUntil(dl.date) >= 0)
+
+  // Completed bar (collapsible)
+  if (completed.length > 0) {
+    let completedRows = completed.map(dl =>
+      `<tr><td>${dl.name}</td><td>${fmtDate(dl.date)}</td><td>${deadlineBadge(dl)}</td></tr>`
+    ).join('')
+    document.getElementById('completedBar').innerHTML = `
+      <div class="completed-bar" onclick="this.classList.toggle('open')">
+        <div class="completed-bar-header">
+          <div class="cb-left">
+            <span class="cb-label">&#10003; Completed</span>
+            <span class="cb-count">${completed.length}</span>
+          </div>
+          <span class="cb-arrow">&#9660;</span>
+        </div>
+        <div class="completed-bar-body">
+          <div class="table-wrap"><table><thead><tr><th>Assignment</th><th>Date</th><th>Status</th></tr></thead><tbody>${completedRows}</tbody></table></div>
+        </div>
+      </div>`
+  } else {
+    document.getElementById('completedBar').innerHTML = ''
+  }
+
+  // Upcoming deadlines table
+  let rows = upcomingDl.map(dl => {
+    let days = daysUntil(dl.date)
+    let dayLabel = days === 0 ? 'Today!' : days === 1 ? '1 day' : days + ' days'
+    return `<tr><td>${dl.name}</td><td>${fmtDate(dl.date)} <span style="color:var(--text-dim);font-size:0.78rem;">(${dayLabel})</span></td><td>${deadlineBadge(dl)}</td></tr>`
+  }).join('')
+  document.getElementById('deadlinesTable').innerHTML = rows ? `<div class="table-wrap"><table><thead><tr><th>Assignment</th><th>Due Date</th><th>Status</th></tr></thead><tbody>${rows}</tbody></table></div>` : '<div class="empty-state">No upcoming deadlines.</div>'
+
+  // Do right now — show all not-yet-past-due items, keep checked ones visible
+  let doNow = sorted.filter(dl => daysUntil(dl.date) >= 0).slice(0, 5)
+  document.getElementById('actionsList').innerHTML = doNow.length ? doNow.map((dl, i) => `
+    <div class="checklist-item${dl.completed ? ' checked' : ''}" id="action-${i}">
+      <input type="checkbox" ${dl.completed ? 'checked' : ''} onchange="markCompleted('${dl.name.replace(/'/g,"\\'")}', '${dl.date}', this.checked)">
+      <span>${actionVerb(dl.type)} <strong>${dl.name}</strong></span>
+      <span class="checklist-time">${actionTime(dl.type)}</span>
+    </div>
+  `).join('') : '<div class="empty-state">Nothing due soon!</div>'
+
+  // Timeline
+  if (sorted.length > 0) {
+    let earliest = new Date(sorted[0].date + 'T00:00:00')
+    let latest = new Date(sorted[sorted.length - 1].date + 'T00:00:00')
+    latest.setDate(latest.getDate() + 7)
+    let totalWeeks = Math.max(1, Math.ceil((latest - earliest) / (7 * 86400000)))
+    let nowWeek = Math.max(0, Math.floor((today - earliest) / (7 * 86400000)))
+    let blocks = ''
+    for (let i = 0; i < totalWeeks; i++) {
+      let cls = i < nowWeek ? 'past' : i === nowWeek ? 'current-week' : 'future'
+      blocks += `<div class="timeline-week ${cls}" title="Week ${i + 1}"></div>`
+    }
+    document.getElementById('timeline').innerHTML = `<div class="timeline-bar">${blocks}</div><div style="text-align:center;color:var(--text-dim);font-size:0.82rem;">Week ${nowWeek + 1} of ${totalWeeks}</div>`
+  } else {
+    document.getElementById('timeline').innerHTML = '<div class="empty-state">No deadlines to build timeline.</div>'
+  }
+
+  // Weight bars
+  let barColors = ['#6c5ce7','#00b894','#e17055','#74b9ff','#fdcb6e','#a29bfe']
+  document.getElementById('weightBars').innerHTML = activeGradeWeights.map((w, i) => {
+    let color = barColors[i % barColors.length]
+    let wLow = w.name.toLowerCase()
+    let wWords = wLow.split(/\s+/)
+    // Find all deadlines that match this weight category by name, type, or keyword overlap
+    let matched = activeDeadlines.filter(dl => {
+      let dlLow = dl.name.toLowerCase()
+      let dlType = (dl.type || '').toLowerCase()
+      if (dlLow.includes(wLow) || wLow.includes(dlLow)) return true
+      if (dlType && (wLow.includes(dlType) || dlType.includes(wLow))) return true
+      // Match if any significant word from the weight name appears in the deadline
+      return wWords.some(word => word.length > 3 && (dlLow.includes(word) || dlType.includes(word)))
+    })
+    // "Graded" if there are matching deadlines and the latest one's due date has passed
+    let graded = false
+    if (matched.length > 0) {
+      let latest = matched.sort((a, b) => b.date.localeCompare(a.date))[0]
+      graded = daysUntil(latest.date) < 0
+    }
+    let badge = graded
+      ? `<span class="badge" style="background:rgba(0,184,148,0.15);color:var(--green);">Graded</span>`
+      : `<span class="badge" style="background:rgba(108,92,231,0.15);color:var(--accent-light);">Active</span>`
+    return `<div class="weight-bar-wrap">
+      <div class="weight-bar-label"><span>${w.name}</span><span>${w.weight}% ${badge}</span></div>
+      <div class="weight-bar-track"><div class="weight-bar-fill" style="width:${w.weight}%;background:${color};"></div></div>
+    </div>`
+  }).join('') || '<div class="empty-state">No grade weights defined.</div>'
+}
+
+function markCompleted(name, date, checked) {
+  if (!activeCourse) return
+  let dl = activeCourse.deadlines.find(d => d.name === name && d.date === date)
+  if (dl) {
+    dl.completed = checked
+    activeDeadlines = activeCourse.deadlines
+    let courses = getAllCourses()
+    let ci = courses.findIndex(c => c.id === activeCourse.id)
+    if (ci >= 0) { courses[ci] = activeCourse; saveCourses(courses) }
+    renderDashboard()
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// PLANNER
+// ═══════════════════════════════════════════════════════════════════
+function renderPlanner() {
+  if (!activeCourse) return
+  let now = new Date(today.getFullYear(), today.getMonth(), today.getDate())
+  let dayOfWeek = now.getDay()
+  let weekStart = new Date(now); weekStart.setDate(now.getDate() - dayOfWeek)
+  let nextWeekStart = new Date(weekStart); nextWeekStart.setDate(weekStart.getDate() + 7)
+  let nextWeekEnd = new Date(weekStart); nextWeekEnd.setDate(weekStart.getDate() + 14)
+
+  let sorted = [...activeDeadlines].sort((a, b) => a.date.localeCompare(b.date))
+
+  function renderItems(items) {
+    if (!items.length) return '<div class="empty-state">Nothing scheduled.</div>'
+    return items.map(dl => {
+      let days = daysUntil(dl.date)
+      let dayLabel = days === 0 ? '<strong style="color:var(--yellow);">Today!</strong>' : `${days} day${days !== 1 ? 's' : ''} away`
+      return `<div style="padding:8px 0;border-bottom:1px solid var(--border);">${fmtDate(dl.date)} <span style="color:var(--text-dim);font-size:0.78rem;">(${dayLabel})</span> — ${actionVerb(dl.type)} <strong>${dl.name}</strong></div>`
+    }).join('')
+  }
+
+  let active = sorted.filter(dl => !dl.completed)
+  let thisWeek = active.filter(dl => { let d = new Date(dl.date+'T00:00:00'); return d >= weekStart && d < nextWeekStart })
+  let nextWeek = active.filter(dl => { let d = new Date(dl.date+'T00:00:00'); return d >= nextWeekStart && d < nextWeekEnd })
+  let future = active.filter(dl => daysUntil(dl.date) >= 0)
+
+  document.getElementById('plannerThisWeek').innerHTML = renderItems(thisWeek)
+  document.getElementById('plannerNextWeek').innerHTML = renderItems(nextWeek)
+  document.getElementById('plannerFull').innerHTML = renderItems(future)
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// TUTOR
+// ═══════════════════════════════════════════════════════════════════
+function isExamTopic(t) { return /\bexam\b/i.test(t) }
+
+function renderTutor() {
+  let topics = Object.keys(activeContent.tutor || {}).filter(t => !isExamTopic(t))
+  document.getElementById('tutorTopics').innerHTML = topics.map(t => `<button class="topic-btn" onclick="showTutor('${t.replace(/'/g,"\\'")}')">${t}</button>`).join('')
+  if (!topics.length) {
+    document.getElementById('tutorTopics').innerHTML = '<div class="empty-state">Generating tutor content...</div>'
+    autoGenerateContent()
+    return
+  }
+  document.getElementById('tutorContent').innerHTML = '<div class="empty-state">Select a module above to view study material.</div>'
+}
+
+function showTutor(mod) {
+  document.querySelectorAll('#tutorTopics .topic-btn').forEach(b => b.classList.toggle('active', b.textContent === mod))
+  let html = activeContent.tutor?.[mod] || '<div class="empty-state">No content for this module.</div>'
+  document.getElementById('tutorContent').innerHTML = `<div class="fade-in">${html}</div>`
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// QUIZ
+// ═══════════════════════════════════════════════════════════════════
+function renderQuizControls() {
+  let topics = Object.keys(activeContent.quiz || {}).filter(t => !isExamTopic(t))
+  document.getElementById('quizTopics').innerHTML = topics.map(t => `<button class="topic-btn" onclick="selectQuizModule('${t.replace(/'/g,"\\'")}')">${t}</button>`).join('')
+  if (!topics.length) {
+    document.getElementById('quizTopics').innerHTML = '<div class="empty-state">Generating quiz content...</div>'
+    autoGenerateContent()
+    return
+  }
+  document.getElementById('quizSettings').classList.add('hidden')
+  document.getElementById('quizArea').classList.add('hidden')
+  document.getElementById('quizResults').classList.add('hidden')
+  renderQuizHistory()
+}
+
+function selectQuizModule(mod) {
+  currentQuizModule = mod
+  document.querySelectorAll('#quizTopics .topic-btn').forEach(b => b.classList.toggle('active', b.textContent === mod))
+  let pool = getQuiz(mod)
+  let max = Math.min(50, pool.length)
+  let slider = document.getElementById('mcCountSlider')
+  slider.max = max
+  slider.value = Math.min(5, max)
+  document.getElementById('mcCountLabel').textContent = slider.value
+  document.getElementById('quizSettings').classList.remove('hidden')
+  document.getElementById('quizArea').classList.add('hidden')
+  document.getElementById('quizResults').classList.add('hidden')
+}
+
+document.addEventListener('input', e => {
+  if (e.target.id === 'mcCountSlider') document.getElementById('mcCountLabel').textContent = e.target.value
+})
+
+function startQuiz() {
+  let mod = currentQuizModule
+  let pool = getQuiz(mod)
+  let count = parseInt(document.getElementById('mcCountSlider').value)
+  let includeWritten = document.getElementById('includeWritten').checked
+
+  // Shuffle and pick
+  let selected = shuffleArray(pool).slice(0, count)
+  // Shuffle options within each question
+  selected = selected.map(q => {
+    let correctAns = q.opts[q.correct]
+    let shuffled = shuffleArray([...q.opts])
+    return { ...q, opts: shuffled, correct: shuffled.indexOf(correctAns) }
+  })
+
+  quizAnswered = 0; quizCorrect = 0; quizTotalMC = selected.length
+  writtenCount = 0; writtenGraded = 0; writtenPoints = 0
+
+  let html = '<div class="fade-in">'
+  selected.forEach((q, i) => {
+    html += `<div class="card" style="margin-bottom:12px;">
+      <div style="font-weight:600;margin-bottom:10px;">Q${i + 1}. ${q.q}</div>
+      ${q.opts.map((opt, j) => `<button class="quiz-opt" onclick="answerQuiz(${i},${j},${q.correct})" id="qopt-${i}-${j}">${String.fromCharCode(65 + j)}. ${opt}</button>`).join('')}
+      <div class="quiz-explain" id="qexp-${i}">${q.explain || ''}</div>
+    </div>`
+  })
+
+  // Written questions
+  if (includeWritten) {
+    let wqs = getWritten(mod)
+    writtenCount = wqs.length
+    wqs.forEach((wq, i) => {
+      html += `<div class="card written-block" style="margin-bottom:12px;">
+        <div style="font-weight:600;margin-bottom:10px;">Written ${i + 1}. ${wq.q}</div>
+        <textarea id="written-${i}" placeholder="Type your answer..."></textarea>
+        <button class="btn btn-sm" style="margin-top:8px;" onclick="gradeWritten(${i})">Submit Answer</button>
+        <div class="written-feedback hidden" id="wfeedback-${i}"></div>
+      </div>`
+    })
+  }
+  html += '</div>'
+
+  document.getElementById('quizSettings').classList.add('hidden')
+  document.getElementById('quizArea').innerHTML = html
+  document.getElementById('quizArea').classList.remove('hidden')
+  document.getElementById('quizResults').classList.add('hidden')
+}
+
+function answerQuiz(qi, chosen, correct) {
+  // Lock all options for this question
+  for (let j = 0; j < 4; j++) {
+    let btn = document.getElementById(`qopt-${qi}-${j}`)
+    if (!btn) continue
+    btn.classList.add('locked')
+    if (j === correct) btn.classList.add(j === chosen ? 'correct' : 'reveal-correct')
+    else if (j === chosen) btn.classList.add('incorrect')
+  }
+  document.getElementById(`qexp-${qi}`).classList.add('show')
+  quizAnswered++
+  if (chosen === correct) quizCorrect++
+  checkAllDone()
+}
+
+function gradeWritten(idx) {
+  let wqs = getWritten(currentQuizModule)
+  let wq = wqs[idx]
+  let answer = document.getElementById(`written-${idx}`).value.trim()
+  if (!answer) return
+
+  // Keyword matching (45%)
+  let foundKw = [], missingKw = []
+  wq.keywords.forEach(k => {
+    if (answer.toLowerCase().includes(k.toLowerCase())) foundKw.push(k)
+    else missingKw.push(k)
+  })
+  let kwRatio = wq.keywords.length > 0 ? foundKw.length / wq.keywords.length : 0
+
+  // Reasoning patterns (40%)
+  let patterns = [
+    /because|since|due to|as a result|therefore|this means|this leads to/i,
+    /causes?|effects?|impacts?|results? in|leads? to/i,
+    /for example|for instance|such as|e\.g\./i,
+    /compared to|whereas|while|unlike|on the other hand|in contrast/i,
+    /increases?|decreases?|shifts?|changes?|moves?/i,
+    /relationship between|connection between|linked to|related to/i
+  ]
+  let hits = patterns.filter(p => p.test(answer)).length
+  let reasoningScore = Math.min(hits / 3, 1.0)
+
+  // Length (15%)
+  let words = answer.split(/\s+/).length
+  let lengthScore = words >= 20 ? 1.0 : words >= 12 ? 0.8 : words >= 6 ? 0.5 : 0.2
+
+  let finalScore = Math.round((kwRatio * 0.45 + reasoningScore * 0.40 + lengthScore * 0.15) * 100)
+
+  // Grade label
+  let label, color
+  if (finalScore >= 90) { label = 'Excellent'; color = 'var(--green)' }
+  else if (finalScore >= 75) { label = 'Good'; color = 'var(--blue)' }
+  else if (finalScore >= 60) { label = 'Fair'; color = 'var(--yellow)' }
+  else if (finalScore >= 40) { label = 'Needs Work'; color = 'var(--orange)' }
+  else { label = 'Insufficient'; color = 'var(--red)' }
+
+  let fb = document.getElementById(`wfeedback-${idx}`)
+  fb.classList.remove('hidden')
+  fb.innerHTML = `
+    <div style="margin-bottom:8px;"><span class="badge" style="background:${color}33;color:${color};font-size:0.85rem;padding:4px 12px;">${finalScore}% — ${label}</span></div>
+    <div style="margin-bottom:6px;font-size:0.82rem;"><strong>Concepts covered:</strong> ${foundKw.map(k => `<span class="keyword-tag found">${k}</span>`).join('') || 'None'}</div>
+    <div style="margin-bottom:6px;font-size:0.82rem;"><strong>Missing concepts:</strong> ${missingKw.map(k => `<span class="keyword-tag missing">${k}</span>`).join('') || 'None!'}</div>
+    <div style="margin-bottom:6px;font-size:0.82rem;"><strong>Reasoning depth:</strong> ${hits}/6 patterns detected</div>
+    <div style="font-size:0.82rem;color:var(--text-dim);margin-top:8px;"><strong>Model answer:</strong> ${wq.idealAnswer || ''}</div>
+  `
+  writtenGraded++
+  writtenPoints += finalScore
+  // Disable submit button
+  document.querySelector(`#wfeedback-${idx}`).previousElementSibling.disabled = true
+  checkAllDone()
+}
+
+function checkAllDone() {
+  if (quizAnswered < quizTotalMC) return
+  if (writtenGraded < writtenCount) return
+
+  let mcPct = quizTotalMC > 0 ? (quizCorrect / quizTotalMC) * 100 : 0
+  let writtenAvg = writtenCount > 0 ? writtenPoints / writtenCount : 0
+  let combined = (mcPct * quizTotalMC + writtenAvg * writtenCount) / (quizTotalMC + writtenCount)
+  combined = Math.round(combined)
+
+  // Save to history
+  quizHistory.push({
+    module: currentQuizModule,
+    score: quizCorrect,
+    total: quizTotalMC,
+    written: Math.round(writtenAvg),
+    pct: combined,
+    date: new Date().toISOString()
+  })
+  localStorage.setItem(`syllabot_${activeCourse.id}_quizHistory`, JSON.stringify(quizHistory))
+
+  // Show results
+  let res = document.getElementById('quizResults')
+  res.classList.remove('hidden')
+  res.innerHTML = `<div class="fade-in" style="text-align:center;padding:20px;">
+    <div style="font-size:2.5rem;font-weight:700;color:${combined >= 75 ? 'var(--green)' : combined >= 50 ? 'var(--yellow)' : 'var(--red)'};">${combined}%</div>
+    <div style="color:var(--text-dim);margin-top:4px;">Combined Score</div>
+    <div style="margin-top:12px;font-size:0.85rem;">MC: ${quizCorrect}/${quizTotalMC} (${Math.round(mcPct)}%)${writtenCount > 0 ? ` | Written: ${Math.round(writtenAvg)}%` : ''}</div>
+    <button class="btn" style="margin-top:16px;" onclick="renderQuizControls()">Try Another Quiz</button>
+  </div>`
+
+  renderQuizHistory()
+}
+
+function renderQuizHistory() {
+  let table = document.getElementById('quizHistoryTable')
+  if (!quizHistory.length) {
+    table.innerHTML = '<div class="empty-state">No quiz attempts yet.</div>'
+    return
+  }
+  let rows = quizHistory.map((h, i) => `<tr>
+    <td>${i + 1}</td>
+    <td style="font-size:0.82rem;">${h.module}</td>
+    <td>${h.score}/${h.total}</td>
+    <td>${h.written || '—'}</td>
+    <td style="color:${h.pct >= 75 ? 'var(--green)' : h.pct >= 50 ? 'var(--yellow)' : 'var(--red)'};">${h.pct}%</td>
+    <td style="font-size:0.78rem;color:var(--text-dim);">${new Date(h.date).toLocaleDateString()}</td>
+  </tr>`).join('')
+  table.innerHTML = `<div class="table-wrap"><table><thead><tr><th>#</th><th>Module</th><th>MC</th><th>Written</th><th>Score</th><th>Date</th></tr></thead><tbody>${rows}</tbody></table></div>`
+  drawQuizChart()
+}
+
+function drawQuizChart() {
+  let canvas = document.getElementById('quizChart')
+  if (!canvas || !quizHistory.length) return
+  let ctx = canvas.getContext('2d')
+  let rect = canvas.parentElement.getBoundingClientRect()
+  canvas.width = rect.width - 40
+  canvas.height = 200
+  let w = canvas.width, h = canvas.height
+  let padL = 40, padR = 20, padT = 20, padB = 30
+  let plotW = w - padL - padR, plotH = h - padT - padB
+
+  ctx.clearRect(0, 0, w, h)
+
+  // Grid
+  ctx.strokeStyle = '#2e3346'; ctx.lineWidth = 1; ctx.setLineDash([4, 4])
+  ctx.fillStyle = '#8b8fa3'; ctx.font = '11px Segoe UI'
+  for (let pct of [25, 50, 75, 100]) {
+    let y = padT + plotH - (pct / 100) * plotH
+    ctx.beginPath(); ctx.moveTo(padL, y); ctx.lineTo(padL + plotW, y); ctx.stroke()
+    ctx.fillText(pct + '%', 4, y + 4)
+  }
+  ctx.setLineDash([])
+
+  // Data
+  let pts = quizHistory.map((h, i) => ({
+    x: padL + (i / Math.max(1, quizHistory.length - 1)) * plotW,
+    y: padT + plotH - (h.pct / 100) * plotH,
+    pct: h.pct
+  }))
+  if (pts.length === 1) pts[0].x = padL + plotW / 2
+
+  // Area fill
+  let grad = ctx.createLinearGradient(0, padT, 0, padT + plotH)
+  grad.addColorStop(0, 'rgba(108,92,231,0.3)')
+  grad.addColorStop(1, 'rgba(108,92,231,0)')
+  ctx.beginPath(); ctx.moveTo(pts[0].x, padT + plotH)
+  pts.forEach(p => ctx.lineTo(p.x, p.y))
+  ctx.lineTo(pts[pts.length - 1].x, padT + plotH); ctx.closePath()
+  ctx.fillStyle = grad; ctx.fill()
+
+  // Line
+  ctx.beginPath(); ctx.strokeStyle = '#6c5ce7'; ctx.lineWidth = 2
+  pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y))
+  ctx.stroke()
+
+  // Dots
+  pts.forEach(p => {
+    ctx.beginPath(); ctx.arc(p.x, p.y, 5, 0, Math.PI * 2)
+    ctx.fillStyle = p.pct >= 75 ? '#00b894' : p.pct >= 50 ? '#fdcb6e' : '#e17055'
+    ctx.fill()
+  })
+
+  // X labels
+  ctx.fillStyle = '#8b8fa3'; ctx.font = '11px Segoe UI'; ctx.textAlign = 'center'
+  pts.forEach((p, i) => ctx.fillText(i + 1, p.x, h - 6))
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// FLASHCARDS
+// ═══════════════════════════════════════════════════════════════════
+function renderFlashcardControls() {
+  let topics = Object.keys(activeContent.flashcards || {}).filter(t => !isExamTopic(t))
+  document.getElementById('fcTopics').innerHTML = topics.map(t => `<button class="topic-btn" onclick="selectFCModule('${t.replace(/'/g,"\\'")}')">${t}</button>`).join('')
+  if (!topics.length) {
+    document.getElementById('fcTopics').innerHTML = '<div class="empty-state">Generating flashcards...</div>'
+    autoGenerateContent()
+    return
+  }
+  document.getElementById('fcDisplay').classList.add('hidden')
+}
+
+function selectFCModule(mod) {
+  currentFCModule = mod; fcIndex = 0
+  document.querySelectorAll('#fcTopics .topic-btn').forEach(b => b.classList.toggle('active', b.textContent === mod))
+  document.getElementById('fcDisplay').classList.remove('hidden')
+  renderFlashcard()
+}
+
+function renderFlashcard() {
+  let cards = getFlashcards(currentFCModule)
+  if (!cards.length) return
+  let card = cards[fcIndex]
+  document.getElementById('fcFront').textContent = card.front
+  document.getElementById('fcBack').textContent = card.back
+  document.getElementById('fcCard').classList.remove('flipped')
+  document.getElementById('fcCounter').textContent = `Card ${fcIndex + 1} of ${cards.length}`
+}
+
+function flipCard() { document.getElementById('fcCard').classList.toggle('flipped') }
+function prevCard() { let cards = getFlashcards(currentFCModule); if (fcIndex > 0) { fcIndex--; renderFlashcard() } }
+function nextCard() { let cards = getFlashcards(currentFCModule); if (fcIndex < cards.length - 1) { fcIndex++; renderFlashcard() } }
+
+// ═══════════════════════════════════════════════════════════════════
+// PROGRESS
+// ═══════════════════════════════════════════════════════════════════
+function renderProgress() {
+  if (!activeCourse) return
+  let total = activeModules.length
+  let done = activeModules.filter(m => localStorage.getItem(`syllabot_${activeCourse.id}_mod-${m.num}`) === 'done' || m.status === 'done').length
+  let pct = total > 0 ? Math.round(done / total * 100) : 0
+  let exams = activeDeadlines.filter(d => d.type === 'exam')
+  let examsDone = exams.filter(d => daysUntil(d.date) < 0).length
+
+  document.getElementById('progressStats').innerHTML = `
+    <div class="stat-card"><div class="stat-value">${done}/${total}</div><div class="stat-label">Modules Done</div></div>
+    <div class="stat-card"><div class="stat-value">${pct}%</div><div class="stat-label">Complete</div></div>
+    <div class="stat-card"><div class="stat-value">${examsDone}/${exams.length}</div><div class="stat-label">Exams Taken</div></div>
+    <div class="stat-card"><div class="stat-value">${quizHistory.length}</div><div class="stat-label">Quizzes Taken</div></div>
+  `
+
+  // Module tracker
+  document.getElementById('modTracker').innerHTML = activeModules.map(m => {
+    let isDone = localStorage.getItem(`syllabot_${activeCourse.id}_mod-${m.num}`) === 'done' || m.status === 'done'
+    let cls = isDone ? 'done' : m.status === 'current' ? 'current' : 'upcoming-mod'
+    return `<div class="mod-circle ${cls}" onclick="toggleModule(${m.num})" title="Module ${m.num}: ${m.topic}${m.reading ? ' ('+m.reading+')' : ''}">${m.num}</div>`
+  }).join('') || '<div class="empty-state">No modules.</div>'
+
+  // Risk analysis
+  let upcoming = [...activeDeadlines].filter(d => daysUntil(d.date) >= 0).sort((a, b) => a.date.localeCompare(b.date)).slice(0, 5)
+  document.getElementById('riskList').innerHTML = upcoming.map(dl => {
+    let days = daysUntil(dl.date)
+    let level, color
+    if (days <= 3) { level = 'URGENT'; color = 'var(--red)' }
+    else if (days <= 10) { level = 'HIGH RISK'; color = 'var(--red)' }
+    else if (days <= 21) { level = 'MEDIUM'; color = 'var(--yellow)' }
+    else { level = 'LOW'; color = 'var(--green)' }
+    return `<div class="risk-item"><div class="risk-dot" style="background:${color};"></div><div><strong>${dl.name}</strong> — ${days} day${days !== 1 ? 's' : ''} <span class="badge" style="background:${color}22;color:${color};">${level}</span></div></div>`
+  }).join('') || '<div class="empty-state">No upcoming deadlines.</div>'
+
+  // Recommendations
+  let recs = []
+  if (Object.keys(activeContent.flashcards || {}).length) recs.push('Use flashcards to reinforce key terms before exams.')
+  if (Object.keys(activeContent.quiz || {}).length) recs.push('Take practice quizzes regularly to identify weak areas.')
+  if (pct >= 50) recs.push('Great progress! You\'re past the halfway mark.')
+  if (pct < 30) recs.push('Consider setting aside dedicated study blocks to catch up on modules.')
+  document.getElementById('recommendations').innerHTML = recs.map(r => `<div style="padding:6px 0;border-bottom:1px solid var(--border);">&#10148; ${r}</div>`).join('') || '<div class="empty-state">Complete some modules to get recommendations.</div>'
+}
+
+function toggleModule(num) {
+  let key = `syllabot_${activeCourse.id}_mod-${num}`
+  if (localStorage.getItem(key) === 'done') localStorage.removeItem(key)
+  else localStorage.setItem(key, 'done')
+  renderProgress()
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// GRADE CALCULATOR
+// ═══════════════════════════════════════════════════════════════════
+function renderGradeCalc() {
+  if (!activeCourse) return
+  document.getElementById('gradeInputs').innerHTML = activeGradeWeights.map(w =>
+    `<div class="grade-input-row">
+      <label>${w.name}</label>
+      <input type="number" min="0" max="100" placeholder="—" oninput="calcGrade()" id="grade-${w.id}">
+      <div class="weight-badge">${w.weight}%</div>
+    </div>`
+  ).join('') || '<div class="empty-state">No grade weights defined.</div>'
+  document.getElementById('gradeResult').innerHTML = ''
+  document.getElementById('finalNeeds').innerHTML = ''
+}
+
+function calcGrade() {
+  let weighted = 0, weightUsed = 0
+  activeGradeWeights.forEach(w => {
+    let el = document.getElementById(`grade-${w.id}`)
+    if (el && el.value !== '') {
+      weighted += parseFloat(el.value) * w.weight / 100
+      weightUsed += w.weight
+    }
+  })
+  if (weightUsed === 0) { document.getElementById('gradeResult').innerHTML = ''; return }
+  let pct = weighted / weightUsed * 100
+  let letter
+  if (pct >= 93) letter = 'A'
+  else if (pct >= 90) letter = 'A-'
+  else if (pct >= 86) letter = 'B+'
+  else if (pct >= 83) letter = 'B'
+  else if (pct >= 80) letter = 'B-'
+  else if (pct >= 76) letter = 'C+'
+  else if (pct >= 73) letter = 'C'
+  else if (pct >= 70) letter = 'C-'
+  else letter = 'F'
+
+  let color = pct >= 80 ? 'var(--green)' : pct >= 70 ? 'var(--yellow)' : 'var(--red)'
+  document.getElementById('gradeResult').innerHTML = `
+    <div class="grade-letter" style="color:${color};">${letter}</div>
+    <div class="grade-pct">${pct.toFixed(1)}%</div>
+    <div style="color:var(--text-dim);font-size:0.82rem;margin-top:4px;">Based on ${weightUsed}% of total grade</div>
+  `
+
+  // What do I need on the final?
+  let finalW = activeGradeWeights.find(w => /final/i.test(w.name))
+  if (!finalW) { document.getElementById('finalNeeds').innerHTML = '<div class="empty-state">No grade component with "final" in the name.</div>'; return }
+
+  let currentTotal = 0
+  activeGradeWeights.forEach(w => {
+    if (w.id === finalW.id) return
+    let el = document.getElementById(`grade-${w.id}`)
+    if (el && el.value !== '') currentTotal += parseFloat(el.value) * w.weight / 100
+  })
+
+  let targets = [{ name: 'A', min: 93 }, { name: 'B+', min: 86 }, { name: 'B', min: 83 }, { name: 'C+', min: 76 }, { name: 'C', min: 73 }]
+  document.getElementById('finalNeeds').innerHTML = '<div class="final-needs">' + targets.map(t => {
+    let needed = (t.min - currentTotal) / (finalW.weight / 100)
+    let display, style
+    if (currentTotal >= t.min) { display = 'Already achieved!'; style = 'color:var(--green);' }
+    else if (needed > 100) { display = 'Not possible'; style = 'color:var(--red);' }
+    else { display = needed.toFixed(1) + '%'; style = needed > 90 ? 'color:var(--yellow);' : '' }
+    return `<div class="final-needs-row"><span>For a <strong>${t.name}</strong>:</span><span style="${style}">${display}</span></div>`
+  }).join('') + '</div>'
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// COURSES
+// ═══════════════════════════════════════════════════════════════════
+function renderCourses() {
+  let courses = getAllCourses()
+  document.getElementById('courseGrid').innerHTML = courses.length ? courses.map(c => `
+    <div class="course-card ${activeCourse && activeCourse.id === c.id ? 'active-course' : ''}">
+      <div style="margin-bottom:8px;"><span class="course-color-dot" style="background:${c.color};"></span><strong style="font-size:1.1rem;">${c.code}</strong></div>
+      <div style="margin-bottom:4px;">${c.name}</div>
+      <div style="font-size:0.82rem;color:var(--text-dim);">
+        ${c.instructor ? c.instructor + '<br>' : ''}
+        ${c.schedule || ''} ${c.location ? '— ' + c.location : ''}<br>
+        ${c.semester || ''}<br>
+        ${(c.modules || []).length} modules | ${(c.deadlines || []).length} deadlines
+      </div>
+      <div style="margin-top:12px;display:flex;gap:8px;">
+        ${activeCourse && activeCourse.id === c.id ? '<span class="badge done">ACTIVE</span>' : `<button class="btn btn-sm" onclick="switchCourse('${c.id}')">Switch</button>`}
+        <button class="btn btn-sm btn-danger" onclick="deleteCourse('${c.id}')">Delete</button>
+      </div>
+    </div>
+  `).join('') : '<div class="empty-state" style="grid-column:1/-1;">No courses yet. Add one below!</div>'
+}
+
+function switchCourse(id) {
+  localStorage.setItem('syllabot_activeCourse', id)
+  loadActiveCourse()
+  switchTab('dashboard')
+}
+
+function deleteCourse(id) {
+  if (!confirm('Delete this course and all its data?')) return
+  // Find the course before removing so we can clean up module keys
+  let courses = getAllCourses()
+  let course = courses.find(c => c.id === id)
+  courses = courses.filter(c => c.id !== id)
+  saveCourses(courses)
+  // Remove all localStorage keys for this course
+  localStorage.removeItem('syllabot_content_' + id)
+  localStorage.removeItem(`syllabot_${id}_quizHistory`)
+  if (course && course.modules) {
+    course.modules.forEach(m => localStorage.removeItem(`syllabot_${id}_mod-${m.num}`))
+  }
+  // Sweep any remaining keys with this course id prefix
+  let prefix = `syllabot_${id}_`
+  Object.keys(localStorage).forEach(k => {
+    if (k.startsWith(prefix)) localStorage.removeItem(k)
+  })
+  if (activeCourse && activeCourse.id === id) {
+    localStorage.removeItem('syllabot_activeCourse')
+    loadActiveCourse()
+  }
+  renderCourses()
+}
+
+// ── Show/Hide Form Sections ──
+function showManualForm() {
+  document.getElementById('courseForm').classList.remove('hidden')
+  document.getElementById('importArea').classList.add('hidden')
+  currentFormStep = 0; gwRowCount = 0; modRowCount = 0; dlRowCount = 0
+  renderStepIndicators()
+  goToFormStep(0)
+  // Reset form
+  ;['fCode','fName','fInstructor','fSemester','fSchedule','fLocation','fFinalDate'].forEach(id => { let e = document.getElementById(id); if (e) e.value = '' })
+  document.getElementById('gwRows').innerHTML = ''
+  document.getElementById('modRows').innerHTML = ''
+  document.getElementById('dlRows').innerHTML = ''
+  document.getElementById('gwTotal').textContent = '0'
+  document.getElementById('saveConfirm').innerHTML = ''
+}
+
+function showImportArea() {
+  document.getElementById('importArea').classList.remove('hidden')
+  // Don't hide the form — after import, the form will be shown with auto-filled data
+}
+
+// ── Step Wizard ──
+function renderStepIndicators() {
+  document.getElementById('stepIndicators').innerHTML = ['Info', 'Grades', 'Modules', 'Deadlines'].map((label, i) =>
+    `<div class="step-ind ${i === currentFormStep ? 'active' : i < currentFormStep ? 'completed' : ''}" onclick="goToFormStep(${i})" title="${label}">${i}</div>`
+  ).join('')
+}
+
+function goToFormStep(step) {
+  currentFormStep = step
+  for (let i = 0; i < 4; i++) {
+    document.getElementById(`formStep${i}`).classList.toggle('visible', i === step)
+  }
+  renderStepIndicators()
+}
+
+// ── Dynamic Rows ──
+function addGWRow(name = '', weight = '') {
+  let id = gwRowCount++
+  document.getElementById('gwRows').insertAdjacentHTML('beforeend',
+    `<div class="dynamic-row" id="gw-row-${id}">
+      <input type="text" placeholder="Component name" value="${name}" class="gw-name">
+      <input type="number" placeholder="%" min="0" max="100" value="${weight}" class="gw-weight" style="max-width:70px;" oninput="updateGWTotal()">
+      <button class="remove-row-btn" onclick="this.parentElement.remove();updateGWTotal()">&#x2715;</button>
+    </div>`)
+  updateGWTotal()
+}
+
+function updateGWTotal() {
+  let total = 0
+  document.querySelectorAll('.gw-weight').forEach(el => { total += parseFloat(el.value) || 0 })
+  document.getElementById('gwTotal').textContent = total
+}
+
+function addModRow(num = '', topic = '', reading = '') {
+  let id = modRowCount++
+  document.getElementById('modRows').insertAdjacentHTML('beforeend',
+    `<div class="dynamic-row" id="mod-row-${id}">
+      <input type="number" placeholder="#" value="${num}" class="mod-num" style="max-width:50px;">
+      <input type="text" placeholder="Topic" value="${topic}" class="mod-topic">
+      <input type="text" placeholder="Reading" value="${reading}" class="mod-reading" style="max-width:100px;">
+      <button class="remove-row-btn" onclick="this.parentElement.remove()">&#x2715;</button>
+    </div>`)
+}
+
+function addDLRow(name = '', date = '', type = 'other') {
+  let id = dlRowCount++
+  document.getElementById('dlRows').insertAdjacentHTML('beforeend',
+    `<div class="dynamic-row" id="dl-row-${id}">
+      <input type="text" placeholder="Name" value="${name}" class="dl-name">
+      <input type="date" value="${date}" class="dl-date">
+      <select class="dl-type"><option value="hw" ${type==='hw'?'selected':''}>Homework</option><option value="reading" ${type==='reading'?'selected':''}>Reading</option><option value="project" ${type==='project'?'selected':''}>Project</option><option value="exam" ${type==='exam'?'selected':''}>Exam</option><option value="other" ${type==='other'?'selected':''}>Other</option></select>
+      <button class="remove-row-btn" onclick="this.parentElement.remove()">&#x2715;</button>
+    </div>`)
+}
+
+// ── Save Course ──
+function saveCourse() {
+  let code = document.getElementById('fCode').value.trim().toUpperCase()
+  let name = document.getElementById('fName').value.trim()
+  if (!code || !name) { alert('Course code and name are required.'); return }
+
+  let semester = document.getElementById('fSemester').value.trim()
+  let id = code.toLowerCase().replace(/\s/g, '') + '-' + semester.toLowerCase().replace(/\s/g, '')
+
+  let courses = getAllCourses()
+  if (courses.find(c => c.id === id)) { alert('A course with this code and semester already exists.'); return }
+
+  // Parse grade weights
+  let gradeWeights = []
+  document.querySelectorAll('#gwRows .dynamic-row').forEach((row, i) => {
+    let n = row.querySelector('.gw-name').value.trim()
+    let w = parseFloat(row.querySelector('.gw-weight').value) || 0
+    if (n && w > 0) gradeWeights.push({ name: n, weight: w, id: 'gw-' + i })
+  })
+
+  // Parse modules
+  let modules = []
+  document.querySelectorAll('#modRows .dynamic-row').forEach(row => {
+    let num = parseInt(row.querySelector('.mod-num').value) || 0
+    let topic = row.querySelector('.mod-topic').value.trim()
+    let reading = row.querySelector('.mod-reading').value.trim()
+    if (topic) modules.push({ num: num || modules.length + 1, topic, unit: 1, reading, status: 'upcoming' })
+  })
+  if (modules.length > 0) modules[0].status = 'current'
+
+  // Parse deadlines
+  let deadlines = []
+  document.querySelectorAll('#dlRows .dynamic-row').forEach(row => {
+    let n = row.querySelector('.dl-name').value.trim()
+    let d = row.querySelector('.dl-date').value
+    let t = row.querySelector('.dl-type').value
+    if (n && d) deadlines.push({ name: n, date: d, type: t })
+  })
+
+  let course = {
+    id, code, name,
+    instructor: document.getElementById('fInstructor').value.trim(),
+    schedule: document.getElementById('fSchedule').value.trim(),
+    location: document.getElementById('fLocation').value.trim(),
+    semester,
+    color: COURSE_COLORS[courses.length % 10],
+    finalExamDate: document.getElementById('fFinalDate').value,
+    gradeWeights, modules, deadlines,
+    hasBuiltInContent: false
+  }
+
+  courses.push(course)
+  saveCourses(courses)
+  localStorage.setItem('syllabot_activeCourse', course.id)
+  loadActiveCourse()
+
+  document.getElementById('courseForm').classList.add('hidden')
+  document.getElementById('saveConfirm').innerHTML = `<div class="confirm-dialog fade-in">Course <strong>${code} — ${name}</strong> saved and activated!</div>`
+  setTimeout(() => document.getElementById('saveConfirm').innerHTML = '', 4000)
+  renderCourses()
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// FILE UPLOAD & SMART PARSER
+// ═══════════════════════════════════════════════════════════════════
+function setupUpload() {
+  let area = document.getElementById('uploadArea')
+  let input = document.getElementById('fileInput')
+  area.addEventListener('click', () => input.click())
+  area.addEventListener('dragover', e => { e.preventDefault(); area.classList.add('drag-over') })
+  area.addEventListener('dragleave', () => area.classList.remove('drag-over'))
+  area.addEventListener('drop', e => { e.preventDefault(); area.classList.remove('drag-over'); if (e.dataTransfer.files.length) handleFileUpload(e.dataTransfer.files[0]) })
+  input.addEventListener('change', () => { if (input.files.length) handleFileUpload(input.files[0]) })
+}
+
+function handleFileUpload(file) {
+  let status = document.getElementById('uploadStatus')
+  status.innerHTML = '<div style="color:var(--text-dim);">Uploading and parsing...</div>'
+  console.log('[Syllabot] Uploading file:', file.name)
+
+  let formData = new FormData()
+  formData.append('file', file)
+
+  fetch('/upload', { method: 'POST', body: formData })
+    .then(r => r.json())
+    .then(data => {
+      console.log('[Syllabot] Server response:', data)
+      if (data.error) { status.innerHTML = `<div style="color:var(--red);">Error: ${data.error}</div>`; return }
+      if (data.type === 'text') {
+        console.log('[Syllabot] Got text, length:', data.text.length)
+        showManualForm()
+        // Keep import area visible so user sees the status
+        document.getElementById('importArea').classList.remove('hidden')
+        let results = autoFillFromText(data.text)
+        console.log('[Syllabot] Parse results:', results)
+        // Show summary of what was extracted
+        let parts = []
+        if (results.courseInfo) parts.push('Course info')
+        if (results.location) parts.push('Location')
+        if (results.finalDate) parts.push('Final exam date')
+        if (results.gradeWeights > 0) parts.push(`${results.gradeWeights} grade components`)
+        if (results.modules > 0) parts.push(`${results.modules} modules/topics`)
+        if (results.deadlines > 0) parts.push(`${results.deadlines} deadlines`)
+        let summary = parts.length ? parts.join(', ') : 'No structured data found — fill in manually'
+        status.innerHTML = `<div style="color:var(--green);margin-bottom:8px;">&#10003; Parsed <strong>${data.filename}</strong></div>
+          <div style="color:var(--text-dim);font-size:0.82rem;">Found: ${summary}</div>
+          <div style="color:var(--text-dim);font-size:0.78rem;margin-top:4px;">Review each step below and click Save Course when ready.</div>`
+      } else if (data.type === 'json') {
+        status.innerHTML = `<div style="color:var(--green);">Loaded ${data.filename}.</div>`
+        if (data.data.code) {
+          let courses = getAllCourses()
+          courses.push(data.data)
+          saveCourses(courses)
+          loadActiveCourse()
+          renderCourses()
+        }
+      }
+    })
+    .catch(err => {
+      console.error('[Syllabot] Upload error:', err)
+      status.innerHTML = `<div style="color:var(--red);">Upload failed: ${err.message}. Is the server running?</div>`
+    })
+}
+
+function autoFillFromText(text) {
+  let lines = text.split('\n')
+  let results = { courseInfo: false, location: false, finalDate: false, gradeWeights: 0, modules: 0, deadlines: 0 }
+
+  // ── Course code ──
+  let codeMatch = text.match(/\b([A-Z]{2,4})\s*(\d{3}[A-Z]?)\b/)
+  if (codeMatch) { document.getElementById('fCode').value = codeMatch[1] + ' ' + codeMatch[2]; results.courseInfo = true }
+
+  // ── Semester ──
+  let semMatch = text.match(/(?:Spring|Summer|Fall|Winter)\s+\d{4}/i)
+  if (semMatch) { document.getElementById('fSemester').value = semMatch[0]; results.courseInfo = true }
+
+  // ── Instructor ──
+  let instrMatch = text.match(/(?:Instructor|Professor|Prof\.|Dr\.|Faculty)[:\s]+([A-Z][a-zA-Z'-]+(?:\s+[A-Z][a-zA-Z'-]+){1,3})/i)
+  if (!instrMatch) instrMatch = text.match(/(?:Instructor|Professor|Prof\.|Dr\.)[:\s]+(.+)/i)
+  if (instrMatch) {
+    let instrName = instrMatch[1].trim().split('\n')[0].split('\t')[0]
+      .replace(/[,;].*$/, '')
+      .replace(/\s*\(.*?\)\s*/g, '')  // remove (He/Him), (PhD), etc.
+      .replace(/[^\w\s.'-]/g, '')     // remove unicode junk
+      .trim()
+    if (instrName.length > 1) { document.getElementById('fInstructor').value = instrName; results.courseInfo = true }
+  }
+
+  // ── Schedule ──
+  // Handle "Time: TF 9:35AM-10:50AM" or "TF 9:35-10:50AM" or "MWF 1:00 PM - 2:15 PM"
+  let schedMatch = text.match(/(?:Time[:\s]+)?([MTWRF]{1,5})\s+(\d{1,2}:\d{2}\s*(?:AM|PM)?)\s*[-–]\s*(\d{1,2}:\d{2}\s*(?:AM|PM)?)/i)
+  if (!schedMatch) schedMatch = text.match(/\b((?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?:day)?(?:\s*[,\/&]\s*(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?:day)?)*)\s+(\d{1,2}:\d{2}\s*(?:AM|PM)?)\s*[-–]\s*(\d{1,2}:\d{2}\s*(?:AM|PM)?)/i)
+  if (schedMatch) {
+    // Clean: remove "Time:" prefix if captured
+    let sched = schedMatch[0].replace(/^Time[:\s]+/i, '').trim()
+    document.getElementById('fSchedule').value = sched
+  }
+
+  // ── Location / Classroom / Room Number ──
+  let locFound = extractLocation(text)
+  if (locFound) { document.getElementById('fLocation').value = locFound; results.location = true }
+
+  // ── Course name ──
+  if (codeMatch) {
+    let codeLine = lines.find(l => l.includes(codeMatch[0]))
+    if (codeLine) {
+      let name = codeLine.replace(codeMatch[0], '').replace(/[-–:]/g, '').trim()
+      name = name.replace(/(?:Spring|Summer|Fall|Winter)\s+\d{4}/i, '').replace(/Section\s+\d+/i, '').trim()
+      if (name.length > 2 && name.length < 100) document.getElementById('fName').value = name
+    }
+  }
+
+  // ── Final Exam Date ──
+  let finalDate = extractFinalExamDate(text)
+  if (finalDate) { document.getElementById('fFinalDate').value = finalDate; results.finalDate = true }
+
+  // ── Grade weights (Step 1) ──
+  let gwFound = extractGradeWeights(text)
+  gwFound.forEach(gw => addGWRow(gw.name, gw.weight))
+  results.gradeWeights = gwFound.length
+
+  // ── Modules / Topics (Step 2) ──
+  let modFound = extractModules(text)
+  modFound.forEach(m => addModRow(m.num, m.topic, m.reading))
+  results.modules = modFound.length
+
+  // ── Deadlines (Step 3) ──
+  let dlFound = extractDeadlines(text)
+  dlFound.forEach(dl => addDLRow(dl.name, dl.date, dl.type))
+  results.deadlines = dlFound.length
+
+  return results
+}
+
+function extractLocation(text) {
+  let lines = text.split('\n')
+
+  // Strategy 1: Explicit label — "Location:", "Room:", "Place:", "Classroom:", "Building:", "Rm.", "Class Location:"
+  for (let line of lines) {
+    let m = line.match(/(?:Location|Place|Room|Classroom|Building|Class\s*(?:Location|Room)|Rm\.?|Where)[:\s]+(.+)/i)
+    if (m) {
+      let loc = m[1].trim().split('\n')[0].replace(/[,;].*$/, '').trim()
+      // Clean out trailing junk but keep room numbers like "UNI 268" or "Room 204B"
+      loc = loc.replace(/\s{2,}.+$/, '').trim()
+      if (loc.length >= 2 && loc.length < 60) return loc
+    }
+  }
+
+  // Strategy 2: Look for building code + room number pattern near schedule/class context
+  // Common patterns: "UNI 268", "BUS 204", "HH 102", "Room 305", "Rm 12B"
+  for (let line of lines) {
+    // Only check lines that seem to be about class logistics (near time, schedule, meeting keywords)
+    if (/(?:class|meet|time|schedule|location|room|where|\d:\d{2})/i.test(line)) {
+      // Pattern: 2-5 letter building code + space + 2-4 digit room number (optional letter)
+      let m = line.match(/\b([A-Z]{2,5})\s+(\d{2,4}[A-Z]?)\b/)
+      if (m) {
+        // Exclude things that look like course codes (already matched) or dates
+        let candidate = m[0]
+        if (!/^(?:AM|PM|MW|TR|TF|MWF|ECO|ACC|BUS|ISA|FIN|MGT|MKT|PSY|BIO|CHE|PHY|MAT|ENG|HIS|SOC|COM|CIS|CSE)\s+\d{3}/i.test(candidate)) {
+          return candidate
+        }
+        // If it looks like a course code, still might be location — check if it's after a location-ish word
+        if (/(?:in|at|room|rm|building|bldg)\s*$/i.test(line.substring(0, line.indexOf(candidate)))) {
+          return candidate
+        }
+      }
+    }
+  }
+
+  // Strategy 3: "Room NNN" or "Rm NNN" anywhere
+  for (let line of lines) {
+    let m = line.match(/(?:Room|Rm\.?)\s*#?\s*(\d{2,4}[A-Z]?)\b/i)
+    if (m) return m[0].trim()
+  }
+
+  return null
+}
+
+function extractFinalExamDate(text) {
+  let months = { january:1, february:2, march:3, april:4, may:5, june:6, july:7, august:8, september:9, october:10, november:11, december:12,
+                 jan:1, feb:2, mar:3, apr:4, jun:6, jul:7, aug:8, sep:9, sept:9, oct:10, nov:11, dec:12 }
+  let currentYear = today.getFullYear()
+  let lines = text.split('\n')
+
+  // Look for lines mentioning "final exam" near a date
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i]
+    if (!/final\s*exam/i.test(line)) continue
+
+    // Try to find a date on this line or the next line
+    let searchText = line + ' ' + (lines[i + 1] || '')
+
+    // ISO: YYYY-MM-DD
+    let iso = searchText.match(/(\d{4})-(\d{2})-(\d{2})/)
+    if (iso) return iso[0]
+
+    // Month DD, YYYY or Month DD
+    let textDate = searchText.match(/(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\.?\s+(\d{1,2})(?:st|nd|rd|th)?,?\s*(\d{4})?/i)
+    if (textDate) {
+      let mon = months[textDate[1].toLowerCase().replace('.', '')]
+      let day = parseInt(textDate[2])
+      let year = textDate[3] ? parseInt(textDate[3]) : currentYear
+      return `${year}-${String(mon).padStart(2, '0')}-${String(day).padStart(2, '0')}`
+    }
+
+    // MM/DD/YYYY or MM/DD
+    let slash = searchText.match(/(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?\b/)
+    if (slash) {
+      let mon = parseInt(slash[1]), day = parseInt(slash[2])
+      let year = slash[3] ? (slash[3].length === 2 ? 2000 + parseInt(slash[3]) : parseInt(slash[3])) : currentYear
+      if (mon >= 1 && mon <= 12 && day >= 1 && day <= 31)
+        return `${year}-${String(mon).padStart(2, '0')}-${String(day).padStart(2, '0')}`
+    }
+  }
+
+  // Broader search: any line with "final" and a date
+  for (let line of lines) {
+    if (!/\bfinal\b/i.test(line)) continue
+    let textDate = line.match(/(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\.?\s+(\d{1,2})(?:st|nd|rd|th)?,?\s*(\d{4})?/i)
+    if (textDate) {
+      let mon = months[textDate[1].toLowerCase().replace('.', '')]
+      let day = parseInt(textDate[2])
+      let year = textDate[3] ? parseInt(textDate[3]) : currentYear
+      return `${year}-${String(mon).padStart(2, '0')}-${String(day).padStart(2, '0')}`
+    }
+    let slash = line.match(/(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?\b/)
+    if (slash) {
+      let mon = parseInt(slash[1]), day = parseInt(slash[2])
+      let year = slash[3] ? (slash[3].length === 2 ? 2000 + parseInt(slash[3]) : parseInt(slash[3])) : currentYear
+      if (mon >= 1 && mon <= 12 && day >= 1 && day <= 31)
+        return `${year}-${String(mon).padStart(2, '0')}-${String(day).padStart(2, '0')}`
+    }
+  }
+  return null
+}
+
+function extractGradeWeights(text) {
+  let lines = text.split('\n')
+  // Patterns to skip: grade scale lines like "A = 90-100" or "A: Excellent"
+  let isGradeScale = l => /^\s*[A-F][+-]?\s*[=:(\s]\s*(\d|excellent|good|satisf|poor|fail|superior|above|below|outstanding)/i.test(l.trim())
+  // Skip lines that are just percentages or numbers (like "90-100")
+  let isJustRange = l => /^\s*\d{1,3}\s*[-–]\s*\d{1,3}\s*%?\s*$/.test(l.trim())
+
+  function tryExtract(lineset) {
+    let weights = []
+    for (let line of lineset) {
+      if (isGradeScale(line) || isJustRange(line)) continue
+      // Try multiple patterns in order of specificity
+      let match = null
+      // Pattern: "Name: NN%" or "Name\tNN%"
+      if (!match) match = line.match(/([A-Za-z][A-Za-z\s/&()-]{2,45}?)\s*[:\t]\s*(\d{1,3})\s*%/)
+      // Pattern: "Name NN%" (space separated)
+      if (!match) match = line.match(/([A-Za-z][A-Za-z\s/&()-]{2,45}?)\s{2,}(\d{1,3})\s*%/)
+      // Pattern: "Name (NN%)"
+      if (!match) match = line.match(/([A-Za-z][A-Za-z\s/&()-]{2,45}?)\s*\((\d{1,3})\s*%\)/)
+      // Pattern: "NN% Name" (percentage first)
+      if (!match) {
+        let rev = line.match(/(\d{1,3})\s*%\s+([A-Za-z][A-Za-z\s/&()-]{2,45})/)
+        if (rev) match = [rev[0], rev[2], rev[1]]
+      }
+      // Pattern: "Name = NN%"
+      if (!match) match = line.match(/([A-Za-z][A-Za-z\s/&()-]{2,45}?)\s*=\s*(\d{1,3})\s*%/)
+      // Pattern: loose — anything followed by a number and %
+      if (!match) match = line.match(/(.{3,45}?)\s+(\d{1,3})\s*%/)
+
+      if (match) {
+        let name = match[1].trim().replace(/^[-•*·▪►●○◦]\s*/, '').replace(/[:\s]+$/, '').trim()
+        let weight = parseInt(match[2])
+        // Filter out bad names
+        if (name.length < 2 || weight <= 0 || weight > 100) continue
+        if (/^[A-F][+-]?$/i.test(name)) continue
+        if (/^\d+$/.test(name)) continue
+        if (/^(total|sum|grade|grading|evaluation|assessment)s?\s*$/i.test(name)) continue
+        // Clean up name: remove trailing numbers, extra punctuation
+        name = name.replace(/\s*\d+\s*$/, '').replace(/[.]+$/, '').trim()
+        if (name.length >= 2) weights.push({ name, weight })
+      }
+    }
+    return weights
+  }
+
+  // Strategy 1: Find a grading section and extract from it
+  let sectionStart = -1
+  for (let i = 0; i < lines.length; i++) {
+    if (/(?:grading|grade\s*(?:breakdown|distribution|weight|component|calculation|policy|criteria)|assessment|evaluation|course\s*(?:requirements|components|weighting))[:\s]*$/i.test(lines[i].trim()) ||
+        /(?:% of (?:final |total |course )?grade|percentage|weight)/i.test(lines[i])) {
+      sectionStart = i
+      break
+    }
+  }
+
+  if (sectionStart >= 0) {
+    // Extract from section (up to 25 lines after header)
+    let sectionLines = lines.slice(sectionStart, sectionStart + 25)
+    let weights = tryExtract(sectionLines)
+    if (weights.length >= 2) {
+      let total = weights.reduce((s, w) => s + w.weight, 0)
+      if (total >= 50 && total <= 115) return weights
+    }
+  }
+
+  // Strategy 2: Extract from full text
+  let weights = tryExtract(lines)
+  if (weights.length >= 2) {
+    let total = weights.reduce((s, w) => s + w.weight, 0)
+    if (total >= 50 && total <= 115) return weights
+  }
+
+  // Strategy 3: Relaxed — just find any lines with % that look like grade components
+  weights = []
+  for (let line of lines) {
+    if (isGradeScale(line) || isJustRange(line)) continue
+    let allPcts = [...line.matchAll(/(\d{1,3})\s*%/g)]
+    for (let pctMatch of allPcts) {
+      let weight = parseInt(pctMatch[1])
+      if (weight < 3 || weight > 60) continue  // likely grade components are 3-60%
+      let name = line.replace(pctMatch[0], '').trim().replace(/^[-•*:]\s*/, '').replace(/[:\s]+$/, '').trim()
+      if (name.length >= 2 && name.length < 50 && !/^[A-F][+-]?$/i.test(name) && !/^\d/.test(name)) {
+        weights.push({ name, weight })
+      }
+    }
+  }
+  // Deduplicate by name
+  let seen = new Set()
+  weights = weights.filter(w => { let k = w.name.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true })
+  let total = weights.reduce((s, w) => s + w.weight, 0)
+  return (weights.length >= 2 && total >= 50 && total <= 115) ? weights : []
+}
+
+function extractModules(text) {
+  let modules = []
+  let lines = text.split('\n')
+
+  function extractReading(line) {
+    // Match "Txtbk. Ch. 1 & 2", "Ch. 1", "Chapter 3", "Ch 5", etc.
+    let readMatch = line.match(/(?:Txtbk\.?\s*)?Ch(?:apter|\.?)\.?\s*(\d+(?:\s*[-–&,]\s*\d+)*)/i)
+    if (readMatch) return readMatch[0].trim()
+    readMatch = line.match(/pp\.?\s*\d+\s*[-–]\s*\d+/i)
+    if (readMatch) return readMatch[0].trim()
+    readMatch = line.match(/(?:Reading|Textbook)[:\s]+([^\n\t,;]{3,40})/i)
+    if (readMatch) return readMatch[1].trim()
+    return ''
+  }
+
+  function cleanTopic(topic, reading) {
+    // If topic contains tabs, only keep the first tab-field (the actual topic name)
+    if (topic.includes('\t')) topic = topic.split('\t')[0]
+    // Remove the reading portion from the topic if embedded
+    if (reading) topic = topic.replace(reading, '')
+    // Remove date patterns that might have been captured
+    topic = topic.replace(/\b\d{1,2}\/\d{1,2}(\/\d{2,4})?\b/g, '')
+    topic = topic.replace(/(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\.?\s+\d{1,2}/gi, '')
+    topic = topic.replace(/(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),?\s*/gi, '')
+    // Remove trailing punctuation, dashes, whitespace
+    topic = topic.replace(/[\s:;,\-–—]+$/, '').replace(/^[\s:;,\-–—]+/, '').trim()
+    return topic
+  }
+
+  // Strategy 1: Module N: Topic (handles both inline and tab-separated table rows)
+  for (let line of lines) {
+    let m = line.match(/Module\s+(\d+)\s*[:\-–—.\s]\s*(.+)/i)
+    if (m) {
+      let reading = extractReading(line)
+      let topic = cleanTopic(m[2], reading)
+      if (topic.length > 2) modules.push({ num: parseInt(m[1]), topic, reading })
+    }
+  }
+
+  // Strategy 2: Week/Chapter/Unit/Topic/Lesson N: Topic
+  if (!modules.length) {
+    for (let line of lines) {
+      let m = line.match(/(?:Chapter|Week|Topic|Lesson|Unit|Part|Session)\s+(\d+)\s*[:\-–—.\s]\s*(.+)/i)
+      if (m) {
+        let reading = extractReading(line)
+        let topic = cleanTopic(m[2], reading)
+        if (topic.length > 2 && topic.length < 120) modules.push({ num: parseInt(m[1]), topic, reading })
+      }
+    }
+  }
+
+  // Strategy 3: Lines starting with a number followed by topic text in a section that looks like a schedule/outline
+  if (!modules.length) {
+    let inScheduleSection = false
+    for (let line of lines) {
+      if (/(?:schedule|outline|topics|modules|syllabus|course\s*(?:outline|schedule|calendar|content))/i.test(line)) inScheduleSection = true
+      if (inScheduleSection || true) {  // try everywhere as fallback
+        let m = line.match(/^\s*(\d{1,2})\s*[.\):\-–]\s+([A-Z][A-Za-z\s,&:/'()-]{4,100})/)
+        if (m) {
+          let num = parseInt(m[1])
+          if (num >= 1 && num <= 30) {
+            let reading = extractReading(line)
+            let topic = cleanTopic(m[2], reading)
+            if (topic.length > 3 && topic.length < 100) modules.push({ num, topic, reading })
+          }
+        }
+      }
+    }
+  }
+
+  // Strategy 4: Look for a table-like structure with weeks and topics
+  if (!modules.length) {
+    let weekNum = 0
+    for (let line of lines) {
+      let m = line.match(/(?:Wk|Week)\s*\.?\s*(\d+)\s*[:\-–\t|]\s*(.+)/i)
+      if (m) {
+        let reading = extractReading(line)
+        let topic = cleanTopic(m[2], reading)
+        if (topic.length > 2) modules.push({ num: parseInt(m[1]), topic, reading })
+      }
+    }
+  }
+
+  // Remove exams — they are not study modules
+  modules = modules.filter(m => !/\bexam\b/i.test(m.topic))
+
+  // Deduplicate by num, keeping first occurrence
+  let seen = new Set()
+  modules = modules.filter(m => {
+    if (seen.has(m.num)) return false
+    seen.add(m.num)
+    return true
+  })
+  modules.sort((a, b) => a.num - b.num)
+
+  // Renumber if gaps are too large (likely not real module numbers)
+  if (modules.length > 2) {
+    let maxNum = Math.max(...modules.map(m => m.num))
+    if (maxNum > modules.length * 3) {
+      modules = modules.map((m, i) => ({ ...m, num: i + 1 }))
+    }
+  }
+
+  return modules
+}
+
+function extractDeadlines(text) {
+  let deadlines = []
+  let months = {
+    january:1, february:2, march:3, april:4, may:5, june:6, july:7, august:8, september:9, october:10, november:11, december:12,
+    jan:1, feb:2, mar:3, apr:4, jun:6, jul:7, aug:8, sep:9, sept:9, oct:10, nov:11, dec:12
+  }
+  let lines = text.split('\n')
+  let currentYear = today.getFullYear()
+
+  // Detect the year from semester if present
+  let semYear = text.match(/(?:Spring|Summer|Fall|Winter)\s+(\d{4})/i)
+  if (semYear) currentYear = parseInt(semYear[1])
+
+  function parseDate(line) {
+    // ISO: YYYY-MM-DD
+    let iso = line.match(/(\d{4})-(\d{2})-(\d{2})/)
+    if (iso) return { date: iso[0], matchStr: iso[0] }
+
+    // "Month DD, YYYY" or "Month DD" (full or abbreviated, with optional ordinal suffixes)
+    let textDate = line.match(/(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\.?\s+(\d{1,2})(?:st|nd|rd|th)?,?\s*(\d{4})?/i)
+    if (textDate) {
+      let mon = months[textDate[1].toLowerCase().replace('.', '')]
+      if (mon) {
+        let day = parseInt(textDate[2])
+        let year = textDate[3] ? parseInt(textDate[3]) : currentYear
+        if (day >= 1 && day <= 31)
+          return { date: `${year}-${String(mon).padStart(2, '0')}-${String(day).padStart(2, '0')}`, matchStr: textDate[0] }
+      }
+    }
+
+    // "DD Month YYYY" or "DD Month" (European style)
+    let euroDate = line.match(/(\d{1,2})(?:st|nd|rd|th)?\s+(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)\.?,?\s*(\d{4})?/i)
+    if (euroDate) {
+      let mon = months[euroDate[2].toLowerCase().replace('.', '')]
+      if (mon) {
+        let day = parseInt(euroDate[1])
+        let year = euroDate[3] ? parseInt(euroDate[3]) : currentYear
+        if (day >= 1 && day <= 31)
+          return { date: `${year}-${String(mon).padStart(2, '0')}-${String(day).padStart(2, '0')}`, matchStr: euroDate[0] }
+      }
+    }
+
+    // MM/DD/YYYY or MM/DD/YY or MM/DD
+    let slash = line.match(/\b(\d{1,2})\/(\d{1,2})(?:\/(\d{2,4}))?\b/)
+    if (slash) {
+      let mon = parseInt(slash[1]), day = parseInt(slash[2])
+      let year = slash[3] ? (slash[3].length === 2 ? 2000 + parseInt(slash[3]) : parseInt(slash[3])) : currentYear
+      if (mon >= 1 && mon <= 12 && day >= 1 && day <= 31)
+        return { date: `${year}-${String(mon).padStart(2, '0')}-${String(day).padStart(2, '0')}`, matchStr: slash[0] }
+    }
+
+    // MM.DD.YYYY or MM-DD-YYYY (but not YYYY-MM-DD which is handled above)
+    let dotDash = line.match(/\b(\d{1,2})[.\-](\d{1,2})[.\-](\d{4})\b/)
+    if (dotDash) {
+      let mon = parseInt(dotDash[1]), day = parseInt(dotDash[2]), year = parseInt(dotDash[3])
+      if (mon >= 1 && mon <= 12 && day >= 1 && day <= 31)
+        return { date: `${year}-${String(mon).padStart(2, '0')}-${String(day).padStart(2, '0')}`, matchStr: dotDash[0] }
+    }
+
+    return null
+  }
+
+  function classifyType(name) {
+    if (/\b(?:exam|midterm|final\s*exam|final\s*test|test)\b/i.test(name)) return 'exam'
+    if (/\b(?:quiz)\b/i.test(name)) return 'hw'
+    if (/\b(?:hw|homework|assignment|problem\s*set|worksheet|exercise)\b/i.test(name)) return 'hw'
+    if (/\b(?:paper|presentation|project|essay|report|portfolio|proposal|case\s*study)\b/i.test(name)) return 'project'
+    if (/\b(?:read|reading|chapter)\b/i.test(name)) return 'reading'
+    return 'other'
+  }
+
+  for (let line of lines) {
+    let parsed = parseDate(line)
+    if (!parsed) continue
+
+    // Check if this is a tab-delimited schedule table row
+    let tabs = line.split('\t')
+    if (tabs.length >= 3) {
+      // Schedule table row — look for assignment names in the tab fields
+      // Typically: Unit | Date | Module | Reading | Assignment Due
+      for (let cell of tabs) {
+        let cellTrimmed = cell.trim()
+        // Skip cells that are the date itself, empty, module names, readings, or "No Class" entries
+        if (!cellTrimmed || cellTrimmed.length < 3) continue
+        if (cellTrimmed === parsed.matchStr) continue
+        if (/^Module\s+\d+/i.test(cellTrimmed)) continue
+        if (/^Unit\s+\d+/i.test(cellTrimmed)) continue
+        if (/^(?:Txtbk|Textbook|Ch\.|Chapter|Reading)/i.test(cellTrimmed)) continue
+        if (/^No Class/i.test(cellTrimmed)) continue
+        if (/^Syllabus/i.test(cellTrimmed)) continue
+        if (/^(?:Date|Assignment|To Read|Graded)/i.test(cellTrimmed)) continue
+        if (/\(Spring|Fall|Winter|Summer\s+\d{4}\)/i.test(cellTrimmed)) continue
+        // Skip day-of-week patterns
+        if (/^(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),?\s+/i.test(cellTrimmed) && parseDate(cellTrimmed)) continue
+        // Skip general description cells (too long, likely paragraph content)
+        if (cellTrimmed.length > 80) continue
+        // This looks like an assignment name
+        let name = cellTrimmed.replace(/\s*\(C\)\s*/g, '').trim()
+        if (name.length >= 3 && classifyType(name) !== null) {
+          deadlines.push({ name, date: parsed.date, type: classifyType(name) })
+        }
+      }
+      continue  // don't also process as a regular line
+    }
+
+    // Regular (non-table) line: extract deadline name
+    let name = line
+      .replace(parsed.matchStr, '')
+      // Remove day-of-week prefix
+      .replace(/^(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday),?\s*/i, '')
+      .replace(/\b\d{4}\b/, '')  // stray year
+      .trim()
+      .replace(/^[\s\-–:,;|•*·▪►]+/, '')
+      .replace(/[\s\-–:,;|]+$/, '')
+      .trim()
+
+    if (name.length < 2) continue
+    if (name.length > 120) name = name.substring(0, 120)
+
+    // Skip lines that are purely dates or reference-like
+    if (/^\d+$/.test(name)) continue
+    if (/^(week|module|unit|chapter)\s+\d+$/i.test(name)) continue
+
+    deadlines.push({ name, date: parsed.date, type: classifyType(name) })
+  }
+
+  // Deduplicate by name+date
+  let seen = new Set()
+  deadlines = deadlines.filter(d => {
+    let k = d.name.toLowerCase() + d.date
+    if (seen.has(k)) return false
+    seen.add(k)
+    return true
+  })
+  deadlines.sort((a, b) => a.date.localeCompare(b.date))
+  return deadlines.slice(0, 50)
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// AUTO-GENERATE CONTENT
+// ═══════════════════════════════════════════════════════════════════
+let _generating = false
+function autoGenerateContent() {
+  if (!activeCourse || !activeModules.length || _generating) return
+  // Skip if all content types already exist
+  let hasAll = activeContent &&
+    (activeContent.quiz && Object.keys(activeContent.quiz).length > 0) &&
+    (activeContent.flashcards && Object.keys(activeContent.flashcards).length > 0) &&
+    (activeContent.tutor && Object.keys(activeContent.tutor).length > 0)
+  if (hasAll) return
+
+  _generating = true
+  let banner = document.getElementById('autoGenBanner')
+  let msg = document.getElementById('autoGenMsg')
+  banner.classList.remove('hidden')
+  msg.textContent = 'Generating study content for ' + activeCourse.code + '... This may take a moment.'
+
+  let modules = activeModules.filter(m => !/\bexam\b/i.test(m.topic)).map(m => ({ num: m.num, topic: m.topic, reading: m.reading || '' }))
+  let types = { quiz: true, written: true, flashcards: true }
+
+  fetch('/generate', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ course: activeCourse.code + ' — ' + activeCourse.name, modules, types })
+  })
+    .then(r => r.json())
+    .then(data => {
+      _generating = false
+      if (data.error) {
+        msg.innerHTML = '<span style="color:var(--red);">Content generation failed: ' + data.error + '</span> <button class="btn" style="padding:4px 12px;font-size:0.8rem;margin-left:10px;" onclick="autoGenRetry()">Retry</button>'
+        return
+      }
+      for (let type of ['quiz', 'written', 'flashcards', 'tutor']) {
+        if (data[type]) {
+          if (!activeContent[type]) activeContent[type] = {}
+          Object.assign(activeContent[type], data[type])
+        }
+      }
+      setCourseContent(activeCourse.id, activeContent)
+      _dirtyTabs = { planner:1, tutor:1, quiz:1, flashcards:1, progress:1, grades:1, courses:1 }
+      msg.innerHTML = '<span style="color:var(--green);">Content generated!</span>'
+      setTimeout(() => banner.classList.add('hidden'), 1500)
+      // Re-render the currently active tab so content appears immediately
+      let activeTab = document.querySelector('.nav-btn.active')
+      if (activeTab) {
+        let tab = activeTab.dataset.tab
+        if (TAB_RENDERERS[tab]) TAB_RENDERERS[tab]()
+      }
+    })
+    .catch(() => {
+      _generating = false
+      msg.innerHTML = '<span style="color:var(--red);">Failed to connect to server.</span> <button class="btn" style="padding:4px 12px;font-size:0.8rem;margin-left:10px;" onclick="autoGenRetry()">Retry</button>'
+    })
+}
+
+function autoGenRetry() {
+  // Reset content check so autoGenerate runs again
+  activeContent = {}
+  setCourseContent(activeCourse.id, activeContent)
+  autoGenerateContent()
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// LOAD ACTIVE COURSE
+// ═══════════════════════════════════════════════════════════════════
+function loadActiveCourse() {
+  let courses = getAllCourses()
+  let activeId = localStorage.getItem('syllabot_activeCourse')
+  activeCourse = courses.find(c => c.id === activeId) || courses[0] || null
+
+  if (activeCourse) {
+    localStorage.setItem('syllabot_activeCourse', activeCourse.id)
+    activeContent = getCourseContent(activeCourse.id)
+    activeDeadlines = activeCourse.deadlines || []
+    activeModules = activeCourse.modules || []
+    activeGradeWeights = activeCourse.gradeWeights || []
+    quizHistory = JSON.parse(localStorage.getItem(`syllabot_${activeCourse.id}_quizHistory`) || '[]')
+    document.getElementById('headerBadge').textContent = activeCourse.code + ' — ' + activeCourse.name
+  } else {
+    activeContent = {}; activeDeadlines = []; activeModules = []; activeGradeWeights = []; quizHistory = []
+    document.getElementById('headerBadge').textContent = 'No Course Loaded'
+  }
+
+  _dirtyTabs = { planner:1, tutor:1, quiz:1, flashcards:1, progress:1, grades:1, courses:1 }
+  renderDashboard()
+  autoGenerateContent()
+}
+
+// ═══════════════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  today = new Date()
+  document.getElementById('headerDate').textContent = today.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+
+  // Tab switching
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', () => switchTab(btn.dataset.tab))
+  })
+
+  // Upload
+  setupUpload()
+
+  // Resize handler for chart
+  window.addEventListener('resize', () => { if (quizHistory.length) drawQuizChart() })
+
+  // Load course
+  loadActiveCourse()
+})
+</script>
+</body>
+</html>

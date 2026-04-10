@@ -1,0 +1,866 @@
+{
+  "metadata": {
+    "institution": "Bryant University",
+    "location": "Smithfield, RI",
+    "catalog_year": "2025-2026",
+    "source_urls": [
+      "https://catalog.bryant.edu/undergraduate/coursedescriptions/com/",
+      "https://catalog.bryant.edu/undergraduate/coursedescriptions/psy/",
+      "https://catalog.bryant.edu/undergraduate/coursedescriptions/his/",
+      "https://catalog.bryant.edu/undergraduate/coursedescriptions/soc/",
+      "https://catalog.bryant.edu/undergraduate/coursedescriptions/pols/",
+      "https://catalog.bryant.edu/undergraduate/coursedescriptions/lcs/",
+      "https://catalog.bryant.edu/undergraduate/coursedescriptions/lgls/",
+      "https://catalog.bryant.edu/undergraduate/coursedescriptions/gen/",
+      "https://catalog.bryant.edu/undergraduate/componentsofundergraduatebaccalaureatedegrees/generaleducationrequirements/"
+    ],
+    "last_updated": "2026-04-08"
+  },
+
+  "general_education": {
+    "program_name": "Impact Core",
+    "total_credits": 43,
+    "framework": "United Nations Sustainable Development Goals (UN SDGs)",
+    "requirements": {
+      "first_year_foundation": [
+        {"code": "GEN 100", "name": "Student Success at Bryant University", "credits": 1},
+        {"code": "IDEA 101", "name": "Bryant IDEA (Innovation and Design Experience For All)", "credits": 1},
+        {"code": "GEN 103", "name": "Career Launch", "credits": 1}
+      ],
+      "writing": [
+        {"code": "GEN 106", "name": "Writing Workshop", "credits": 3}
+      ],
+      "mathematics": [
+        {"code": "MATH 110", "name": "Mathematical Analysis", "credits": 3},
+        {"code": "MATH 201", "name": "Statistics I (or MATH 202 Biostatistics / MATH 203 Sports Statistics)", "credits": 3}
+      ],
+      "economics": [
+        {"code": "ECO 113", "name": "Microeconomic Principles", "credits": 3, "note": "Required for all students"},
+        {"code": "ECO 114", "name": "Macroeconomic Principles", "credits": 3, "note": "Required for College of Business; Arts & Sciences may substitute second social science"}
+      ],
+      "core_disciplines_12cr": [
+        {"category": "Social Science (200-level)", "options": "Anthropology, Language Studies, Legal Studies, Political Science, Psychology, or Sociology"},
+        {"category": "Science with Lab (200/300-level)", "options": "Biology, Geology, Physics, Chemistry, Climate Change, Ecology, or related"},
+        {"category": "History (200-level)", "options": "Any HIS 2XX course"},
+        {"category": "Literary & Cultural Studies (200-level)", "options": "Any LCS 2XX course"}
+      ],
+      "additional": [
+        {"code": "BUS 100", "name": "Introduction to Business", "credits": 3},
+        {"code": "ACI 220", "name": "Introduction to Arts & Creative Industries", "credits": 3},
+        {"code": "GEN 201", "name": "Intercultural Communication", "credits": 3},
+        {"code": "GEN 390", "name": "General Education Capstone", "credits": 3}
+      ]
+    }
+  },
+
+  "departments": {
+    "communication": {
+      "prefix": "COM",
+      "department": "Department of Communication and Language Studies",
+      "college": "College of Arts and Sciences",
+      "tracks": ["Public Relations", "Broadcast Journalism", "Film and Television", "Organizational Communication", "Strategic Healthcare", "General Communication"],
+      "courses": [
+        {"code": "COM 101", "name": "Health Communication, Identity and Sport", "credits": 3, "description": "Examines relationships between health communication and public health in athletic contexts, focusing on mental health, identity issues among college athletes, and wellness representation in sports."},
+        {"code": "COM 202", "name": "Public Speaking", "credits": 3, "description": "Develops skills in researching, organizing, and delivering public messages across informative, persuasive, and entertainment formats, with emphasis on audience analysis and managing communication anxiety."},
+        {"code": "COM 203", "name": "Introduction to Communication", "credits": 3, "description": "Explores communication definitions, research methods, and major theories. Introduces students to various specializations including interpersonal, mass, health, intercultural, and small group communication."},
+        {"code": "COM 205", "name": "Introduction to Digital Communication", "credits": 3, "description": "Surveys the evolution of digital communication technologies and their impact on human interaction, examining internet governance, ethics, privacy, and industries transformed by digital innovation."},
+        {"code": "COM 206", "name": "Introduction to Sports Communication", "credits": 3, "description": "Overview of sport communication including media, advertising, public relations, and employment opportunities, with practical experience in press conferences and sports reporting."},
+        {"code": "COM 208", "name": "Esports Communication and Media Studies", "credits": 3, "description": "Introduces communication's role in esports through media relations, broadcasting, content creation, and branding analysis across digital platforms."},
+        {"code": "COM 209", "name": "Principles of Visual Communication in the Digital Space", "credits": 3, "description": "Examines foundational design theories including composition, color, typography, and visual hierarchy, analyzing how visual elements influence audience perception and engagement."},
+        {"code": "COM 230", "name": "Introduction to Film Studies", "credits": 3, "description": "Investigates film language, cinematography, production design, and cultural representation, examining how movies reflect and shape societal perceptions regarding identity and social issues."},
+        {"code": "COM 242", "name": "Basic Studio Production", "credits": 3, "description": "Introduces television production fundamentals through studio exercises, emphasizing how software and hardware structure visual, auditory, and motion elements for video communication."},
+        {"code": "COM 243", "name": "Digital Media Production", "credits": 3, "description": "Teaches single-camera video production and Adobe Premiere editing through hands-on projects, focusing on shot composition, camera movement, and storytelling techniques."},
+        {"code": "COM 260", "name": "Media Literacy", "credits": 3, "description": "Provides tools for critically examining mass media content including advertisements, television, and digital platforms, addressing misinformation and evaluating media's cultural impact."},
+        {"code": "COM 265", "name": "Public Relations and Social Media", "credits": 3, "description": "Introduces PR concepts and social media strategy, teaching students to develop communication plans integrating traditional and digital channels for organizational objectives."},
+        {"code": "COM 270", "name": "Interpersonal Communication", "credits": 3, "description": "Examines communication elements affecting relationships including language, perception, nonverbal signals, and conflict, applying research to real-world social interactions."},
+        {"code": "COM 272", "name": "Mass Communication", "credits": 3, "description": "Familiarizes students with media industries' structures, economics, and content, emphasizing media literacy, ownership concentration, and cultural responsibility."},
+        {"code": "COM 280", "name": "Introduction to Health Communication", "credits": 3, "description": "Introduces health communication foundations including patient-provider interactions, health literacy, campaigns, technology's influence, and cultural factors in healthcare messaging."},
+        {"code": "COM 301", "name": "Esports Governance and Policy", "credits": 3, "description": "Examines esports leagues, teams, and governance structures, exploring legal frameworks, ethical standards, and stakeholder roles in competitive gaming ecosystems."},
+        {"code": "COM 331", "name": "Sports Broadcasting and Analysis", "credits": 3, "description": "Develops practical skills for sports media careers through hands-on projects, teaching commentary techniques, on-air presence, and industry navigation strategies."},
+        {"code": "COM 332", "name": "Writing and Reporting for Broadcast and Digital Media", "credits": 3, "description": "Teaches broadcast journalism skills including researching, writing news stories, conducting interviews, and delivering content for television and internet platforms."},
+        {"code": "COM 333", "name": "Public Health Communication: Advocacy and Action", "credits": 3, "description": "Examines public health history and current issues, teaching social marketing, media advocacy, risk communication, and qualitative research methods for health initiatives."},
+        {"code": "COM 344", "name": "Sports Media Production", "credits": 3, "description": "Uses live sports broadcasting as a platform for teaching multi-camera directing, field production, editing, writing, and rapid editorial decision-making."},
+        {"code": "COM 345", "name": "Documentary Filmmaking", "credits": 3, "description": "Teaches nonfiction film creation including topic selection, quasi-narrative frameworks, directing, writing, and editing while managing unpredictable real-world production challenges."},
+        {"code": "COM 346", "name": "Talk Radio: Sports, Politics and Podcasting", "credits": 3, "description": "Develops skills for talk radio and podcast hosting, emphasizing research, interviewing, storytelling, and integrating emerging broadcast technologies."},
+        {"code": "COM 352", "name": "Strategic Content Planning and Creation", "credits": 3, "description": "Explores strategies for building audience-organization relationships through audits, style guides, briefs, and authentic social media content curation across platforms."},
+        {"code": "COM 353", "name": "Writing for Digital Media", "credits": 3, "description": "Teaches students to create, analyze, and compose digital content across multiple genres, tools, platforms, and audiences using multimodal writing processes."},
+        {"code": "COM 357", "name": "Digital Video and Media Narrative Design", "credits": 3, "description": "Focuses on digital storytelling skills for producing, writing, capturing, and editing content across various purposes and platforms."},
+        {"code": "COM 359", "name": "The Sociological Imagination: What We See When We Watch T.V.", "credits": 3, "description": "Applies sociological analysis to television, examining character narratives and urban spaces to explore work, morality, gender, race, and social justice themes."},
+        {"code": "COM 360", "name": "Crisis and Risk Communication", "credits": 3, "description": "Examines crisis and risk communication processes, planning, and implementation strategies for organizational scandals, environmental disasters, and public health hazards."},
+        {"code": "COM 361", "name": "Public Relations", "credits": 3, "description": "Examines the PR process, corporate-public relationships, media methods, and legal/ethical issues while developing programs and communications for various media channels."},
+        {"code": "COM 363", "name": "Conflict Management and Negotiation", "credits": 3, "description": "Introduces conflict study and communication's role in causing, escalating, and managing disputes, exploring negotiation within intimate, workplace, and team contexts."},
+        {"code": "COM 367", "name": "Small Group Communication", "credits": 3, "description": "Surveys small group theory including cohesiveness, conflict, power, roles, and decision-making, with practical application to problem-solving group environments."},
+        {"code": "COM 370", "name": "Media Organizations", "credits": 3, "description": "Addresses management, production, and distribution of mass media, examining organizational history, business aspects, regulation, and technology's impact."},
+        {"code": "COM 380", "name": "Nonverbal Communication", "credits": 3, "description": "In-depth study of nonverbal codes including body language, eye contact, and vocalics, examining their communicative functions and role in overall messaging."},
+        {"code": "COM 381", "name": "Message Design and Content Creation in the Age of Artificial Intelligence", "credits": 3, "description": "Explores AI's transformative role in communication, teaching message design, audience analysis, and content creation while addressing authenticity and ethical AI use."},
+        {"code": "COM 390", "name": "Research Methods in Communication/Digital Communication", "credits": 3, "description": "Introduces research methods including ethical implications, sampling, variables, hypothesis testing, and statistical analysis for communication research and evaluation."},
+        {"code": "COM 391", "name": "Communication Internship", "credits": 3, "description": "Supervised work experience applying communication skills and theory to professional environments."},
+        {"code": "COM 401", "name": "Advanced Intercultural Communication", "credits": 3, "description": "Explores how culture influences communication through theoretical and practical approaches, examining context's role in intercultural interactions across education, healthcare, and business."},
+        {"code": "COM 402", "name": "Digital Literacy, Digital Lives", "credits": 3, "description": "Develops critical thinking skills for assessing, analyzing, and creating digital content while examining digital technology's impact on interactions, society, and relationships."},
+        {"code": "COM 403", "name": "Organization, Leadership, and Communication in the Sports Industry", "credits": 3, "description": "Focuses on organizational structures and communication requirements for sports entities, examining departments, roles, interdependence, and coordination."},
+        {"code": "COM 404", "name": "Esports Event Planning and Organization", "credits": 3, "description": "Explores planning and managing esports events from grassroots to international tournaments, covering logistics, sponsorship, audience engagement, and tournament technologies."},
+        {"code": "COM 405", "name": "Advanced Sports Broadcasting: Road to Radio Row", "credits": 3, "description": "Provides immersive experience in live sports media production with culminating participation in Super Bowl Radio Row."},
+        {"code": "COM 406", "name": "Voices of the Game: Expert Perspectives on Sports Communication", "credits": 3, "description": "Features accomplished athletes and sports executives sharing expertise on communication, media, sponsorship, fan engagement, and leadership."},
+        {"code": "COM 442", "name": "Advanced Digital Media", "credits": 3, "description": "Examines digital platform production across traditional and emerging services, teaching content creation from preproduction through distribution."},
+        {"code": "COM 444", "name": "Sports Journalism", "credits": 3, "description": "Prepares students for sports coverage across multiple formats through hands-on instruction in researching, interviewing, writing, and developing unique journalistic voices."},
+        {"code": "COM 450", "name": "Media Genre Studies", "credits": 3, "description": "Examines media genres as dynamic industry-audience exchanges, analyzing how categorization reveals production institutions, market demands, and historical moments."},
+        {"code": "COM 452", "name": "Personal Branding in Digital Media", "credits": 3, "description": "Explores branding history and self-presentation in digital contexts, emphasizing content creation for digital platforms to strengthen personal and professional brand images."},
+        {"code": "COM 463", "name": "The Impact of Digital Addiction on Individuals and Social Interactions", "credits": 3, "description": "Examines digital communication's effects on cognitive processes, addiction, and culture, exploring behavioral engineering, memes, identity, and mental health implications."},
+        {"code": "COM 470", "name": "Persuasion and Social Influence", "credits": 3, "description": "Introduces theoretical and applied issues in social influence, examining persuasive message creation and consumption across advertising, politics, health, and relationships."},
+        {"code": "COM 472", "name": "Media Effects", "credits": 3, "description": "Examines mass media's impact including cultivation, desensitization, agenda-setting, violence, and gender portrayals, requiring semester-long research projects."},
+        {"code": "COM 474", "name": "The Dark Side of Human Communication", "credits": 3, "description": "Investigates difficult social interactions including jealousy, deception, infidelity, stalking, and breakups, applying research and theory."},
+        {"code": "COM 478", "name": "Global Communication", "credits": 3, "description": "Uses comparative approaches to examine cross-national communication policy and practice regarding broadcasting, telecommunications, and internet culture."},
+        {"code": "COM 480", "name": "Advanced Health Communication Health Campaigns", "credits": 3, "description": "In-depth study of health message design, promotion, and behavior change through theories, models, and current campaigns."},
+        {"code": "COM 491", "name": "Senior Capstone for Communication/Digital Communication", "credits": 3, "description": "Synthesizes communication theory and ethics through real-world application, requiring students to solve nonprofit communication problems."},
+        {"code": "COM 492", "name": "Senior Capstone in Sports Industries, Media, and Promotion", "credits": 3, "description": "Applies sports communication theories and concepts to real industry problems."},
+        {"code": "COM 497", "name": "Directed Study in Communication", "credits": 3, "description": "Permits independent pursuit of communication interests under faculty supervision."}
+      ]
+    },
+
+    "psychology": {
+      "prefix": "PSY",
+      "department": "Department of Psychology",
+      "college": "School of Health and Behavioral Sciences",
+      "courses": [
+        {"code": "PSY 260", "name": "Introduction to Psychology", "credits": 3, "description": "Addresses major principles, theories and research methods for understanding mental processing and behavior, surveying human behavior across contexts with ethical considerations."},
+        {"code": "PSY 263", "name": "Honors: Core Concepts in Psychology", "credits": 3, "description": "Covers the same foundational material as PSY 260 with opportunities for honors students to contribute directly to teaching course content."},
+        {"code": "PSY 301", "name": "Sensation and Perception", "credits": 3, "description": "Explores biological and psychological processes of perception, sensory systems, brain structures processing sensory information, and how learning augments perception."},
+        {"code": "PSY 353", "name": "Psychology of Personality", "credits": 3, "description": "Examines historical and contemporary approaches to personality understanding, incorporating cross-cultural and gender influences with applications to case studies."},
+        {"code": "PSY 355", "name": "Introduction to Psychopathology", "credits": 3, "description": "Emphasizes contemporary approaches to understanding causes and treatments of psychological and psychiatric disorders."},
+        {"code": "PSY 360", "name": "Child and Adolescent Development", "credits": 3, "description": "Examines human development from prenatal period through adolescence using current research methods and relevant theories."},
+        {"code": "PSY 361", "name": "Adult Development and Aging", "credits": 3, "description": "Investigates psychological and physical changes throughout adulthood with emphasis on aging experiences in modern society."},
+        {"code": "PSY 365", "name": "Environmental Psychology", "credits": 3, "description": "Uses interdisciplinary perspective to investigate environmental effects on behavior and human performance."},
+        {"code": "PSY 371", "name": "Applied Psychology", "credits": 3, "description": "Addresses practical applications of psychological research to real-world problems across biomedical, educational, industrial/organizational, sports, legal, and other contexts."},
+        {"code": "PSY 372", "name": "Positive Psychology", "credits": 3, "description": "Focuses on subjective well-being, optimal human functioning, positive traits, and collective societal wellbeing across the lifespan."},
+        {"code": "PSY 373", "name": "Cognitive Psychology", "credits": 3, "description": "Overviews primary cognitive psychology areas including neuroscience, perception, attention, memory, language, decision-making, and problem-solving."},
+        {"code": "PSY 374", "name": "Introduction to Neuroscience", "credits": 3, "description": "Foundational overview of nervous system structure and function, including neuronal communication, brain organization, sensory systems, and neural basis of behavior."},
+        {"code": "PSY 375", "name": "Health Psychology", "credits": 3, "description": "Overviews health psychology areas including stress, illness, coping, lifestyle enhancement, chronic illness, pain, and life-threatening health problems."},
+        {"code": "PSY 376", "name": "Research Methods in Psychology", "credits": 3, "description": "Introduces experimental methods focusing on research planning, experimental design, statistics, APA-style report writing, and critical evaluation of scientific evidence."},
+        {"code": "PSY 377", "name": "Educational Psychology", "credits": 3, "description": "Explores psychological principles and theories applied to teaching and learning, covering learning theories, motivation, development, individual differences, and assessment."},
+        {"code": "PSY 378", "name": "Industrial and Organization Psychology", "credits": 3, "description": "Focuses on human behavior in the workplace, addressing hiring, management, employee development, retention, productivity, and employee wellbeing."},
+        {"code": "PSY 379", "name": "Neural Circuits and Systems", "credits": 3, "description": "Examines how neural circuits produce sensation, action, attention, executive function, language, emotion, motivation, and sleep, exploring circuit disruptions in mental illness."},
+        {"code": "PSY 386", "name": "Research Methods in Psychology II", "credits": 3, "description": "Second research methods course emphasizing research design, implementation, data analysis, and interpretation for psychology majors."},
+        {"code": "PSY 391", "name": "Psychology Internship", "credits": 3, "description": "Supervised work-study applying psychological theory in work environments (120 hours minimum)."},
+        {"code": "PSY 401", "name": "Neurobiology of Learning and Memory", "credits": 3, "description": "Explores current understanding of learning and memory processes from human and animal research, examining measurement, different memory systems, and underlying mechanisms."},
+        {"code": "PSY 440", "name": "The Design Thinking Process", "credits": 3, "description": "Hands-on course applying design thinking while developing understanding of cognitive and behavioral principles underlying innovation and problem-solving."},
+        {"code": "PSY 465", "name": "Cross-Cultural Psychology", "credits": 3, "description": "In-depth examination of culture's role in socialization and behavior, addressing cross-cultural psychology methodology."},
+        {"code": "PSY 470", "name": "Social Psychology", "credits": 3, "description": "Examines factors impacting human relationships including interpersonal attraction, attitudes, social perception, altruism, aggression, group behavior, and social influence."},
+        {"code": "PSY 471", "name": "Gender in Childhood", "credits": 3, "description": "Addresses gender meaning and its effects on children's experiences and identities, considering biological and socio-cultural factors."},
+        {"code": "PSY 472", "name": "Child Psychopathology", "credits": 3, "description": "Focuses on atypical childhood development, covering defining characteristics, causes, diagnosis, and intervention approaches for behavioral, mood, and developmental disorders."},
+        {"code": "PSY 480", "name": "Counseling Theory and Practice", "credits": 3, "description": "Reviews major contemporary counseling theories and techniques with opportunities for observation and practice, addressing cross-cultural issues."},
+        {"code": "PSY 481", "name": "Exercise and Sport Psychology", "credits": 3, "description": "Studies how psychology promotes and maintains exercise and sport behavior across the lifespan with emphasis on practical applications."},
+        {"code": "PSY 482", "name": "Forensic Psychology", "credits": 3, "description": "Introduces forensic psychology covering criminal profiling, hypnosis, lie detection, eyewitness testimony, jury selection, insanity defense, and abuse cases."},
+        {"code": "PSY 483", "name": "Drugs and Behavior", "credits": 3, "description": "Overviews topics related to drugs and behavioral effects, covering historical perspectives, drug action, neurobiology, and psychopharmacology."},
+        {"code": "PSY 484", "name": "Psychological Testing and Assessment", "credits": 3, "description": "Explores assessment goals and principles, measurement theory, test construction, major test types, and contemporary issues including bias and ethical concerns."},
+        {"code": "PSY 486", "name": "Judgement and Decision Making", "credits": 3, "description": "Examines human judgment and decision-making research with applications to health, financial, legal, political, and personal relationship decisions."},
+        {"code": "PSY 490", "name": "Senior Research Seminar", "credits": 3, "description": "Integrates accumulated knowledge through development and investigation of applied psychology hypotheses, culminating in written and oral presentations."},
+        {"code": "PSY 491", "name": "Senior Internship Seminar", "credits": 3, "description": "Integrates and applies prior coursework through diverse field placements combined with classroom seminars."},
+        {"code": "PSY 497", "name": "Directed Study in Psychology", "credits": 3, "description": "Independent and in-depth study of specific psychology topics through individually supervised research projects."}
+      ]
+    },
+
+    "history": {
+      "prefix": "HIS",
+      "department": "Department of History, Literature, and the Arts",
+      "college": "College of Arts and Sciences",
+      "courses": [
+        {"code": "HIS 250", "name": "Emergence of Europe (1000-1600)", "credits": 3, "description": "Examines the origins and early development of Europe from 1000-1600, covering feudalism, national monarchies, urbanism and society during the Renaissance and Reformation."},
+        {"code": "HIS 252", "name": "Europe: 1500 to 1815", "credits": 3, "description": "Study of political, intellectual, and socio-economic history of early modern Europe including the Reformation, Scientific Revolution, and English & French revolutions."},
+        {"code": "HIS 261", "name": "History of the United States to 1877", "credits": 3, "description": "Basic survey of American history covering political, cultural and economic development of the United States through Reconstruction."},
+        {"code": "HIS 262", "name": "History of the United States Since 1865", "credits": 3, "description": "History of the American experience from end of Reconstruction to present, focusing on Urban-Industrial age, rise of US to world leadership, and changes in American life."},
+        {"code": "HIS 263", "name": "American Women's History", "credits": 3, "description": "Surveys American women's history from colonial times to present, examining how major developments affected women and the lives of ordinary and leading women thinkers and activists."},
+        {"code": "HIS 270", "name": "World History to 1500", "credits": 3, "description": "Traces development of humanity and society from dawn of history to 1500, providing insight into ideas, institutions, and life practices across different cultures."},
+        {"code": "HIS 271", "name": "World History Since 1500", "credits": 3, "description": "Historical study of major regions and cultures of the world during the last five centuries, with attention to connections, interactions, and global trends."},
+        {"code": "HIS 272", "name": "Introduction to Latin American History", "credits": 3, "description": "Basic survey from pre-European invasion to recent times, emphasizing diversity of the Latin American experience alongside historical continuities of conflict, inequality, and imperial domination."},
+        {"code": "HIS 273", "name": "History in the World Today", "credits": 3, "description": "Develops argumentation skills regarding complex historical problems while strengthening global perspective through analyzing current events' historical dimensions."},
+        {"code": "HIS 282", "name": "Introduction to American Studies", "credits": 3, "description": "Introduces key American Studies themes and concepts through methodology enabling interpretation of literary texts, films, documents, music, visual art, and popular culture."},
+        {"code": "HIS 302", "name": "To Arms! History of Modern France", "credits": 3, "description": "Examines French social and political evolution from the eighteenth century through WWI, emphasizing the Revolution, Napoleonic era, imperial expansion, and cultural movements."},
+        {"code": "HIS 303", "name": "French Studies", "credits": 3, "description": "Biocultural approach to French philosophical thought across centuries, examining works by major thinkers. Topics may include humanism, skepticism, feminism, and constructivism."},
+        {"code": "HIS 304", "name": "Italian Studies", "credits": 3, "description": "Focuses on Italian history, society, politics, culture, and economics. Rotating topics may address humanism, science, fascism, and the Vatican."},
+        {"code": "HIS 351", "name": "History of Modern Europe: 1815 to the Present", "credits": 3, "description": "Examines major political, economic, and intellectual developments since 1815, emphasizing significant events, patterns, and themes in Western history."},
+        {"code": "HIS 354", "name": "Trends in Modern Thought", "credits": 3, "description": "Selected history of modern and post-modern themes and ideologies in Euro-America since the Renaissance, with social, political, and philosophical focus."},
+        {"code": "HIS 361", "name": "Gender and World War II", "credits": 3, "description": "Explores whether WWII served as a transformative force for women globally, examining diverse socioeconomic and ethnic perspectives across US, Europe, and Asia."},
+        {"code": "HIS 362", "name": "The United States in the 1960s", "credits": 3, "description": "Examines 1960s political, economic, social, and cultural contours, addressing Civil Rights Movement, Vietnam, conservatism's resurgence, and cultural expressions."},
+        {"code": "HIS 364", "name": "History of American Technology", "credits": 3, "description": "Treats technology history within American business and social contexts, focusing on 19th and 20th centuries and technological impact on institutions, business, and culture."},
+        {"code": "HIS 365", "name": "The United States and World Politics, 1890 to the Present", "credits": 3, "description": "Examines American emergence as a great power from the Spanish-American War forward, evaluating US global role."},
+        {"code": "HIS 366", "name": "Race in America", "credits": 3, "description": "Examines race relations from slavery's onset to present, addressing slavery origins, immigration, abolitionism, Jim Crow, Civil Rights Movement, and post-civil rights era."},
+        {"code": "HIS 367", "name": "The History of American Popular Culture", "credits": 3, "description": "Explores American popular culture expressions across media including literature, film, music, and advertising, examining relationships to economics and social developments."},
+        {"code": "HIS 368", "name": "Gender and American Culture in the 1950s", "credits": 3, "description": "Examines 1950s cultural complexities through television and literature, showing how women challenged domestic stereotypes."},
+        {"code": "HIS 369", "name": "U.S. Latin American Relations 1820 to Present", "credits": 3, "description": "Examines historical relations between the United States and Latin American nations from the Monroe Doctrine era to contemporary times."},
+        {"code": "HIS 371", "name": "History of Russia", "credits": 3, "description": "Historical study of Russian societal evolution from the Age of Kiev through Soviet and contemporary periods."},
+        {"code": "HIS 372", "name": "History of East Asia", "credits": 3, "description": "Historical examination of East Asian ideas and institutions, emphasizing China's ancient and modern development since 1800, plus contemporary regional problems."},
+        {"code": "HIS 373", "name": "History of Modern Africa", "credits": 3, "description": "Provides context for analyzing major contemporary African challenges through coverage of ancient culture, slavery, colonialism, nationalism, and modern trends."},
+        {"code": "HIS 375", "name": "History of Modern Japan", "credits": 3, "description": "Surveys Japanese history from origins through 20th century, addressing political, social, economic, intellectual, and cultural developments."},
+        {"code": "HIS 380", "name": "Doing Public History", "credits": 3, "description": "Enables students to examine local history and communicate findings publicly while engaging debates about whose history merits documentation."},
+        {"code": "HIS 386", "name": "History, Law, and the Holocaust", "credits": 3, "description": "In-depth Holocaust exploration examining anti-Semitism, Nazi rise, and post-1945 international law development, concluding with contemporary human rights law."},
+        {"code": "HIS 391", "name": "History Internship", "credits": 3, "description": "Supervised work-study arrangement applying history theory and principles in professional settings."},
+        {"code": "HIS 400", "name": "Buy American: Consumer Culture in U.S. History", "credits": 3, "description": "Examines American consumer culture's rise from 19th through 21st centuries using interdisciplinary case studies addressing mass marketing, advertising, and consumer activism."},
+        {"code": "HIS 435", "name": "World War I: Causes, Courses, and Consequences", "credits": 3, "description": "Examines the seminal 20th-century conflict, analyzing political-cultural-military factors, wartime experiences, peacemaking, and enduring legacy."},
+        {"code": "HIS 451", "name": "The World Since 1945", "credits": 3, "description": "Examines major post-1945 global developments including capitalist and socialist systems, the Cold War, imperialism, independence movements, and the new world order."},
+        {"code": "HIS 452", "name": "History of Modern Britain", "credits": 3, "description": "Traces British history from 1688 through present, examining capitalism, constitutionalism, industrialism, and imperialism's impacts."},
+        {"code": "HIS 453", "name": "History of Modern Science", "credits": 3, "description": "Presents natural sciences history from 18th through 20th centuries, focusing on conceptual problems and scientific culture."},
+        {"code": "HIS 454", "name": "Foundations of the Modern Middle East", "credits": 3, "description": "Foundational Middle East understanding through Abrahamic traditions, Islamic history, Ottoman Empire, and British Palestine mandate, concluding with Arab-Israeli conflict."},
+        {"code": "HIS 461", "name": "History of Contemporary America", "credits": 3, "description": "Intensive examination of forces shaping recent America, emphasizing domestic politics, social change, urbanization, civil rights and ecological problems."},
+        {"code": "HIS 463", "name": "The United States in the 1970s and 1980s", "credits": 3, "description": "Explores 1970s-1980s shifts including conservatism's ascendancy, economic inequality, social movements, and media-politics relationships."},
+        {"code": "HIS 490", "name": "Seminar in Historical Inquiry", "credits": 3, "description": "Senior capstone with extensive practical experience in historical research and writing while examining historiographical and philosophical debates."},
+        {"code": "HIS 497", "name": "Directed Study in History", "credits": 3, "description": "Independent study under faculty direction requiring substantial papers or projects."},
+        {"code": "HIS ST200", "name": "Special Topics: Modern American Civil Rights Movement", "credits": 3, "description": "Traces Black freedom struggle from the 1950s-1970s examining organizational, leadership, and ideological aspects."},
+        {"code": "HIS ST201", "name": "Special Topics in Native American History", "credits": 3, "description": "Introduces Indigenous North American history from pre-contact through present using Indigenous perspectives."},
+        {"code": "HIS ST300", "name": "Special Topics: Race and Slavery in the Atlantic World", "credits": 3, "description": "Examines 15th through 19th-century Atlantic World slavery and race, emphasizing trans-Atlantic trade impacts."},
+        {"code": "HIS ST305", "name": "Special Topics: The Space Race: A History", "credits": 3, "description": "Examines 20th-century manned space flight evolution, focusing on Cold War rivalry and the African-American women integral to orbital dynamics."},
+        {"code": "HIS ST401", "name": "Special Topics: War Crimes in World History", "credits": 3, "description": "Explores global war crimes history and legal responses, tracing human efforts limiting warfare from antiquity through modern criminal trials."}
+      ]
+    },
+
+    "sociology": {
+      "prefix": "SOC",
+      "department": "Department of Politics, Law & Society",
+      "college": "College of Arts and Sciences",
+      "courses": [
+        {"code": "SOC 251", "name": "Principles of Sociology", "credits": 3, "description": "Students survey and appraise the basic concepts including theory and method, social processes and structure."},
+        {"code": "SOC 253", "name": "Honors Sociology", "credits": 3, "description": "Advanced introduction to sociology exploring social theory, research methods, social structure, culture, groups, socialization, social interaction, inequality, and social institutions."},
+        {"code": "SOC 351", "name": "Social Problems Social Solutions", "credits": 3, "description": "Examines major contemporary social problems and their explanations, assessing effectiveness of solutions regarding race, ethnicity, gender, immigration, education, age, criminal justice, overpopulation, and environmental degradation."},
+        {"code": "SOC 352", "name": "Sociology of Gender, Illness, and Health", "credits": 3, "description": "Explores gender's role in health opportunities and illness likelihood, examining different health outcomes for women and men."},
+        {"code": "SOC 354", "name": "Globalization and Childhood", "credits": 3, "description": "Examines impacts of globalization on children and childhood across the globe, including children as producers and consumers."},
+        {"code": "SOC 355", "name": "Social Determinants of Health", "credits": 3, "description": "Examines conditions and systems influencing health outcomes through structural determinants, economic policies, and discrimination using medical anthropology perspectives."},
+        {"code": "SOC 356", "name": "Sociology of Family", "credits": 3, "description": "Explores American family changes, mythology of traditional families, diversity of current family forms, examining hooking up, partnering, parenting, household labor division, and divorce."},
+        {"code": "SOC 359", "name": "The Sociological Imagination: What We See When We Watch T.V.", "credits": 3, "description": "Applies sociological imagination lens to television content analysis examining character lives, urban space, work, morality, sexuality, politics, and social justice."},
+        {"code": "SOC 360", "name": "Sociology of Sport", "credits": 3, "description": "Overview of sociology of sport, focusing on global aspects and relationship between sport and race, class, gender."},
+        {"code": "SOC 362", "name": "Sociology of Innovation and Creativity", "credits": 3, "description": "Takes sociological perspective on creativity and innovation exploring the sociological context of each, with community-based projects."},
+        {"code": "SOC 370", "name": "Crime and Justice", "credits": 3, "description": "Applies sociological theory and research to the study of crime and social control, with policy debates and research projects."},
+        {"code": "SOC 390", "name": "Research Methods in Sociology", "credits": 3, "description": "Introduces systematic strategies to gather, analyze, and interpret sociological data via survey research, including SPSS statistical analysis."},
+        {"code": "SOC 391", "name": "Sociology Internship", "credits": 3, "description": "Individually supervised work-study arrangements applying social science theory and principles."},
+        {"code": "SOC 451", "name": "Population and Society", "credits": 3, "description": "Examines determinants and consequences of population processes, exploring relevance to economic development, gender equality, immigration, poverty, healthcare, and environmental issues."},
+        {"code": "SOC 452", "name": "Sociology of Work", "credits": 3, "description": "Exploration of the meaning of work in our lives and culture, challenging assumptions about social organization of work."},
+        {"code": "SOC 453", "name": "Race and Ethnicity", "credits": 3, "description": "Examines theories to understand treatment and life chances of racial and ethnic subpopulations."},
+        {"code": "SOC 454", "name": "Social Theory: The Study of Isms and Phobias", "credits": 3, "description": "Examines classical and contemporary social theory to understand inequalities including racism, sexism, classism, heterosexism."},
+        {"code": "SOC 455", "name": "Urban Sociology", "credits": 3, "description": "Uses urban theory to analyze the relationship between larger social forces and individual experiences, focusing on city formation and urbanism's effects."},
+        {"code": "SOC 460SL", "name": "Applied Seminar in Social Entrepreneurship", "credits": 3, "description": "Background in social entrepreneurship with hands-on experience creating solutions to significant global problems."},
+        {"code": "SOC 491", "name": "Sociology Capstone I", "credits": 3, "description": "Senior-level capstone seminar exploring an important social issue as it relates to social institutions."},
+        {"code": "SOC 492", "name": "Sociology Capstone II", "credits": 3, "description": "Continuation of SOC 491 providing opportunity for extended, in-depth research."},
+        {"code": "SOC 497", "name": "Directed Study in Sociology", "credits": 3, "description": "Independent, in-depth study or research under faculty direction with substantial paper or project."},
+        {"code": "SOC ST300", "name": "Special Topics: From Womb to Tomb - Sociology of Sexuality", "credits": 3, "description": "Examines how sexuality is culturally, politically, and legally defined throughout the life cycle."},
+        {"code": "SOC ST301", "name": "Special Topics: From Asylums to Zoloft - Sociology of Mental Health", "credits": 3, "description": "Explores social dimensions of mental health and illness, examining historical and cultural definitions and modern trends' effects on wellbeing."}
+      ]
+    },
+
+    "political_science": {
+      "prefix": "POLS",
+      "department": "Department of Politics, Law & Society",
+      "college": "College of Arts and Sciences",
+      "courses": [
+        {"code": "POLS 240", "name": "Contemporary Problems and Policy Responses", "credits": 3, "description": "Places students in a dynamic learning environment wrestling with complex, real-world problems. Emphasizes problem-solving skills, critical thinking, and ethical reasoning."},
+        {"code": "POLS 241", "name": "Introduction to International Politics", "credits": 3, "description": "Introduction to international relations covering nation-state development, war and peace, human rights, and economic/environmental policies. Explores international institutions like the UN and World Bank."},
+        {"code": "POLS 256", "name": "Introduction to U.S. Politics", "credits": 3, "description": "Surveys U.S. government topics including the Constitution, Congress, presidency, Supreme Court, federalism, political parties, elections, interest groups, civil liberties, and civil rights."},
+        {"code": "POLS 290", "name": "Honors Politics of the International System", "credits": 3, "description": "Explores the current international political system, historical developments, competing IR theories, and contemporary global issues."},
+        {"code": "POLS 291", "name": "Honors Contemporary U.S. Politics", "credits": 3, "description": "Covers ideas and historical factors shaping the U.S. political system, including institutions, parties, elections, and contemporary politics."},
+        {"code": "POLS 351", "name": "United States Foreign Policy", "credits": 3, "description": "Surveys instruments, implementation, and issues of U.S. foreign policy, America's rise to power, and post-WWII overseas involvements."},
+        {"code": "POLS 352", "name": "American Political Economy", "credits": 3, "description": "Examines relationships between government and business, politics and economy, and power and money in the United States."},
+        {"code": "POLS 353", "name": "Political Parties and Elections", "credits": 3, "description": "Covers party history, organization, nominations, elections, voting, and roles of pressure groups, public opinion, and media."},
+        {"code": "POLS 354", "name": "The U.S. Congress", "credits": 3, "description": "Examines Congress as a central institution, analyzing elections, internal organization, committees, legislative processes, and relationships with other branches."},
+        {"code": "POLS 356", "name": "The Presidency in Modern American Politics", "credits": 3, "description": "Explores how the presidency transformed from the Constitution's outline to today's centerpiece of American politics."},
+        {"code": "POLS 361", "name": "Comparative Politics", "credits": 3, "description": "Examines key concepts and trends using comparative methodology across democracies, authoritarian regimes, communist systems, and developing countries."},
+        {"code": "POLS 366", "name": "Politics of Asia", "credits": 3, "description": "Analyzes government and domestic politics of India, China, and Japan using comparative methodology."},
+        {"code": "POLS 367", "name": "Global Environmental Sustainability and Policy", "credits": 3, "description": "Examines intersection of environmental sustainability, political policy, and economic issues with focus on climate change."},
+        {"code": "POLS 391", "name": "Political Science Internship", "credits": 3, "description": "Supervised work-study arrangement applying political science theory."},
+        {"code": "POLS 440", "name": "Interest Groups and Lobbying", "credits": 3, "description": "Examines interest groups and lobbyists in American politics, analyzing organization, campaign finance, policy influence, and social movements."},
+        {"code": "POLS 462", "name": "International Security", "credits": 3, "description": "Analyzes the modern international system and power struggles, including balance of power, war and peace, national power, international law, and diplomacy."},
+        {"code": "POLS 463", "name": "Ethics in International Affairs", "credits": 3, "description": "Examines ethical constraints on force use, human rights norms, global inequality, development programs, and ethical implications of the global economy."},
+        {"code": "POLS 464", "name": "Political Ideologies - Old and New", "credits": 3, "description": "Examines liberalism, conservatism, and Marxism plus modern ideological debates over nationalism, environmentalism, and feminism."},
+        {"code": "POLS 481", "name": "Politics of Development", "credits": 3, "description": "Examines political, economic, and social structures of developing countries in Asia, Africa, Latin America, and Middle East."},
+        {"code": "POLS 483", "name": "Politics of International Economic Relations", "credits": 3, "description": "Focuses on governments and international economic organizations examining conflict/cooperation on trade, investment, exchange rates, and multinational corporations."},
+        {"code": "POLS 490", "name": "Seminar in Politics and Law", "credits": 3, "description": "Interdisciplinary capstone for Politics and Law majors with in-depth examination and major research projects."},
+        {"code": "POLS 497", "name": "Directed Study in Politics", "credits": 3, "description": "Independent, in-depth study or research under faculty direction."},
+        {"code": "POLS ST302", "name": "Special Topics: Saving the World with Data", "credits": 3, "description": "Introduces contemporary political science research methods including fieldwork, interviews, surveys, statistical analysis, and AI applications."},
+        {"code": "POLS ST400", "name": "Special Topics: Politics and Society of Modern Japan", "credits": 3, "description": "Examines Japanese history and politics through Confucian thought, comparing traditional structures with contemporary challenges."}
+      ]
+    },
+
+    "literary_cultural_studies": {
+      "prefix": "LCS",
+      "department": "Department of History, Literature, and the Arts",
+      "college": "College of Arts and Sciences",
+      "courses": [
+        {"code": "LCS 220", "name": "Introduction to Arts and Creative Industries", "credits": 3, "description": "Explores creativity through scholarship, creative practice, and creative industries study. Focuses on visual art, performing arts, or creative writing."},
+        {"code": "LCS 221", "name": "Studies in Fiction", "credits": 3, "description": "Investigates various forms of narrative literature such as novels, short stories, and experimental narrative forms through theoretical and contextual analysis."},
+        {"code": "LCS 222", "name": "Studies in Nonfiction", "credits": 3, "description": "Covers reading and research on nonfiction works including biographies, autobiographies, journalism, essays, film documentaries, and journals."},
+        {"code": "LCS 223", "name": "Studies in Poetry", "credits": 3, "description": "Examines poetry as craft, exploring the relationship between strategic decisions poets make and the meanings derived through active reading."},
+        {"code": "LCS 224", "name": "Introduction to Hip-Hop Culture", "credits": 3, "description": "Explores hip-hop's origins in West African traditions and American music, examining it as a significant cultural and political movement."},
+        {"code": "LCS 225", "name": "Professional Writing", "credits": 3, "description": "Teaches written communication strategies across fields, focusing on adapting knowledge for diverse audiences with ethical dimensions."},
+        {"code": "LCS 230", "name": "Introduction to Film Studies", "credits": 3, "description": "Introduces film language, examines relationships between movies and culture, analyzes cinematography, production design, editing, and narrative structure."},
+        {"code": "LCS 240", "name": "Introduction to the Environmental Humanities", "credits": 3, "description": "Addresses how nature became separated from culture and examines ethical and political considerations for the environment and environmental justice."},
+        {"code": "LCS 250", "name": "Women, Gender, and Sexuality Studies", "credits": 3, "description": "Applies critical lens to examine how gender and sexuality have been used as systems of social control and their roles in social change."},
+        {"code": "LCS 251", "name": "Studies in Drama", "credits": 3, "description": "Focuses on dramatic literature in various forms with examination of representative works from diverse historical and cultural contexts."},
+        {"code": "LCS 260", "name": "Introduction to Philosophy", "credits": 3, "description": "Studies core philosophical concepts, examining reasons for choices, actions, thoughts and beliefs using Western and non-Western sources."},
+        {"code": "LCS 270", "name": "Introduction to Cultural Studies", "credits": 3, "description": "Examines cultural texts and practices, addressing questions about making culture and being made by culture."},
+        {"code": "LCS 280", "name": "Introduction to World Music", "credits": 3, "description": "Builds vocabulary for describing music and studies cultures of music including aesthetics, traditions, values, and politics."},
+        {"code": "LCS 282", "name": "Introduction to American Studies", "credits": 3, "description": "Introduces American Studies methodology and themes using literary texts, films, historical documents, music, visual art, and popular culture."},
+        {"code": "LCS 341", "name": "Philosophy of Art", "credits": 3, "description": "Examines the history of aesthetic theory and philosophical issues raised by various art forms."},
+        {"code": "LCS 352", "name": "Studies in Poetry (Advanced)", "credits": 3, "description": "Investigates poetry's power through craft analysis, examining strategic decisions poets make."},
+        {"code": "LCS 354", "name": "Animation Theory, History, Practice", "credits": 3, "description": "Explores animation as vital component of film studies and visual culture across cinema, video games, and other media."},
+        {"code": "LCS 356", "name": "Studies in Narrative", "credits": 3, "description": "Investigates various forms of narrative literature through theoretical and contextual study."},
+        {"code": "LCS 357", "name": "Studies in Ethnic Literature of the United States", "credits": 3, "description": "Examines American literature from minority perspectives, exploring how other Americans brought their backgrounds and world views to national literature."},
+        {"code": "LCS 358", "name": "Introduction to Studies in Jazz", "credits": 3, "description": "Introduces jazz as American art form through music theory, African/American/European cultural history, and recording industry examination."},
+        {"code": "LCS 359", "name": "Music and Society", "credits": 3, "description": "Studies musicians and genres globally, examining ways music impacts communities, politics, and everyday life."},
+        {"code": "LCS 360", "name": "Studies in Nonfiction (Advanced)", "credits": 3, "description": "Reading and research on nonfiction works across diverse non-fiction forms and genres."},
+        {"code": "LCS 361", "name": "Studies in International Literature", "credits": 3, "description": "Focuses on interrelations between representative texts from different cultures, examining literature from particular regions in translated form."},
+        {"code": "LCS 362", "name": "Topics in the Environmental Humanities", "credits": 3, "description": "Examines historical and contemporary relationships between human and more-than-human worlds using ecocriticism scholarship."},
+        {"code": "LCS 363", "name": "British Literary Contexts: Beginnings to the Restoration", "credits": 3, "description": "Examines critical, social, cultural, and historical contexts of British literary production using canonical and non-canonical works."},
+        {"code": "LCS 364", "name": "British Literary Contexts: Restoration to the Present", "credits": 3, "description": "Explores British literary production from the Restoration forward, examining how texts reflect and shape political and aesthetic values."},
+        {"code": "LCS 365", "name": "American Literary Contexts: Beginnings to the Civil War", "credits": 3, "description": "Examines American literature from pre-contact through post-Civil War, analyzing how political tensions and social movements shape literary texts."},
+        {"code": "LCS 366", "name": "American Literary Contexts: Civil War to the Present", "credits": 3, "description": "Explores post-Civil War American literature to present, examining influences that shape and are shaped by American literary texts."},
+        {"code": "LCS 370", "name": "Poetry Writing Workshop", "credits": 3, "description": "Hands-on poetry creation through regular presentations of original writing with focus on form, revision, and contemporary publishing."},
+        {"code": "LCS 371", "name": "Fiction Writing Workshop", "credits": 3, "description": "Hands-on story construction examining fundamental structure of fiction including character, plot, and theme through drafting and revision."},
+        {"code": "LCS 372", "name": "Creative Writing Workshop", "credits": 3, "description": "Exploration of creative writing in specific genres with reading, extensive drafting, and critique."},
+        {"code": "LCS 374", "name": "Modern Art in Europe 1880-1945", "credits": 3, "description": "Examines politics and practice of visual art movements in Europe including symbolism, expressionism, cubism, and surrealism."},
+        {"code": "LCS 376", "name": "Global Art History Before 1850", "credits": 3, "description": "Chronological case studies exploring histories, interpretations, and reception of art and visual culture from prehistory to 1850."},
+        {"code": "LCS 378", "name": "African American Studies", "credits": 3, "description": "Explores past and present experiences, cultures, and achievements of people of African descent in the United States."},
+        {"code": "LCS 379", "name": "Asian American Studies", "credits": 3, "description": "Explores the interdisciplinary field through literary studies, cultural studies, and social movement history."},
+        {"code": "LCS 380", "name": "Latin American Studies", "credits": 3, "description": "Examines Latin American and Latinx traditions, histories, and forms of cultural production."},
+        {"code": "LCS 381", "name": "Native American Studies", "credits": 3, "description": "Interdisciplinary introduction to the history, culture, and contemporary experiences of Indigenous people in North America."},
+        {"code": "LCS 382", "name": "American Studies", "credits": 3, "description": "Examines primary sources contributing to U.S. national culture formation with selective history of American writing."},
+        {"code": "LCS 383", "name": "Sexuality and Culture", "credits": 3, "description": "Analyzes key texts from the canon of sexuality studies exploring 19th-century developments and new sexual paradigms."},
+        {"code": "LCS 386", "name": "African Heritage in the Americas and Caribbean", "credits": 3, "description": "International perspective on the African Diaspora through cultural products including music, festivals, and religion."},
+        {"code": "LCS 387", "name": "African Popular Culture", "credits": 3, "description": "Examines multiple forms of music, literature, and art in sub-Saharan Africa."},
+        {"code": "LCS 388", "name": "Religious Studies", "credits": 3, "description": "Covers various religions, currently taught as introduction to Judaism through examination of traditional texts throughout Jewish history."},
+        {"code": "LCS 391", "name": "Literary and Cultural Studies Internship", "credits": 3, "description": "Individually supervised work-study arrangements applying English arts and theory."},
+        {"code": "LCS 402", "name": "Life and How to Live It", "credits": 3, "description": "Addresses fundamental questions about living and dying well through literary and philosophical works."},
+        {"code": "LCS 403", "name": "The Philosophy of Technology", "credits": 3, "description": "Explores technology's nature and implications, providing historical overview and examining cultural, ethical, and political implications."},
+        {"code": "LCS 441", "name": "Film Theory", "credits": 3, "description": "Approaches film as both art form and social practice, teaching key texts in film theory."},
+        {"code": "LCS 443", "name": "Editing and Publishing Workshop: The Bryant Literary Review", "credits": 3, "description": "Mentorship in literary magazine editing through reviewing submissions and meeting publishing professionals."},
+        {"code": "LCS 456", "name": "Contemporary Literature", "credits": 3, "description": "Examines new literary forms through reading recent literature exploring responses to changing social and cultural values."},
+        {"code": "LCS 457", "name": "Ethics", "credits": 3, "description": "Introduces ethics and moral philosophy, applying ethical theories to concrete situations and contemporary issues."},
+        {"code": "LCS 458", "name": "Anthropology of Music Industries", "credits": 3, "description": "Examines music industry as both business and creative site, exploring commodification and creativity."},
+        {"code": "LCS 461", "name": "The Image of Business in Literature", "credits": 3, "description": "Insight into business through literary and cinematic perspectives, building bridges between humanities and business."},
+        {"code": "LCS 462", "name": "Literature in a Historical Context", "credits": 3, "description": "Examines literary movements in-depth such as realism, modernism, romanticism, or gothic literature."},
+        {"code": "LCS 463", "name": "Studies in Comparative Literature", "credits": 3, "description": "Analyzes literature within cross-cultural frameworks, examining development of a genre in an international context."},
+        {"code": "LCS 464", "name": "Major Literary Figures", "credits": 3, "description": "Examines one writer or writing circle in-depth through biography, autobiography, letters, and critical reaction."},
+        {"code": "LCS 466", "name": "Women and the Creative Imagination", "credits": 3, "description": "Considers women's cultural production through case studies exploring gendered identities and intersectionality of gender."},
+        {"code": "LCS 467", "name": "Art and Politics in Nineteenth-Century France", "credits": 3, "description": "Focuses on late 19th-century French visual culture examining artists working from other places or identities."},
+        {"code": "LCS 468", "name": "Studies in Graphic Narrative", "credits": 3, "description": "Studies comics and graphic novels as art form including autobiography, memoir, political documentary, and literary adaptation."},
+        {"code": "LCS 469", "name": "Studies in Political Satire", "credits": 3, "description": "Examines the place of political satire within contemporary culture across television, film, stage, and print."},
+        {"code": "LCS 470", "name": "Advanced Poetry Writing", "credits": 3, "description": "Continues poetry workshop with focus on deep revision and evolving language, requiring final portfolio."},
+        {"code": "LCS 471", "name": "Sex, Love and Social Media", "credits": 3, "description": "Critically examines social media effects on friendship and intimacy through philosophical analysis."},
+        {"code": "LCS 480", "name": "Cultural Studies Abroad", "credits": 3, "description": "Studies culture, history, and literature of a country or city including 10-12 day research trip."},
+        {"code": "LCS 490", "name": "Critical and Cultural Theory", "credits": 3, "description": "Focuses on theoretical traditions shaping literary analysis from philosophy, social theory, linguistics, psychoanalysis, and gender studies."},
+        {"code": "LCS 491", "name": "Creativity and Research Portfolio Workshop", "credits": 3, "description": "Develop portfolios for exhibition, performance, job applications, or graduate study."},
+        {"code": "LCS 497", "name": "Directed Study in Literary and Cultural Studies", "credits": 3, "description": "Independent, in-depth study or research under faculty direction."},
+        {"code": "LCS ST302", "name": "Special Topics: Creative Writing Creative Field Trips", "credits": 3, "description": "Explores crucial decisions writers and artists make when engaging with the natural world through outdoor field trips."}
+      ]
+    },
+
+    "legal_studies": {
+      "prefix": "LGLS",
+      "department": "Department of Politics, Law & Society",
+      "college": "College of Arts and Sciences",
+      "courses": [
+        {"code": "LGLS 211", "name": "The Legal Environment of Business", "credits": 3, "description": "Examines nature of legal systems and processes including agency, contracts, UCC, debtor-creditor relationships, government regulation, and business entity selection."},
+        {"code": "LGLS 230", "name": "Introduction to the U.S. Legal System", "credits": 3, "description": "Overview of American legal framework covering sources of law, court systems, constitutional law, civil and criminal procedure, and regulatory structures."},
+        {"code": "LGLS 320", "name": "Global Legal Traditions", "credits": 3, "description": "Introduces comparative law study, examining how legal systems vary across nations including common law traditions."},
+        {"code": "LGLS 330", "name": "Criminal Law and Procedure", "credits": 3, "description": "Focuses on criminal responsibility, common crimes, and procedural requirements including rights to counsel, search warrants, and evidentiary rules."},
+        {"code": "LGLS 351", "name": "Civil Rights and Liberties", "credits": 3, "description": "Examines constitutional principles defining government limits and citizen rights, emphasizing Supreme Court decisions."},
+        {"code": "LGLS 354", "name": "Communications Law", "credits": 3, "description": "Studies media legal rights covering privacy, libel, defamation, copyright, regulatory agencies, and First Amendment theories."},
+        {"code": "LGLS 356", "name": "Law and the Digital World", "credits": 3, "description": "Addresses legal and policy issues regarding technology's societal impact including internet regulation and cyber threats."},
+        {"code": "LGLS 360", "name": "Law and Society", "credits": 3, "description": "Introduces law and society scholarship examining law's nature, legal actors' roles, and controversial issues."},
+        {"code": "LGLS 380", "name": "Sport and the Law", "credits": 3, "description": "Uses sports as a lens to examine societal change at multiple levels."},
+        {"code": "LGLS 381", "name": "International Law", "credits": 3, "description": "Covers state sovereignty, jurisdiction, treaty law, dispute resolution, international organizations, criminal law, force use, terrorism, and environmental law."},
+        {"code": "LGLS 382", "name": "Nonprofit Law and Governance", "credits": 3, "description": "Explores forming, maintaining, and governing tax-exempt organizations."},
+        {"code": "LGLS 383", "name": "Health Law", "credits": 3, "description": "Investigates legal regulation of health and healthcare industries."},
+        {"code": "LGLS 386", "name": "History, Law, and the Holocaust", "credits": 3, "description": "Explores Holocaust history and its impact on post-1945 international law development. Cross-listed with HIS 386."},
+        {"code": "LGLS 391", "name": "Legal Studies Internship", "credits": 3, "description": "Supervised employment applying legal studies theories."},
+        {"code": "LGLS 411", "name": "Markets and the Law: The Uniform Commercial Code", "credits": 3, "description": "Advanced examination of UCC provisions including contracts, sales, negotiable instruments, and secured transactions."},
+        {"code": "LGLS 412", "name": "Law of Financial Institutions", "credits": 3, "description": "Studies laws governing U.S. financial institutions including regulatory evolution and post-2008 crisis legislation."},
+        {"code": "LGLS 413", "name": "Gender and the Law", "credits": 3, "description": "Reviews historical and contemporary gender-related legal battles including voting, privacy, reproductive rights, and discrimination."},
+        {"code": "LGLS 443", "name": "Legal Ethics", "credits": 3, "description": "Investigates ethical systems guiding human thought, integrating ethical theories into law study."},
+        {"code": "LGLS 451", "name": "International Business Law", "credits": 3, "description": "Addresses government control of international business, comparing legal systems and covering international agreements."},
+        {"code": "LGLS 490", "name": "Seminar in Politics and Law", "credits": 3, "description": "Interdisciplinary capstone with in-depth examination and major research projects. Cross-listed with POLS 490."},
+        {"code": "LGLS 497", "name": "Directed Study in Legal Studies", "credits": 3, "description": "Independent study under faculty supervision."}
+      ]
+    },
+
+    "general_education_courses": {
+      "prefix": "GEN",
+      "courses": [
+        {"code": "GEN 100", "name": "Student Success at Bryant University", "credits": 1, "description": "Introduces foundational concepts of higher education and equips students with strategies for success, emphasizing adaptability, accountability, resiliency, diversity, equity, and inclusion."},
+        {"code": "GEN 103", "name": "Career Launch", "credits": 1, "description": "15-week course developing career management competencies including personal career identity building and practical planning tools."},
+        {"code": "GEN 106", "name": "Writing Workshop", "credits": 3, "description": "Students engage collaboratively as a writing community, emphasizing composition as an iterative process, exploring the potential of writing for social impact and change."},
+        {"code": "GEN 201", "name": "Intercultural Communication", "credits": 3, "description": "Analyzes communication within intercultural contexts domestically and internationally, examining culture's effect on sending and interpreting messages."},
+        {"code": "GEN 390", "name": "General Education Capstone", "credits": 3, "description": "Experiential course synthesizing general education skills with sustainable development goals and innovation methodology, tackling real-world problems with community partners."}
+      ]
+    }
+  },
+
+  "subject_knowledge": {
+    "communication": {
+      "theories_and_models": [
+        {
+          "name": "Shannon-Weaver Model (1948)",
+          "key_figures": ["Claude Shannon", "Warren Weaver"],
+          "definition": "A linear model of communication consisting of sender, encoder, channel, decoder, receiver, and noise. Originally designed for telecommunications.",
+          "key_concepts": ["Information source", "Transmitter/encoder", "Channel", "Noise", "Receiver/decoder", "Destination", "Feedback (added later)"],
+          "exam_topics": ["Identify components of the model", "Limitations of linear models", "Difference between semantic and technical noise"]
+        },
+        {
+          "name": "Berlo's SMCR Model (1960)",
+          "key_figures": ["David Berlo"],
+          "definition": "Expands Shannon-Weaver into Source-Message-Channel-Receiver, emphasizing that communication skills, attitudes, knowledge, social system, and culture of both source and receiver affect communication.",
+          "key_concepts": ["Source factors", "Message content/elements/treatment/structure/code", "Channel (5 senses)", "Receiver factors"],
+          "exam_topics": ["How source characteristics affect encoding", "Role of culture in communication"]
+        },
+        {
+          "name": "Schramm's Interactive Model (1954)",
+          "key_figures": ["Wilbur Schramm"],
+          "definition": "Introduced the concept of shared field of experience between sender and receiver. Communication is only effective when both parties share overlapping experiences.",
+          "key_concepts": ["Field of experience", "Shared meaning", "Encoding/decoding", "Feedback loop"],
+          "exam_topics": ["Why shared experience matters", "Difference from linear models"]
+        },
+        {
+          "name": "Transactional Model",
+          "key_figures": ["Dean Barnlund"],
+          "definition": "Both parties are simultaneously senders and receivers. Communication is a continuous, dynamic process influenced by noise, environment, and context.",
+          "key_concepts": ["Simultaneous sending/receiving", "Co-creation of meaning", "Context dependence", "Relational communication"],
+          "exam_topics": ["How transactional differs from interactive", "Examples of simultaneous communication"]
+        },
+        {
+          "name": "Uses and Gratifications Theory (1974)",
+          "key_figures": ["Elihu Katz", "Jay Blumler", "Michael Gurevitch"],
+          "definition": "Audiences actively seek out media to satisfy specific needs: information, personal identity, integration/social interaction, and entertainment.",
+          "key_concepts": ["Active audience", "Media choice", "Need gratification", "Cognitive needs", "Affective needs", "Social integrative needs"],
+          "exam_topics": ["Contrast with effects-based theories", "Examples of each gratification type"]
+        },
+        {
+          "name": "Agenda-Setting Theory (1972)",
+          "key_figures": ["Maxwell McCombs", "Donald Shaw"],
+          "definition": "The media does not tell people what to think, but what to think about. Media coverage determines issue salience in public consciousness.",
+          "key_concepts": ["First-level agenda setting (object salience)", "Second-level agenda setting (attribute salience)", "Priming", "Framing"],
+          "exam_topics": ["Distinguish agenda setting from framing", "Real-world examples of media agenda setting"]
+        },
+        {
+          "name": "Cultivation Theory (1976)",
+          "key_figures": ["George Gerbner"],
+          "definition": "Long-term exposure to media (especially television) shapes viewers' perceptions of social reality, making heavy viewers more likely to perceive the world as portrayed on TV.",
+          "key_concepts": ["Mean world syndrome", "Mainstreaming", "Resonance", "Heavy vs. light viewers"],
+          "exam_topics": ["Define mean world syndrome", "How cultivation affects fear/violence perception"]
+        },
+        {
+          "name": "Social Learning Theory / Social Cognitive Theory",
+          "key_figures": ["Albert Bandura"],
+          "definition": "People learn behaviors by observing others (models), including media figures. Includes attention, retention, reproduction, and motivation processes.",
+          "key_concepts": ["Modeling", "Vicarious reinforcement", "Self-efficacy", "Observational learning"],
+          "exam_topics": ["Bobo doll experiment", "Media violence and imitation"]
+        },
+        {
+          "name": "Spiral of Silence (1974)",
+          "key_figures": ["Elisabeth Noelle-Neumann"],
+          "definition": "People who perceive their opinion as being in the minority tend to remain silent, which in turn reinforces the perception that the majority opinion is dominant.",
+          "key_concepts": ["Fear of isolation", "Quasi-statistical sense", "Dominant opinion climate", "Willingness to speak out"],
+          "exam_topics": ["How social media affects the spiral", "Criticisms of the theory"]
+        },
+        {
+          "name": "Elaboration Likelihood Model (ELM) (1986)",
+          "key_figures": ["Richard Petty", "John Cacioppo"],
+          "definition": "Persuasion occurs through two routes: central (careful evaluation of arguments) and peripheral (reliance on cues like attractiveness or credibility).",
+          "key_concepts": ["Central route", "Peripheral route", "Motivation", "Ability to process", "Argument quality", "Source credibility"],
+          "exam_topics": ["When each route is used", "Advertising examples of each route"]
+        }
+      ],
+      "public_speaking_and_rhetoric": {
+        "key_concepts": [
+          {"term": "Ethos", "definition": "Speaker credibility and character; audience trust in the speaker's expertise and goodwill.", "example": "A doctor speaking about vaccines has high ethos."},
+          {"term": "Pathos", "definition": "Emotional appeal; evoking feelings in the audience to persuade.", "example": "Charity ads showing suffering children use pathos."},
+          {"term": "Logos", "definition": "Logical appeal; using evidence, data, and reasoning to support claims.", "example": "Citing statistics on graduation rates."},
+          {"term": "Kairos", "definition": "The opportune moment; timeliness and appropriateness of the message.", "example": "Discussing climate policy after a natural disaster."},
+          {"term": "Monroe's Motivated Sequence", "definition": "5-step persuasive speech structure: Attention, Need, Satisfaction, Visualization, Action.", "example": "Used in sales pitches and campaign speeches."},
+          {"term": "Communication Apprehension", "definition": "Fear or anxiety about real or anticipated communication with others, especially public speaking.", "example": "Stage fright, nervousness before presentations."},
+          {"term": "Informative vs. Persuasive Speech", "definition": "Informative teaches/explains without advocating a position; persuasive seeks to change beliefs, attitudes, or behaviors.", "example": "Explaining how solar panels work vs. arguing we should use them."},
+          {"term": "Audience Analysis", "definition": "Process of examining demographics, psychographics, and situational factors of an audience to tailor a message.", "example": "Adjusting vocabulary for a professional vs. student audience."}
+        ],
+        "key_figures": ["Aristotle (rhetoric foundations)", "Cicero (5 canons of rhetoric)", "Quintilian (ideal orator)"]
+      },
+      "interpersonal_communication": {
+        "key_concepts": [
+          {"term": "Social Penetration Theory", "definition": "Relationships develop through gradual self-disclosure, moving from superficial to intimate layers (onion metaphor).", "key_figures": ["Irwin Altman", "Dalmas Taylor"]},
+          {"term": "Uncertainty Reduction Theory", "definition": "People seek information to reduce uncertainty about others during initial interactions.", "key_figures": ["Charles Berger", "Richard Calabrese"]},
+          {"term": "Relational Dialectics", "definition": "Relationships involve ongoing tensions between contradictory desires: autonomy vs. connection, openness vs. closedness, predictability vs. novelty.", "key_figures": ["Leslie Baxter", "Barbara Montgomery"]},
+          {"term": "Nonverbal Communication Codes", "definition": "Kinesics (body movement), haptics (touch), proxemics (space), chronemics (time), vocalics/paralanguage (voice qualities), physical appearance.", "key_figures": ["Edward T. Hall (proxemics)", "Paul Ekman (facial expressions)"]},
+          {"term": "Johari Window", "definition": "Model for self-awareness showing 4 quadrants: Open, Blind, Hidden, Unknown areas of self.", "key_figures": ["Joseph Luft", "Harrington Ingham"]},
+          {"term": "Face-Negotiation Theory", "definition": "People from different cultures manage conflict differently based on face concerns (self-face vs. other-face).", "key_figures": ["Stella Ting-Toomey"]}
+        ]
+      },
+      "mass_communication": {
+        "key_concepts": [
+          {"term": "Gatekeeping", "definition": "Process by which media professionals select, filter, and shape information before it reaches the public.", "key_figures": ["Kurt Lewin"]},
+          {"term": "Media Convergence", "definition": "The merging of previously distinct media technologies, industries, and content onto digital platforms."},
+          {"term": "Media Ownership Concentration", "definition": "Consolidation of media outlets under fewer corporate owners, raising concerns about diversity of viewpoints."},
+          {"term": "Framing", "definition": "How media presents information by emphasizing certain aspects while downplaying others, influencing interpretation.", "key_figures": ["Robert Entman"]},
+          {"term": "Digital Divide", "definition": "Gap between those with access to digital technology and those without, often along socioeconomic, racial, and geographic lines."},
+          {"term": "Media Literacy", "definition": "Ability to access, analyze, evaluate, create, and act using all forms of communication."}
+        ]
+      },
+      "organizational_communication": {
+        "key_concepts": [
+          {"term": "Formal vs. Informal Communication", "definition": "Formal follows official channels (memos, meetings); informal includes grapevine, water-cooler talk."},
+          {"term": "Upward/Downward/Horizontal Communication", "definition": "Direction of message flow in organizational hierarchy."},
+          {"term": "Organizational Culture", "definition": "Shared values, beliefs, and practices that characterize an organization.", "key_figures": ["Edgar Schein"]},
+          {"term": "Crisis Communication", "definition": "Strategies for communicating during organizational crises. Includes Situational Crisis Communication Theory (SCCT).", "key_figures": ["Timothy Coombs"]}
+        ]
+      }
+    },
+
+    "psychology": {
+      "major_perspectives": [
+        {
+          "name": "Behavioral Perspective",
+          "key_figures": ["John B. Watson", "B.F. Skinner", "Ivan Pavlov", "Edward Thorndike"],
+          "core_idea": "Behavior is learned through interaction with the environment. Only observable behavior should be studied scientifically.",
+          "key_concepts": [
+            {"term": "Classical Conditioning", "definition": "Learning through association. A neutral stimulus becomes associated with an unconditioned stimulus to produce a conditioned response.", "example": "Pavlov's dogs salivating at a bell."},
+            {"term": "Operant Conditioning", "definition": "Learning through consequences. Behavior is strengthened by reinforcement or weakened by punishment.", "example": "A rat pressing a lever for food (Skinner box)."},
+            {"term": "Positive Reinforcement", "definition": "Adding a desirable stimulus to increase behavior.", "example": "Giving a treat for good behavior."},
+            {"term": "Negative Reinforcement", "definition": "Removing an aversive stimulus to increase behavior.", "example": "Taking aspirin to remove a headache."},
+            {"term": "Positive Punishment", "definition": "Adding an aversive stimulus to decrease behavior.", "example": "A speeding ticket."},
+            {"term": "Negative Punishment", "definition": "Removing a desirable stimulus to decrease behavior.", "example": "Taking away phone privileges."},
+            {"term": "Extinction", "definition": "Gradual weakening of a conditioned response when reinforcement stops."},
+            {"term": "Shaping", "definition": "Reinforcing successive approximations of a desired behavior."},
+            {"term": "Schedules of Reinforcement", "definition": "Fixed-ratio, variable-ratio, fixed-interval, variable-interval. Variable-ratio produces highest, most consistent response rates."}
+          ],
+          "exam_topics": ["Distinguish classical from operant conditioning", "Identify reinforcement schedules", "Apply to real-world scenarios"]
+        },
+        {
+          "name": "Cognitive Perspective",
+          "key_figures": ["Jean Piaget", "Noam Chomsky", "Aaron Beck", "Albert Ellis", "Ulric Neisser"],
+          "core_idea": "Mental processes (thinking, memory, perception, problem-solving) are central to understanding behavior.",
+          "key_concepts": [
+            {"term": "Schema", "definition": "Mental framework for organizing and interpreting information."},
+            {"term": "Cognitive Distortions", "definition": "Systematic errors in thinking (e.g., catastrophizing, all-or-nothing thinking, overgeneralization).", "key_figure": "Aaron Beck"},
+            {"term": "Information Processing Model", "definition": "Mind works like a computer: encoding, storage, retrieval of information."},
+            {"term": "Piaget's Stages of Cognitive Development", "definition": "Sensorimotor (0-2), Preoperational (2-7), Concrete Operational (7-11), Formal Operational (11+)."},
+            {"term": "Metacognition", "definition": "Thinking about one's own thinking; awareness and regulation of cognitive processes."}
+          ],
+          "exam_topics": ["Piaget's stages and what children can/cannot do at each", "Cognitive distortions in CBT", "Information processing stages"]
+        },
+        {
+          "name": "Psychodynamic Perspective",
+          "key_figures": ["Sigmund Freud", "Carl Jung", "Alfred Adler", "Erik Erikson", "Karen Horney"],
+          "core_idea": "Behavior is driven by unconscious desires, conflicts, and childhood experiences.",
+          "key_concepts": [
+            {"term": "Id, Ego, Superego", "definition": "Id: primitive drives (pleasure principle). Ego: mediator (reality principle). Superego: moral conscience (morality principle)."},
+            {"term": "Defense Mechanisms", "definition": "Unconscious strategies to protect ego from anxiety: repression, denial, projection, displacement, sublimation, rationalization, regression, reaction formation."},
+            {"term": "Psychosexual Stages", "definition": "Freud's stages: Oral, Anal, Phallic, Latency, Genital. Fixation at any stage affects adult personality."},
+            {"term": "Erikson's Psychosocial Stages", "definition": "8 stages of development, each with a crisis: Trust vs. Mistrust, Autonomy vs. Shame/Doubt, Initiative vs. Guilt, Industry vs. Inferiority, Identity vs. Role Confusion, Intimacy vs. Isolation, Generativity vs. Stagnation, Integrity vs. Despair."},
+            {"term": "The Unconscious", "definition": "Repository of thoughts, memories, and desires below conscious awareness that influence behavior."},
+            {"term": "Collective Unconscious", "definition": "Jung's concept of shared, inherited unconscious containing archetypes common to all humans."}
+          ],
+          "exam_topics": ["Match defense mechanisms to examples", "Erikson's stages and age ranges", "Freud vs. Neo-Freudians"]
+        },
+        {
+          "name": "Humanistic Perspective",
+          "key_figures": ["Abraham Maslow", "Carl Rogers", "Rollo May"],
+          "core_idea": "Emphasis on free will, personal growth, and self-actualization. People are inherently good and motivated to reach their potential.",
+          "key_concepts": [
+            {"term": "Maslow's Hierarchy of Needs", "definition": "5-level pyramid: Physiological, Safety, Love/Belonging, Esteem, Self-Actualization. Lower needs must be met before higher ones."},
+            {"term": "Self-Actualization", "definition": "Realizing one's full potential and capabilities.", "key_figure": "Abraham Maslow"},
+            {"term": "Unconditional Positive Regard", "definition": "Acceptance and support of a person regardless of what they say or do.", "key_figure": "Carl Rogers"},
+            {"term": "Client-Centered Therapy", "definition": "Rogers' approach: therapist provides empathy, genuineness, and unconditional positive regard to facilitate client growth."},
+            {"term": "Self-Concept", "definition": "An individual's belief about themselves, including attributes and who they are."}
+          ],
+          "exam_topics": ["Order Maslow's hierarchy", "Rogers' therapeutic conditions", "Contrast with behaviorism"]
+        },
+        {
+          "name": "Biological/Neuroscience Perspective",
+          "key_figures": ["Roger Sperry", "Michael Gazzaniga", "Paul Broca", "Carl Wernicke"],
+          "core_idea": "Behavior and mental processes have biological bases in genetics, brain structures, neurotransmitters, and evolution.",
+          "key_concepts": [
+            {"term": "Neurotransmitters", "definition": "Chemical messengers: serotonin (mood), dopamine (reward/motivation), norepinephrine (alertness), GABA (inhibition), acetylcholine (memory/muscle), glutamate (excitation)."},
+            {"term": "Brain Regions", "definition": "Frontal lobe (planning/personality), temporal lobe (hearing/language), parietal lobe (sensation/spatial), occipital lobe (vision), limbic system (emotion/memory)."},
+            {"term": "Neuroplasticity", "definition": "The brain's ability to reorganize and form new neural connections throughout life."},
+            {"term": "Split-Brain Research", "definition": "Studies on patients with severed corpus callosum showing hemispheric specialization.", "key_figure": "Roger Sperry"}
+          ],
+          "exam_topics": ["Match neurotransmitters to functions", "Brain lobe functions", "Nature vs. nurture"]
+        },
+        {
+          "name": "Sociocultural Perspective",
+          "key_figures": ["Lev Vygotsky", "Stanley Milgram", "Philip Zimbardo", "Solomon Asch"],
+          "core_idea": "Behavior is influenced by social and cultural context, including group dynamics, cultural norms, and social expectations.",
+          "key_concepts": [
+            {"term": "Zone of Proximal Development", "definition": "The gap between what a learner can do independently and what they can do with guidance.", "key_figure": "Vygotsky"},
+            {"term": "Conformity", "definition": "Adjusting behavior to match group norms.", "example": "Asch's line experiment."},
+            {"term": "Obedience", "definition": "Complying with authority figures.", "example": "Milgram's shock experiment."},
+            {"term": "Scaffolding", "definition": "Temporary support provided to a learner to help them achieve a task beyond their current ability."}
+          ],
+          "exam_topics": ["Describe key social psychology experiments", "Cultural influences on behavior"]
+        }
+      ],
+      "research_methods": {
+        "key_concepts": [
+          {"term": "Scientific Method", "definition": "Systematic process: observation, hypothesis, experiment, analysis, conclusion."},
+          {"term": "Independent Variable (IV)", "definition": "The variable manipulated by the researcher."},
+          {"term": "Dependent Variable (DV)", "definition": "The variable measured as the outcome."},
+          {"term": "Confounding Variable", "definition": "An uncontrolled variable that may influence the DV."},
+          {"term": "Random Assignment", "definition": "Each participant has an equal chance of being in any condition, minimizing pre-existing differences."},
+          {"term": "Random Sampling", "definition": "Each member of the population has an equal chance of being selected for the study."},
+          {"term": "Correlation", "definition": "Measure of relationship between two variables (-1 to +1). Correlation does not imply causation."},
+          {"term": "Experimental vs. Correlational Design", "definition": "Experiments manipulate variables to establish causation. Correlational studies measure relationships but cannot prove causation."},
+          {"term": "Double-Blind Study", "definition": "Neither participants nor researchers know who is in the experimental vs. control group, reducing bias."},
+          {"term": "Placebo Effect", "definition": "Improvement caused by expectation of treatment rather than the treatment itself."},
+          {"term": "Reliability", "definition": "Consistency of a measure across time and observers."},
+          {"term": "Validity", "definition": "Whether a test measures what it claims to measure."},
+          {"term": "Informed Consent", "definition": "Ethical requirement that participants understand and agree to the study's procedures and risks."},
+          {"term": "APA Ethics", "definition": "Key principles: beneficence, nonmaleficence, autonomy, justice, fidelity. IRB approval required for human subjects research."}
+        ]
+      },
+      "learning_and_memory": {
+        "key_concepts": [
+          {"term": "Sensory Memory", "definition": "Brief (0.5-3 sec) storage of sensory information. Iconic (visual) and echoic (auditory)."},
+          {"term": "Short-Term/Working Memory", "definition": "Limited capacity (7 +/- 2 items), duration ~20-30 seconds without rehearsal. Baddeley's model: phonological loop, visuospatial sketchpad, central executive, episodic buffer."},
+          {"term": "Long-Term Memory", "definition": "Unlimited capacity and potentially permanent. Types: explicit (declarative: episodic + semantic) and implicit (procedural, priming, conditioning)."},
+          {"term": "Encoding Strategies", "definition": "Elaborative rehearsal, chunking, mnemonics, method of loci, spacing effect."},
+          {"term": "Forgetting", "definition": "Decay theory (fading over time), interference (proactive = old disrupts new; retroactive = new disrupts old), retrieval failure (tip-of-the-tongue)."},
+          {"term": "Ebbinghaus Forgetting Curve", "definition": "Most forgetting occurs rapidly after learning, then levels off. Spaced practice counteracts this."},
+          {"term": "Reconstructive Memory", "definition": "Memory is not a perfect recording; it is actively reconstructed and can be influenced by schemas and post-event information.", "key_figure": "Elizabeth Loftus (misinformation effect)"}
+        ]
+      },
+      "social_psychology": {
+        "key_concepts": [
+          {"term": "Fundamental Attribution Error", "definition": "Tendency to overestimate dispositional (personality) factors and underestimate situational factors when explaining others' behavior."},
+          {"term": "Self-Serving Bias", "definition": "Attributing successes to internal factors and failures to external factors."},
+          {"term": "Cognitive Dissonance", "definition": "Discomfort from holding contradictory beliefs or behaving inconsistently with beliefs, motivating attitude change.", "key_figure": "Leon Festinger"},
+          {"term": "Bystander Effect", "definition": "The more people present, the less likely any individual is to help in an emergency.", "key_figures": ["John Darley", "Bibb Latane"]},
+          {"term": "Groupthink", "definition": "Group members prioritize consensus over critical thinking, leading to poor decisions.", "key_figure": "Irving Janis"},
+          {"term": "Social Facilitation", "definition": "Presence of others improves performance on simple tasks but impairs performance on complex tasks."},
+          {"term": "Social Loafing", "definition": "Individuals exert less effort in group settings than when working alone."},
+          {"term": "Prejudice, Stereotypes, Discrimination", "definition": "Prejudice = negative attitude. Stereotype = generalized belief. Discrimination = negative behavior toward a group."},
+          {"term": "Stanford Prison Experiment", "definition": "Zimbardo's 1971 study showing how situational factors and assigned roles can dramatically influence behavior.", "key_figure": "Philip Zimbardo"},
+          {"term": "Milgram's Obedience Study", "definition": "65% of participants administered maximum shocks when instructed by an authority figure, demonstrating the power of obedience.", "key_figure": "Stanley Milgram"}
+        ]
+      },
+      "developmental_psychology": {
+        "key_concepts": [
+          {"term": "Nature vs. Nurture", "definition": "Debate over whether genetics (nature) or environment (nurture) has greater influence on development."},
+          {"term": "Piaget's Cognitive Development", "definition": "Sensorimotor (0-2): object permanence. Preoperational (2-7): egocentrism, lack of conservation. Concrete operational (7-11): logical thinking about concrete events. Formal operational (11+): abstract reasoning."},
+          {"term": "Vygotsky's Sociocultural Theory", "definition": "Cognitive development occurs through social interaction and cultural tools. Zone of Proximal Development and scaffolding are central concepts."},
+          {"term": "Erikson's 8 Psychosocial Stages", "definition": "Each stage involves a crisis: Trust/Mistrust (0-1), Autonomy/Shame (1-3), Initiative/Guilt (3-6), Industry/Inferiority (6-12), Identity/Role Confusion (12-18), Intimacy/Isolation (young adult), Generativity/Stagnation (middle adult), Integrity/Despair (late adult)."},
+          {"term": "Kohlberg's Moral Development", "definition": "3 levels, 6 stages: Preconventional (obedience, self-interest), Conventional (conformity, law and order), Postconventional (social contract, universal ethics).", "key_figure": "Lawrence Kohlberg"},
+          {"term": "Attachment Theory", "definition": "Bowlby: infants have innate need for attachment to a caregiver. Ainsworth's Strange Situation identified secure, avoidant, anxious-ambivalent, and disorganized attachment styles.", "key_figures": ["John Bowlby", "Mary Ainsworth"]},
+          {"term": "Harlow's Monkey Studies", "definition": "Demonstrated that infant monkeys preferred soft cloth surrogate mothers over wire mothers with food, showing contact comfort is crucial."},
+          {"term": "Teratogens", "definition": "Environmental agents that can cause prenatal damage (e.g., alcohol causing Fetal Alcohol Spectrum Disorders, drugs, viruses)."}
+        ]
+      },
+      "abnormal_psychology": {
+        "key_concepts": [
+          {"term": "DSM-5-TR", "definition": "Diagnostic and Statistical Manual of Mental Disorders, 5th ed., Text Revision. Standard classification used by mental health professionals in the US."},
+          {"term": "Criteria for Abnormality", "definition": "The 4 Ds: Deviance (differs from cultural norms), Distress (causes suffering), Dysfunction (impairs daily functioning), Danger (to self or others)."},
+          {"term": "Anxiety Disorders", "definition": "Generalized Anxiety Disorder (GAD), Panic Disorder, Social Anxiety, Specific Phobias, Agoraphobia. Characterized by excessive fear and anxiety."},
+          {"term": "Depressive Disorders", "definition": "Major Depressive Disorder, Persistent Depressive Disorder (dysthymia). Symptoms include depressed mood, anhedonia, sleep/appetite changes, fatigue, guilt, suicidal ideation."},
+          {"term": "Bipolar Disorders", "definition": "Alternating episodes of mania (elevated mood, energy, impulsivity) and depression. Bipolar I requires manic episode; Bipolar II requires hypomanic + depressive episodes."},
+          {"term": "Schizophrenia", "definition": "Positive symptoms: hallucinations, delusions, disorganized speech. Negative symptoms: flat affect, alogia, avolition. Cognitive symptoms: impaired attention and memory."},
+          {"term": "OCD", "definition": "Obsessive-Compulsive Disorder: recurrent unwanted thoughts (obsessions) and repetitive behaviors (compulsions) performed to reduce anxiety."},
+          {"term": "PTSD", "definition": "Post-Traumatic Stress Disorder: re-experiencing (flashbacks), avoidance, negative cognitions/mood, and hyperarousal following a traumatic event."},
+          {"term": "Diathesis-Stress Model", "definition": "Mental disorders result from interaction between biological predisposition (diathesis) and environmental stressors."},
+          {"term": "Biopsychosocial Model", "definition": "Mental health involves biological (genetics, brain chemistry), psychological (thoughts, emotions), and social (relationships, culture) factors."}
+        ]
+      }
+    },
+
+    "sociology": {
+      "major_perspectives": [
+        {
+          "name": "Structural Functionalism",
+          "key_figures": ["Emile Durkheim", "Talcott Parsons", "Robert Merton"],
+          "core_idea": "Society is a complex system whose parts work together to promote stability and solidarity. Each social institution serves a function.",
+          "key_concepts": [
+            {"term": "Manifest Functions", "definition": "Intended, recognized consequences of a social institution.", "example": "Education teaches literacy."},
+            {"term": "Latent Functions", "definition": "Unintended, often unrecognized consequences.", "example": "Schools provide childcare while parents work."},
+            {"term": "Dysfunction", "definition": "Element of society that disrupts social stability.", "example": "Income inequality leading to crime."},
+            {"term": "Social Facts", "definition": "Durkheim's concept: values, norms, and structures that transcend individuals and constrain behavior."},
+            {"term": "Mechanical vs. Organic Solidarity", "definition": "Mechanical: social cohesion based on shared beliefs (simple societies). Organic: cohesion based on interdependence of specialized roles (complex societies).", "key_figure": "Durkheim"},
+            {"term": "Anomie", "definition": "Breakdown of social norms and values; normlessness leading to social instability.", "key_figure": "Durkheim"}
+          ],
+          "exam_topics": ["Distinguish manifest from latent functions", "Apply functionalism to education, religion, or family", "Criticisms: ignores inequality, assumes stability is good"]
+        },
+        {
+          "name": "Conflict Theory",
+          "key_figures": ["Karl Marx", "Max Weber", "C. Wright Mills", "Ralf Dahrendorf"],
+          "core_idea": "Society is characterized by inequality and competition for scarce resources. Power dynamics between dominant and subordinate groups drive social change.",
+          "key_concepts": [
+            {"term": "Bourgeoisie vs. Proletariat", "definition": "Marx's classes: bourgeoisie own means of production; proletariat sell their labor.", "key_figure": "Karl Marx"},
+            {"term": "Class Consciousness", "definition": "Awareness of one's social class and economic interests, especially among the working class.", "key_figure": "Marx"},
+            {"term": "False Consciousness", "definition": "When the working class accepts the dominant ideology that serves ruling class interests.", "key_figure": "Marx"},
+            {"term": "Power Elite", "definition": "Mills' concept: a small group of military, political, and corporate leaders who hold disproportionate power.", "key_figure": "C. Wright Mills"},
+            {"term": "Weber's 3 Dimensions of Stratification", "definition": "Class (economic), Status (prestige), Power (political influence). More nuanced than Marx's purely economic view.", "key_figure": "Max Weber"},
+            {"term": "Hegemony", "definition": "Dominance of one group over others through cultural influence rather than overt force.", "key_figure": "Antonio Gramsci"}
+          ],
+          "exam_topics": ["How does conflict theory explain education?", "Marx vs. Weber on stratification", "Criticisms: overemphasizes conflict, ignores social order"]
+        },
+        {
+          "name": "Symbolic Interactionism",
+          "key_figures": ["George Herbert Mead", "Herbert Blumer", "Erving Goffman", "Charles Horton Cooley"],
+          "core_idea": "Society is constructed through everyday interactions and the meanings people attach to symbols, language, and gestures.",
+          "key_concepts": [
+            {"term": "Social Construction of Reality", "definition": "Reality is created and maintained through social interaction.", "key_figures": ["Peter Berger", "Thomas Luckmann"]},
+            {"term": "Looking-Glass Self", "definition": "We develop our self-concept based on how we believe others see us (imagine, interpret, evaluate).", "key_figure": "Charles Horton Cooley"},
+            {"term": "Dramaturgical Analysis", "definition": "Social life is like a theater: we perform roles on a front stage (public) and have a back stage (private) where we relax our performances.", "key_figure": "Erving Goffman"},
+            {"term": "Labeling Theory", "definition": "Deviance is not inherent in an act but is defined by societal reaction and labels applied to individuals.", "key_figure": "Howard Becker"},
+            {"term": "I and Me", "definition": "Mead: 'I' is the spontaneous, creative self. 'Me' is the socialized self that considers others' expectations.", "key_figure": "George Herbert Mead"},
+            {"term": "Significant Others and Generalized Other", "definition": "Mead: significant others are specific people who influence us. Generalized other is the common expectations of society.", "key_figure": "Mead"},
+            {"term": "Definition of the Situation", "definition": "Thomas theorem: If people define situations as real, they are real in their consequences.", "key_figure": "W.I. Thomas"}
+          ],
+          "exam_topics": ["Apply Goffman's dramaturgy to social media", "How labels create deviance", "Criticisms: ignores macro-level structures"]
+        }
+      ],
+      "social_stratification": {
+        "key_concepts": [
+          {"term": "Social Stratification", "definition": "Hierarchical arrangement of people in society based on wealth, power, and prestige."},
+          {"term": "Social Mobility", "definition": "Movement between social classes. Intragenerational (within one's lifetime) vs. intergenerational (compared to parents)."},
+          {"term": "Meritocracy", "definition": "System where positions are based on individual achievement and talent rather than inherited status. Critiqued as an ideology masking structural inequality."},
+          {"term": "Intersectionality", "definition": "Overlapping social categories (race, class, gender, sexuality) create interconnected systems of advantage and disadvantage.", "key_figure": "Kimberle Crenshaw"},
+          {"term": "Cultural Capital", "definition": "Non-financial social assets (education, speech, dress, knowledge) that promote social mobility.", "key_figure": "Pierre Bourdieu"},
+          {"term": "Social Capital", "definition": "Networks of relationships that provide resources and opportunities.", "key_figure": "Pierre Bourdieu"},
+          {"term": "Poverty Line", "definition": "Government-set income threshold below which a family is considered poor. Absolute poverty vs. relative poverty."},
+          {"term": "Wealth vs. Income", "definition": "Income: money earned (wages, salary). Wealth: total assets minus debts. Wealth inequality is much greater than income inequality."}
+        ]
+      },
+      "culture_socialization_deviance": {
+        "culture": [
+          {"term": "Culture", "definition": "Shared beliefs, values, norms, language, symbols, and material objects of a society."},
+          {"term": "Material vs. Non-Material Culture", "definition": "Material: physical objects (tools, buildings). Non-material: ideas, values, norms."},
+          {"term": "Ethnocentrism", "definition": "Judging another culture by the standards of one's own culture."},
+          {"term": "Cultural Relativism", "definition": "Understanding a culture on its own terms without judging it by one's own standards."},
+          {"term": "Subculture", "definition": "A group within a larger culture with distinct values and behaviors (e.g., surfers, gamers)."},
+          {"term": "Counterculture", "definition": "A subculture that actively opposes dominant cultural norms (e.g., 1960s hippies, punk movement)."},
+          {"term": "Cultural Lag", "definition": "When material culture changes faster than non-material culture (e.g., technology outpacing laws).", "key_figure": "William F. Ogburn"},
+          {"term": "Sapir-Whorf Hypothesis", "definition": "Language shapes thought and perception of reality.", "key_figures": ["Edward Sapir", "Benjamin Whorf"]}
+        ],
+        "socialization": [
+          {"term": "Socialization", "definition": "Lifelong process of learning cultural norms, values, and behaviors."},
+          {"term": "Agents of Socialization", "definition": "Family (primary), peers, schools, media, religion, workplace."},
+          {"term": "Nature vs. Nurture", "definition": "Debate over biological inheritance vs. social environment in shaping behavior."},
+          {"term": "Primary vs. Secondary Socialization", "definition": "Primary: early childhood socialization within family. Secondary: later socialization in schools, workplaces, etc."},
+          {"term": "Resocialization", "definition": "Radical alteration of personality through deliberate manipulation of environment (e.g., military boot camp, prison).", "key_figure": "Goffman (total institutions)"},
+          {"term": "Total Institutions", "definition": "Places where people are cut off from broader society and controlled (prisons, mental hospitals, military).", "key_figure": "Erving Goffman"},
+          {"term": "Gender Socialization", "definition": "Process by which individuals learn gender roles, expectations, and behaviors deemed appropriate for their sex."}
+        ],
+        "deviance": [
+          {"term": "Deviance", "definition": "Behavior that violates social norms. Not necessarily criminal; socially constructed and varies by context."},
+          {"term": "Strain Theory", "definition": "Deviance results from the gap between culturally valued goals and legitimate means to achieve them. Modes of adaptation: conformity, innovation, ritualism, retreatism, rebellion.", "key_figure": "Robert Merton"},
+          {"term": "Labeling Theory", "definition": "Deviance is created by societal reaction. Primary deviance (initial act) vs. secondary deviance (adopting deviant identity after being labeled).", "key_figure": "Howard Becker"},
+          {"term": "Differential Association Theory", "definition": "Deviance is learned through interaction with others who engage in deviant behavior.", "key_figure": "Edwin Sutherland"},
+          {"term": "Social Control Theory", "definition": "Strong social bonds (attachment, commitment, involvement, belief) prevent deviance.", "key_figure": "Travis Hirschi"},
+          {"term": "White-Collar Crime", "definition": "Non-violent crimes committed by individuals of high social status in their occupational roles.", "key_figure": "Edwin Sutherland"}
+        ]
+      }
+    },
+
+    "political_science": {
+      "american_government": {
+        "key_concepts": [
+          {"term": "The Constitution", "definition": "Supreme law of the United States, ratified 1788. Establishes government structure, powers, and individual rights. Based on popular sovereignty, limited government, separation of powers, checks and balances, and federalism."},
+          {"term": "Separation of Powers", "definition": "Division of government into three branches: Legislative (Congress - makes laws), Executive (President - enforces laws), Judicial (Supreme Court - interprets laws)."},
+          {"term": "Checks and Balances", "definition": "Each branch can limit the power of the others. Examples: presidential veto, congressional override, judicial review, Senate confirmation of appointments."},
+          {"term": "Federalism", "definition": "Division of power between national and state governments. Enumerated powers (federal), reserved powers (state), concurrent powers (shared)."},
+          {"term": "Judicial Review", "definition": "Supreme Court's power to declare laws unconstitutional. Established in Marbury v. Madison (1803).", "key_figure": "Chief Justice John Marshall"},
+          {"term": "Bill of Rights", "definition": "First 10 amendments to the Constitution guaranteeing individual liberties: speech, religion, press, assembly, petition (1st), bear arms (2nd), no unreasonable search (4th), due process (5th, 14th), speedy trial (6th), no cruel/unusual punishment (8th)."},
+          {"term": "Civil Liberties vs. Civil Rights", "definition": "Civil liberties: protections FROM government (Bill of Rights). Civil rights: protections BY government against discrimination (14th Amendment, Civil Rights Act 1964)."},
+          {"term": "Electoral College", "definition": "System for electing the President. 538 electors; 270 needed to win. Each state gets electors equal to its congressional delegation."},
+          {"term": "Congressional Structure", "definition": "Bicameral legislature: Senate (100, 2 per state, 6-year terms) and House of Representatives (435, proportional representation, 2-year terms)."},
+          {"term": "Political Parties", "definition": "Two-party system dominated by Democrats and Republicans. Functions: nominate candidates, mobilize voters, organize government, provide opposition."},
+          {"term": "Interest Groups", "definition": "Organizations that seek to influence policy on behalf of members. Use lobbying, campaign contributions (PACs/Super PACs), grassroots mobilization."},
+          {"term": "Landmark Supreme Court Cases", "definition": "Marbury v. Madison (judicial review), McCulloch v. Maryland (federal supremacy), Brown v. Board (desegregation), Miranda v. Arizona (rights of accused), Roe v. Wade (privacy/abortion), Citizens United v. FEC (campaign finance)."}
+        ]
+      },
+      "international_relations": {
+        "theories": [
+          {
+            "name": "Realism",
+            "key_figures": ["Hans Morgenthau", "Kenneth Waltz", "Thucydides", "Niccolo Machiavelli", "Thomas Hobbes"],
+            "core_idea": "The international system is anarchic (no overarching authority). States are the primary actors, driven by self-interest and the pursuit of power. Conflict is inevitable.",
+            "key_concepts": ["Anarchy", "Balance of power", "Security dilemma", "National interest", "Power politics", "Self-help system"],
+            "variants": ["Classical realism (Morgenthau): human nature drives power-seeking", "Neorealism/structural realism (Waltz): system structure determines behavior"]
+          },
+          {
+            "name": "Liberalism/Idealism",
+            "key_figures": ["Immanuel Kant", "Woodrow Wilson", "Robert Keohane", "Joseph Nye"],
+            "core_idea": "Cooperation is possible through international institutions, trade interdependence, and democratic governance. Peace can be achieved through diplomacy and law.",
+            "key_concepts": ["Democratic peace theory", "International institutions (UN, WTO, NATO)", "Interdependence", "Collective security", "Soft power", "Free trade promotes peace"],
+            "variants": ["Neoliberal institutionalism (Keohane): institutions facilitate cooperation even under anarchy"]
+          },
+          {
+            "name": "Constructivism",
+            "key_figures": ["Alexander Wendt", "Martha Finnemore", "Nicholas Onuf"],
+            "core_idea": "The international system is socially constructed. States' identities, interests, and behaviors are shaped by shared ideas, norms, and culture rather than being fixed.",
+            "key_concepts": ["Anarchy is what states make of it (Wendt)", "Social construction of identity", "Norms and identity", "Intersubjective meaning", "Logic of appropriateness"],
+            "variants": []
+          },
+          {
+            "name": "Marxism/Critical Theory",
+            "key_figures": ["Karl Marx", "Vladimir Lenin", "Immanuel Wallerstein", "Antonio Gramsci"],
+            "core_idea": "Global politics is driven by economic forces and class struggle. The international system reflects and reinforces capitalist exploitation.",
+            "key_concepts": ["World-systems theory (core, periphery, semi-periphery)", "Dependency theory", "Imperialism as highest stage of capitalism", "Global inequality"],
+            "variants": ["World-systems theory (Wallerstein)", "Dependency theory (Andre Gunder Frank)"]
+          }
+        ],
+        "key_concepts": [
+          {"term": "Sovereignty", "definition": "A state's supreme authority within its territory and independence from external interference."},
+          {"term": "Westphalian System", "definition": "Modern state system originating from the Peace of Westphalia (1648), establishing principles of state sovereignty and non-interference."},
+          {"term": "Security Dilemma", "definition": "When one state increases military capability for defense, other states perceive it as a threat and also arm, leading to an arms race."},
+          {"term": "Deterrence", "definition": "Preventing aggression by threatening unacceptable retaliation, especially in nuclear strategy (MAD: Mutually Assured Destruction)."},
+          {"term": "Soft Power vs. Hard Power", "definition": "Soft power: influence through culture, values, and institutions. Hard power: coercion through military or economic force.", "key_figure": "Joseph Nye"},
+          {"term": "Globalization", "definition": "Increasing interconnectedness of economies, cultures, and politics across national borders."},
+          {"term": "United Nations", "definition": "International organization (est. 1945) with Security Council (5 permanent members with veto), General Assembly, and specialized agencies."}
+        ]
+      },
+      "political_ideologies": {
+        "key_concepts": [
+          {"term": "Liberalism (Classical)", "definition": "Emphasis on individual rights, limited government, free markets, rule of law. Key thinkers: John Locke, Adam Smith, John Stuart Mill."},
+          {"term": "Liberalism (Modern/American)", "definition": "Supports government intervention to promote equality and social welfare while protecting civil liberties."},
+          {"term": "Conservatism", "definition": "Values tradition, social order, authority, and gradual change. Skeptical of rapid reform. Key thinkers: Edmund Burke, Russell Kirk."},
+          {"term": "Socialism", "definition": "Advocates collective/government ownership of means of production to reduce inequality. Democratic socialism vs. authoritarian socialism."},
+          {"term": "Marxism/Communism", "definition": "Marx and Engels: class struggle drives history; capitalism will be replaced by a classless society. Communism: abolition of private property, state withers away."},
+          {"term": "Fascism", "definition": "Ultranationalist, authoritarian ideology emphasizing state power, militarism, racial superiority, and rejection of democracy. Historical examples: Nazi Germany, Fascist Italy."},
+          {"term": "Libertarianism", "definition": "Maximizes individual liberty and minimizes government in both economic and social spheres."},
+          {"term": "Populism", "definition": "Political approach appealing to ordinary people against a perceived corrupt elite. Can be left-wing or right-wing."},
+          {"term": "Nationalism", "definition": "Identification with and devotion to one's nation, often including belief in national superiority."},
+          {"term": "Feminism (Political)", "definition": "Advocacy for political, economic, and social equality of the sexes. Waves: 1st (suffrage), 2nd (workplace/reproductive rights), 3rd (intersectionality), 4th (digital activism)."},
+          {"term": "Environmentalism", "definition": "Political movement advocating environmental protection through government regulation, sustainability, and addressing climate change."}
+        ]
+      }
+    },
+
+    "history": {
+      "us_history_survey": {
+        "colonial_and_founding": [
+          {"topic": "Colonial America", "key_points": ["Jamestown (1607) first permanent English settlement", "Plymouth Colony (1620) Pilgrims/Mayflower Compact", "13 colonies: New England, Middle, Southern", "Mercantilism and Navigation Acts", "Great Awakening (religious revival 1730s-1740s)"]},
+          {"topic": "American Revolution", "key_points": ["Stamp Act (1765), Boston Massacre (1770), Boston Tea Party (1773)", "Declaration of Independence (1776) - Thomas Jefferson", "Key battles: Lexington/Concord, Saratoga, Yorktown", "Treaty of Paris (1783)", "Enlightenment influences: Locke (natural rights), Montesquieu (separation of powers)"]},
+          {"topic": "Constitution and Early Republic", "key_points": ["Articles of Confederation (weak central government)", "Constitutional Convention (1787) - Great Compromise, 3/5 Compromise", "Federalists (Hamilton) vs. Anti-Federalists (Jefferson)", "Washington's presidency, precedent-setting", "Hamilton's financial plan, national bank debate"]}
+        ],
+        "expansion_and_civil_war": [
+          {"topic": "Westward Expansion and Manifest Destiny", "key_points": ["Louisiana Purchase (1803)", "Indian Removal Act (1830), Trail of Tears", "Manifest Destiny - belief in continental expansion", "Mexican-American War (1846-1848)", "Gold Rush (1849)"]},
+          {"topic": "Slavery and Abolition", "key_points": ["Cotton gin (1793) expanded slavery", "Missouri Compromise (1820)", "Compromise of 1850, Fugitive Slave Act", "Uncle Tom's Cabin (Harriet Beecher Stowe)", "Dred Scott v. Sandford (1857)", "Abolitionists: Frederick Douglass, William Lloyd Garrison, Sojourner Truth"]},
+          {"topic": "Civil War and Reconstruction", "key_points": ["Secession of Southern states, Confederate States of America", "Key battles: Bull Run, Antietam, Gettysburg, Vicksburg, Sherman's March", "Emancipation Proclamation (1863)", "13th Amendment (abolished slavery), 14th (equal protection), 15th (voting rights)", "Reconstruction: Freedmen's Bureau, Black Codes, Jim Crow laws"]}
+        ],
+        "industrial_to_modern": [
+          {"topic": "Industrialization and Gilded Age", "key_points": ["Transcontinental Railroad (1869)", "Captains of Industry/Robber Barons: Carnegie, Rockefeller, Vanderbilt, Morgan", "Labor movement: AFL (Gompers), Knights of Labor, strikes", "Immigration waves (Ellis Island)", "Progressive Era reforms: muckrakers, trust-busting, women's suffrage"]},
+          {"topic": "World Wars", "key_points": ["WWI: US enters 1917, Wilson's 14 Points, Treaty of Versailles, League of Nations rejected", "Roaring Twenties, Great Depression (1929), New Deal (FDR)", "WWII: Pearl Harbor (1941), D-Day, atomic bombs on Hiroshima/Nagasaki", "Holocaust, Nuremberg Trials", "UN established (1945), beginning of Cold War"]},
+          {"topic": "Cold War and Civil Rights", "key_points": ["Containment policy, Truman Doctrine, Marshall Plan", "Korean War, Vietnam War, Cuban Missile Crisis", "McCarthyism and Red Scare", "Brown v. Board of Education (1954)", "Rosa Parks, Montgomery Bus Boycott", "Martin Luther King Jr., March on Washington, 'I Have a Dream'", "Civil Rights Act (1964), Voting Rights Act (1965)", "Assassination of JFK (1963), MLK and RFK (1968)"]}
+        ]
+      },
+      "world_history_western_civ": {
+        "ancient_and_medieval": [
+          {"topic": "Ancient Civilizations", "key_points": ["Mesopotamia: Sumerians, Code of Hammurabi, cuneiform", "Egypt: pharaohs, pyramids, Nile civilization", "Greece: democracy (Athens), philosophy (Socrates, Plato, Aristotle), Alexander the Great", "Rome: republic to empire, Roman law, Pax Romana, fall of Western Roman Empire (476 CE)", "Monotheism: Judaism, Christianity, Islam"]},
+          {"topic": "Medieval Period", "key_points": ["Feudalism: lords, vassals, serfs, manorialism", "Catholic Church as dominant institution, papal authority", "Crusades (1096-1291): religious wars, cultural exchange, trade expansion", "Black Death (1347-1351): killed ~1/3 of European population", "Magna Carta (1215): foundation of constitutional government"]}
+        ],
+        "early_modern": [
+          {"topic": "Renaissance (14th-17th century)", "key_points": ["Rebirth of classical learning, humanism", "Art: Leonardo da Vinci, Michelangelo, Raphael", "Literature: Machiavelli (The Prince), Shakespeare", "Spread from Italy across Europe", "Invention of printing press (Gutenberg, c. 1440)"]},
+          {"topic": "Reformation", "key_points": ["Martin Luther's 95 Theses (1517)", "Protestant denominations: Lutheran, Calvinist, Anglican", "Counter-Reformation: Council of Trent, Jesuits", "Religious wars: Thirty Years' War (1618-1648)", "Peace of Westphalia (1648): modern state system"]},
+          {"topic": "Scientific Revolution and Enlightenment", "key_points": ["Copernicus: heliocentric model. Galileo: telescope observations. Newton: laws of motion/gravity", "Scientific method development", "Enlightenment thinkers: Locke (natural rights, social contract), Montesquieu (separation of powers), Voltaire (free speech), Rousseau (general will)", "Impact on American and French Revolutions"]}
+        ],
+        "modern": [
+          {"topic": "French Revolution and Napoleon", "key_points": ["Causes: fiscal crisis, Enlightenment ideas, social inequality (3 estates)", "Storming of the Bastille (1789), Declaration of the Rights of Man", "Reign of Terror (Robespierre)", "Napoleon's rise, conquests, Napoleonic Code, defeat at Waterloo (1815)", "Congress of Vienna (1815): restored conservative order"]},
+          {"topic": "Industrial Revolution", "key_points": ["Began in Britain (late 1700s), spread to Europe and US", "Key innovations: steam engine, spinning jenny, factory system, railways", "Urbanization, child labor, harsh working conditions", "Rise of capitalism (Adam Smith) and socialism (Marx/Engels: Communist Manifesto 1848)", "Labor movements, unions, reform legislation"]},
+          {"topic": "Imperialism and Colonialism", "key_points": ["European scramble for Africa (Berlin Conference 1884-85)", "British Empire, French colonies, Belgian Congo", "Social Darwinism, 'White Man's Burden' as justifications", "Resistance movements across colonized regions", "Legacy: borders, ethnic conflicts, underdevelopment"]},
+          {"topic": "20th Century Global Conflicts", "key_points": ["World War I (1914-1918): alliance system, trench warfare, Treaty of Versailles", "Russian Revolution (1917), rise of Soviet Union", "Rise of fascism: Mussolini (Italy), Hitler (Germany), militarism (Japan)", "World War II (1939-1945): Holocaust, atomic age", "Cold War (1947-1991): US vs. USSR, proxy wars, nuclear arms race, fall of Berlin Wall (1989)"]}
+        ]
+      }
+    }
+  }
+}

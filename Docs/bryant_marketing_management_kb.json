@@ -1,0 +1,971 @@
+{
+  "metadata": {
+    "university": "Bryant University",
+    "location": "Smithfield, RI",
+    "catalog_year": "2025-2026",
+    "departments": ["Marketing (MKT)", "Management (MGT)"],
+    "source_urls": [
+      "https://catalog.bryant.edu/undergraduate/coursedescriptions/mkt/",
+      "https://catalog.bryant.edu/undergraduate/coursedescriptions/mgt/"
+    ],
+    "generated": "2026-04-08"
+  },
+
+  "courses": {
+    "MKT": [
+      {
+        "code": "MKT 201",
+        "name": "Foundations of Marketing Management",
+        "credits": 3,
+        "prerequisites": ["BUS 100"],
+        "description": "Overview of marketing concepts, tools, and analytical methods. Covers the seven key elements of the marketing mix management (product, price, promotion, distribution, people, process, and facilities), customer value, competitive analysis, marketing research, segmentation, branding, and consumer behavior.",
+        "key_topics": ["Marketing mix (7Ps)", "Customer value and satisfaction", "Competitive analysis", "Marketing research intro", "Segmentation and targeting", "Branding and positioning", "Consumer behavior intro"]
+      },
+      {
+        "code": "MKT 201G",
+        "name": "Global Dimensions of Marketing",
+        "credits": 3,
+        "prerequisites": ["BSIB major", "BUS 100"],
+        "description": "Systems-oriented approach examining major environmental forces affecting marketing managers. Explores marketing research, buying behavior, segmentation, targeting, and the marketing mix in a broader, international context.",
+        "key_topics": ["International marketing environment", "Global segmentation and targeting", "Cross-cultural consumer behavior", "Global marketing mix"]
+      },
+      {
+        "code": "MKT 311",
+        "name": "Consumer Behavior",
+        "credits": 3,
+        "prerequisites": ["MKT 201 or MKT 201G or MKT 203", "Junior standing"],
+        "description": "Applies concepts from economics, psychology, sociology, and anthropology to examine internal and external factors that influence the acquisition, consumption, and disposition of goods, services, and ideas.",
+        "key_topics": ["Consumer decision-making process", "Motivation and perception", "Learning and memory", "Attitudes and persuasion", "Culture and subculture", "Social influence and reference groups", "Situational factors"]
+      },
+      {
+        "code": "MKT 312",
+        "name": "Marketing Research",
+        "credits": 3,
+        "prerequisites": ["MATH 201", "MKT 201 or MKT 203 or MKT 201G", "Junior standing"],
+        "description": "Focuses on developing information for marketing decision-making, including identifying problems, designing research, acquiring information, evaluating data, and presenting findings.",
+        "key_topics": ["Research design", "Primary vs secondary data", "Survey methods", "Sampling", "Data analysis", "Research presentation", "Qualitative vs quantitative research"]
+      },
+      {
+        "code": "MKT 313",
+        "name": "Sports Marketing",
+        "credits": 3,
+        "prerequisites": ["MKT 201 or MKT 203"],
+        "description": "Introduction to sports marketing combining theory with practical insights. Covers strategies for promoting events, teams, and products, with a focus on fan engagement, digital channels, and sponsorships.",
+        "key_topics": ["Sports industry dynamics", "Fan engagement", "Sponsorship management", "Digital sports marketing", "Event promotion", "Team branding"]
+      },
+      {
+        "code": "MKT 360",
+        "name": "Retail Management",
+        "credits": 3,
+        "prerequisites": ["MKT 201 or MKT 201G or MKT 203", "Junior standing"],
+        "description": "Addresses retailing as a distinct business format. Examines retail evolution, 21st-century challenges, and internet's role in retail strategy, emphasizing consumer attraction and long-term relationship development.",
+        "key_topics": ["Retail formats", "Store location and layout", "Merchandise management", "E-commerce and omnichannel", "Customer relationship management", "Retail strategy"]
+      },
+      {
+        "code": "MKT 363",
+        "name": "Personal Selling",
+        "credits": 3,
+        "prerequisites": ["MKT 201 or MKT 201G or MKT 203", "Junior standing"],
+        "description": "Hands-on sales skills course covering adaptive selling, ethics, relationship and trust building, closing the sale, negotiating for win-win solutions. Includes sales competitions, case studies, and recorded presentations with professional feedback.",
+        "key_topics": ["Adaptive selling", "Sales ethics", "Relationship selling", "Closing techniques", "Negotiation", "Sales presentations"]
+      },
+      {
+        "code": "MKT 368",
+        "name": "International Marketing",
+        "credits": 3,
+        "prerequisites": ["MKT 201 or MKT 201G or MKT 203", "Junior standing"],
+        "description": "Studies essentials of international marketing, examining cultural, political, economic, and legal system differences. Investigates market entry modes, trade trends, positioning, research, and each element of the marketing mix in the international context.",
+        "key_topics": ["Market entry strategies", "Cultural analysis", "International marketing mix", "Trade agreements", "Global positioning", "Political and legal environments"]
+      },
+      {
+        "code": "MKT 371",
+        "name": "Advertising and Integrated Marketing Communication",
+        "credits": 3,
+        "prerequisites": ["MKT 201 or MKT 201G or MKT 203", "Junior standing"],
+        "description": "Overviews promotional activities and their effective integration. Emphasizes determining communication goals, marketing and promotional objectives, developing creative themes, testing messages, evaluating promotion effectiveness, and strategic campaign planning.",
+        "key_topics": ["IMC strategy", "Advertising creative development", "Media planning", "Sales promotion", "Public relations", "Campaign evaluation", "Communication objectives"]
+      },
+      {
+        "code": "MKT 380",
+        "name": "Services Marketing",
+        "credits": 3,
+        "prerequisites": ["MKT 201 or MKT 201G or MKT 203", "Junior standing"],
+        "description": "Focuses on distinctive marketing challenges associated with service offerings, addressing key differences between the marketing and management of services and the marketing of goods.",
+        "key_topics": ["Service characteristics (IHIP)", "Service quality (SERVQUAL)", "Service recovery", "Customer experience management", "Services marketing mix (7Ps)", "Service blueprinting"]
+      },
+      {
+        "code": "MKT 381",
+        "name": "Digital Marketing",
+        "credits": 3,
+        "prerequisites": ["MKT 201 or MKT 201G or MKT 203", "MKT 311", "MKT 312 (pre/corequisite)"],
+        "description": "Examines digital marketing for achieving business goals. Covers online consumer behavior, digital channels, campaign creation, and effectiveness tracking for B2B and B2C brands.",
+        "key_topics": ["SEO/SEM", "Social media marketing", "Email marketing", "Content marketing", "Online consumer behavior", "Digital campaign metrics", "B2B vs B2C digital"]
+      },
+      {
+        "code": "MKT 382",
+        "name": "New Product Development",
+        "credits": 3,
+        "prerequisites": ["MKT 201 or MKT 201G or MKT 203", "MKT 311", "MKT 312 (pre/corequisite)", "Junior standing"],
+        "description": "Introduces organizational stages for bringing new products to market, covering decisions from concept generation and problem-based ideation to marketing testing and launch management.",
+        "key_topics": ["Idea generation", "Concept testing", "Product design", "Test marketing", "Launch management", "Stage-gate process", "Innovation management"]
+      },
+      {
+        "code": "MKT 391",
+        "name": "Marketing Internship",
+        "credits": 3,
+        "prerequisites": ["Department approval", "Second semester juniors and seniors"],
+        "description": "Individually supervised employment in marketing areas (retailing, advertising, sales, research). Requires minimum ten hours weekly work, faculty meetings, literature research, and substantive report preparation.",
+        "key_topics": ["Applied marketing practice"]
+      },
+      {
+        "code": "MKT 410",
+        "name": "Business to Business Marketing",
+        "credits": 3,
+        "prerequisites": ["MKT 201 or MKT 201G or MKT 203", "Senior standing"],
+        "description": "Investigates domestic and international activities marketing to industrial buyers, governments, and intermediaries. Supply Chain Management is a central core with emphasis on distribution, channel participants, value analysis, contracting, ethics, and pricing.",
+        "key_topics": ["B2B buying process", "Supply chain management", "Value analysis", "Industrial pricing", "Channel management", "Government procurement", "B2B ethics"]
+      },
+      {
+        "code": "MKT 412",
+        "name": "Marketing Policy and Problems",
+        "credits": 3,
+        "prerequisites": ["MKT 311", "MKT 312", "Senior standing"],
+        "description": "Capstone course integrating knowledge from prior marketing courses. Students conduct a situation analysis, identify opportunities and problems, formulate marketing strategies, plan and execute tactics using simulated virtual business environments.",
+        "key_topics": ["Situation analysis", "SWOT analysis", "Marketing strategy formulation", "Marketing plan development", "Strategy execution", "Marketing simulation"]
+      },
+      {
+        "code": "MKT 421",
+        "name": "Sustainability Marketing",
+        "credits": 3,
+        "prerequisites": ["Instructor permission", "MKT 201"],
+        "description": "Explores sustainability marketing from international perspective, assessing sustainable practices of international companies with a focus on the supply chain. Includes travel component for global experiential learning.",
+        "key_topics": ["Green marketing", "Sustainable supply chains", "Corporate sustainability", "Ethical consumption", "International sustainability practices"]
+      },
+      {
+        "code": "MKT 422",
+        "name": "Visual Analytics for Marketing",
+        "credits": 3,
+        "prerequisites": ["MKT 312", "Junior standing"],
+        "description": "Introduces marketing analytics emphasizing visual techniques for exploring and communicating data. Focuses on dynamic data interaction, visual storytelling, and analytical thinking to enhance decision-making using Excel and Tableau.",
+        "key_topics": ["Data visualization", "Tableau", "Excel analytics", "Visual storytelling", "Marketing dashboards", "Data-driven decision-making"]
+      },
+      {
+        "code": "MKT 461",
+        "name": "Marketing Analytics",
+        "credits": 3,
+        "prerequisites": ["MKT 312", "Senior standing"],
+        "description": "Teaches quantitative and analytical tools for marketing decisions, including forecasting, behavioral modeling, and linear and nonlinear programming with spreadsheet and statistical software applications.",
+        "key_topics": ["Forecasting models", "Behavioral modeling", "Linear programming", "Statistical analysis", "Marketing optimization", "Predictive analytics"]
+      },
+      {
+        "code": "MKT 463",
+        "name": "Sales Management",
+        "credits": 3,
+        "prerequisites": ["MKT 363", "Senior standing"],
+        "description": "Hands-on sales management training including team management, manager shadowing, and professional competitions. Topics include managing conflict, goal setting, providing feedback, coaching, sales forecasting, motivating your sales team, training, compensation, recruiting, selection, performance evaluation.",
+        "key_topics": ["Sales team management", "Sales forecasting", "Compensation design", "Recruiting and selection", "Performance evaluation", "Coaching and motivation"]
+      },
+      {
+        "code": "MKT 481",
+        "name": "Digital Marketing II",
+        "credits": 3,
+        "prerequisites": ["MKT 381"],
+        "description": "Examines developing, implementing, and analyzing digital strategy across channels. Students gain comprehensive understanding of how to develop an integrated digital marketing strategy and optimize it for multi-channel traffic acquisition. Covers SEO, SEM, display, mobile, social media, content marketing.",
+        "key_topics": ["Integrated digital strategy", "SEO advanced", "SEM/PPC", "Display advertising", "Mobile marketing", "Social media strategy", "Content marketing", "Multi-channel optimization"]
+      },
+      {
+        "code": "MKT 497",
+        "name": "Directed Study in Marketing",
+        "credits": 3,
+        "prerequisites": ["MKT 201", "MKT 312", "Senior standing"],
+        "description": "In-depth exploration of specialized marketing areas through individualized instruction. Extensive research including primary data collection may be required, concluding with research report and presentation.",
+        "key_topics": ["Independent research", "Primary data collection"]
+      }
+    ],
+
+    "MGT": [
+      {
+        "code": "MGT 200",
+        "name": "Management Principles and Practice",
+        "credits": 3,
+        "prerequisites": ["Sophomore standing"],
+        "description": "Introduces foundational management concepts through three areas: leadership and organizational culture, performance management and employee engagement, and high-performing teams. Uses articles, experiential exercises, case studies, simulations, and videos.",
+        "key_topics": ["Leadership fundamentals", "Organizational culture", "Performance management", "Employee engagement", "Team effectiveness", "Management theory"]
+      },
+      {
+        "code": "MGT 201",
+        "name": "Operations Management",
+        "credits": 3,
+        "prerequisites": ["MATH 201 (pre/corequisite)"],
+        "description": "Covers theories and tools for managing competitive advantage in global markets. Topics include operations strategy, process design, quality management, inventory theory, and project management, balancing managerial issues with analytical techniques.",
+        "key_topics": ["Operations strategy", "Process design", "Quality management (TQM)", "Inventory management", "Project management", "Capacity planning", "Supply chain basics"]
+      },
+      {
+        "code": "MGT 201G",
+        "name": "Global Dimensions of Operations Management",
+        "credits": 3,
+        "prerequisites": ["MATH 201", "BSIB Major", "BUS 100", "Sophomore standing"],
+        "description": "Two-part course addressing manufacturing and service operations globally. Section I covers foundational concepts; Section II focuses on supply chain integration, inventory management, warehouse logistics, and lean systems for competitive advantage.",
+        "key_topics": ["Global operations", "Supply chain integration", "Inventory management", "Warehouse logistics", "Lean systems", "Manufacturing vs service operations"]
+      },
+      {
+        "code": "MGT 203",
+        "name": "Honors Management for Organizational Leadership",
+        "credits": 3,
+        "prerequisites": ["Honors program membership"],
+        "description": "Develops decision-making effectiveness for future organizational leaders. Uses interactive, cooperative learning including team projects, simulations, and case analyses. Examines leading management theorists and develops interpersonal skills.",
+        "key_topics": ["Decision-making", "Management theory", "Interpersonal skills", "Leadership development", "Case analysis"]
+      },
+      {
+        "code": "MGT 302",
+        "name": "Organizational Behavior",
+        "credits": 3,
+        "prerequisites": ["MGT 200 or MGT 203", "Junior standing"],
+        "description": "Explores human dimensions of management emphasizing theory application to real-world problems and interpersonal skill development. Topics include motivation, leadership, group dynamics, and interpersonal communication.",
+        "key_topics": ["Motivation theories", "Leadership theories", "Group dynamics", "Interpersonal communication", "Organizational culture", "Individual differences", "Perception and attitudes"]
+      },
+      {
+        "code": "MGT 312",
+        "name": "Human Resources Management",
+        "credits": 3,
+        "prerequisites": ["Sophomore standing"],
+        "description": "In-depth study of human resources management principles, emphasizing functions managers and HR personnel must understand for developing an effective workforce.",
+        "key_topics": ["HR planning", "Recruitment and selection", "Training and development", "Performance appraisal", "Compensation and benefits", "Employment law", "Employee relations"]
+      },
+      {
+        "code": "MGT 356",
+        "name": "International Business Management",
+        "credits": 3,
+        "prerequisites": ["MGT 200 or MGT 203", "Junior standing"],
+        "description": "Covers cultural, economic, legal, and political forces shaping international business environments. Develops knowledge and skills for cross-border management.",
+        "key_topics": ["Cultural dimensions (Hofstede)", "International trade theory", "Foreign direct investment", "Global strategy", "Cross-border management", "Political and legal environments"]
+      },
+      {
+        "code": "MGT 357",
+        "name": "Diversity in a Global Environment",
+        "credits": 3,
+        "prerequisites": ["Sophomore standing"],
+        "description": "Frames diversity as a leverageable resource rather than a problem. Uses lectures, discussions, films, simulations, case studies, and interactive media addressing demographic workforce changes.",
+        "key_topics": ["Workforce diversity", "Inclusion strategies", "Cross-cultural competence", "Demographic trends", "Diversity management"]
+      },
+      {
+        "code": "MGT 358",
+        "name": "Global Dimensions of Human Resource Management",
+        "credits": 3,
+        "prerequisites": ["Sophomore standing"],
+        "description": "Addresses HR challenges in international ventures and work arrangements. Covers recruitment, selection, training, performance management, and compensation in global settings, plus comparative labor relations and virtual teams.",
+        "key_topics": ["International staffing", "Expatriate management", "Global compensation", "Comparative labor relations", "Virtual teams", "Cross-cultural training"]
+      },
+      {
+        "code": "MGT 370",
+        "name": "Managing the Nonprofit Organization",
+        "credits": 3,
+        "prerequisites": ["MGT 200 or MGT 203", "Sophomore standing"],
+        "description": "Focuses on nonprofit development, management, and leadership. Students assess nonprofit excellence theories, accountability, funding, and sustainability.",
+        "key_topics": ["Nonprofit governance", "Fundraising", "Nonprofit accountability", "Mission-driven leadership", "Sustainability", "Volunteer management"]
+      },
+      {
+        "code": "MGT 380",
+        "name": "Compensation Management",
+        "credits": 3,
+        "prerequisites": ["MGT 312", "Junior standing"],
+        "description": "Provides understanding of effective, equitable compensation programs and how compensation supports operational and strategic objectives. Reviews plan objectives, implementation techniques, and federal compliance requirements.",
+        "key_topics": ["Job evaluation", "Pay structures", "Incentive systems", "Benefits administration", "Pay equity", "Federal compliance (FLSA, Equal Pay Act)"]
+      },
+      {
+        "code": "MGT 381",
+        "name": "Cross-Cultural Management",
+        "credits": 3,
+        "prerequisites": ["MGT 302", "Junior standing"],
+        "description": "Emphasizes cultural, organizational, and management aspects of international business, focusing on leadership and motivation in a cross-cultural environment.",
+        "key_topics": ["Cultural intelligence", "Cross-cultural leadership", "Cross-cultural motivation", "Hofstede dimensions", "GLOBE study", "Negotiation across cultures"]
+      },
+      {
+        "code": "MGT 382",
+        "name": "Strategic Management of Technological Innovation",
+        "credits": 3,
+        "prerequisites": ["IDEA 101", "MGT 200 or MGT 201G"],
+        "description": "Provides strategy framework for high-technology and startup companies. Teaches students to examine technical and managerial opportunities in emerging technologies, analyze organizational structures, and develop strategies for commercializing technology-based products and services.",
+        "key_topics": ["Innovation strategy", "Technology commercialization", "Startup management", "Disruptive innovation", "Organizational design for innovation", "Technology adoption lifecycle"]
+      },
+      {
+        "code": "MGT 391",
+        "name": "Management Internship",
+        "credits": 3,
+        "prerequisites": ["Junior/Senior standing", "Faculty and department chair approval"],
+        "description": "Individually supervised employment in management areas (human resources, operations, general management) requiring application of management theory and principles.",
+        "key_topics": ["Applied management practice"]
+      },
+      {
+        "code": "MGT 413",
+        "name": "Multinational Business Simulation",
+        "credits": 3,
+        "prerequisites": ["FIN 201", "MKT 201 or MKT 203", "Senior standing"],
+        "description": "Semester-long computer simulation where teams manage competing multinational firms. Emphasizes finance, marketing, and production decisions requiring mastery of enterprise operations.",
+        "key_topics": ["Business simulation", "Cross-functional decision-making", "Multinational operations", "Team leadership", "Ethical decision-making"]
+      },
+      {
+        "code": "MGT 440",
+        "name": "The Design Thinking Process",
+        "credits": 3,
+        "prerequisites": ["IDEA 101", "PSY 260 or MGT 302"],
+        "description": "Hands-on course teaching design thinking process application while developing understanding of psychological principles underlying innovation, problem-solving, and gamification.",
+        "key_topics": ["Design thinking", "Empathy mapping", "Prototyping", "Iteration", "Problem-solving frameworks", "Gamification"]
+      },
+      {
+        "code": "MGT 450",
+        "name": "Internship: Human Resources Administration",
+        "credits": 3,
+        "prerequisites": ["Faculty and department chair approval"],
+        "description": "Supervised internship applying human resource management principles requiring minimum ten hours weekly.",
+        "key_topics": ["Applied HR practice"]
+      },
+      {
+        "code": "MGT 451",
+        "name": "Human Resources Development",
+        "credits": 3,
+        "prerequisites": ["MGT 312", "Senior standing"],
+        "description": "Examines four HRD main components: training/individual development, performance management, organization development, and career development. Explores needs analysis, learning acquisition and transfer, evaluation, and HRD practitioner competencies.",
+        "key_topics": ["Training needs analysis", "Learning transfer", "Organization development", "Career development", "Program evaluation", "HRD competencies"]
+      },
+      {
+        "code": "MGT 452",
+        "name": "Human Resource Metrics and Analytics",
+        "credits": 3,
+        "prerequisites": ["MGT 312"],
+        "description": "Covers data analytics concepts and applications within HRM domain. Progresses from simplified HR issue illustration through functional aspects (workforce utilization, recruitment, engagement, talent development) to higher analytics maturity with data analysis and predictive recommendations.",
+        "key_topics": ["HR metrics", "Workforce analytics", "Predictive HR analytics", "Recruitment metrics", "Engagement measurement", "Data-driven HR decisions"]
+      },
+      {
+        "code": "MGT 461",
+        "name": "Cases in Global Business Management",
+        "credits": 3,
+        "prerequisites": ["MGT 200 or MGT 203", "MGT 356", "Senior standing"],
+        "description": "Expands knowledge from MGT 356 focusing on strategy implementation and effective operation in different global environmental and institutional settings.",
+        "key_topics": ["Global strategy implementation", "Cross-cultural case analysis", "Institutional environments", "International operations"]
+      },
+      {
+        "code": "MGT 462",
+        "name": "Project Management I",
+        "credits": 3,
+        "prerequisites": ["Junior standing"],
+        "description": "Focuses on project management tools and techniques for managing complex, non-routine, one-time endeavors. Topics include scheduling, budgeting, cost control, team building and risk management.",
+        "key_topics": ["Project scheduling (Gantt, CPM, PERT)", "Budgeting", "Cost control", "Risk management", "Team building", "Consulting deliverables"]
+      },
+      {
+        "code": "MGT 463",
+        "name": "Power and Influence",
+        "credits": 3,
+        "prerequisites": ["MGT 302", "Senior standing"],
+        "description": "Explores power sources and influence principles in modern organizations. Evaluates strategies for employing power effectively, emphasizing influence without formal authority. Analyzes ethical issues and develops responsible stewardship approaches.",
+        "key_topics": ["Power bases (French and Raven)", "Influence tactics", "Organizational politics", "Influence without authority", "Ethical use of power", "Stewardship"]
+      },
+      {
+        "code": "MGT 464",
+        "name": "Employment Relations",
+        "credits": 3,
+        "prerequisites": ["MGT 312", "Senior standing"],
+        "description": "Begins with historic American labor movement impact on workplace conflict resolution, then examines employment relations management, employee rights/responsibilities, labor relations, collective bargaining, and federal workplace laws.",
+        "key_topics": ["Labor history", "Collective bargaining", "Employee rights", "Federal labor law (NLRA, FLSA)", "Grievance procedures", "Union-management relations"]
+      },
+      {
+        "code": "MGT 475",
+        "name": "Management Seminar",
+        "credits": 3,
+        "prerequisites": ["Senior standing"],
+        "description": "Students identify and understand trends in sociological, technological, and managerial environments for twenty-first century management. Develops personal management philosophies and styles.",
+        "key_topics": ["Emerging management trends", "Personal management philosophy", "Future of work", "Technology and management"]
+      },
+      {
+        "code": "MGT 476",
+        "name": "Team Building and Conflict Resolution",
+        "credits": 3,
+        "prerequisites": ["MGT 302", "Senior standing"],
+        "description": "Develops understanding of organizational conflict origins and effective management. Empowers students with skills and strategies for becoming effective team members and leaders.",
+        "key_topics": ["Conflict sources", "Conflict resolution styles", "Team development stages (Tuckman)", "Team climate", "Facilitation skills", "Negotiation"]
+      },
+      {
+        "code": "MGT 477",
+        "name": "Women and Leadership Strategies for Success and Professional Development",
+        "credits": 3,
+        "prerequisites": ["Senior standing"],
+        "description": "Focuses on women's organizational roles through professional development. Provides skill and competency acquisition in networking, negotiation, personal branding, leadership and career development.",
+        "key_topics": ["Women in leadership", "Networking", "Negotiation skills", "Personal branding", "Career development"]
+      },
+      {
+        "code": "MGT 478",
+        "name": "Strategic Human Resource Management (SHRM)",
+        "credits": 3,
+        "prerequisites": ["MGT 312", "Senior standing"],
+        "description": "HR capstone course integrating entire HR knowledge body within global and strategic frameworks.",
+        "key_topics": ["Strategic HR alignment", "HR as strategic partner", "Global HR strategy", "HR policy integration", "Workforce planning"]
+      },
+      {
+        "code": "MGT 480",
+        "name": "Leadership Seminar",
+        "credits": 3,
+        "prerequisites": ["MGT 302", "Senior standing"],
+        "description": "Addresses modern leadership challenges from changing social trends, technology, politics, and globalization. Studies current leadership theory through interactive case studies, exercises, film, and collaborative projects.",
+        "key_topics": ["Contemporary leadership theory", "Transformational leadership", "Servant leadership", "Cross-cultural leadership", "Leadership in crisis", "Authentic leadership"]
+      },
+      {
+        "code": "MGT 486",
+        "name": "Project Management II",
+        "credits": 3,
+        "prerequisites": ["MGT 462", "Senior standing"],
+        "description": "Builds on MGT 462 tools and techniques for managing organizational change. Students prepare project reports for companies. Prepares students for Associate Certification in Project Management Exam.",
+        "key_topics": ["Change management", "Advanced project tools", "CAPM preparation", "Organizational change", "Stakeholder management"]
+      },
+      {
+        "code": "MGT 497",
+        "name": "Directed Study in Management",
+        "credits": 3,
+        "prerequisites": ["Senior standing", "Department chair permission"],
+        "description": "Under faculty supervision, students pursue a well-defined management interest area.",
+        "key_topics": ["Independent research"]
+      }
+    ]
+  },
+
+  "subject_knowledge": {
+    "marketing": {
+      "marketing_mix_4ps": {
+        "title": "Marketing Mix (4 Ps)",
+        "definition": "A foundational marketing framework comprising four key decision areas that marketers control to meet customer needs and achieve organizational objectives.",
+        "key_terms": {
+          "Product": "Goods, services, or ideas offered to satisfy customer needs. Includes features, quality, design, branding, packaging, warranties, and product line decisions.",
+          "Price": "The amount charged for a product. Includes list price, discounts, allowances, payment terms, and credit terms. Must reflect value to customer and cover costs.",
+          "Place (Distribution)": "Activities that make the product available to target consumers. Includes channels, coverage, locations, inventory, transportation, and logistics.",
+          "Promotion": "Activities that communicate product merits and persuade target customers to buy. Includes advertising, personal selling, sales promotion, public relations, and direct marketing."
+        },
+        "extended_mix_7ps": {
+          "People": "All human actors who play a role in service delivery and influence buyer perceptions (employees, customers).",
+          "Process": "The procedures, mechanisms, and flow of activities by which services are consumed.",
+          "Physical Evidence": "The environment in which the service is delivered, including tangible components that facilitate performance."
+        },
+        "frameworks": ["McCarthy's 4Ps (1960)", "Booms and Bitner's 7Ps (1981)", "Lauterborn's 4Cs (Customer solution, Cost, Convenience, Communication)"],
+        "real_world_examples": [
+          "Apple iPhone: Premium product design (Product), premium pricing strategy (Price), Apple Stores and authorized retailers (Place), iconic advertising campaigns (Promotion)",
+          "Starbucks: Customized beverages (Product), value-based pricing (Price), ubiquitous store locations (Place), loyalty program and social media (Promotion), barista training (People), order process (Process), store ambiance (Physical Evidence)"
+        ],
+        "common_exam_topics": ["Identify which P a given business decision falls under", "Explain how 4Ps interact and must be consistent", "Compare 4Ps to 7Ps and when to use each", "Apply the marketing mix to a case study"]
+      },
+
+      "stp_process": {
+        "title": "Market Segmentation, Targeting, and Positioning (STP)",
+        "definition": "A three-step strategic marketing process: (1) divide the market into distinct groups, (2) evaluate and select the most attractive segments, (3) develop a competitive position for the product in the minds of target customers.",
+        "key_terms": {
+          "Market Segmentation": "Dividing a market into distinct subsets of consumers with common needs or characteristics.",
+          "Segmentation Bases": "Geographic (region, city size, climate), Demographic (age, gender, income, education), Psychographic (lifestyle, personality, values via VALS), Behavioral (usage rate, loyalty, benefits sought, occasion).",
+          "Targeting Strategies": "Undifferentiated (mass marketing), Differentiated (multi-segment), Concentrated (niche), Micromarketing (local/individual).",
+          "Positioning": "Designing a product's offering and image to occupy a distinctive place in the target market's mind.",
+          "Positioning Statement": "For [target segment], [brand] is the [frame of reference] that [point of difference] because [reason to believe].",
+          "Perceptual Map": "A visual tool plotting brands on axes representing key attributes as perceived by consumers.",
+          "Value Proposition": "The full mix of benefits upon which a brand is positioned."
+        },
+        "frameworks": ["VALS psychographic framework", "Perceptual mapping", "Positioning statement template"],
+        "real_world_examples": [
+          "Nike: Segments by sport/activity and lifestyle; targets serious athletes and aspirational fitness consumers; positions as performance and inspiration ('Just Do It')",
+          "Toyota: Multiple segments with different brands (Lexus for luxury, Toyota for reliability, Scion for youth); each positioned differently on perceptual maps"
+        ],
+        "common_exam_topics": ["Identify segmentation bases in a scenario", "Evaluate segment attractiveness (measurable, accessible, substantial, differentiable, actionable)", "Construct a positioning statement", "Read and interpret a perceptual map"]
+      },
+
+      "consumer_behavior": {
+        "title": "Consumer Behavior and Decision-Making Process",
+        "definition": "The study of how individuals, groups, and organizations select, buy, use, and dispose of goods, services, ideas, or experiences to satisfy needs and desires.",
+        "key_terms": {
+          "Consumer Decision-Making Process": "Five stages: (1) Need/Problem Recognition, (2) Information Search, (3) Evaluation of Alternatives, (4) Purchase Decision, (5) Post-Purchase Behavior.",
+          "Involvement": "Level of personal relevance or importance of a purchase. High involvement = extensive problem solving; Low involvement = habitual/routine.",
+          "Perception": "Process of selecting, organizing, and interpreting stimuli. Includes selective attention, distortion, and retention.",
+          "Motivation": "Internal drive. Maslow's hierarchy applied: physiological, safety, social, esteem, self-actualization needs drive purchases.",
+          "Attitudes": "Learned predispositions to behave favorably or unfavorably. ABC model: Affect, Behavior, Cognition.",
+          "Reference Groups": "Groups that serve as frames of reference for individuals in purchase decisions (aspirational, membership, dissociative).",
+          "Culture and Subculture": "Broadest influence on behavior. Includes values, beliefs, customs passed through generations.",
+          "Cognitive Dissonance": "Post-purchase doubt about whether the right decision was made, especially for high-involvement purchases.",
+          "Evoked Set": "The set of brands a consumer actually considers before making a purchase."
+        },
+        "frameworks": ["Maslow's Hierarchy of Needs", "Howard-Sheth Model", "Theory of Planned Behavior (Ajzen)", "Elaboration Likelihood Model (ELM)"],
+        "real_world_examples": [
+          "Car buying: High involvement, extensive information search (online reviews, dealer visits), evaluate alternatives (safety, price, features), post-purchase rationalization",
+          "Grocery shopping: Low involvement, habitual decision-making, brand loyalty, influenced by in-store promotions and shelf placement"
+        ],
+        "common_exam_topics": ["Trace through the 5-stage decision process for a scenario", "Explain high vs low involvement purchasing", "Identify cultural, social, personal, and psychological influences", "Apply cognitive dissonance to a post-purchase situation"]
+      },
+
+      "marketing_research": {
+        "title": "Marketing Research Methods",
+        "definition": "The systematic design, collection, analysis, and reporting of data and findings relevant to a specific marketing situation facing a company.",
+        "key_terms": {
+          "Research Process": "Define the problem > Develop research plan > Collect data > Analyze data > Present findings.",
+          "Primary Data": "Data collected firsthand for the specific research purpose. Methods: surveys, experiments, observation, focus groups, interviews.",
+          "Secondary Data": "Data that already exists, collected for another purpose. Sources: government data, industry reports, company records, academic journals.",
+          "Qualitative Research": "Exploratory, non-numerical. Focus groups, depth interviews, ethnography, projective techniques.",
+          "Quantitative Research": "Structured, numerical. Surveys, experiments, statistical analysis.",
+          "Sampling": "Probability (random, stratified, cluster) vs Non-probability (convenience, judgment, snowball, quota).",
+          "Survey Methods": "Online, telephone, mail, personal interview. Each has trade-offs in cost, speed, response rate, and bias.",
+          "Experimental Design": "Testing cause-and-effect by manipulating independent variables and measuring dependent variables. A/B testing is a common form.",
+          "Reliability": "Consistency of measurement results.",
+          "Validity": "Whether the research measures what it intends to measure."
+        },
+        "frameworks": ["Marketing Research Process (5 steps)", "Exploratory vs Descriptive vs Causal research designs"],
+        "real_world_examples": [
+          "Netflix uses A/B testing (experimental research) on thumbnails and UI elements to optimize engagement",
+          "Procter & Gamble conducts extensive focus groups (qualitative) before launching new consumer products"
+        ],
+        "common_exam_topics": ["Distinguish primary vs secondary data with examples", "Choose appropriate research design for a scenario", "Identify sampling method strengths/weaknesses", "Explain reliability vs validity"]
+      },
+
+      "branding_brand_equity": {
+        "title": "Branding and Brand Equity",
+        "definition": "A brand is a name, term, sign, symbol, design, or combination that identifies and differentiates a seller's products. Brand equity is the added value endowed by the brand name.",
+        "key_terms": {
+          "Brand Equity": "The differential effect that knowing the brand name has on customer response to the product. Keller's model: brand salience, performance, imagery, judgments, feelings, resonance.",
+          "Brand Awareness": "Ability to recognize or recall a brand. Includes recognition (aided) and recall (unaided).",
+          "Brand Loyalty": "The degree to which consumers consistently purchase the same brand. Levels: switchers, habitual, satisfied, brand likers, committed.",
+          "Brand Associations": "Anything linked in memory to a brand: attributes, benefits, attitudes.",
+          "Brand Architecture": "How brands within a company portfolio relate. Types: branded house (Google), house of brands (P&G), endorsed (Marriott Courtyard), sub-brands.",
+          "Brand Extension": "Using an existing brand name to launch a product in a new category. Risk: dilution.",
+          "Co-Branding": "Two brands featured on a single product (e.g., Nike + Apple).",
+          "Brand Positioning": "How a brand is perceived relative to competitors in the minds of consumers."
+        },
+        "frameworks": ["Keller's Brand Equity Pyramid (CBBE)", "Aaker's Brand Equity Model", "Brand Value Chain"],
+        "real_world_examples": [
+          "Coca-Cola: High brand equity built over 130+ years; brand value estimated at $90B+; consistent positioning around happiness and refreshment",
+          "Amazon: Brand trust and convenience drive equity; extended from books to everything; Prime membership builds loyalty"
+        ],
+        "common_exam_topics": ["Explain Keller's CBBE pyramid levels", "Evaluate brand extension decisions", "Distinguish brand awareness, image, and loyalty", "Calculate/discuss brand equity implications"]
+      },
+
+      "digital_marketing": {
+        "title": "Digital Marketing and Social Media Marketing",
+        "definition": "Marketing efforts that use electronic devices or the internet. Encompasses all marketing efforts using digital channels to connect with current and prospective customers.",
+        "key_terms": {
+          "SEO (Search Engine Optimization)": "Optimizing website content to rank higher in organic search results. On-page (content, keywords, meta tags) and off-page (backlinks, domain authority).",
+          "SEM (Search Engine Marketing)": "Paid search advertising (Google Ads/PPC). Bid on keywords; pay per click.",
+          "Content Marketing": "Creating and distributing valuable, relevant content to attract and retain a defined audience.",
+          "Social Media Marketing": "Using platforms (Instagram, TikTok, LinkedIn, X, Facebook) to promote products and engage audiences. Organic vs paid social.",
+          "Email Marketing": "Direct communication via email. Metrics: open rate, click-through rate, conversion rate, unsubscribe rate.",
+          "Influencer Marketing": "Partnering with individuals who have significant social media followings to promote products.",
+          "Marketing Automation": "Software to automate repetitive marketing tasks (email sequences, social posting, lead nurturing).",
+          "Conversion Rate": "Percentage of visitors who complete a desired action (purchase, sign-up).",
+          "Customer Journey Mapping": "Visualizing the complete experience a customer has with a brand across all digital and physical touchpoints.",
+          "KPIs": "Key performance indicators: CTR, CPC, CPM, ROAS, CAC, CLV."
+        },
+        "frameworks": ["RACE framework (Reach, Act, Convert, Engage)", "Content marketing funnel (TOFU, MOFU, BOFU)", "Google's ZMOT (Zero Moment of Truth)"],
+        "real_world_examples": [
+          "Dollar Shave Club: Viral video content marketing launched a $1B brand acquired by Unilever",
+          "Glossier: Built entirely through social media and user-generated content; community-first digital strategy"
+        ],
+        "common_exam_topics": ["Compare SEO vs SEM", "Explain the digital marketing funnel", "Calculate basic digital metrics (CTR, conversion rate)", "Design a social media strategy for a brand"]
+      },
+
+      "b2b_vs_b2c": {
+        "title": "B2B vs B2C Marketing",
+        "definition": "B2B (Business-to-Business) marketing involves selling products/services to other businesses. B2C (Business-to-Consumer) marketing targets individual end consumers.",
+        "key_terms": {
+          "B2B Characteristics": "Fewer but larger buyers, derived demand, inelastic demand, professional purchasing, longer sales cycles, relationship-focused, buying center (DMU).",
+          "B2C Characteristics": "Many individual buyers, direct demand, emotional and impulsive buying, shorter sales cycles, brand-driven.",
+          "Buying Center (DMU)": "Decision Making Unit in B2B: Initiators, Users, Influencers, Deciders, Approvers, Buyers, Gatekeepers.",
+          "Derived Demand": "B2B demand that derives from demand for consumer goods.",
+          "Supply Chain Management": "Coordinating the flow of materials, information, and finances from supplier to manufacturer to wholesaler to retailer to consumer."
+        },
+        "key_differences_table": {
+          "Decision_makers": {"B2B": "Buying center/committee", "B2C": "Individual or household"},
+          "Relationship": {"B2B": "Long-term, relationship-based", "B2C": "Transactional or loyalty-based"},
+          "Purchase_volume": {"B2B": "Large quantities, high value", "B2C": "Smaller quantities, lower value"},
+          "Sales_cycle": {"B2B": "Weeks to years", "B2C": "Minutes to days"},
+          "Marketing_channels": {"B2B": "Trade shows, LinkedIn, direct sales, industry publications", "B2C": "Mass media, social media, retail, e-commerce"}
+        },
+        "real_world_examples": [
+          "Salesforce (B2B): Sells CRM software to businesses; long sales cycles; relationship selling; ROI-focused messaging",
+          "Coca-Cola (B2C): Sells beverages to consumers; emotional branding; mass advertising; impulse purchase"
+        ],
+        "common_exam_topics": ["Compare B2B and B2C on 5+ dimensions", "Identify buying center roles in a scenario", "Explain derived demand with an example"]
+      },
+
+      "product_life_cycle": {
+        "title": "Product Life Cycle (PLC)",
+        "definition": "The course of a product's sales and profits over its lifetime, typically described in four stages: Introduction, Growth, Maturity, and Decline.",
+        "key_terms": {
+          "Introduction Stage": "Product launched. Low sales, high costs per customer, negative profits. Goal: create awareness and trial. Promotion-heavy, limited distribution.",
+          "Growth Stage": "Sales climb rapidly. Rising profits, increasing competition. Goal: maximize market share. Expand distribution, improve product.",
+          "Maturity Stage": "Sales peak then plateau. Profits stabilize or decline. Intense competition, price pressure. Goal: defend share, increase profits. Differentiate, find new segments.",
+          "Decline Stage": "Sales and profits drop. Goal: reduce expenditure, harvest or divest. Options: maintain, harvest, or drop the product.",
+          "Adoption Curve": "Rogers' Diffusion of Innovations: Innovators (2.5%), Early Adopters (13.5%), Early Majority (34%), Late Majority (34%), Laggards (16%)."
+        },
+        "frameworks": ["Product Life Cycle curve", "Rogers' Diffusion of Innovations", "BCG Matrix (ties to PLC stages)"],
+        "real_world_examples": [
+          "Smartphones: Introduction (2007 iPhone), Growth (2008-2015), Maturity (2016-present, saturated market, incremental innovation)",
+          "DVD players: Full cycle from introduction through decline; replaced by streaming"
+        ],
+        "common_exam_topics": ["Identify PLC stage from sales/profit data", "Recommend marketing strategies for each stage", "Relate adoption curve to PLC", "Explain how to extend the maturity stage"]
+      },
+
+      "pricing_strategies": {
+        "title": "Pricing Strategies",
+        "definition": "Methods companies use to price their products or services, balancing cost recovery, value delivery, competitive positioning, and profit objectives.",
+        "key_terms": {
+          "Cost-Based Pricing": "Setting price based on costs plus a markup (cost-plus pricing). Simple but ignores demand and competition.",
+          "Value-Based Pricing": "Setting price based on perceived customer value rather than cost. Requires understanding customer willingness to pay.",
+          "Competition-Based Pricing": "Setting prices based on competitors' strategies. Going rate, above-market, below-market.",
+          "Price Skimming": "Setting high initial price to 'skim' revenue from early adopters, then lowering over time. Works with innovative products.",
+          "Penetration Pricing": "Setting low initial price to gain market share quickly. Works in price-sensitive markets.",
+          "Dynamic Pricing": "Adjusting prices in real-time based on demand, time, customer segment (airlines, Uber surge pricing).",
+          "Psychological Pricing": "Pricing that considers psychology: odd pricing ($9.99), prestige pricing, reference pricing, bundle pricing.",
+          "Price Elasticity of Demand": "Measure of how sensitive quantity demanded is to a price change. Elastic (>1): sensitive; Inelastic (<1): insensitive.",
+          "Freemium": "Basic product free, premium features paid. Common in SaaS and apps.",
+          "Loss Leader": "Pricing a product below cost to attract customers who then purchase other profitable items."
+        },
+        "frameworks": ["Cost-Volume-Profit analysis", "Break-even analysis", "Price elasticity of demand"],
+        "real_world_examples": [
+          "Apple: Price skimming on new iPhone models; prestige pricing reinforces premium brand",
+          "Walmart: Everyday low pricing (EDLP) strategy; penetration pricing for new markets",
+          "Spotify: Freemium model; free tier with ads, premium subscription without"
+        ],
+        "common_exam_topics": ["Calculate break-even point", "Recommend pricing strategy for a new product scenario", "Explain skimming vs penetration with conditions for each", "Calculate price elasticity and interpret"]
+      },
+
+      "distribution_channels": {
+        "title": "Distribution Channels",
+        "definition": "The set of interdependent organizations involved in the process of making a product or service available for use or consumption by the consumer or business user.",
+        "key_terms": {
+          "Channel Levels": "Direct (manufacturer to consumer, 0-level), Indirect (1+ intermediaries: retailer, wholesaler, agent/broker).",
+          "Channel Functions": "Information, promotion, negotiation, ordering, financing, risk taking, physical possession, payment, title transfer.",
+          "Intensive Distribution": "Product available in as many outlets as possible (convenience goods: Coca-Cola).",
+          "Selective Distribution": "Limited number of outlets in a given area (shopping goods: appliances).",
+          "Exclusive Distribution": "Very limited outlets; often one per territory (specialty goods: luxury brands, car dealerships).",
+          "Vertical Marketing System (VMS)": "Unified channel system. Types: Corporate (single ownership), Contractual (franchises), Administered (dominant member coordinates).",
+          "Omnichannel": "Integrated approach across all channels (physical stores, online, mobile, social) providing seamless customer experience.",
+          "Channel Conflict": "Disagreements between channel members over goals, roles, or rewards. Horizontal vs vertical conflict.",
+          "Disintermediation": "Removal of intermediaries (e.g., manufacturers selling direct online)."
+        },
+        "frameworks": ["Channel design decisions (analyze needs, set objectives, identify alternatives, evaluate)", "Push vs Pull strategy"],
+        "real_world_examples": [
+          "Tesla: Direct-to-consumer model, no dealerships; disintermediation",
+          "Nike: Shifted from wholesale-heavy to DTC (Nike.com, Nike stores) while maintaining selective retail partners"
+        ],
+        "common_exam_topics": ["Identify distribution intensity for a product type", "Explain channel conflict with an example", "Compare push vs pull distribution strategies", "Design a channel strategy for a given product"]
+      },
+
+      "integrated_marketing_communications": {
+        "title": "Integrated Marketing Communications (IMC)",
+        "definition": "A strategic approach that coordinates all promotional tools and messages to deliver a consistent, unified message across all customer touchpoints.",
+        "key_terms": {
+          "Promotion Mix Elements": "Advertising, Sales Promotion, Personal Selling, Public Relations, Direct Marketing, Digital/Social Media.",
+          "Advertising": "Paid, non-personal communication through mass media. Types: informative, persuasive, reminder.",
+          "Sales Promotion": "Short-term incentives to encourage purchase. Consumer (coupons, samples, contests) and Trade (allowances, co-op advertising).",
+          "Personal Selling": "Face-to-face interaction with prospective buyers. Most effective for B2B and high-involvement purchases.",
+          "Public Relations": "Building good relations with publics through favorable publicity, corporate image, and handling unfavorable events. Tools: press releases, events, sponsorships.",
+          "Direct Marketing": "Direct connections with targeted consumers (email, direct mail, catalogs, telemarketing).",
+          "AIDA Model": "Attention > Interest > Desire > Action. Framework for designing promotional messages.",
+          "Media Planning": "Selecting the right media mix (TV, digital, print, outdoor) based on reach, frequency, impact, and cost.",
+          "CPM": "Cost Per Thousand impressions. Standard metric for comparing media costs."
+        },
+        "frameworks": ["AIDA model", "Hierarchy of Effects model", "IMC planning process", "DAGMAR (Defining Advertising Goals for Measured Advertising Results)"],
+        "real_world_examples": [
+          "Dove 'Real Beauty' campaign: Integrated TV ads, social media, PR, in-store displays with consistent body-positivity message across all channels",
+          "Red Bull: IMC through extreme sports sponsorship (PR), content marketing, social media, and experiential events all reinforcing 'gives you wings' positioning"
+        ],
+        "common_exam_topics": ["Explain why IMC is important (consistency, efficiency)", "Apply AIDA to a promotional message", "Choose appropriate promotion mix for B2B vs B2C", "Calculate CPM and compare media options"]
+      },
+
+      "swot_competitive_analysis": {
+        "title": "SWOT Analysis and Competitive Analysis",
+        "definition": "SWOT is a framework for identifying internal Strengths and Weaknesses and external Opportunities and Threats. Competitive analysis is the systematic evaluation of competitors' strategies, capabilities, and market positions.",
+        "key_terms": {
+          "Strengths": "Internal capabilities that give advantage (brand, patents, skilled workforce, efficient operations).",
+          "Weaknesses": "Internal limitations that create disadvantage (high costs, outdated technology, weak brand, limited distribution).",
+          "Opportunities": "External factors the company could exploit (market growth, new technology, regulatory changes, demographic shifts).",
+          "Threats": "External factors that could cause trouble (new competitors, economic downturn, changing consumer preferences, regulation).",
+          "Competitive Advantage": "A condition that allows a company to produce goods/services better or more cheaply than rivals. Sustainable when not easily copied.",
+          "Competitor Analysis Framework": "Identify competitors > Assess objectives/strategies/strengths/weaknesses > Select competitors to attack or avoid.",
+          "Porter's Five Forces": "(Also in management) Threat of new entrants, Bargaining power of suppliers, Bargaining power of buyers, Threat of substitutes, Rivalry among existing competitors.",
+          "PESTEL Analysis": "Political, Economic, Social, Technological, Environmental, Legal external factors analysis."
+        },
+        "frameworks": ["SWOT matrix", "TOWS matrix (strategic options from SWOT)", "Porter's Five Forces", "PESTEL", "Competitive positioning map"],
+        "real_world_examples": [
+          "Netflix SWOT: Strengths (brand, content library, data analytics), Weaknesses (high content costs, debt), Opportunities (global expansion, gaming), Threats (Disney+, password sharing crackdowns)",
+          "Porter's Five Forces for airline industry: High rivalry, moderate supplier power (Boeing/Airbus duopoly), high buyer power (price sensitivity), high threat of substitutes (trains, video conferencing), moderate entry barriers"
+        ],
+        "common_exam_topics": ["Conduct a SWOT analysis for a given company", "Apply Porter's Five Forces to an industry", "Distinguish internal vs external factors", "Use TOWS to generate strategy recommendations"]
+      }
+    },
+
+    "management": {
+      "management_functions": {
+        "title": "Management Functions (POLC)",
+        "definition": "The four fundamental functions of management that all managers perform: Planning, Organizing, Leading, and Controlling.",
+        "key_terms": {
+          "Planning": "Setting organizational goals and determining the best course of action. Includes strategic planning (long-term, top management), tactical planning (medium-term, middle management), and operational planning (short-term, first-line management).",
+          "Organizing": "Arranging resources and tasks to achieve organizational goals. Includes designing organizational structure, delegating authority, establishing reporting relationships.",
+          "Leading": "Directing and motivating employees to achieve organizational goals. Includes communication, motivation, leadership style, and conflict resolution.",
+          "Controlling": "Monitoring performance, comparing to standards, and taking corrective action. Includes setting standards, measuring performance, comparing, correcting.",
+          "SMART Goals": "Specific, Measurable, Achievable, Relevant, Time-bound.",
+          "Management Levels": "Top (CEO, VP: strategic), Middle (department heads: tactical), First-line (supervisors: operational).",
+          "Mintzberg's Managerial Roles": "Interpersonal (figurehead, leader, liaison), Informational (monitor, disseminator, spokesperson), Decisional (entrepreneur, disturbance handler, resource allocator, negotiator).",
+          "Efficiency vs Effectiveness": "Efficiency = doing things right (minimize resources); Effectiveness = doing the right things (achieve goals)."
+        },
+        "key_theorists": ["Henri Fayol (14 Principles of Management)", "Peter Drucker (MBO - Management by Objectives)", "Henry Mintzberg (Managerial Roles)"],
+        "real_world_examples": [
+          "Planning: Amazon's long-term strategy to dominate e-commerce, cloud computing, and AI",
+          "Organizing: Google's matrix organizational structure balancing product teams and functional departments",
+          "Leading: Satya Nadella transforming Microsoft's culture from 'know-it-all' to 'learn-it-all'",
+          "Controlling: Toyota's quality control systems and continuous improvement (kaizen)"
+        ],
+        "common_exam_topics": ["Identify which function a manager is performing in a scenario", "Explain Fayol's principles with modern examples", "Distinguish strategic, tactical, and operational planning", "Describe the control process steps"]
+      },
+
+      "organizational_behavior_motivation": {
+        "title": "Organizational Behavior and Motivation Theories",
+        "definition": "OB is the study of how people behave in organizational settings. Motivation theories explain what drives individuals to act and sustain effort toward goals.",
+        "key_terms": {
+          "Maslow's Hierarchy of Needs": "Five levels (bottom to top): Physiological, Safety, Social/Belonging, Esteem, Self-Actualization. Lower needs must be substantially met before higher needs motivate.",
+          "Herzberg's Two-Factor Theory": "Hygiene factors (salary, job security, working conditions) prevent dissatisfaction but don't motivate. Motivators (achievement, recognition, responsibility, growth) create satisfaction and motivation.",
+          "McGregor's Theory X and Theory Y": "Theory X: managers assume workers are lazy, need coercion and control. Theory Y: managers assume workers are self-motivated, seek responsibility, and are creative.",
+          "Expectancy Theory (Vroom)": "Motivation = Expectancy (effort leads to performance) x Instrumentality (performance leads to reward) x Valence (value of reward).",
+          "Equity Theory (Adams)": "People compare their input/output ratio to others. Perceived inequity leads to motivation to restore equity (reduce effort, seek raise, leave).",
+          "Goal-Setting Theory (Locke)": "Specific, difficult but achievable goals with feedback lead to higher performance than vague or easy goals.",
+          "Self-Determination Theory (Deci & Ryan)": "Three innate needs: Autonomy, Competence, Relatedness. Intrinsic motivation strongest when all three are met.",
+          "Reinforcement Theory (Skinner)": "Behavior shaped by consequences: positive reinforcement, negative reinforcement, punishment, extinction.",
+          "Job Characteristics Model (Hackman & Oldham)": "Five core dimensions (skill variety, task identity, task significance, autonomy, feedback) lead to critical psychological states and outcomes (motivation, satisfaction, performance)."
+        },
+        "key_theorists": ["Abraham Maslow", "Frederick Herzberg", "Douglas McGregor", "Victor Vroom", "J. Stacy Adams", "Edwin Locke", "B.F. Skinner", "Hackman & Oldham", "Deci & Ryan"],
+        "real_world_examples": [
+          "Maslow: Google provides free meals (physiological), job security (safety), collaborative spaces (social), peer recognition programs (esteem), 20% time for personal projects (self-actualization)",
+          "Herzberg: A pay raise (hygiene) stops complaints but doesn't motivate; assigning a challenging project (motivator) drives engagement",
+          "Theory Y: W.L. Gore (Gore-Tex) uses flat structure, self-managed teams, assumes employees are creative and responsible",
+          "Equity Theory: Employee discovers a peer with same role earns 20% more; reduces effort or negotiates raise"
+        ],
+        "common_exam_topics": ["Compare and contrast Maslow, Herzberg, and McGregor", "Apply Vroom's expectancy theory to a scenario", "Identify hygiene vs motivator factors", "Explain how equity theory predicts employee reactions", "Apply goal-setting theory principles to improve performance"]
+      },
+
+      "leadership_styles_theories": {
+        "title": "Leadership Styles and Theories",
+        "definition": "Leadership is the ability to influence a group toward the achievement of goals. Theories explain where leadership comes from and how it can be practiced effectively.",
+        "key_terms": {
+          "Trait Theory": "Leaders possess certain inherent traits (intelligence, self-confidence, determination, integrity, sociability). Criticisms: doesn't account for situations, not predictive.",
+          "Behavioral Theories": "Focus on what leaders do, not who they are. Ohio State studies: Initiating Structure (task) vs Consideration (relationship). Michigan studies: Production-oriented vs Employee-oriented.",
+          "Situational/Contingency Theories": {
+            "Fiedler's Contingency Model": "Leadership effectiveness depends on match between leader style (task vs relationship) and situational favorableness (leader-member relations, task structure, position power).",
+            "Hersey-Blanchard Situational Leadership": "Leader adapts style (Telling, Selling, Participating, Delegating) based on follower readiness/maturity.",
+            "Path-Goal Theory (House)": "Leader's job is to assist followers in attaining goals. Four styles: Directive, Supportive, Participative, Achievement-oriented."
+          },
+          "Transformational Leadership": "Inspires followers to transcend self-interest. Four I's: Idealized Influence, Inspirational Motivation, Intellectual Stimulation, Individualized Consideration.",
+          "Transactional Leadership": "Exchange-based: rewards for performance, management by exception (active/passive).",
+          "Servant Leadership": "Leader's primary role is to serve followers. Emphasizes empathy, listening, stewardship, community building.",
+          "Authentic Leadership": "Self-aware, transparent, ethical, balanced processing of information.",
+          "Autocratic vs Democratic vs Laissez-faire": "Autocratic (leader decides alone), Democratic (leader involves group), Laissez-faire (leader hands off)."
+        },
+        "key_theorists": ["Fred Fiedler", "Paul Hersey & Ken Blanchard", "Robert House", "James MacGregor Burns", "Bernard Bass", "Robert Greenleaf"],
+        "real_world_examples": [
+          "Transformational: Steve Jobs inspired Apple employees with a vision of changing the world through technology",
+          "Servant: Howard Schultz at Starbucks prioritized employee benefits (health insurance for part-timers) and called employees 'partners'",
+          "Situational: A new employee (low readiness) needs directive/telling style; an experienced self-starter needs delegating style"
+        ],
+        "common_exam_topics": ["Match leadership style to a scenario using situational leadership", "Compare transformational vs transactional leadership", "Identify leadership style from a case study", "Explain why no single style works in all situations", "Apply path-goal theory to a workplace scenario"]
+      },
+
+      "organizational_structure_design": {
+        "title": "Organizational Structure and Design",
+        "definition": "The formal system of task and authority relationships that controls how people coordinate their actions and use resources to achieve organizational goals.",
+        "key_terms": {
+          "Organizational Chart": "Visual representation of reporting relationships and structure.",
+          "Chain of Command": "Unbroken line of authority extending from top to bottom. Unity of command: each person reports to one manager.",
+          "Span of Control": "Number of subordinates a manager can effectively manage. Wide (many subordinates, flat org) vs Narrow (few subordinates, tall org).",
+          "Centralization vs Decentralization": "Centralized: decisions made at top. Decentralized: decision authority pushed to lower levels.",
+          "Departmentalization": "Grouping by function, product, geography, customer, or process.",
+          "Functional Structure": "Grouped by business function (marketing, finance, operations). Efficient but can create silos.",
+          "Divisional Structure": "Grouped by product line, geography, or customer type. More responsive but duplicates resources.",
+          "Matrix Structure": "Dual reporting relationships (functional and product/project). Flexible but can create confusion and conflict.",
+          "Flat vs Tall Organizations": "Flat: few levels, wide span. Tall: many levels, narrow span.",
+          "Mechanistic vs Organic": "Mechanistic: rigid, formal, centralized (stable environments). Organic: flexible, informal, decentralized (dynamic environments).",
+          "Formalization": "Degree to which jobs are standardized with rules and procedures."
+        },
+        "key_theorists": ["Max Weber (bureaucracy)", "Tom Burns & G.M. Stalker (mechanistic vs organic)", "Henry Mintzberg (structural configurations)"],
+        "real_world_examples": [
+          "Functional: A small manufacturing company with marketing, finance, HR, and production departments",
+          "Divisional: Johnson & Johnson operates as a collection of independent companies organized by product line",
+          "Matrix: NASA uses matrix structure where engineers report to both functional departments and project managers",
+          "Flat: Valve Corporation (game developer) has no formal management hierarchy"
+        ],
+        "common_exam_topics": ["Identify structure type from an org chart", "Recommend a structure for a given company scenario", "Explain trade-offs of centralization vs decentralization", "Compare mechanistic vs organic structures and when each is appropriate"]
+      },
+
+      "strategic_management": {
+        "title": "Strategic Management",
+        "definition": "The set of managerial decisions and actions that determines the long-run performance of an organization. Includes environmental scanning, strategy formulation, strategy implementation, and evaluation/control.",
+        "key_terms": {
+          "Mission Statement": "Declares the organization's reason for being and scope of operations.",
+          "Vision Statement": "Describes what the organization aspires to become.",
+          "Porter's Five Forces": "Industry analysis framework: (1) Threat of new entrants (barriers to entry), (2) Bargaining power of suppliers, (3) Bargaining power of buyers, (4) Threat of substitutes, (5) Rivalry among existing competitors.",
+          "Porter's Generic Strategies": "Cost Leadership (low cost, broad market), Differentiation (unique product, broad market), Focus (cost or differentiation in narrow segment). Stuck in the middle: danger of not committing to a strategy.",
+          "Value Chain Analysis (Porter)": "Primary activities (inbound logistics, operations, outbound logistics, marketing/sales, service) and Support activities (firm infrastructure, HRM, technology development, procurement). Identify where value is created or costs can be reduced.",
+          "SWOT Analysis": "Strengths, Weaknesses (internal); Opportunities, Threats (external).",
+          "BCG Matrix": "Portfolio analysis: Stars (high growth, high share), Cash Cows (low growth, high share), Question Marks (high growth, low share), Dogs (low growth, low share).",
+          "Ansoff Matrix": "Growth strategies: Market Penetration, Market Development, Product Development, Diversification.",
+          "Core Competency": "A unique set of capabilities that gives a company competitive advantage (Prahalad & Hamel).",
+          "Balanced Scorecard": "Performance measurement across four perspectives: Financial, Customer, Internal Processes, Learning & Growth (Kaplan & Norton)."
+        },
+        "key_theorists": ["Michael Porter", "C.K. Prahalad & Gary Hamel", "Igor Ansoff", "Robert Kaplan & David Norton", "Jay Barney (Resource-Based View)"],
+        "real_world_examples": [
+          "Porter's Five Forces for Coffee Industry: High rivalry (Starbucks, Dunkin', local shops), Low supplier power (many coffee growers), Moderate buyer power, Low substitute threat, Low entry barriers for local shops but high for national chains",
+          "Cost Leadership: Walmart's supply chain efficiency enables everyday low prices",
+          "Differentiation: Apple differentiates through design, ecosystem, and brand experience",
+          "Value Chain: Zara's value chain advantage is in rapid design-to-store operations (2 weeks vs industry 6 months)"
+        ],
+        "common_exam_topics": ["Apply Porter's Five Forces to a given industry", "Identify which generic strategy a company uses", "Conduct a value chain analysis", "Use BCG matrix to recommend portfolio strategies", "Distinguish mission from vision statements"]
+      },
+
+      "human_resource_management": {
+        "title": "Human Resource Management Basics",
+        "definition": "The process of acquiring, training, appraising, and compensating employees, and attending to their labor relations, health and safety, and fairness concerns.",
+        "key_terms": {
+          "HR Planning": "Forecasting future HR needs and ensuring the right number of qualified people are in the right jobs at the right time.",
+          "Job Analysis": "Systematic process of collecting information about job duties, responsibilities, and requirements. Produces job descriptions and job specifications.",
+          "Recruitment": "Process of generating a pool of qualified applicants. Internal (transfers, promotions) vs External (job boards, agencies, campus recruiting).",
+          "Selection": "Choosing from applicants. Tools: interviews (structured/unstructured), tests (aptitude, personality), assessment centers, background checks.",
+          "Training and Development": "Training: improving current job skills. Development: preparing for future roles. Methods: on-the-job, mentoring, classroom, e-learning, simulation.",
+          "Performance Appraisal": "Evaluating employee performance against standards. Methods: 360-degree feedback, MBO, graphic rating scales, critical incident, BARS (Behaviorally Anchored Rating Scales).",
+          "Compensation": "Direct (salary, wages, bonuses) and Indirect (benefits: health insurance, retirement plans, PTO).",
+          "Employment Law": "Title VII (no discrimination based on race, sex, religion, national origin, color), ADA (disability accommodation), ADEA (age), FMLA (family leave), FLSA (minimum wage, overtime), OSHA (workplace safety).",
+          "At-Will Employment": "Employer or employee can terminate the relationship at any time for any lawful reason."
+        },
+        "key_theorists": ["Dave Ulrich (HR as strategic partner)", "Frederick Taylor (Scientific Management, early HRM)"],
+        "real_world_examples": [
+          "Google's hiring: Structured interviews, work sample tests, cross-functional hiring committees reduce bias",
+          "Costco: Higher wages and better benefits than competitors result in lower turnover and higher productivity"
+        ],
+        "common_exam_topics": ["Describe the recruitment and selection process", "Compare performance appraisal methods", "Identify which employment law applies to a scenario", "Explain strategic HR alignment with business strategy"]
+      },
+
+      "operations_management": {
+        "title": "Operations Management",
+        "definition": "The administration of business practices to create the highest level of efficiency possible within an organization, concerned with converting materials and labor into goods and services as efficiently as possible.",
+        "key_terms": {
+          "Operations Strategy": "How the operations function contributes to competitive strategy through decisions about process, quality, capacity, and inventory.",
+          "Process Design": "Layout and flow of production. Types: Job shop (custom, low volume), Batch, Assembly line (high volume, standardized), Continuous flow.",
+          "Quality Management": {
+            "TQM (Total Quality Management)": "Organization-wide approach to continuous quality improvement in all processes.",
+            "Six Sigma": "Data-driven methodology to eliminate defects (DMAIC: Define, Measure, Analyze, Improve, Control). 3.4 defects per million opportunities.",
+            "ISO 9000": "International quality management standards."
+          },
+          "Lean Operations": "Minimizing waste (muda) while maximizing value. Tools: Just-In-Time (JIT), Kanban, 5S, Value Stream Mapping, Kaizen (continuous improvement).",
+          "Inventory Management": "EOQ (Economic Order Quantity), JIT, ABC analysis, Safety stock. Balancing holding costs vs ordering costs vs stockout costs.",
+          "Supply Chain Management": "Coordinating all activities from raw materials to final customer delivery. Includes supplier selection, logistics, warehousing, demand forecasting.",
+          "Capacity Planning": "Determining the production capacity needed to meet changing demands.",
+          "Project Management": "Planning and controlling one-time projects. Tools: Gantt charts, CPM (Critical Path Method), PERT (Program Evaluation and Review Technique).",
+          "Forecasting": "Predicting future demand. Qualitative (expert opinion, Delphi method) and Quantitative (moving averages, exponential smoothing, regression)."
+        },
+        "key_theorists": ["W. Edwards Deming (14 Points, PDCA cycle)", "Joseph Juran (Quality trilogy)", "Taiichi Ohno (Toyota Production System/Lean)", "Eli Goldratt (Theory of Constraints)"],
+        "real_world_examples": [
+          "Toyota: Pioneer of lean manufacturing (TPS), JIT inventory, kaizen culture",
+          "Amazon: Operations excellence in fulfillment center design, robotics, last-mile delivery optimization",
+          "Six Sigma at Motorola: Originated Six Sigma methodology; later adopted and popularized by GE under Jack Welch"
+        ],
+        "common_exam_topics": ["Calculate EOQ", "Explain TQM principles", "Compare lean vs Six Sigma", "Identify process type for a given production scenario", "Create/analyze a Gantt chart or critical path"]
+      },
+
+      "change_management": {
+        "title": "Change Management",
+        "definition": "The process, tools, and techniques to manage the people side of change to achieve a required business outcome.",
+        "key_terms": {
+          "Lewin's Change Model": "Three stages: Unfreeze (create urgency, challenge status quo), Change/Move (implement new processes, behaviors), Refreeze (stabilize and reinforce the change).",
+          "Kotter's 8-Step Model": "(1) Create urgency, (2) Form a guiding coalition, (3) Create a vision, (4) Communicate the vision, (5) Empower broad-based action, (6) Generate short-term wins, (7) Consolidate gains, (8) Anchor in culture.",
+          "Resistance to Change": "Common reasons: fear of unknown, loss of control, bad timing, peer pressure, self-interest, misunderstanding, lack of trust.",
+          "Overcoming Resistance": "Education/communication, participation, facilitation/support, negotiation, manipulation/co-optation, coercion (Kotter & Schlesinger).",
+          "Organizational Development (OD)": "Planned, systematic process of change using behavioral science knowledge. Interventions: team building, survey feedback, process consultation.",
+          "Force Field Analysis (Lewin)": "Identifies driving forces (pushing for change) and restraining forces (resisting change). Change occurs when driving forces exceed restraining forces.",
+          "Planned vs Emergent Change": "Planned: deliberate, structured. Emergent: evolves in response to the environment, less predictable."
+        },
+        "key_theorists": ["Kurt Lewin", "John Kotter", "Everett Rogers (Diffusion of Innovations)", "ADKAR model (Jeff Hiatt/Prosci)"],
+        "real_world_examples": [
+          "Kotter's 8 steps at Ford: Alan Mulally created urgency (near-bankruptcy), built coalition (leadership team), vision ('One Ford'), short-term wins (profitable quarters), anchored new culture",
+          "Resistance: Kodak's failure to transition from film to digital despite inventing the digital camera (resistance from profitable film business)"
+        ],
+        "common_exam_topics": ["Apply Lewin's model to a change scenario", "List Kotter's 8 steps in order", "Identify sources of resistance and recommend solutions", "Conduct a force field analysis"]
+      },
+
+      "business_ethics_csr": {
+        "title": "Business Ethics and Corporate Social Responsibility",
+        "definition": "Business ethics refers to applying ethical principles to business situations. CSR is a company's commitment to managing its social, environmental, and economic effects responsibly and in line with stakeholder expectations.",
+        "key_terms": {
+          "Ethics": "Moral principles that guide behavior. Business context: honesty, fairness, integrity, respect for stakeholders.",
+          "Ethical Decision-Making Frameworks": {
+            "Utilitarian": "Greatest good for the greatest number (consequentialist).",
+            "Rights-Based": "Respects fundamental rights of individuals regardless of outcomes.",
+            "Justice/Fairness": "Fair distribution of benefits and burdens.",
+            "Virtue Ethics": "Focus on character and moral virtues of the decision-maker."
+          },
+          "Corporate Social Responsibility (CSR)": "Carroll's Pyramid: (base) Economic responsibilities > Legal responsibilities > Ethical responsibilities > Philanthropic responsibilities (top).",
+          "Stakeholder Theory (Freeman)": "Managers should consider all stakeholders (employees, customers, suppliers, community, shareholders, environment), not just shareholders.",
+          "Shareholder Theory (Friedman)": "The social responsibility of business is to increase profits (within the law).",
+          "Triple Bottom Line": "People, Planet, Profit. Measuring success beyond financial performance.",
+          "Whistleblowing": "Reporting illegal or unethical practices within an organization. Protected under Sarbanes-Oxley and Dodd-Frank.",
+          "Code of Ethics": "Formal document stating an organization's values and ethical rules.",
+          "ESG (Environmental, Social, Governance)": "Framework for evaluating corporate behavior beyond financial metrics."
+        },
+        "key_theorists": ["R. Edward Freeman (Stakeholder Theory)", "Milton Friedman (Shareholder Theory)", "Archie Carroll (CSR Pyramid)", "John Elkington (Triple Bottom Line)"],
+        "real_world_examples": [
+          "Patagonia: 'Don't buy this jacket' campaign; donates 1% of sales to environment; B Corp certified",
+          "Enron: Ethical failure - massive accounting fraud, destroyed shareholder value, led to Sarbanes-Oxley Act",
+          "Ben & Jerry's: Social mission integrated into business model; fair trade sourcing; community activism"
+        ],
+        "common_exam_topics": ["Apply ethical frameworks to a business dilemma", "Explain Carroll's CSR pyramid with examples", "Compare stakeholder vs shareholder theory", "Analyze a case study for ethical violations", "Discuss the business case for CSR"]
+      },
+
+      "team_dynamics_conflict": {
+        "title": "Team Dynamics and Conflict Resolution",
+        "definition": "Team dynamics refers to the behavioral relationships between group members that affect performance. Conflict resolution involves managing disagreements constructively.",
+        "key_terms": {
+          "Tuckman's Stages of Group Development": "Forming (orientation, getting to know each other), Storming (conflict, power struggles), Norming (establishing norms, cohesion develops), Performing (high performance, effective collaboration), Adjourning (dissolution, completion).",
+          "Team Roles (Belbin)": "Nine roles: Plant (creative), Resource Investigator, Coordinator, Shaper, Monitor Evaluator, Teamworker, Implementer, Completer Finisher, Specialist.",
+          "Groupthink (Janis)": "Desire for conformity overrides realistic appraisal of alternatives. Symptoms: illusion of invulnerability, collective rationalization, stereotyping outgroups, self-censorship.",
+          "Social Loafing": "Tendency for individuals to exert less effort when working collectively. Countered by smaller groups, individual accountability, meaningful tasks.",
+          "Conflict Types": "Task conflict (disagreements about work content - can be productive), Relationship conflict (personal friction - usually destructive), Process conflict (how work should be done).",
+          "Thomas-Kilmann Conflict Modes": "Competing (assertive, uncooperative), Collaborating (assertive, cooperative), Compromising (moderate), Avoiding (unassertive, uncooperative), Accommodating (unassertive, cooperative).",
+          "Negotiation": "Distributive (win-lose, fixed pie) vs Integrative (win-win, expand pie). BATNA: Best Alternative To a Negotiated Agreement.",
+          "Psychological Safety (Edmondson)": "Shared belief that the team is safe for interpersonal risk-taking. Critical for learning and innovation.",
+          "Virtual Teams": "Geographically dispersed teams using technology. Challenges: communication, trust, time zones, cultural differences."
+        },
+        "key_theorists": ["Bruce Tuckman", "Meredith Belbin", "Irving Janis (Groupthink)", "Kenneth Thomas & Ralph Kilmann", "Amy Edmondson (Psychological Safety)"],
+        "real_world_examples": [
+          "Groupthink: Bay of Pigs invasion (1961) - JFK's advisory team failed to challenge flawed plan due to group pressure",
+          "Psychological Safety: Google's Project Aristotle found psychological safety was the #1 factor in high-performing teams",
+          "Thomas-Kilmann: A team leader uses collaborating style to resolve a scheduling conflict by finding a solution that addresses everyone's needs"
+        ],
+        "common_exam_topics": ["Identify Tuckman's stage from a team scenario", "Explain how to prevent groupthink", "Choose appropriate conflict management style for a situation", "Describe strategies to reduce social loafing", "Explain why psychological safety matters"]
+      },
+
+      "decision_making_models": {
+        "title": "Decision-Making Models",
+        "definition": "Frameworks that describe how managers make choices among alternatives to solve problems and capitalize on opportunities.",
+        "key_terms": {
+          "Rational Decision-Making Model": "Ideal model: (1) Define the problem, (2) Identify decision criteria, (3) Allocate weights to criteria, (4) Develop alternatives, (5) Evaluate alternatives, (6) Select the best alternative. Assumes complete information and rationality.",
+          "Bounded Rationality (Simon)": "Decision-makers have limited information, cognitive capacity, and time. They 'satisfice' (choose first acceptable option) rather than optimize.",
+          "Intuitive Decision-Making": "Making decisions based on experience, feelings, and accumulated judgment. Effective for experienced managers in time-pressured situations.",
+          "Programmed vs Non-programmed Decisions": "Programmed: routine, repetitive, handled by rules/procedures. Non-programmed: novel, unstructured, require creative solutions.",
+          "Group Decision-Making": "Advantages: diverse perspectives, more information, greater acceptance. Disadvantages: time-consuming, conformity pressure, groupthink, social loafing.",
+          "Decision-Making Biases": {
+            "Confirmation Bias": "Seeking information that confirms existing beliefs.",
+            "Anchoring Bias": "Over-relying on the first piece of information encountered.",
+            "Overconfidence Bias": "Overestimating accuracy of own judgments.",
+            "Availability Heuristic": "Judging likelihood based on how easily examples come to mind.",
+            "Escalation of Commitment": "Continuing to invest in a failing course of action (sunk cost fallacy).",
+            "Framing Effect": "Decisions influenced by how options are presented."
+          },
+          "Decision Trees": "Visual tool mapping decisions, chance events, and outcomes with probabilities and payoffs.",
+          "Delphi Method": "Structured group technique using iterative anonymous expert surveys to reach consensus.",
+          "Cost-Benefit Analysis": "Comparing total costs vs total benefits of each alternative."
+        },
+        "key_theorists": ["Herbert Simon (Bounded Rationality, Satisficing)", "Daniel Kahneman & Amos Tversky (Biases and Heuristics)", "Irving Janis (Groupthink in decisions)", "Gary Klein (Naturalistic/Intuitive Decision-Making)"],
+        "real_world_examples": [
+          "Bounded Rationality: A hiring manager reviews 10 of 200 resumes and picks the first 'good enough' candidate rather than reviewing all applicants",
+          "Escalation of Commitment: Concorde aircraft project continued despite economic unviability because of sunk costs (the 'Concorde fallacy')",
+          "Anchoring: In salary negotiation, the first number stated becomes the anchor around which the negotiation revolves"
+        ],
+        "common_exam_topics": ["Walk through the rational decision-making model for a scenario", "Explain bounded rationality vs rational model", "Identify decision-making biases in examples", "Compare advantages/disadvantages of group vs individual decisions", "Explain when intuitive decision-making is appropriate"]
+      }
+    }
+  }
+}

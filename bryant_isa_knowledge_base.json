@@ -1,0 +1,1270 @@
+{
+  "university": "Bryant University",
+  "location": "Smithfield, RI",
+  "department": "Department of Information Systems and Analytics",
+  "catalog_year": "2025-2026",
+  "last_updated": "2026-04-08",
+
+  "programs": {
+    "bsba_information_systems": {
+      "name": "Bachelor of Science in Business Administration: Information Systems Concentration",
+      "degree": "BSBA",
+      "credits_concentration": 18,
+      "credits_total": 120,
+      "required_courses": ["ISA 221", "ISA 341", "ISA 343", "ISA 441"],
+      "elective_requirement": "Two ISA electives (min 6 credits), at least one at 400-level",
+      "business_core": ["ACG 203", "ACG 204", "BUS 400", "FIN 201", "ISA 201", "LGLS 211", "MGT 200", "MGT 201", "MKT 201"]
+    },
+    "bs_data_science": {
+      "name": "Bachelor of Science in Data Science",
+      "degree": "BSDS",
+      "credits_total": 120,
+      "core_courses": ["ISA 210", "ISA 221", "ISA 310", "ISA 330", "ISA 340", "ISA 341", "ISA 343", "ISA 360", "ISA 460", "ISA 490"],
+      "math_requirements": ["MATH 121", "MATH 201", "MATH 226", "MATH 350"],
+      "science_requirement": ["SCI 373"],
+      "business_minor": ["ACG 203", "ISA 201", "FIN 201", "MGT 200", "MGT 201", "MKT 201"]
+    },
+    "applied_analytics_concentration": {
+      "name": "Applied Analytics Concentration (Interdisciplinary)",
+      "credits": 18,
+      "required_courses": ["AA 205", "AA 304", "AA 306", "AA 490"],
+      "elective_requirement": "2 electives from approved list, max 1 at 200-level",
+      "note": "Must be taken as second concentration alongside primary major"
+    },
+    "msba_ai": {
+      "name": "Master of Science in Business Analytics and AI",
+      "degree": "MSBA & AI",
+      "credits": 34,
+      "format": "Full-time, in-person (Fall/Spring/Summer)",
+      "foundation": ["ISA 510", "ISA 520", "ISA 530", "ISA 540"],
+      "core": ["AI 600", "MSBA 610", "MSBA 620", "MSBA 640"],
+      "elective_tracks": ["Finance", "Supply Chain", "Healthcare", "International Business", "General Management"]
+    },
+    "msds_ai": {
+      "name": "Master of Science in Data Science and AI",
+      "degree": "MSDS & AI",
+      "credits": 34,
+      "format": "Full-time, in-person (Fall/Spring/Summer)",
+      "foundation": ["ISA 510", "ISA 520", "ISA 530", "ISA 540"],
+      "core": ["MSDS 610", "MSDS 620", "MSDS 630", "MSDS 640"]
+    }
+  },
+
+  "courses": {
+    "ISA 201": {
+      "name": "Introduction to Information Technology and Analytics",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Explores how IT supports business processes and strategic initiatives including CRM, ERP, and SCM. Covers emerging technologies, security, and ethical issues. Students apply what they have learned and compete team-to-team in a sponsored course-wide analytical case.",
+      "key_topics": ["Business information systems", "CRM", "ERP", "SCM", "IT strategy", "Information security", "Ethics in IT", "Business analytics fundamentals"],
+      "prerequisites": []
+    },
+    "ISA 201G": {
+      "name": "Introduction to Global Information Technology and Analytics",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Foundation in IT concepts within a global business context. Addresses how information culture varies internationally and impacts technology adoption. Includes hands-on experience with database and spreadsheet tools.",
+      "key_topics": ["Global IT", "Information culture", "International technology adoption", "Databases", "Spreadsheets"],
+      "prerequisites": []
+    },
+    "ISA 203": {
+      "name": "Honors Business Information Technology and Analytics",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Introduces IT's role in organizations covering business systems, ethics, security, and databases. Students will also gain experience in developing a functional database application for a business case.",
+      "key_topics": ["Business systems", "IT ethics", "Security", "Database application development"],
+      "prerequisites": []
+    },
+    "ISA 210": {
+      "name": "Introduction to Data Science",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Gateway course covering data science principles and tools. Topics include data collection, exploratory analysis, machine learning, text mining, and ethical considerations. Emphasizes breadth over depth.",
+      "key_topics": ["Data collection", "Exploratory data analysis", "Machine learning intro", "Text mining", "Data ethics", "Data science pipeline"],
+      "prerequisites": []
+    },
+    "ISA 221": {
+      "name": "Introduction to Programming",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "High-level programming using structured programming, control structures, and object-oriented concepts. Covers classes and using object-oriented tools such as the class debugger.",
+      "key_topics": ["Structured programming", "Control structures", "Object-oriented programming", "Classes", "Debugging", "Program design"],
+      "prerequisites": []
+    },
+    "ISA 310": {
+      "name": "Data Visualization",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Examines visualization techniques and how visual elements influence comprehension. Explores Excel, Tableau, Gephi, and Python-based visualizations through practical application.",
+      "key_topics": ["Visualization techniques", "Visual perception", "Excel charts", "Tableau", "Gephi network visualization", "Python visualization", "Dashboard design"],
+      "prerequisites": ["ISA 210"]
+    },
+    "ISA 311": {
+      "name": "Introduction to Cybersecurity",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Hands-on introduction to security threats and protection strategies. Covers SQL injection, cross-site scripting, mobile security, and encryption in a virtual lab environment.",
+      "key_topics": ["SQL injection", "Cross-site scripting (XSS)", "Mobile security", "Encryption", "Virtual labs", "Threat analysis", "Security vulnerabilities"],
+      "prerequisites": []
+    },
+    "ISA 312": {
+      "name": "Mobile Device Application Programming",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Programming methodologies for mobile applications. Covers software development kits for mobile applications, Java, and mobile website development.",
+      "key_topics": ["Mobile SDKs", "Java for mobile", "Mobile web development", "App design", "Mobile UI"],
+      "prerequisites": ["ISA 221"]
+    },
+    "ISA 314": {
+      "name": "Visual Basic Programming",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Structured programming using Visual Basic.Net for business applications. Students engage in writing, debugging, testing and documenting a variety of programs.",
+      "key_topics": ["Visual Basic .NET", "Business applications", "Program debugging", "Testing", "Documentation"],
+      "prerequisites": []
+    },
+    "ISA 320": {
+      "name": "Information Technology in Supply Chain Management",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Discusses IT's role in enabling supply chain management. Topics include ERP, innovative technologies, and internet-based supply chains using simulated SAP ERP system and real-world cases.",
+      "key_topics": ["Supply chain management", "ERP systems", "SAP", "Internet-based supply chains", "SCM technology"],
+      "prerequisites": ["ISA 201"]
+    },
+    "ISA 321": {
+      "name": "Advanced Java Programming and Data Structures",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Intermediate and advanced Java features including recursion, file I/O, exceptions, and generics. Covers fundamental data structures and algorithm analysis.",
+      "key_topics": ["Advanced Java", "Recursion", "File I/O", "Exceptions", "Generics", "Data structures", "Algorithm analysis"],
+      "prerequisites": ["ISA 221"]
+    },
+    "ISA 330": {
+      "name": "Programming for Data Science",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Advanced Python focusing on data science libraries (NumPy, Pandas). Covers web scraping and other data extraction techniques, data transformation, data staging, data analysis.",
+      "key_topics": ["Python", "NumPy", "Pandas", "Web scraping", "Data extraction", "Data transformation", "Data staging", "Data analysis"],
+      "prerequisites": ["ISA 221"]
+    },
+    "ISA 332": {
+      "name": "E-Business Models",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Explores business activities over IT platforms using internet protocols. Examines radical changes in the marketing, advertising, and delivery of products and services.",
+      "key_topics": ["E-business", "E-commerce models", "Internet protocols", "Digital marketing", "Online advertising", "Digital delivery"],
+      "prerequisites": ["ISA 201"]
+    },
+    "ISA 340": {
+      "name": "Introduction to Machine Learning",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Practical machine learning using Python and scikit-learn. Focuses on real-world applications including House Price Prediction, Handwritten Character Recognition, Credit Card Fraud Detection.",
+      "key_topics": ["Machine learning", "Python", "scikit-learn", "Regression", "Classification", "Fraud detection", "Predictive modeling"],
+      "prerequisites": ["ISA 330"]
+    },
+    "ISA 341": {
+      "name": "Database Management Systems Principles",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Database design and application development focusing on relational models. Covers designing and normalizing a Relational Database with hands-on projects.",
+      "key_topics": ["Relational database design", "Normalization", "SQL", "ER diagrams", "Database application development", "Data modeling"],
+      "prerequisites": ["ISA 201 or ISA 210"]
+    },
+    "ISA 343": {
+      "name": "Infrastructure and Cloud Computing",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Hardware, system software, and cloud computing integration. Topics include operating systems, computer networks, middleware, virtualization and Big Data support.",
+      "key_topics": ["Cloud computing", "Operating systems", "Computer networks", "Middleware", "Virtualization", "Big Data infrastructure", "Hardware"],
+      "prerequisites": ["ISA 201 or ISA 210"]
+    },
+    "ISA 345": {
+      "name": "Web Design and Development",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Client-side web technologies including HTML, JavaScript, jQuery, and Cascading Style Sheets. Covers design principles, interactivity, accessibility, and development tools.",
+      "key_topics": ["HTML", "JavaScript", "jQuery", "CSS", "Web design principles", "Accessibility", "Client-side development"],
+      "prerequisites": ["ISA 221"]
+    },
+    "ISA 360": {
+      "name": "Data Warehousing in the Age of Big Data",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Design and implementation of distributed databases for massive datasets. Provides practical, hands-on experience with retrieving and manipulating data with advanced SQL, Hadoop, and NoSQL.",
+      "key_topics": ["Data warehousing", "Distributed databases", "Advanced SQL", "Hadoop", "NoSQL", "Big Data", "ETL processes"],
+      "prerequisites": ["ISA 341"]
+    },
+    "ISA 391": {
+      "name": "Information Systems and Analytics Internship",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Supervised employment applying ISA principles. Students work at least ten hours per week, meet periodically with a supervising faculty member.",
+      "key_topics": ["Professional experience", "Applied ISA skills"],
+      "prerequisites": []
+    },
+    "ISA 400": {
+      "name": "Introduction to Deep Learning",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Introduces the basic concepts of Neural Networks and Deep Learning, teaching students the fundamental principles, formulations, underlying mathematics and deep learning implementation details in PyTorch. Explores different deep learning model suitability for different data domains such as text, images and videos.",
+      "key_topics": ["Neural networks", "Deep learning", "PyTorch", "Natural language processing", "Computer vision", "CNNs", "RNNs"],
+      "prerequisites": ["ISA 340"]
+    },
+    "ISA 410": {
+      "name": "Machine Learning with Robotics",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Provides an in-depth understanding of robotics and associated machine learning concepts. Explores how the industry leverages both open-source and proprietary technologies to build sophisticated robotic systems. Students work with Turtlebot 3, NAO and Pepper humanoid robots.",
+      "key_topics": ["Robotics", "Machine learning for robotics", "Turtlebot 3", "NAO robot", "Pepper robot", "Sensor integration", "Autonomous systems"],
+      "prerequisites": ["ISA 340"]
+    },
+    "ISA 441": {
+      "name": "Systems Analysis and Information Technology Consulting",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Teaches investigative techniques for understanding business problems and designing technology solutions. Teams of students will develop a plan for building a complete computer information system.",
+      "key_topics": ["Systems analysis", "SDLC", "Requirements gathering", "System design", "IT consulting", "Business problem solving", "Project planning"],
+      "prerequisites": ["ISA 341"]
+    },
+    "ISA 442": {
+      "name": "Project Management and Practice",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Introduction to IT project management following Project Management Body of Knowledge framework, with emphasis on its application to software and systems development projects.",
+      "key_topics": ["PMBOK", "Project planning", "Scope management", "Risk management", "Schedule management", "Agile", "Waterfall", "IT project management"],
+      "prerequisites": []
+    },
+    "ISA 445": {
+      "name": "Advanced Web Programming",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Server-side web development complementing ISA 345. Covers server-side applications that mediate between an information source such as a database and the browser-end programs.",
+      "key_topics": ["Server-side programming", "Web application architecture", "Database connectivity", "APIs", "Backend development"],
+      "prerequisites": ["ISA 345"]
+    },
+    "ISA 460": {
+      "name": "Big Data Analytics",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Big Data tools on Hadoop platforms. Addresses volume, velocity, and variety through Hadoop platforms, Teradata Aster, social media analytics, link analysis, and stream analytics.",
+      "key_topics": ["Big Data", "Hadoop", "Teradata Aster", "Social media analytics", "Link analysis", "Stream analytics", "Volume/Velocity/Variety"],
+      "prerequisites": ["ISA 360"]
+    },
+    "ISA 470": {
+      "name": "Managing Global Information Resources",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Principles of managing IT resources in global organizations. Focuses on viewing the organization in a global perspective, with the associated technological, cultural and operational issues.",
+      "key_topics": ["Global IT management", "Cultural issues in IT", "International operations", "IT governance", "Global strategy"],
+      "prerequisites": []
+    },
+    "ISA 472": {
+      "name": "IT Security and Risk Management",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "IT security from risk management perspective. Covers cryptography, securing networks, access control, firewalls, host hardening, application security, data protection, and incident response.",
+      "key_topics": ["Cryptography", "Network security", "Access control", "Firewalls", "Host hardening", "Application security", "Data protection", "Incident response", "Risk management"],
+      "prerequisites": ["ISA 311"]
+    },
+    "ISA 490": {
+      "name": "Data Science Capstone",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Real-world data science project application. Students engage in the entire process of solving a real-world data science project, from defining the problem or opportunity.",
+      "key_topics": ["Capstone project", "End-to-end data science", "Problem definition", "Data collection", "Analysis", "Presentation"],
+      "prerequisites": ["ISA 340", "ISA 360"]
+    },
+    "ISA 497": {
+      "name": "Directed Study in Information Systems and Analytics",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Independent, in-depth study or research for senior majors under faculty direction, requiring the student to develop a substantial paper or project.",
+      "key_topics": ["Independent research", "Faculty-directed study"],
+      "prerequisites": []
+    },
+    "ISA ST400": {
+      "name": "Special Topics: Introduction to Blockchain",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Blockchain technology from management perspective. Students develop smart contracts and deploy the smart contracts in a private Ethereum environment.",
+      "key_topics": ["Blockchain", "Smart contracts", "Ethereum", "Distributed ledger", "Cryptocurrency concepts"],
+      "prerequisites": []
+    },
+    "AA 205": {
+      "name": "Introduction to Applied Analytics",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Introductory course in applied analytics. Focus is on using data and being able to gain insight into the data for multiple purposes. Analytics will be studied from a wide variety of fields and disciplines including using data visualization, text mining, and data mining methodologies.",
+      "key_topics": ["Applied analytics", "Data visualization", "Text mining", "Data mining", "Cross-disciplinary analytics"],
+      "prerequisites": ["MATH 201"]
+    },
+    "AA 304": {
+      "name": "Managing Information for Applied Analytics",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Management of information - how it is acquired, stored, and deployed effectively and how it may be analyzed for applications in a wide variety of domains such as literary and historical text analysis, social media, bioinformatics, and business decision-making.",
+      "key_topics": ["Information management", "Data acquisition", "Data storage", "Text analysis", "Social media analytics", "Bioinformatics", "Decision support"],
+      "prerequisites": ["AA 205"]
+    },
+    "AA 306": {
+      "name": "Data Mining for Effective Decision Making",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Analytics is about the discovery and communication of meaningful patterns in data. This course is about applying analytics to create useful information that provides insights, fosters inquiry, and supports effective decision making and problem solving.",
+      "key_topics": ["Data mining", "Pattern discovery", "Decision making", "Problem solving", "Analytical methods"],
+      "prerequisites": ["AA 205"]
+    },
+    "AA 490": {
+      "name": "Applied Analytics Capstone",
+      "credits": 3,
+      "level": "undergraduate",
+      "description": "Capstone course for the Applied Analytics concentration requiring students to integrate skills from prior coursework into a comprehensive analytics project.",
+      "key_topics": ["Capstone project", "Integrated analytics", "Project presentation"],
+      "prerequisites": ["AA 304", "AA 306"]
+    },
+    "ISA 500": {
+      "name": "Programming Foundations for Analytics",
+      "credits": 0,
+      "level": "graduate",
+      "description": "Delves into the theory and pragmatics of programming with a special focus on the Python programming language. Covers variables, constants, operators, expressions, conditional statements, loops, and functions through hands-on exercises.",
+      "key_topics": ["Python programming", "Variables", "Operators", "Conditional statements", "Loops", "Functions"],
+      "prerequisites": []
+    },
+    "ISA 501": {
+      "name": "Math and Statistics Foundations for Analytics",
+      "credits": 0,
+      "level": "graduate",
+      "description": "Introduces the core math that data science/analytics is built upon for students lacking sufficient mathematical background. Topics include linear algebra, basic probability, statistics, and calculus.",
+      "key_topics": ["Linear algebra", "Probability", "Statistics", "Calculus"],
+      "prerequisites": []
+    },
+    "ISA 510": {
+      "name": "Probability and Statistics for Data Analytics",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Provides students with an understanding of how to analyze and understand data through statistics and probability. Covers foundational and advanced topics with practical Python-based projects.",
+      "key_topics": ["Probability theory", "Statistical inference", "Hypothesis testing", "Regression analysis", "Python for statistics"],
+      "prerequisites": ["ISA 500", "ISA 501"]
+    },
+    "ISA 520": {
+      "name": "Data Visualization and Communication",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Examines the art and science of data visualization including human perception, exploratory analysis, and interaction techniques. Uses Power BI, Tableau, and Python for implementation.",
+      "key_topics": ["Data visualization", "Human perception", "Power BI", "Tableau", "Python visualization", "Data storytelling", "Exploratory analysis"],
+      "prerequisites": []
+    },
+    "ISA 530": {
+      "name": "Fundamentals of AI and Machine Learning",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Covers the complete machine learning pipeline including supervised/unsupervised learning, time series forecasting, and reinforcement learning, incorporating AI tools and large language models.",
+      "key_topics": ["Machine learning pipeline", "Supervised learning", "Unsupervised learning", "Time series", "Reinforcement learning", "LLMs", "AI tools"],
+      "prerequisites": ["ISA 510"]
+    },
+    "ISA 540": {
+      "name": "Data Management in the Age of AI",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Explores database management for AI environments, covering relational model and Structured Query Language (SQL) alongside NoSQL and vector databases for modern data systems.",
+      "key_topics": ["Relational databases", "SQL", "NoSQL", "Vector databases", "Data management for AI", "Database design"],
+      "prerequisites": []
+    },
+    "AA 630": {
+      "name": "Data Management for Analytics",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Introduction to the principles and techniques for acquisition and preparation of data used for analysis and modeling. Course covers Python for statistical analysis and data preparation, SQL for database systems, and culminates in a major project using realistic datasets.",
+      "key_topics": ["Data acquisition", "Data preparation", "Python for analytics", "SQL", "Data cleaning", "ETL"],
+      "prerequisites": []
+    },
+    "AA 640": {
+      "name": "Data Visualization and Text Mining",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Focuses on text mining techniques using unstructured data and addresses challenges with text and images. The second half emphasizes data visualization implementation and storytelling approaches.",
+      "key_topics": ["Text mining", "Unstructured data", "NLP basics", "Data visualization", "Data storytelling"],
+      "prerequisites": ["AA 630"]
+    },
+    "AA 645": {
+      "name": "Data Mining and Predictive Analytics",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Provides understanding of predictive analytics for decision-making in different application domains. Covers statistical techniques (regression), classification methods (decision trees, random forests), association analysis, and clustering. Tools include Python, Excel, and Tableau.",
+      "key_topics": ["Predictive analytics", "Regression", "Decision trees", "Random forests", "Association analysis", "Clustering", "Python", "Tableau"],
+      "prerequisites": ["AA 630"]
+    },
+    "AA 651": {
+      "name": "Analytics Capstone",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Opportunity to apply the knowledge and skills acquired to realistic problems that involve large data sets. Students work on business partner projects, develop multiple predictive models using Python, and present findings professionally.",
+      "key_topics": ["Capstone project", "Predictive modeling", "Business partner projects", "Professional presentation"],
+      "prerequisites": ["AA 630", "AA 640", "AA 645"]
+    },
+    "MSBA 515": {
+      "name": "Preparing for MSBA and AI Success",
+      "credits": 1,
+      "level": "graduate",
+      "description": "Foundational skills covering statistics, programming, data visualization, and communication for the MSBA program.",
+      "key_topics": ["Statistics review", "Programming basics", "Visualization basics", "Communication skills"],
+      "prerequisites": []
+    },
+    "MSBA 610": {
+      "name": "Time Series Analysis and Optimization for Business Decisions",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Time series analysis and optimization techniques applied to business decision-making.",
+      "key_topics": ["Time series analysis", "Optimization", "Business decisions", "Forecasting"],
+      "prerequisites": ["ISA 510", "ISA 530"]
+    },
+    "MSBA 620": {
+      "name": "Marketing Analytics",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Application of analytics techniques to marketing problems and decisions.",
+      "key_topics": ["Marketing analytics", "Customer segmentation", "Campaign analysis", "Marketing ROI"],
+      "prerequisites": []
+    },
+    "MSBA 640": {
+      "name": "Business Analytics and AI Capstone",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Capstone experience applying business analytics and AI skills to real-world business problems.",
+      "key_topics": ["Capstone project", "Applied AI", "Business analytics integration"],
+      "prerequisites": []
+    },
+    "MSDS 610": {
+      "name": "AI I: Deep Learning",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Advanced deep learning concepts and implementation for data science applications.",
+      "key_topics": ["Deep learning", "Neural network architectures", "Training techniques", "GPU computing"],
+      "prerequisites": ["ISA 530"]
+    },
+    "MSDS 620": {
+      "name": "AI II: Natural Language Processing",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Natural language processing techniques and applications using modern AI approaches.",
+      "key_topics": ["NLP", "Text processing", "Language models", "Sentiment analysis", "Named entity recognition"],
+      "prerequisites": ["MSDS 610"]
+    },
+    "MSDS 630": {
+      "name": "Large Scale Data Analytics in the Age of AI",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Techniques and tools for processing and analyzing data at scale using modern AI-enhanced approaches.",
+      "key_topics": ["Large-scale analytics", "Distributed computing", "AI-enhanced analysis", "Scalable data processing"],
+      "prerequisites": ["ISA 540"]
+    },
+    "MSDS 640": {
+      "name": "Data Science and AI Capstone",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Capstone experience applying data science and AI skills to real-world problems.",
+      "key_topics": ["Capstone project", "End-to-end data science", "AI application"],
+      "prerequisites": []
+    },
+    "AI 600": {
+      "name": "AI Applications in Business",
+      "credits": 3,
+      "level": "graduate",
+      "description": "Exploration of artificial intelligence applications across various business functions and domains.",
+      "key_topics": ["AI in business", "Use cases", "AI strategy", "Implementation challenges"],
+      "prerequisites": ["ISA 530"]
+    }
+  },
+
+  "subject_knowledge": {
+    "information_systems": {
+      "database_concepts": {
+        "title": "Database Concepts",
+        "relevant_courses": ["ISA 341", "ISA 360", "ISA 540", "AA 630"],
+        "subtopics": {
+          "relational_model": {
+            "definition": "A data model that organizes data into tables (relations) consisting of rows (tuples) and columns (attributes), based on relational algebra and set theory.",
+            "key_terms": {
+              "Relation": "A table in a relational database, consisting of rows and columns.",
+              "Tuple": "A single row in a relation, representing one record.",
+              "Attribute": "A column in a relation, representing a property of the entity.",
+              "Domain": "The set of allowable values for an attribute.",
+              "Primary Key": "A unique identifier for each tuple in a relation. No two rows can have the same primary key value, and it cannot be NULL.",
+              "Foreign Key": "An attribute in one relation that references the primary key of another relation, establishing a relationship between tables.",
+              "Candidate Key": "An attribute or set of attributes that could serve as a primary key (unique and minimal).",
+              "Composite Key": "A primary key composed of two or more attributes.",
+              "Referential Integrity": "A constraint ensuring that foreign key values match an existing primary key in the referenced table, or are NULL.",
+              "Schema": "The logical structure of a database, defining tables, columns, data types, and relationships.",
+              "Instance": "The actual data stored in the database at a particular moment in time."
+            },
+            "examples": [
+              "A Students table with columns StudentID (PK), Name, Major, GPA",
+              "An Enrollments table with StudentID (FK) referencing Students and CourseID (FK) referencing Courses"
+            ],
+            "common_exam_questions": [
+              "What is the difference between a primary key and a foreign key?",
+              "Why is referential integrity important in relational databases?",
+              "Given a scenario, identify the appropriate primary key for a table.",
+              "Explain the difference between a candidate key and a composite key."
+            ]
+          },
+          "sql": {
+            "definition": "Structured Query Language (SQL) is the standard language for creating, querying, updating, and managing relational databases.",
+            "key_terms": {
+              "DDL (Data Definition Language)": "SQL commands that define or modify database structure: CREATE, ALTER, DROP, TRUNCATE.",
+              "DML (Data Manipulation Language)": "SQL commands that manipulate data: SELECT, INSERT, UPDATE, DELETE.",
+              "DCL (Data Control Language)": "SQL commands that control access: GRANT, REVOKE.",
+              "SELECT": "Retrieves data from one or more tables. Syntax: SELECT columns FROM table WHERE condition.",
+              "JOIN": "Combines rows from two or more tables based on a related column. Types: INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN, CROSS JOIN.",
+              "INNER JOIN": "Returns only rows that have matching values in both tables.",
+              "LEFT JOIN": "Returns all rows from the left table plus matched rows from the right table (NULLs where no match).",
+              "GROUP BY": "Groups rows sharing a value in specified columns, typically used with aggregate functions (COUNT, SUM, AVG, MAX, MIN).",
+              "HAVING": "Filters groups created by GROUP BY (like WHERE but for aggregated data).",
+              "Subquery": "A query nested inside another query, used in WHERE, FROM, or SELECT clauses.",
+              "VIEW": "A virtual table based on the result of a SQL query. Does not store data itself.",
+              "INDEX": "A database structure that improves the speed of data retrieval at the cost of additional storage and slower writes.",
+              "WHERE": "Filters rows before grouping. Used with comparison operators (=, <>, <, >, LIKE, IN, BETWEEN).",
+              "ORDER BY": "Sorts the result set by one or more columns (ASC or DESC)."
+            },
+            "examples": [
+              "SELECT s.Name, c.CourseName FROM Students s INNER JOIN Enrollments e ON s.StudentID = e.StudentID INNER JOIN Courses c ON e.CourseID = c.CourseID WHERE s.GPA > 3.5;",
+              "SELECT Major, COUNT(*) AS StudentCount, AVG(GPA) AS AvgGPA FROM Students GROUP BY Major HAVING AVG(GPA) > 3.0 ORDER BY AvgGPA DESC;",
+              "CREATE TABLE Orders (OrderID INT PRIMARY KEY, CustomerID INT REFERENCES Customers(CustomerID), OrderDate DATE, Total DECIMAL(10,2));"
+            ],
+            "common_exam_questions": [
+              "Write a SQL query to find all students enrolled in more than 3 courses.",
+              "What is the difference between WHERE and HAVING?",
+              "Explain the difference between INNER JOIN and LEFT JOIN with examples.",
+              "Write a query using a subquery to find students with above-average GPA.",
+              "What is the purpose of an INDEX and what are its trade-offs?"
+            ]
+          },
+          "normalization": {
+            "definition": "The process of organizing a relational database to reduce data redundancy and improve data integrity by decomposing tables according to a series of normal forms.",
+            "key_terms": {
+              "Functional Dependency": "A constraint where the value of one attribute (or set) determines the value of another. Written as A -> B (A determines B).",
+              "1NF (First Normal Form)": "Each column contains only atomic (indivisible) values. No repeating groups or arrays.",
+              "2NF (Second Normal Form)": "In 1NF, and every non-key attribute is fully functionally dependent on the entire primary key (no partial dependencies).",
+              "3NF (Third Normal Form)": "In 2NF, and no non-key attribute is transitively dependent on the primary key (no transitive dependencies).",
+              "BCNF (Boyce-Codd Normal Form)": "A stricter version of 3NF where every determinant is a candidate key.",
+              "Partial Dependency": "When a non-key attribute depends on only part of a composite primary key. Violates 2NF.",
+              "Transitive Dependency": "When a non-key attribute depends on another non-key attribute rather than directly on the primary key. Violates 3NF.",
+              "Denormalization": "Intentionally introducing redundancy into a normalized design for performance optimization (faster reads at the cost of more complex writes).",
+              "Anomalies": "Problems caused by poor normalization: insertion anomalies (can't add data without unrelated data), update anomalies (inconsistencies from partial updates), deletion anomalies (losing data when deleting a row)."
+            },
+            "examples": [
+              "1NF violation: A Student table with a 'Courses' column containing 'Math, English, Science' -- fix by creating separate Enrollment rows.",
+              "2NF violation: In a table (StudentID, CourseID, StudentName, Grade), StudentName depends only on StudentID (partial dependency) -- fix by moving StudentName to a separate Students table.",
+              "3NF violation: In a table (StudentID, DeptID, DeptName), DeptName depends on DeptID, not directly on StudentID (transitive dependency) -- fix by creating a separate Departments table."
+            ],
+            "common_exam_questions": [
+              "Given a table with functional dependencies, normalize it to 3NF.",
+              "Identify all functional dependencies in a given relation.",
+              "What types of anomalies can occur in an unnormalized database?",
+              "Explain the difference between 2NF and 3NF with examples.",
+              "When might denormalization be appropriate?"
+            ]
+          },
+          "er_diagrams": {
+            "definition": "Entity-Relationship (ER) diagrams are visual representations of entities, their attributes, and the relationships between them, used during the conceptual design phase of database development.",
+            "key_terms": {
+              "Entity": "A real-world object or concept that can be distinctly identified (e.g., Student, Course, Employee).",
+              "Entity Set": "A collection of similar entities (e.g., all Students).",
+              "Attribute": "A property or characteristic of an entity (e.g., StudentName, GPA).",
+              "Simple Attribute": "An attribute that cannot be divided further (e.g., Age).",
+              "Composite Attribute": "An attribute that can be divided into sub-parts (e.g., FullName = FirstName + LastName).",
+              "Derived Attribute": "An attribute whose value can be computed from other attributes (e.g., Age from DateOfBirth). Shown with dashed oval.",
+              "Multivalued Attribute": "An attribute that can hold multiple values (e.g., PhoneNumbers). Shown with double oval.",
+              "Relationship": "An association between two or more entities.",
+              "Cardinality": "The number of entity instances that can participate in a relationship: 1:1 (one-to-one), 1:N (one-to-many), M:N (many-to-many).",
+              "Participation Constraint": "Total participation (every entity must participate, shown with double line) vs. Partial participation (some entities may not participate, shown with single line).",
+              "Weak Entity": "An entity that cannot be uniquely identified by its own attributes alone; depends on a strong (owner) entity. Shown with double rectangle.",
+              "Discriminator": "The partial key of a weak entity that, combined with the owner entity's key, uniquely identifies the weak entity."
+            },
+            "examples": [
+              "A 1:N relationship between Department and Employee (one department has many employees).",
+              "An M:N relationship between Student and Course, resolved with an Enrollment junction table.",
+              "A weak entity OrderItem that depends on Order (OrderID + ItemNumber together form the key)."
+            ],
+            "common_exam_questions": [
+              "Draw an ER diagram for a university registration system.",
+              "Convert the following ER diagram to a relational schema.",
+              "Identify the cardinality of each relationship in a given scenario.",
+              "What is a weak entity and when would you use one?",
+              "How do you resolve an M:N relationship when converting to tables?"
+            ]
+          }
+        }
+      },
+      "sdlc": {
+        "title": "Systems Development Life Cycle (SDLC)",
+        "relevant_courses": ["ISA 441", "ISA 442"],
+        "subtopics": {
+          "sdlc_overview": {
+            "definition": "A structured framework that defines tasks performed at each step of the software/systems development process. Provides a systematic approach to building information systems.",
+            "key_terms": {
+              "Planning Phase": "Identifies the scope, objectives, feasibility, and resources for the project. Includes feasibility study (technical, economic, organizational, schedule).",
+              "Analysis Phase": "Determines system requirements through interviews, questionnaires, observation, and document analysis. Produces a requirements specification.",
+              "Design Phase": "Creates the blueprint for the system including architecture, user interface, database, and program design. Produces design specifications.",
+              "Implementation Phase": "The system is coded, tested, and deployed. Includes unit testing, integration testing, system testing, and user acceptance testing (UAT).",
+              "Maintenance Phase": "Ongoing support, bug fixes, enhancements, and adaptations after deployment. Typically the longest and most expensive phase.",
+              "Feasibility Study": "Analysis of whether a proposed system is technically possible, economically justified, operationally viable, and achievable within schedule constraints (TEOS).",
+              "Requirements Specification": "A detailed document describing what the system must do (functional requirements) and how well it must perform (non-functional requirements).",
+              "Waterfall Model": "A linear, sequential SDLC approach where each phase must be completed before the next begins. Easy to manage but inflexible to change.",
+              "Agile Methodology": "An iterative, incremental approach emphasizing flexibility, collaboration, and rapid delivery. Uses short iterations called sprints (typically 2-4 weeks).",
+              "Scrum": "An Agile framework with defined roles (Product Owner, Scrum Master, Development Team), ceremonies (Sprint Planning, Daily Standup, Sprint Review, Retrospective), and artifacts (Product Backlog, Sprint Backlog, Increment).",
+              "Prototyping": "Building a working model of the system to clarify requirements and get user feedback early in development.",
+              "RAD (Rapid Application Development)": "An approach emphasizing rapid prototyping and iterative delivery over rigorous planning.",
+              "DevOps": "A culture and set of practices combining software development (Dev) and IT operations (Ops) to shorten development cycles and deliver high-quality software continuously.",
+              "CI/CD": "Continuous Integration (frequently merging code changes) and Continuous Delivery/Deployment (automatically testing and deploying code)."
+            },
+            "examples": [
+              "Waterfall is appropriate for projects with well-understood, stable requirements (e.g., payroll system).",
+              "Agile/Scrum is appropriate for projects with evolving requirements (e.g., a new mobile app where user needs are still being discovered).",
+              "A hospital migrating to a new electronic health records system would conduct a thorough feasibility study covering technical capability, budget, staff readiness, and timeline."
+            ],
+            "common_exam_questions": [
+              "Compare and contrast the Waterfall and Agile methodologies.",
+              "What are the four components of a feasibility study?",
+              "Describe the activities in each phase of the SDLC.",
+              "When is prototyping most useful?",
+              "What is the role of a Scrum Master vs. Product Owner?",
+              "Why is the maintenance phase typically the most expensive?"
+            ]
+          }
+        }
+      },
+      "networking_fundamentals": {
+        "title": "Networking Fundamentals",
+        "relevant_courses": ["ISA 343", "ISA 472"],
+        "subtopics": {
+          "tcp_ip_and_protocols": {
+            "definition": "The TCP/IP model is the foundational protocol suite of the internet, defining how data is packetized, addressed, transmitted, routed, and received.",
+            "key_terms": {
+              "TCP/IP Model": "A four-layer networking model: Application, Transport, Internet, Network Access (Link). The practical basis for internet communication.",
+              "OSI Model": "A seven-layer conceptual model: Application, Presentation, Session, Transport, Network, Data Link, Physical. Used for teaching and reference.",
+              "IP Address": "A unique numerical identifier assigned to each device on a network. IPv4 uses 32-bit addresses (e.g., 192.168.1.1); IPv6 uses 128-bit addresses.",
+              "TCP (Transmission Control Protocol)": "A connection-oriented, reliable transport protocol that ensures data arrives complete and in order. Uses three-way handshake (SYN, SYN-ACK, ACK).",
+              "UDP (User Datagram Protocol)": "A connectionless, faster but unreliable transport protocol. Used for streaming, DNS queries, and gaming where speed matters more than guaranteed delivery.",
+              "HTTP/HTTPS": "Hypertext Transfer Protocol (and its secure version). Application-layer protocol for web communication. HTTPS adds TLS/SSL encryption.",
+              "DNS (Domain Name System)": "Translates human-readable domain names (e.g., bryant.edu) into IP addresses. Acts as the internet's phone book.",
+              "DHCP": "Dynamic Host Configuration Protocol. Automatically assigns IP addresses to devices on a network.",
+              "FTP/SFTP": "File Transfer Protocol (and its secure version). Used for transferring files between systems.",
+              "SMTP/POP3/IMAP": "Email protocols. SMTP sends email; POP3 downloads and removes from server; IMAP syncs across devices.",
+              "Port": "A logical endpoint for communication. Well-known ports: HTTP=80, HTTPS=443, FTP=21, SSH=22, SMTP=25, DNS=53.",
+              "Packet": "A unit of data transmitted over a network, containing header (source/destination, protocol info) and payload (actual data).",
+              "Router": "A device that forwards data packets between networks based on IP addresses. Operates at Layer 3 (Network).",
+              "Switch": "A device that forwards data frames within a LAN based on MAC addresses. Operates at Layer 2 (Data Link).",
+              "Subnet": "A logical subdivision of an IP network. Subnet mask determines which portion of an IP address identifies the network vs. host.",
+              "NAT (Network Address Translation)": "Translates private IP addresses to a public IP address, allowing multiple devices to share one public IP."
+            },
+            "examples": [
+              "When you type bryant.edu in a browser: DNS resolves it to an IP, TCP establishes a connection, HTTP/HTTPS requests the webpage, and the response is rendered.",
+              "A company uses NAT so 200 internal computers share one public IP address.",
+              "Video conferencing uses UDP because occasional packet loss is acceptable but low latency is critical."
+            ],
+            "common_exam_questions": [
+              "Compare TCP and UDP. When would you use each?",
+              "Describe the four layers of the TCP/IP model and give a protocol example for each.",
+              "What happens when you type a URL into a browser? Describe the networking steps.",
+              "What is the difference between a router and a switch?",
+              "Explain the purpose of DHCP and DNS."
+            ]
+          },
+          "lan_wan": {
+            "definition": "LAN (Local Area Network) connects devices in a limited area (building/campus). WAN (Wide Area Network) connects LANs over large geographic distances. The internet is the largest WAN.",
+            "key_terms": {
+              "LAN": "Local Area Network. High-speed, limited area (building or campus). Typically Ethernet or Wi-Fi.",
+              "WAN": "Wide Area Network. Spans cities, countries, or continents. Uses leased lines, MPLS, or VPN over internet.",
+              "MAN": "Metropolitan Area Network. Covers a city or large campus.",
+              "WLAN": "Wireless LAN using Wi-Fi (IEEE 802.11 standards).",
+              "VPN (Virtual Private Network)": "Creates an encrypted tunnel over a public network (internet) to securely connect remote users or sites to a private network.",
+              "Ethernet": "The most common LAN technology. IEEE 802.3 standard. Uses CSMA/CD for media access.",
+              "Bandwidth": "The maximum rate of data transfer across a network path, measured in bits per second (bps, Mbps, Gbps).",
+              "Latency": "The time delay for data to travel from source to destination. Measured in milliseconds (ms).",
+              "Topology": "The arrangement of network devices. Types: Star (central hub/switch), Bus (single cable), Ring (circular), Mesh (every device connected to every other).",
+              "Firewall": "A network security device that monitors and filters incoming and outgoing traffic based on predefined security rules."
+            },
+            "common_exam_questions": [
+              "What are the key differences between a LAN and a WAN?",
+              "Describe three common network topologies and their advantages/disadvantages.",
+              "How does a VPN provide security over a public network?",
+              "What is the difference between bandwidth and latency?"
+            ]
+          }
+        }
+      },
+      "cybersecurity": {
+        "title": "Cybersecurity Basics",
+        "relevant_courses": ["ISA 311", "ISA 472"],
+        "subtopics": {
+          "cia_triad": {
+            "definition": "The three core principles of information security: Confidentiality (only authorized access), Integrity (data is accurate and unaltered), and Availability (systems and data are accessible when needed).",
+            "key_terms": {
+              "Confidentiality": "Ensuring information is accessible only to authorized individuals. Achieved through encryption, access controls, and authentication.",
+              "Integrity": "Ensuring data is accurate, complete, and has not been tampered with. Achieved through hashing, digital signatures, and checksums.",
+              "Availability": "Ensuring systems and data are accessible to authorized users when needed. Achieved through redundancy, backups, and disaster recovery.",
+              "Non-repudiation": "The assurance that someone cannot deny having performed an action (e.g., sending a message). Achieved through digital signatures and audit logs.",
+              "Threat": "Any potential danger that could exploit a vulnerability and cause harm to an asset.",
+              "Vulnerability": "A weakness in a system that can be exploited by a threat.",
+              "Risk": "The probability of a threat exploiting a vulnerability multiplied by the potential impact. Risk = Threat x Vulnerability x Impact.",
+              "Attack Surface": "The total number of points where an unauthorized user can try to enter or extract data from a system."
+            },
+            "examples": [
+              "Confidentiality breach: A hacker accesses customer credit card data.",
+              "Integrity breach: A student modifies their grades in the university database.",
+              "Availability breach: A DDoS attack takes down an e-commerce website during Black Friday."
+            ],
+            "common_exam_questions": [
+              "Define the CIA triad and give an example of a breach for each component.",
+              "What is the relationship between threats, vulnerabilities, and risk?",
+              "A hospital's patient records system goes offline for 4 hours. Which element of the CIA triad is affected?",
+              "How do digital signatures provide both integrity and non-repudiation?"
+            ]
+          },
+          "encryption_and_authentication": {
+            "definition": "Encryption transforms plaintext into ciphertext using an algorithm and key, making it unreadable to unauthorized parties. Authentication verifies the identity of a user or system.",
+            "key_terms": {
+              "Symmetric Encryption": "Uses the same key for encryption and decryption. Fast but requires secure key distribution. Examples: AES, DES, 3DES.",
+              "Asymmetric Encryption": "Uses a key pair: public key (encrypt) and private key (decrypt). Slower but solves key distribution problem. Examples: RSA, ECC.",
+              "Hashing": "A one-way function that produces a fixed-length digest from input data. Used for password storage and integrity verification. Examples: SHA-256, MD5 (deprecated).",
+              "Digital Signature": "Created by encrypting a hash of a message with the sender's private key. Verifies identity (authentication) and message integrity.",
+              "SSL/TLS": "Protocols that encrypt data in transit between client and server. TLS is the successor to SSL. Used in HTTPS.",
+              "Multi-Factor Authentication (MFA)": "Requires two or more verification factors: something you know (password), something you have (phone/token), something you are (biometric).",
+              "Single Sign-On (SSO)": "Allows users to authenticate once and access multiple systems without re-entering credentials.",
+              "OAuth": "An authorization framework that allows third-party applications to access user resources without exposing credentials.",
+              "Phishing": "A social engineering attack using deceptive emails or websites to trick users into revealing sensitive information.",
+              "Malware": "Malicious software including viruses, worms, trojans, ransomware, and spyware.",
+              "SQL Injection": "An attack that inserts malicious SQL code into input fields to manipulate or access a database.",
+              "Cross-Site Scripting (XSS)": "An attack that injects malicious scripts into web pages viewed by other users.",
+              "DDoS (Distributed Denial of Service)": "An attack that overwhelms a system with traffic from multiple sources, making it unavailable.",
+              "Zero-Day Vulnerability": "A software vulnerability unknown to the vendor with no available patch.",
+              "Penetration Testing": "Authorized simulated attacks on a system to identify security weaknesses.",
+              "IDS/IPS": "Intrusion Detection System (monitors and alerts) / Intrusion Prevention System (monitors and blocks). Can be network-based or host-based."
+            },
+            "examples": [
+              "AES-256 is a symmetric encryption standard used by the U.S. government for classified information.",
+              "When you visit a bank website, TLS encrypts your session using asymmetric encryption for key exchange and symmetric encryption for data transfer.",
+              "MFA example: logging into a bank requires a password (know) + a code sent to your phone (have)."
+            ],
+            "common_exam_questions": [
+              "Compare symmetric and asymmetric encryption. When would you use each?",
+              "How does a digital signature work? What does it verify?",
+              "What are the three factors in multi-factor authentication?",
+              "Explain how a SQL injection attack works and how to prevent it.",
+              "What is the difference between an IDS and an IPS?"
+            ]
+          }
+        }
+      },
+      "cloud_computing": {
+        "title": "Cloud Computing Concepts",
+        "relevant_courses": ["ISA 343"],
+        "subtopics": {
+          "cloud_fundamentals": {
+            "definition": "Cloud computing delivers computing services (servers, storage, databases, networking, software, analytics) over the internet ('the cloud') on a pay-as-you-go basis.",
+            "key_terms": {
+              "IaaS (Infrastructure as a Service)": "Provides virtualized computing resources over the internet. Customer manages OS, middleware, and applications. Examples: AWS EC2, Azure VMs, Google Compute Engine.",
+              "PaaS (Platform as a Service)": "Provides a platform for developing, running, and managing applications without managing infrastructure. Examples: Heroku, Google App Engine, Azure App Service.",
+              "SaaS (Software as a Service)": "Delivers software applications over the internet on a subscription basis. Examples: Salesforce, Google Workspace, Microsoft 365.",
+              "Public Cloud": "Cloud resources owned and operated by a third-party provider, shared among multiple organizations.",
+              "Private Cloud": "Cloud infrastructure dedicated to a single organization, offering more control and security.",
+              "Hybrid Cloud": "Combines public and private clouds, allowing data and applications to move between them.",
+              "Multi-Cloud": "Using services from multiple cloud providers to avoid vendor lock-in and optimize capabilities.",
+              "Virtualization": "Creating virtual versions of computing resources (servers, storage, networks) using software, allowing multiple virtual machines on a single physical machine.",
+              "Containers": "Lightweight, portable packages of software that include everything needed to run an application. More efficient than VMs. Example: Docker.",
+              "Serverless Computing": "Cloud execution model where the provider manages server infrastructure and automatically scales. Customer pays only for execution time. Example: AWS Lambda.",
+              "Scalability": "The ability to increase or decrease resources as needed. Vertical scaling (bigger machine) vs. Horizontal scaling (more machines).",
+              "Elasticity": "The ability to automatically scale resources up or down based on demand in real-time.",
+              "SLA (Service Level Agreement)": "A contract defining the expected level of service (uptime guarantees, response times, etc.)."
+            },
+            "examples": [
+              "A startup uses AWS EC2 (IaaS) for servers, deploys their app on Heroku (PaaS), and uses Google Workspace (SaaS) for email.",
+              "Netflix uses AWS to elastically scale during peak viewing hours and scale down during off-hours.",
+              "A bank uses a hybrid cloud: sensitive customer data on a private cloud, public-facing website on a public cloud."
+            ],
+            "common_exam_questions": [
+              "Compare IaaS, PaaS, and SaaS. Give an example of each.",
+              "What are the advantages and disadvantages of cloud computing?",
+              "Explain the difference between scalability and elasticity.",
+              "When would a company choose a hybrid cloud strategy?",
+              "What is the difference between a virtual machine and a container?"
+            ]
+          }
+        }
+      },
+      "erp_systems": {
+        "title": "Enterprise Resource Planning (ERP) Systems",
+        "relevant_courses": ["ISA 201", "ISA 320"],
+        "subtopics": {
+          "erp_fundamentals": {
+            "definition": "An ERP system is an integrated software platform that manages core business processes in real-time, using a common database shared across departments (finance, HR, manufacturing, supply chain, sales).",
+            "key_terms": {
+              "ERP": "Enterprise Resource Planning. Integrates all business functions into a single system with a shared database.",
+              "Module": "A functional component of an ERP system (e.g., Finance, HR, Sales, Procurement, Manufacturing, Inventory).",
+              "SAP": "The world's largest ERP vendor (Systems, Applications, and Products in Data Processing). SAP S/4HANA is the current flagship product.",
+              "Oracle ERP Cloud": "A major cloud-based ERP solution competing with SAP.",
+              "CRM (Customer Relationship Management)": "Software that manages interactions with customers and prospects. Often a module within ERP or a standalone system (e.g., Salesforce).",
+              "SCM (Supply Chain Management)": "The management of the flow of goods, data, and finances from raw materials to final delivery. ERP integrates SCM data.",
+              "Best of Breed vs. Integrated": "Best of breed: selecting the best software for each function. Integrated (ERP): one system for all functions.",
+              "Implementation Risk": "ERP implementations are complex, expensive, and frequently over budget/schedule. Failure rate is high.",
+              "Customization vs. Configuration": "Configuration: adjusting ERP settings within built-in options. Customization: modifying source code (risky, expensive, complicates upgrades).",
+              "Change Management": "The structured approach to transitioning individuals and organizations to a new system. Critical for ERP success."
+            },
+            "examples": [
+              "When a customer places an order, the ERP system simultaneously updates inventory, triggers manufacturing if needed, creates a shipping order, and records the revenue.",
+              "Bryant's ISA 320 course uses a simulated SAP ERP system to teach supply chain concepts.",
+              "A manufacturer implements SAP S/4HANA to replace 12 separate legacy systems with one integrated platform."
+            ],
+            "common_exam_questions": [
+              "What are the main benefits and risks of implementing an ERP system?",
+              "How does an ERP system differ from using separate best-of-breed applications?",
+              "Describe three modules commonly found in an ERP system.",
+              "Why is change management critical during ERP implementation?",
+              "What is the difference between customization and configuration in ERP?"
+            ]
+          }
+        }
+      },
+      "business_process_modeling": {
+        "title": "Business Process Modeling",
+        "relevant_courses": ["ISA 441"],
+        "subtopics": {
+          "bpm_fundamentals": {
+            "definition": "Business Process Modeling (BPM) is the activity of representing processes of an enterprise so that the current process may be analyzed, improved, and automated.",
+            "key_terms": {
+              "Business Process": "A set of structured, related activities that produce a specific output for a particular customer or market.",
+              "BPMN (Business Process Model and Notation)": "A graphical standard for modeling business processes in a workflow. Uses events (circles), activities (rounded rectangles), gateways (diamonds), and flows (arrows).",
+              "Swimlane Diagram": "A process diagram that assigns activities to different actors or departments using horizontal or vertical lanes.",
+              "Data Flow Diagram (DFD)": "A graphical representation of data flows through a system. Components: processes (circles), data stores (open rectangles), external entities (squares), data flows (arrows).",
+              "Use Case Diagram": "A UML diagram showing the interactions between actors and system functions (use cases).",
+              "Process Improvement": "Analyzing existing processes to identify inefficiencies, bottlenecks, and opportunities for optimization.",
+              "As-Is Process": "The current state of a business process before improvement.",
+              "To-Be Process": "The desired future state of a business process after improvement.",
+              "BPR (Business Process Reengineering)": "Radical redesign of business processes to achieve dramatic improvement. Contrasts with incremental improvement.",
+              "Value Chain": "Michael Porter's framework identifying primary activities (inbound logistics, operations, outbound logistics, marketing/sales, service) and support activities (firm infrastructure, HR, technology, procurement) that create value."
+            },
+            "common_exam_questions": [
+              "Draw a DFD for a library book checkout system.",
+              "What is the difference between BPR and incremental process improvement?",
+              "Create a swimlane diagram for an order fulfillment process.",
+              "What are the four components of a Data Flow Diagram?",
+              "Explain Porter's Value Chain and how IT supports each activity."
+            ]
+          }
+        }
+      },
+      "it_project_management": {
+        "title": "IT Project Management",
+        "relevant_courses": ["ISA 442"],
+        "subtopics": {
+          "pm_fundamentals": {
+            "definition": "The application of knowledge, skills, tools, and techniques to IT project activities to meet project requirements. Guided by the Project Management Body of Knowledge (PMBOK).",
+            "key_terms": {
+              "PMBOK": "Project Management Body of Knowledge. A standard published by PMI defining 5 process groups and 10 knowledge areas.",
+              "Triple Constraint": "The three competing constraints of any project: Scope, Time, and Cost. Also called the Iron Triangle. Quality is at the center.",
+              "Process Groups": "Initiating, Planning, Executing, Monitoring & Controlling, Closing.",
+              "Knowledge Areas": "Integration, Scope, Schedule, Cost, Quality, Resource, Communications, Risk, Procurement, Stakeholder Management.",
+              "WBS (Work Breakdown Structure)": "A hierarchical decomposition of the total scope of work into manageable components.",
+              "Gantt Chart": "A bar chart showing project tasks on the vertical axis and time on the horizontal axis. Shows task duration, dependencies, and progress.",
+              "Critical Path": "The longest sequence of dependent tasks that determines the minimum project duration. Any delay on the critical path delays the project.",
+              "PERT (Program Evaluation and Review Technique)": "A network analysis technique using optimistic, pessimistic, and most likely time estimates for each task.",
+              "Risk Management": "Identifying, analyzing, and responding to project risks. Strategies: Avoid, Mitigate, Transfer (insurance), Accept.",
+              "Stakeholder": "Anyone affected by or who can influence the project (sponsor, users, team, management, vendors).",
+              "Scope Creep": "Uncontrolled changes or additions to project scope without adjustments to time, cost, or resources.",
+              "Sprint": "A time-boxed iteration in Agile (typically 2-4 weeks) producing a potentially shippable increment.",
+              "Kanban": "A visual workflow management method using a board with columns (To Do, In Progress, Done) to limit work in progress.",
+              "Earned Value Management (EVM)": "A technique measuring project performance by comparing planned value, earned value, and actual cost."
+            },
+            "common_exam_questions": [
+              "What are the five PMBOK process groups?",
+              "Explain the triple constraint and how the three elements interact.",
+              "What is a Work Breakdown Structure and why is it important?",
+              "How do you determine the critical path in a project network diagram?",
+              "What is scope creep and how can it be prevented?",
+              "Compare Waterfall and Agile approaches to project management."
+            ]
+          }
+        }
+      },
+      "ecommerce_digital_business": {
+        "title": "E-Commerce and Digital Business",
+        "relevant_courses": ["ISA 332"],
+        "subtopics": {
+          "ecommerce_fundamentals": {
+            "definition": "E-commerce is the buying and selling of goods and services over the internet. Digital business extends this to include all digitally-enabled business processes and relationships.",
+            "key_terms": {
+              "B2C (Business-to-Consumer)": "Businesses selling directly to individual consumers. Examples: Amazon, Walmart.com.",
+              "B2B (Business-to-Business)": "Businesses selling to other businesses. Larger transaction volumes. Examples: Alibaba, SAP Ariba.",
+              "C2C (Consumer-to-Consumer)": "Consumers selling to other consumers through a platform. Examples: eBay, Craigslist, Facebook Marketplace.",
+              "B2G (Business-to-Government)": "Businesses selling products or services to government agencies.",
+              "Revenue Models": "Advertising, subscription, transaction fee, freemium, affiliate marketing, licensing.",
+              "Digital Payment Systems": "Credit cards, digital wallets (PayPal, Apple Pay), cryptocurrency, buy-now-pay-later.",
+              "Disintermediation": "Removal of intermediaries (middlemen) in a supply chain through digital platforms.",
+              "Platform Business Model": "A business model that creates value by facilitating exchanges between two or more interdependent groups. Examples: Uber, Airbnb, Amazon Marketplace.",
+              "SEO (Search Engine Optimization)": "Techniques to improve a website's ranking in search engine results.",
+              "Conversion Rate": "The percentage of website visitors who complete a desired action (purchase, signup).",
+              "Digital Transformation": "The integration of digital technology into all areas of a business, fundamentally changing how it operates and delivers value."
+            },
+            "common_exam_questions": [
+              "Compare B2B and B2C e-commerce models.",
+              "What are three common revenue models for e-commerce businesses?",
+              "Explain disintermediation with an example.",
+              "What is a platform business model and why is it powerful?",
+              "How has digital transformation changed traditional retail?"
+            ]
+          }
+        }
+      }
+    },
+    "data_analytics": {
+      "analytics_types": {
+        "title": "Types of Analytics",
+        "relevant_courses": ["ISA 201", "ISA 210", "AA 205", "AA 306", "AA 645"],
+        "subtopics": {
+          "descriptive_predictive_prescriptive": {
+            "definition": "Analytics can be categorized into three types based on the question they answer: Descriptive (What happened?), Predictive (What will happen?), and Prescriptive (What should we do?).",
+            "key_terms": {
+              "Descriptive Analytics": "Examines historical data to identify patterns and trends. Answers 'What happened?' Uses summarization, aggregation, and visualization. Examples: sales dashboards, monthly reports, KPI tracking.",
+              "Diagnostic Analytics": "A subset of descriptive analytics that examines data to answer 'Why did it happen?' Uses drill-down, data discovery, and correlation analysis.",
+              "Predictive Analytics": "Uses statistical models and machine learning to forecast future outcomes. Answers 'What will happen?' Examples: demand forecasting, churn prediction, credit scoring.",
+              "Prescriptive Analytics": "Recommends actions to achieve desired outcomes. Answers 'What should we do?' Uses optimization, simulation, and decision analysis. Examples: supply chain optimization, dynamic pricing.",
+              "KPI (Key Performance Indicator)": "A measurable value that demonstrates how effectively an organization is achieving key business objectives.",
+              "Dashboard": "A visual display of the most important information needed to achieve objectives, consolidated on a single screen.",
+              "CRISP-DM": "Cross-Industry Standard Process for Data Mining. Six phases: Business Understanding, Data Understanding, Data Preparation, Modeling, Evaluation, Deployment.",
+              "Data-Driven Decision Making": "Making organizational decisions based on data analysis rather than intuition alone."
+            },
+            "examples": [
+              "Descriptive: A retail dashboard showing last quarter's sales by region, product, and channel.",
+              "Diagnostic: Drilling down to discover that a sales decline in the Northeast was caused by a competitor's promotional campaign.",
+              "Predictive: A model predicting which customers are likely to cancel their subscription in the next 30 days.",
+              "Prescriptive: An algorithm recommending optimal inventory levels for each warehouse to minimize costs while meeting demand."
+            ],
+            "common_exam_questions": [
+              "Define and compare descriptive, predictive, and prescriptive analytics with examples.",
+              "A company wants to reduce customer churn. Which type of analytics would they use at each stage?",
+              "What are the six phases of CRISP-DM?",
+              "How does diagnostic analytics differ from descriptive analytics?",
+              "Give an example of a KPI for each of these industries: retail, healthcare, education."
+            ]
+          }
+        }
+      },
+      "data_visualization": {
+        "title": "Data Visualization Principles",
+        "relevant_courses": ["ISA 310", "ISA 520", "AA 640"],
+        "subtopics": {
+          "visualization_fundamentals": {
+            "definition": "The graphical representation of data and information using visual elements like charts, graphs, and maps to communicate patterns, trends, and outliers effectively.",
+            "key_terms": {
+              "Pre-attentive Attributes": "Visual properties processed by the brain almost instantly (within 250ms): color, size, shape, orientation, position, length. Critical for effective visualization.",
+              "Chart Types": "Bar chart (comparing categories), Line chart (trends over time), Scatter plot (relationship between two variables), Pie chart (parts of a whole - use sparingly), Histogram (distribution of continuous data), Heat map (intensity across two dimensions), Box plot (distribution summary), Treemap (hierarchical data).",
+              "Data-Ink Ratio": "Edward Tufte's principle: maximize the ratio of data-ink to total ink. Remove non-essential visual elements (chartjunk).",
+              "Chartjunk": "Non-essential visual elements that distract from the data (3D effects, excessive gridlines, decorative images).",
+              "Color Theory": "Use color intentionally: sequential (light-to-dark for continuous data), diverging (two-color scale for data with a meaningful midpoint), qualitative (distinct colors for categories). Consider colorblind accessibility.",
+              "Gestalt Principles": "Laws of visual perception: proximity (nearby = related), similarity (similar = grouped), continuity (follow lines/curves), closure (complete incomplete shapes), enclosure (enclosed = grouped).",
+              "Exploratory vs. Explanatory Visualization": "Exploratory: visualizations for the analyst to discover patterns. Explanatory: visualizations for an audience to communicate findings.",
+              "Interactive Visualization": "Visualizations that allow users to filter, drill down, hover, zoom, and explore data dynamically.",
+              "Tableau": "A leading data visualization and business intelligence platform. Uses a drag-and-drop interface.",
+              "Power BI": "Microsoft's business analytics service for interactive visualizations and business intelligence.",
+              "Matplotlib/Seaborn": "Python libraries for creating static, animated, and interactive visualizations.",
+              "Storytelling with Data": "The practice of combining data, visuals, and narrative to communicate insights effectively to an audience."
+            },
+            "examples": [
+              "A well-designed sales dashboard uses a line chart for revenue trends, bar chart for regional comparisons, and KPI cards for headline metrics.",
+              "Bad visualization: a 3D exploded pie chart with 15 slices. Good alternative: a horizontal bar chart sorted by value.",
+              "Using color-blind-safe palettes (e.g., Viridis) ensures accessibility for ~8% of men who are color blind."
+            ],
+            "common_exam_questions": [
+              "When should you use a bar chart vs. a line chart vs. a scatter plot?",
+              "What is the data-ink ratio and why does it matter?",
+              "Explain three pre-attentive attributes and how they can be used in visualization.",
+              "What is chartjunk? Give examples and explain why it should be avoided.",
+              "Describe the difference between exploratory and explanatory visualization."
+            ]
+          }
+        }
+      },
+      "statistical_analysis": {
+        "title": "Statistical Analysis Basics",
+        "relevant_courses": ["ISA 510", "MATH 201", "MATH 350"],
+        "subtopics": {
+          "statistics_fundamentals": {
+            "definition": "The science of collecting, organizing, analyzing, interpreting, and presenting data to discover patterns and make informed decisions.",
+            "key_terms": {
+              "Population vs. Sample": "Population: the entire group of interest. Sample: a subset selected for analysis. Statistics from samples estimate parameters of the population.",
+              "Mean": "The arithmetic average. Sum of all values divided by the number of values.",
+              "Median": "The middle value when data is sorted. More robust to outliers than the mean.",
+              "Mode": "The most frequently occurring value in a dataset.",
+              "Standard Deviation": "A measure of how spread out data values are from the mean. Low SD = data clustered near mean. High SD = data widely spread.",
+              "Variance": "The average of the squared differences from the mean. Standard deviation squared.",
+              "Normal Distribution": "A symmetric, bell-shaped distribution where mean = median = mode. ~68% within 1 SD, ~95% within 2 SD, ~99.7% within 3 SD.",
+              "Hypothesis Testing": "A statistical method to determine if there is enough evidence to reject a null hypothesis. Steps: state H0 and H1, choose significance level, compute test statistic, make decision.",
+              "Null Hypothesis (H0)": "The default assumption of no effect or no difference.",
+              "Alternative Hypothesis (H1)": "The claim being tested, suggesting an effect or difference exists.",
+              "p-value": "The probability of observing results as extreme as the sample results, assuming the null hypothesis is true. If p < alpha, reject H0.",
+              "Significance Level (alpha)": "The threshold for rejecting H0 (commonly 0.05 or 5%). Probability of Type I error.",
+              "Type I Error": "Rejecting H0 when it is actually true (false positive).",
+              "Type II Error": "Failing to reject H0 when it is actually false (false negative).",
+              "Correlation": "A measure of the linear relationship between two variables. Pearson's r ranges from -1 (perfect negative) to +1 (perfect positive). Correlation does not imply causation.",
+              "Regression": "A statistical method for modeling the relationship between a dependent variable and one or more independent variables.",
+              "Confidence Interval": "A range of values that is likely to contain the true population parameter with a specified level of confidence (e.g., 95%).",
+              "Chi-Square Test": "A test of independence to determine if there is a significant association between two categorical variables.",
+              "t-Test": "A test comparing means of two groups to determine if they are statistically different. Types: one-sample, independent two-sample, paired."
+            },
+            "examples": [
+              "Testing if a new website design increases conversion rates: H0: no difference, H1: new design is better. p-value = 0.03 < 0.05, so reject H0.",
+              "A confidence interval of (45.2, 52.8) at 95% confidence means we're 95% confident the true population mean falls in this range.",
+              "Correlation of r = 0.85 between study hours and exam scores suggests a strong positive linear relationship."
+            ],
+            "common_exam_questions": [
+              "Explain the difference between Type I and Type II errors.",
+              "What does a p-value of 0.03 mean in the context of hypothesis testing?",
+              "Why doesn't correlation imply causation? Give an example.",
+              "When would you use a t-test vs. a chi-square test?",
+              "Calculate the mean, median, and standard deviation for a given dataset."
+            ]
+          }
+        }
+      },
+      "machine_learning": {
+        "title": "Machine Learning Concepts",
+        "relevant_courses": ["ISA 340", "ISA 400", "ISA 410", "ISA 530", "AA 645"],
+        "subtopics": {
+          "ml_fundamentals": {
+            "definition": "A subset of artificial intelligence where systems learn patterns from data to make predictions or decisions without being explicitly programmed for each specific task.",
+            "key_terms": {
+              "Supervised Learning": "Learning from labeled data (input-output pairs). The algorithm learns a mapping from inputs to known outputs. Used for regression and classification.",
+              "Unsupervised Learning": "Learning from unlabeled data to find hidden patterns or structure. Used for clustering, dimensionality reduction, and association rules.",
+              "Reinforcement Learning": "An agent learns by interacting with an environment, receiving rewards or penalties for actions. Used in game playing, robotics, and autonomous systems.",
+              "Training Set": "The portion of data used to train the model (typically 70-80%).",
+              "Test Set": "The portion of data held out to evaluate model performance (typically 20-30%).",
+              "Validation Set": "A subset used during training to tune hyperparameters and prevent overfitting.",
+              "Feature": "An individual measurable property or characteristic used as input to a model (also called attribute, predictor, or independent variable).",
+              "Label/Target": "The output variable the model is trying to predict (also called dependent variable or response).",
+              "Overfitting": "When a model learns noise in the training data and performs well on training data but poorly on new data. Too complex.",
+              "Underfitting": "When a model is too simple to capture the underlying patterns, performing poorly on both training and test data.",
+              "Cross-Validation": "A technique for assessing model performance by splitting data into k folds, training on k-1 folds, and testing on the remaining fold. Repeated k times.",
+              "Bias-Variance Tradeoff": "Bias: error from incorrect assumptions (underfitting). Variance: error from sensitivity to small fluctuations in training data (overfitting). Optimal models balance both.",
+              "Hyperparameter": "A parameter set before training begins (e.g., learning rate, number of trees). Contrasts with model parameters learned during training."
+            },
+            "relationships": "Supervised learning uses labeled data for regression/classification. Unsupervised learning uses unlabeled data for clustering/dimensionality reduction. Semi-supervised learning uses a mix. Deep learning is a subset of machine learning using neural networks with many layers."
+          },
+          "regression": {
+            "definition": "A supervised learning technique for predicting a continuous numerical output based on one or more input features.",
+            "key_terms": {
+              "Linear Regression": "Models the relationship between variables by fitting a straight line (y = mx + b). Simple (one predictor) or Multiple (multiple predictors).",
+              "Polynomial Regression": "Extends linear regression by fitting a polynomial curve to capture non-linear relationships.",
+              "R-squared (R2)": "The proportion of variance in the dependent variable explained by the model. Ranges 0-1. Higher is better.",
+              "Adjusted R-squared": "R-squared adjusted for the number of predictors. Penalizes adding features that don't improve the model.",
+              "RMSE (Root Mean Squared Error)": "The square root of the average squared differences between predicted and actual values. Lower is better.",
+              "MAE (Mean Absolute Error)": "The average of absolute differences between predicted and actual values.",
+              "Residual": "The difference between the actual value and the predicted value for a data point.",
+              "Multicollinearity": "When predictor variables are highly correlated with each other, making it difficult to determine each variable's individual effect.",
+              "Ridge Regression": "Linear regression with L2 regularization to prevent overfitting by penalizing large coefficients.",
+              "Lasso Regression": "Linear regression with L1 regularization that can shrink some coefficients to zero, performing feature selection."
+            },
+            "common_exam_questions": [
+              "What does an R-squared value of 0.82 mean?",
+              "What is the difference between simple and multiple linear regression?",
+              "How do you detect and handle multicollinearity?",
+              "What is regularization and why is it used?",
+              "Given a scatter plot, would linear or polynomial regression be more appropriate?"
+            ]
+          },
+          "classification": {
+            "definition": "A supervised learning technique for predicting a categorical label (class) for new observations based on past labeled data.",
+            "key_terms": {
+              "Logistic Regression": "Despite its name, it is a classification algorithm that predicts the probability of a binary outcome using a sigmoid function.",
+              "Decision Tree": "A tree-shaped model where internal nodes represent feature tests, branches represent outcomes, and leaf nodes represent class labels. Easy to interpret.",
+              "Random Forest": "An ensemble of decision trees that improves accuracy by averaging predictions (regression) or using majority voting (classification). Reduces overfitting.",
+              "K-Nearest Neighbors (KNN)": "Classifies a data point based on the majority class of its k closest neighbors in the feature space.",
+              "Support Vector Machine (SVM)": "Finds the optimal hyperplane that maximally separates classes in feature space.",
+              "Naive Bayes": "A probabilistic classifier based on Bayes' theorem, assuming feature independence. Fast and effective for text classification.",
+              "Confusion Matrix": "A table showing True Positives (TP), True Negatives (TN), False Positives (FP), and False Negatives (FN).",
+              "Accuracy": "Proportion of correct predictions: (TP + TN) / (TP + TN + FP + FN). Can be misleading with imbalanced classes.",
+              "Precision": "Of all positive predictions, how many were actually positive: TP / (TP + FP). Important when false positives are costly.",
+              "Recall (Sensitivity)": "Of all actual positives, how many were correctly predicted: TP / (TP + FN). Important when false negatives are costly.",
+              "F1 Score": "The harmonic mean of precision and recall: 2 * (Precision * Recall) / (Precision + Recall). Balances both metrics.",
+              "AUC-ROC": "Area Under the Receiver Operating Characteristic curve. Measures the model's ability to distinguish between classes. 1.0 = perfect, 0.5 = random."
+            },
+            "examples": [
+              "Email spam detection: classify emails as spam or not-spam using Naive Bayes.",
+              "Credit card fraud detection: classify transactions as fraudulent or legitimate using Random Forest.",
+              "In medical diagnosis, recall is critical -- we'd rather flag a healthy patient (false positive) than miss a sick one (false negative)."
+            ],
+            "common_exam_questions": [
+              "Explain the confusion matrix and calculate precision, recall, and F1 score from given values.",
+              "When would you prioritize precision over recall?",
+              "How does a Random Forest improve upon a single Decision Tree?",
+              "What assumptions does Naive Bayes make?",
+              "Explain how KNN classifies a new data point."
+            ]
+          },
+          "clustering": {
+            "definition": "An unsupervised learning technique that groups similar data points together without predefined labels.",
+            "key_terms": {
+              "K-Means Clustering": "Partitions data into k clusters by iteratively assigning points to the nearest centroid and updating centroids. Requires specifying k in advance.",
+              "Hierarchical Clustering": "Builds a tree (dendrogram) of clusters. Agglomerative (bottom-up): starts with individual points and merges. Divisive (top-down): starts with one cluster and splits.",
+              "DBSCAN": "Density-Based Spatial Clustering of Applications with Noise. Groups points that are closely packed and marks outliers as noise. Does not require specifying k.",
+              "Centroid": "The center point of a cluster, calculated as the mean of all points in the cluster.",
+              "Elbow Method": "A technique for choosing k in K-Means by plotting the sum of squared distances and looking for the 'elbow' where the rate of decrease sharply changes.",
+              "Silhouette Score": "Measures how similar a point is to its own cluster vs. other clusters. Ranges -1 to 1. Higher is better.",
+              "Dendrogram": "A tree diagram showing the arrangement of clusters produced by hierarchical clustering."
+            },
+            "examples": [
+              "Customer segmentation: K-Means groups customers into segments (e.g., high-value, at-risk, casual) based on purchase behavior.",
+              "Document clustering: grouping news articles by topic without predefined categories.",
+              "Using the elbow method, if the within-cluster sum of squares drops sharply at k=4 and flattens after, k=4 is likely the best choice."
+            ],
+            "common_exam_questions": [
+              "Describe the K-Means algorithm step by step.",
+              "How do you determine the optimal number of clusters?",
+              "Compare K-Means and Hierarchical clustering.",
+              "When would DBSCAN be preferred over K-Means?",
+              "What is a silhouette score and how is it interpreted?"
+            ]
+          }
+        }
+      },
+      "data_warehousing_etl": {
+        "title": "Data Warehousing and ETL",
+        "relevant_courses": ["ISA 360", "ISA 460", "AA 630"],
+        "subtopics": {
+          "dw_fundamentals": {
+            "definition": "A data warehouse is a centralized repository of integrated data from multiple sources, optimized for analytical queries and reporting rather than transactional processing.",
+            "key_terms": {
+              "Data Warehouse": "A subject-oriented, integrated, time-variant, non-volatile collection of data for decision support (Bill Inmon's definition).",
+              "OLTP (Online Transaction Processing)": "Systems optimized for fast inserts/updates/deletes of individual records. Used for day-to-day operations (e.g., POS system, bank ATM).",
+              "OLAP (Online Analytical Processing)": "Systems optimized for complex queries and analysis across large datasets. Used for reporting and analytics.",
+              "ETL (Extract, Transform, Load)": "The process of extracting data from source systems, transforming it (cleaning, formatting, aggregating), and loading it into the data warehouse.",
+              "ELT (Extract, Load, Transform)": "A modern variation where raw data is loaded first, then transformed within the warehouse. Enabled by cloud data platforms.",
+              "Star Schema": "A data warehouse design with a central fact table connected to dimension tables. Simple, fast queries.",
+              "Snowflake Schema": "A normalized version of star schema where dimension tables are further normalized into sub-tables. Saves storage but more complex queries.",
+              "Fact Table": "The central table containing quantitative metrics/measures (e.g., sales amount, quantity) and foreign keys to dimension tables.",
+              "Dimension Table": "Tables containing descriptive attributes for analysis (e.g., Date, Product, Customer, Store).",
+              "Data Mart": "A subset of a data warehouse focused on a specific business area (e.g., Sales data mart, HR data mart).",
+              "Data Lake": "A storage repository that holds raw data in its native format until needed. Supports structured, semi-structured, and unstructured data.",
+              "Data Lakehouse": "A hybrid architecture combining data lake storage with data warehouse management features.",
+              "Slowly Changing Dimensions (SCD)": "Techniques for handling changes in dimension data over time. Type 1: overwrite. Type 2: add new row with versioning. Type 3: add new column.",
+              "Metadata": "Data about data. Describes the structure, origin, and rules for data in the warehouse."
+            },
+            "examples": [
+              "A retail data warehouse star schema: Fact_Sales (SaleID, DateKey, ProductKey, StoreKey, Quantity, Revenue) connected to Dim_Date, Dim_Product, Dim_Store.",
+              "ETL process: Extract customer data from CRM and ERP, transform (standardize names, merge duplicates, calculate lifetime value), load into the warehouse nightly.",
+              "A company uses a data lake on AWS S3 to store raw log files, social media data, and IoT sensor readings."
+            ],
+            "common_exam_questions": [
+              "What are the four characteristics of a data warehouse (Inmon's definition)?",
+              "Compare OLTP and OLAP systems.",
+              "Explain the ETL process with an example.",
+              "What is the difference between a star schema and a snowflake schema?",
+              "What is a data lake and how does it differ from a data warehouse?",
+              "Describe three types of slowly changing dimensions."
+            ]
+          }
+        }
+      },
+      "business_intelligence": {
+        "title": "Business Intelligence Tools",
+        "relevant_courses": ["ISA 310", "ISA 520", "AA 640"],
+        "subtopics": {
+          "bi_fundamentals": {
+            "definition": "Business Intelligence (BI) encompasses the strategies, technologies, and practices used to collect, integrate, analyze, and present business data to support better decision-making.",
+            "key_terms": {
+              "Business Intelligence (BI)": "The broad category of technologies and practices for transforming raw data into meaningful insights for decision-making.",
+              "Tableau": "A leading BI and visualization platform known for drag-and-drop interface, interactive dashboards, and strong visualization capabilities.",
+              "Power BI": "Microsoft's BI platform that integrates with Excel and Azure. Offers dashboards, reports, and data modeling with DAX language.",
+              "SSRS (SQL Server Reporting Services)": "Microsoft's server-based reporting platform for creating, deploying, and managing reports.",
+              "Self-Service BI": "Tools enabling business users (not just IT) to create their own reports and analyses without depending on technical staff.",
+              "Ad Hoc Query": "An unplanned query created on-the-fly to answer a specific question, as opposed to pre-built reports.",
+              "Drill-Down": "Navigating from summary data to detailed data (e.g., from yearly revenue to quarterly to monthly to daily).",
+              "Slice and Dice": "Viewing data from different angles by selecting specific dimensions or filtering criteria.",
+              "OLAP Cube": "A multi-dimensional data structure optimized for fast analysis. Allows slicing, dicing, drilling, and pivoting.",
+              "Reporting": "The process of organizing and presenting data in a structured format (tables, charts, summaries) for stakeholders.",
+              "Data Governance": "The set of policies, procedures, and standards for managing data quality, security, privacy, and compliance across an organization."
+            },
+            "common_exam_questions": [
+              "What is Business Intelligence and how does it support decision-making?",
+              "Compare Tableau and Power BI as BI tools.",
+              "What is self-service BI and why is it important?",
+              "Explain drill-down and slice-and-dice with examples.",
+              "What is data governance and why is it important?"
+            ]
+          }
+        }
+      },
+      "big_data": {
+        "title": "Big Data Concepts",
+        "relevant_courses": ["ISA 360", "ISA 460", "MSDS 630"],
+        "subtopics": {
+          "big_data_fundamentals": {
+            "definition": "Datasets that are too large, complex, or fast-moving to be processed by traditional database tools. Characterized by the 5 Vs.",
+            "key_terms": {
+              "Volume": "The massive amount of data generated (terabytes, petabytes, exabytes).",
+              "Velocity": "The speed at which data is generated, collected, and processed. Real-time and streaming data.",
+              "Variety": "The different types and formats of data: structured (databases), semi-structured (JSON, XML), unstructured (text, images, video).",
+              "Veracity": "The trustworthiness and quality of data. Dealing with noise, bias, and inconsistency.",
+              "Value": "The business value and actionable insights that can be derived from the data.",
+              "Hadoop": "An open-source framework for distributed storage (HDFS) and processing (MapReduce) of large datasets across clusters of computers.",
+              "HDFS (Hadoop Distributed File System)": "Hadoop's storage layer. Splits files into blocks, replicates them across nodes for fault tolerance.",
+              "MapReduce": "Hadoop's programming model: Map (processes and filters data in parallel across nodes) then Reduce (aggregates the results).",
+              "Apache Spark": "A fast, general-purpose distributed computing system. Processes data in-memory, much faster than MapReduce for iterative algorithms.",
+              "NoSQL": "Non-relational databases designed for specific data models (document, key-value, column-family, graph). Examples: MongoDB (document), Redis (key-value), Cassandra (column), Neo4j (graph).",
+              "Kafka": "A distributed streaming platform for building real-time data pipelines and streaming applications.",
+              "Stream Processing": "Processing data in real-time as it arrives, rather than in batches. Used for live dashboards, fraud detection, IoT.",
+              "Data Pipeline": "The set of steps and tools that move data from sources through processing to destinations (storage, analytics, applications).",
+              "Cloud Data Platforms": "Managed big data services: AWS (S3, EMR, Redshift), Azure (Data Lake, Synapse), Google Cloud (BigQuery, Dataflow)."
+            },
+            "examples": [
+              "Social media generates ~500 million tweets per day (volume + velocity), containing text, images, and videos (variety).",
+              "Netflix uses Spark to process viewing data in real-time to update recommendations.",
+              "A retailer uses Kafka to stream point-of-sale data for real-time inventory tracking."
+            ],
+            "common_exam_questions": [
+              "Define the 5 Vs of Big Data with examples.",
+              "How does Hadoop process large datasets?",
+              "Compare Hadoop MapReduce and Apache Spark.",
+              "What are the four main types of NoSQL databases? Give an example of each.",
+              "What is the difference between batch processing and stream processing?"
+            ]
+          }
+        }
+      }
+    }
+  },
+
+  "cross_reference_map": {
+    "ISA 201": ["erp_systems", "ecommerce_digital_business", "analytics_types"],
+    "ISA 210": ["analytics_types", "ml_fundamentals", "visualization_fundamentals"],
+    "ISA 221": ["sdlc_overview"],
+    "ISA 310": ["visualization_fundamentals", "bi_fundamentals"],
+    "ISA 311": ["cia_triad", "encryption_and_authentication"],
+    "ISA 320": ["erp_fundamentals", "ecommerce_fundamentals"],
+    "ISA 330": ["statistics_fundamentals", "ml_fundamentals"],
+    "ISA 332": ["ecommerce_fundamentals"],
+    "ISA 340": ["ml_fundamentals", "regression", "classification", "clustering"],
+    "ISA 341": ["relational_model", "sql", "normalization", "er_diagrams"],
+    "ISA 343": ["cloud_fundamentals", "tcp_ip_and_protocols", "lan_wan"],
+    "ISA 345": ["ecommerce_fundamentals"],
+    "ISA 360": ["dw_fundamentals", "big_data_fundamentals"],
+    "ISA 400": ["ml_fundamentals"],
+    "ISA 410": ["ml_fundamentals"],
+    "ISA 441": ["sdlc_overview", "bpm_fundamentals"],
+    "ISA 442": ["pm_fundamentals"],
+    "ISA 445": ["ecommerce_fundamentals"],
+    "ISA 460": ["big_data_fundamentals", "dw_fundamentals"],
+    "ISA 472": ["cia_triad", "encryption_and_authentication"],
+    "ISA 510": ["statistics_fundamentals"],
+    "ISA 520": ["visualization_fundamentals"],
+    "ISA 530": ["ml_fundamentals", "regression", "classification", "clustering"],
+    "ISA 540": ["relational_model", "sql"],
+    "AA 205": ["analytics_types", "visualization_fundamentals"],
+    "AA 304": ["dw_fundamentals"],
+    "AA 306": ["analytics_types", "ml_fundamentals"],
+    "AA 630": ["sql", "dw_fundamentals"],
+    "AA 640": ["visualization_fundamentals"],
+    "AA 645": ["regression", "classification", "clustering"]
+  }
+}
